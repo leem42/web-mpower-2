@@ -96,10 +96,34 @@
     }
   }
 
+  .indicatorEmpty {
+      position: fixed;
+      top: 90px !important;
+      width: 16.3%;
+      height: 10px;
+      color: transparent;
+      opacity: 0.2;
+      float: left;
+      background-color: #68BF60;
+      z-index: 1000;
+  }
   .indicatorFilled {
-    background-color: #2196f3 !important;
+    background-color: rgba(238,238,238,0.7);
     opacity: 1 !important;
   }
+
+  #submit {
+    border-radius: 5px !important;
+    background-color: #3A539B !important;
+    color: white;
+    font-weight: 500;
+    height: 3.83%;
+  }
+  
+  .greenText {
+    color: #68BF60;
+  }
+
 
   .green {
     background-color: #4caf50 !important;
@@ -122,23 +146,11 @@
   .lower {
     text-transform: none;
   }
-  .indicatorEmpty {
-      position: fixed;
-      top: 90px !important;
-      width: 16.3%;
-      height: 10px;
-      color: transparent;
-      opacity: 0.2;
-      float: left;
-      background-color: #90cbf9;
-      z-index: 1000;
-  }
 
   nav {
 
     color: white !important;
-    background-color: #5B34B6 !important;
-    box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
+    background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);    box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
     height: 90px;
     // below is used for aligning the element in the middle vertically
     display: flex;
@@ -245,12 +257,13 @@
   .long {
     width: 295px;
   }
+
   .x-long {
     width: 385px !important;
   }
 
   .large {
-      font-size: 33px;
+    height: 50px !important;      
   }
 
   .light {

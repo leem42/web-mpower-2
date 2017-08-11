@@ -76,7 +76,7 @@
 
 
           <v-btn v-model="selectedChoices" round class=" round  lightPurple" @click="handleClick(6)"
-          v-bind:class="{ 'lightPurple': isLightPurple(6), 'darkPurple': isDarkPurple(6)}"> Am curious
+          v-bind:class="{ 'lightPurple': isLightPurple(6), 'darkPurple': isDarkPurple(6)}"> balance
             <v-icon v-bind:class="{ 'dark': isLightPurple(6)}" center>
             {{isLightPurple(6) ? 'remove_circle_outline': 'add_circle_outline'}}
             </v-icon>
@@ -86,7 +86,20 @@
       <br class="visible-md-up">
       
       <p class="col-md-8 offset-md-2 text-left"> I'd be willing to do this/these activities: </p>
-      <v-select class="col-12 offset-md-2 col-md-4" label="Select frequency" v-bind:items="frequencyChoices" v-model="selectedOptionThree" chips hint="remove choices by clicking the X" persistent-hint></v-select>
+      <v-flex class="col-sm-2 offset-sm-2 col-4" >
+        <v-radio label="Daily" value="radio-1" v-model="ex8" ></v-radio>
+      </v-flex>
+      <v-flex class="col-sm-2 col-8">
+        <v-radio value="3x per week" label="3x/week" v-model="ex8" ></v-radio>
+      </v-flex>
+      <v-flex class="col-sm-2 col-6">
+        <v-radio value="2x per week" label="2x/week" v-model="ex8" ></v-radio>
+      </v-flex>
+      <v-flex class="col-sm-2 col-6">
+        <v-radio value="weekly" label="weekly" v-model="ex8" ></v-radio>
+      </v-flex>
+
+      <!--<v-select class="col-12 offset-md-2 col-md-4" label="Select frequency" v-bind:items="frequencyChoices" v-model="selectedOptionThree" chips hint="remove choices by clicking the X" persistent-hint></v-select>-->
     
     </div>
 
@@ -117,58 +130,14 @@
           </v-btn>
       <!--<v-select id="wouldLike" class="col-md-8 offset-md-2" label="Select choices" v-bind:items="returnChoices" v-model="selectedOptionFour" multiple chips hint="remove choices by clicking the X" persistent-hint></v-select>-->
     
-    </div>
-      <br>
-      <hr id="partTwo">
-      <div class="row">
-        <p class="lead col-md-8 offset-md-2"> We'd just like a few more pieces of information to make sure you're eligible </p>
-
-          <p class="col-4 col-sm-auto offset-4 offset-sm-2"> I am  </p>
-          <v-flex class="col-12 col-sm-4">
-            <v-text-field
-            suffix="years old"
-              name="input-1"
-              label="enter age"
-              id="testing"
-              type="number"
-               pattern="\d*"
-               single-line
-            v-model.number="age"
-            class="pb-4"
-             ></v-text-field>
-          </v-flex>
-          <v-flex class="col-6 col-sm-auto offset-3 offset-sm-0" v-if="isUnderage !== null && !isUnderage">           
-            <p> I live in </p>
-          </v-flex>
-          <v-flex class="col-md-3" v-if="isUnderage !== null && !isUnderage">
-            <v-text-field suffix="zipcode" single-line pattern="\d*" bottom name="input-1" label="5-digit zipcode" id="placeField" type="number" v-model.number="zipCode"></v-text-field>
-          </v-flex>
-          
-          <div v-if="isPlaceAnswered !== null && !isPlaceAnswered" class="alert lead light alert-danger col-md-4 offset-md-4" role="alert" id="zipError">
-            <strong>Sorry.</strong> Zipcodes must contain at least 5 numbers, if there is a mistake please email sagebase.org
-          </div>
-
-        </div>
-  
-        <div v-if="isUnderage" class="alert alert-danger col-md-4 offset-md-4" id="ageError" role="alert">
-          <strong>Sorry.</strong> Participants must be at least 18 years of age to register.
-        </div>
-  
-      <div id="option" class="row" v-if="isPlaceAnswered">
-        <p class="col-6 offset-3 col-sm-auto offset-md-2 mr-4">
-          and I feel </p>
-        <v-select id="comfortable" class="col-md-4 col-12" label="Select your reason(s)" v-bind:items="phoneChoices" v-model="selectedOptionForPhone" chips hint="remove choices by clicking the X" persistent-hint></v-select>
-        </select>
-        <p> using my phone </p>
       </div>
-  
       <br>
       <div class="row">
         <br>
         <br>
-        <div class="col-md-12" v-if="isEligiblePartTwo">
-          <button v-on:click="clicked" v-bind:class="{dim: !isEligiblePartTwo}" v-focus="isEligiblePartTwo" id="next"> Submit </button>
-        </div>
+          <v-btn v-on:click="clicked" id="submit" class="col-md-2 offset-md-2" light> Submit</v-btn>
+          
+          <!--<button v-on:click="clicked" v-bind:class="{dim: !isEligiblePartTwo}" v-focus="isEligiblePartTwo" id="next"> Submit </button>-->
       </div>
     </div>
   </v-app>
@@ -224,6 +193,7 @@ export default {
         'weary',
         'uncomfortable'
       ],
+      ex8: 'radio-1',
       turn: false,
       selectedChoices: [null, null, null, null, null, null, null, null, null],
       lightPurpleDisk: 'g',
@@ -233,7 +203,6 @@ export default {
   },
   watch: {
     selectedChoices: function () {
-      console.log('hi')
       this.setIsInterested()
     },
     selectedOptionTwo: function (newOption) {
@@ -263,9 +232,9 @@ export default {
   },
   methods: {
     clicked () {
-      if (this.isEligiblePartOne && this.isEligiblePartTwo) {
-        this.$router.push('Congratulations')
-      }
+      // if (this.isEligiblePartOne && this.isEligiblePartTwo) {
+      this.$router.push('Congratulations')
+      // }
     },
     findValues (start, stop) {
       var inUse = 0

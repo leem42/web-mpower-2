@@ -1,79 +1,52 @@
 <template>
-  <div class="page-overview">
+  <v-app class="page-overview">
 
-    <div class="text-left text-md-center"> You would be a great fit for the mPower study! </div>
+   <div class="row">
+    <span v-if="!isEligible">
+    <div class="indicatorEmpty"> . </div>
+    <div class="indicatorEmpty offset-2"> .</div>
+    <div class="indicatorEmpty offset-4" > .</div>
+    <div class="indicatorEmpty offset-6 " > .</div>
+    <div class="indicatorEmpty offset-8"> .</div> 
+    <div class="indicatorEmpty offset-10" > .</div> 
+    </span>
+    <div class="indicatorEmpty green" v-if="false"></div>
     <br>
-    <div class="lead text-left text-md-center">
-      We'd just like to know a couple more things about you to make sure you're eligible
     </div>
-    <br>
-    <!--TODO: Make better accesibile elements, currently the page is not navigatable vie keybaord if trying to backtrack on the page-->
+
     <div class="row">
-      <!-- Field input one -->
-      <div class="mr-2 col-12 col-sm-auto text-center offset-md-2">
-        I am
+      <p class="lead col-md-8 offset-md-2"> You would be a great fit for the mPower study! </p>
+      <p class="lead tiny light col-md-8 offset-md-2"> We'd just like a few more pieces of information to make sure you're eligible </p>
+  
+      <p class="col-4 col-sm-auto offset-4 offset-sm-2"> I am </p>
+      <v-flex class="col-12 col-sm-4">
+        <v-text-field suffix="years old" name="input-1" label="enter age" id="testing" type="number" pattern="\d*" single-line v-model.number="age" class="pb-4"></v-text-field>
+      </v-flex>
+      <v-flex class="col-6 col-sm-auto offset-3 offset-sm-0" v-if="isUnderage !== null && !isUnderage">
+        <p> I live in </p>
+      </v-flex>
+      <v-flex class="col-md-3" v-if="isUnderage !== null && !isUnderage">
+        <v-text-field suffix="zipcode" single-line pattern="\d*" bottom name="input-1" label="5-digit zipcode" id="placeField" type="number" v-model.number="zipCode"></v-text-field>
+      </v-flex>
+  
+      <div v-if="isPlaceAnswered !== null && !isPlaceAnswered" class="alert lead light alert-danger col-md-4 offset-md-4" role="alert" id="zipError">
+        <strong>Sorry.</strong> Zipcodes must contain at least 5 numbers, if there is a mistake please email sagebase.org
       </div>
-    
-      <input v-model.number="age" type="number" pattern="\d*" class=" lead light col-12 col-sm-2 phoneInput"
-              id="ageField" placeholder="enter age" min=0  max=100 >
-
-      <!-- TODO: Import lodash so that this message does not immediately prompt-->
-      <div v-if="isUnderage" class="alert alert-danger col-md-4 offset-md-4" id="ageError" role="alert">
-        <strong>Sorry.</strong> Participants must be at least 18 years of age to register.
-      </div>
-
-      <!--Field input two-->
-      <div v-if="isUnderage !== null && !isUnderage" class="text-center col-12 col-sm-auto">
-        <label class="form-input-label mr-2" for="placeField" id="live"> I live in </label>
-      </div>
-      <input v-if="isUnderage !== null && !isUnderage" v-model.number="zipCode" id="placeField"
-              class="text-center lead light col-12 col-md-3 md-input-invalid phoneInput" type="number" pattern="\d*" placeholder="enter 5-digit zip"></input>
+  
     </div>
-
-    <div v-if="isPlaceAnswered !== null && !isPlaceAnswered" class="alert lead light alert-danger col-md-4 offset-md-4" role="alert" id="zipError">
-      <strong>Sorry.</strong> Zipcodes must contain at least 5 numbers, if there is a mistake please email sagebase.org
+  
+    <div v-if="isUnderage" class="alert alert-danger col-md-4 offset-md-4" id="ageError" role="alert">
+      <strong>Sorry.</strong> Participants must be at least 18 years of age to register.
     </div>
-
-    <!--Field input three-->
-    <div class="row" v-if="isPlaceAnswered">
-      <div class="text-center col-12 col-sm-auto offset-md-2 mr-2 phoneInput">
-        and I feel </div>
-      <!--<select class="col-12 col-md-3 custom-select lead light text-center phoneInput" id="comfortable"
-              placeholder="please select one" v-model="selectedOptionForPhone" style="white-spce:nowrap !important;">-->
-        <!--TODO: Fill in with actual values-->
-        <!--<option disabled value=""> Select one</option>
-        <option > comfortable </option>
-        <option > weary </option>
-        <option >  uncomfortable </option>-->
+  
+    <div id="option" class="row" v-if="isPlaceAnswered">
+      <p class="col-6 offset-3 col-sm-auto offset-md-2 mr-4">
+        and I feel </p>
+      <v-select bottom id="comfortable" class="col-md-4 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
       </select>
-
-
-    <div class="col-md-8 offset-md-2" id="comfortable" v-if="isPlaceAnswered">
-     
-      <div v-bind:class="{dim: !(selectedOptionForPhone === null || selectedOptionForPhone === 'One')}">
-        <input type="radio" id="one" value="One" v-model="selectedOptionForPhone">
-        <label class="custom-input" for="one"> comfortable</label>
-        <br>
-      </div>
-    
-      <span v-bind:class="{dim: !(selectedOptionForPhone === null || selectedOptionForPhone === 'Two')}">
-        <input type="radio" id="two" value="Two" v-model="selectedOptionForPhone">
-        <label class="custom-input" for="two"> weary</label>
-        </label>
-        <br>
-      </span>
-
-      <span v-bind:class="{dim: !(selectedOptionForPhone === null || selectedOptionForPhone === 'Three')}">
-        <input type="radio" id="three" value="Three" v-model="selectedOptionForPhone">
-        <label class="custom-input" for="three"> uncomfortable</label>
-        </label>
-        <br>
-      </span>
-
+      <p> using my phone </p>
     </div>
-      <label class="text-center col-sm-auto col-12"> using my phone </label>
-    </div>
-
+  
     <br>
     <div class="row">
       <br>
@@ -82,7 +55,7 @@
         <button v-on:click="clicked" v-bind:class="{dim: !isEligible}" v-focus="isEligible" id="next"> Submit </button>
       </div>
     </div>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -97,7 +70,8 @@
         isUnderage: null,
         isPlaceAnswered: null,
         hasChosenOption: false,
-        isEligible: false
+        isEligible: false,
+        phoneChoices: ['comfortable', 'uncomfortable']
       }
     },
     watch: {
