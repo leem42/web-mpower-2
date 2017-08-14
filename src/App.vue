@@ -8,7 +8,7 @@
             <h1 class="lead light tiny" id="status">  Eligibility </a></h1>
           </div>
 
-          <div class="col-md-8 text-sm-right">
+          <div class="col-md-8 text-center text-sm-right">
               <img src="./images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
               <img src="./images/survey.svg" ></img>
               <img src="./images/ic_lock_black_48px.svg" ></img>            
@@ -79,6 +79,20 @@
       margin-left: 16.66% !important;
     }
   }
+
+  // For button elements that need specific spacing
+  @media(min-width: 767px) and (max-width: 1023px) {  
+    .ml-6-restricted {
+      margin-left: 16.66% !important;
+    }
+  }
+
+  @media(min-width: 769px) and (max-width: 1339px) {  
+    .ml-6-restricted-x {
+      margin-left: 16.66% !important;
+    }
+  }
+
   @media(max-width: 767px) {
     p {
       color: #31117D;
@@ -174,8 +188,8 @@
       border-radius: 50%;
       // background-color: rgba(65, 73, 90, 0.1);
       background-color: whitesmoke;
-      margin-left: 2px;
-      margin-right: 2px;
+      margin-left: 4px;
+      margin-right: 4px;
       top: 50% !important;
       height: 55px;
       width: 55px;

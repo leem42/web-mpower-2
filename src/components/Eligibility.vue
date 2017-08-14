@@ -15,46 +15,41 @@
     </div>
 
     <div class="row">
-      <p class="lead col-md-8 offset-md-2"> You would be a great fit for the mPower study! </p>
-      <p class="lead tiny light col-md-8 offset-md-2"> We'd just like a few more pieces of information to make sure you're eligible </p>
+      <p class="lead col-sm-8 ml-6"> You would be a great fit for the mPower study! </p>
+      <p class="lead tiny light col-sm-8 ml-6"> We'd just like a few more pieces of information to make sure you're eligible </p>
   
-      <p class="col-4 col-sm-auto offset-4 offset-sm-2"> I am </p>
-      <v-flex class="col-12 col-sm-4">
+      <p class="col-12 col-sm-auto text-center ml-6"> I am </p>
+      <v-flex class="col-12 col-sm-3">
         <v-text-field suffix="years old" name="input-1" label="enter age" id="testing" type="number" pattern="\d*" single-line v-model.number="age" class="pb-4"></v-text-field>
       </v-flex>
-      <v-flex class="col-6 col-sm-auto offset-3 offset-sm-0" v-if="isUnderage !== null && !isUnderage">
-        <p> I live in </p>
-      </v-flex>
-      <v-flex class="col-md-3" v-if="isUnderage !== null && !isUnderage">
+
+        <p class="col-sm-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>
+        <v-flex class="col-12 col-sm-3" v-if="isUnderage !== null && !isUnderage">
         <v-text-field suffix="zipcode" single-line pattern="\d*" bottom name="input-1" label="5-digit zipcode" id="placeField" type="number" v-model.number="zipCode"></v-text-field>
       </v-flex>
   
-      <div v-if="isPlaceAnswered !== null && !isPlaceAnswered" class="alert lead light alert-danger col-md-4 offset-md-4" role="alert" id="zipError">
+      <div v-if="isPlaceAnswered !== null && !isPlaceAnswered" class="alert text-center lead light alert-danger col-sm-3" role="alert" id="zipError">
         <strong>Sorry.</strong> Zipcodes must contain at least 5 numbers, if there is a mistake please email sagebase.org
       </div>
   
     </div>
   
-    <div v-if="isUnderage" class="alert alert-danger col-md-4 offset-md-4" id="ageError" role="alert">
+    <div v-if="isUnderage" class="alert alert-danger col-sm-3" id="ageError" role="alert">
       <strong>Sorry.</strong> Participants must be at least 18 years of age to register.
     </div>
   
     <div id="option" class="row" v-if="isPlaceAnswered">
-      <p class="col-6 offset-3 col-sm-auto offset-md-2 mr-4">
+      <p class="col-12 text-center col-sm-auto ml-6 ">
         and I feel </p>
-      <v-select bottom id="comfortable" class="col-md-4 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
+      <v-select bottom id="comfortable" class="col-sm-3 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
       </select>
-      <p> using my phone </p>
+      <p class="col-12 text-center col-sm-auto"> using my phone </p>
+      <div class="col-12 text-center " v-if="isEligible">
+        <v-btn light v-on:click="clicked" v-bind:class="{dim: !isEligible}" v-focus="isEligible" id="submit" class="large" > Submit </v-btn>
+      </div>
     </div>
   
     <br>
-    <div class="row">
-      <br>
-      <br>
-      <div class="col-md-12" v-if="isEligible">
-        <button v-on:click="clicked" v-bind:class="{dim: !isEligible}" v-focus="isEligible" id="next"> Submit </button>
-      </div>
-    </div>
   </v-app>
 </template>
 
