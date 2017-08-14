@@ -11,42 +11,43 @@
     </span>
     </div>
     <br>
+    <br>
+    
     <div class="row">    
     <p class="col-sm-8 ml-6 "> Why are you interested in joining mPower? </p>
-    <p class="col-md-10 ml-6 text-left tiny lead"> Select your reasons by selecting them below. You can remove them by clicking the X. </p>
+    <p class="col-md-10 ml-6 text-left tiny lead"> Select your reasons by choosing below. You can remove them by clicking the X. </p>
+    <br>
+    <br>
     
-
-     <v-btn v-model="selectedChoices"  class="ml-6 round long lightPurple" @click="handleClick(0)"
+    <p class="lead col-sm-8 ml-6" > I'm interested in the joining mPower because I </p>
+     <v-btn v-model="selectedChoices"  class="ml-6 round lower long lightPurple" @click="handleClick(0)"
     v-bind:class="{ 'lightPurple': isLightPurple(0), 'darkPurple': isDarkPurple(0)}"> Want to help myself
+      
       <v-icon v-bind:class="{ 'dark': isLightPurple(0)}" center>
-      {{isLightPurple(0) ? 'remove_circle_outline': 'add_circle_outline'}}
+      {{isLightPurple(0)  ? 'add_circle_outline': 'remove_circle_outline'}}
       </v-icon>
     </v-btn>
 
-
-    <!--viewport < 1024px-->
-     <v-btn v-model="selectedChoices"  class="ml-6-restricted round x-long lightPurple" @click="handleClick(1)"
+     <v-btn v-model="selectedChoices"  class="ml-6-restricted round lower x-long lightPurple" @click="handleClick(1)"
     v-bind:class="{ 'lightPurple': isLightPurple(1), 'darkPurple': isDarkPurple(1)}"> Want to help a loved one
       <v-icon v-bind:class="{ 'dark': isLightPurple(1)}" center>
-      {{isLightPurple(1) ? 'remove_circle_outline': 'add_circle_outline'}}
+      {{isLightPurple(1) ? 'add_circle_outline': 'remove_circle_outline'}}
       </v-icon>
     </v-btn>
 
 
-     <v-btn v-model="selectedChoices"  class="ml-6-restricted-x round lightPurple" @click="handleClick(2)"
+     <v-btn v-model="selectedChoices"  class="ml-6-restricted-x round lower lightPurple" @click="handleClick(2)"
     v-bind:class="{ 'lightPurple': isLightPurple(2), 'darkPurple': isDarkPurple(2)}"> help others
       <v-icon v-bind:class="{ 'dark': isLightPurple(2)}" center>
-      {{isLightPurple(2) ? 'remove_circle_outline': 'add_circle_outline'}}
+      {{isLightPurple(2) ? 'add_circle_outline': 'remove_circle_outline'}}
       </v-icon>
     </v-btn>
 
 
-    <!--TODO: FIX 768 PX VIEWPORT-->
-    <!---->
-     <v-btn v-model="selectedChoices" class=" round lightPurple ml-6-restricted" @click="handleClick(3)"
+     <v-btn v-model="selectedChoices" class=" round lower lightPurple ml-6-restricted" @click="handleClick(3)"
     v-bind:class="{ 'lightPurple': isLightPurple(3), 'darkPurple': isDarkPurple(3)}"> Am curious 
       <v-icon v-bind:class="{ 'dark': isLightPurple(3)}" center>
-      {{isLightPurple(3) ? 'remove_circle_outline': 'add_circle_outline'}}
+      {{isLightPurple(3) ? 'add_circle_outline': 'remove_circle_outline'}}
       </v-icon>
     </v-btn>
       <br class="visible-md-up">
@@ -56,35 +57,35 @@
     <div class="row">
   
       <br class="visible-md-up">
-      <p class="col-md-8 ml-6 text-left"> I'd be willing to try </p>
+      <p class="col-md-8 ml-6 text-left lead"> I'd be willing to try </p>
 
-      <v-btn v-model="selectedChoices"  class="ml-6 round x-long lightPurple" @click="handleClick(4)"
+      <v-btn v-model="selectedChoices"  class="ml-6 round lower x-long lightPurple" @click="handleClick(4)"
           v-bind:class="{ 'lightPurple': isLightPurple(4), 'darkPurple': isDarkPurple(4)}"> Finger Tapping
             <v-icon v-bind:class="{ 'dark': isLightPurple(4)}" center>
-            {{isLightPurple(4) ? 'remove_circle_outline': 'add_circle_outline'}}
+            {{isLightPurple(4) ? 'add_circle_outline': 'remove_circle_outline'}}
             </v-icon>
           </v-btn>
 
 
-          <v-btn v-model="selectedChoices" class=" round lightPurple" @click="handleClick(5)"
+          <v-btn v-model="selectedChoices" class=" round lower lightPurple" @click="handleClick(5)"
           v-bind:class="{ 'lightPurple': isLightPurple(5), 'darkPurple': isDarkPurple(5)}"> Walking
             <v-icon v-bind:class="{ 'dark': isLightPurple(5)}" center>
-            {{isLightPurple(5) ? 'remove_circle_outline': 'add_circle_outline'}}
+            {{isLightPurple(5) ? 'add_circle_outline': 'remove_circle_outline'}}
             </v-icon>
           </v-btn>
 
 
-          <v-btn v-model="selectedChoices" class="ml-6-restricted  round  lightPurple" @click="handleClick(6)"
-          v-bind:class="{ 'lightPurple': isLightPurple(6), 'darkPurple': isDarkPurple(6)}"> balance
+          <v-btn v-model="selectedChoices" class="ml-6-restricted  round lower  lightPurple" @click="handleClick(6)"
+          v-bind:class="{ 'lightPurple': isLightPurple(6), 'darkPurple': isDarkPurple(6)}"> Balance
             <v-icon v-bind:class="{ 'dark': isLightPurple(6)}" center>
-            {{isLightPurple(6) ? 'remove_circle_outline': 'add_circle_outline'}}
+            {{isLightPurple(6) ? 'add_circle_outline': 'remove_circle_outline'}}
             </v-icon>
           </v-btn>
       
       <br class="visible-md-up">
       <br class="visible-md-up">
       
-      <p class="col-md-8 ml-6 text-left"> I'd be willing to do this/these activities: </p>
+      <p class="col-md-8 ml-6 text-left lead"> I'd be willing to do this/these activities: </p>
       <v-flex class="col-sm-2 ml-6 col-4" >
         <v-radio label="Daily" value="radio-1" v-model="ex8" ></v-radio>
       </v-flex>
@@ -104,27 +105,27 @@
 
     <br class="visible-md-up">
     <div class="row"> 
-      <p class="col-md-8 ml-6"> What would you like from us? </p>
-       <v-btn v-model="selectedChoices" round class="ml-6 round x-long lightPurple" @click="handleClick(7)"
+      <p class="col-md-8 ml-6 lead"> What would you like from us? </p>
+       <v-btn v-model="selectedChoices" round lower class="ml-6 round lower x-long lightPurple" @click="handleClick(7)"
           v-bind:class="{ 'lightPurple': isLightPurple(7), 'darkPurple': isDarkPurple(7)}"> Updates on the study
             <v-icon v-bind:class="{ 'dark': isLightPurple(7)}" center>
-            {{isLightPurple(7) ? 'remove_circle_outline': 'add_circle_outline'}}
+            {{isLightPurple(7) ? 'add_circle_outline': 'remove_circle_outline'}}
             </v-icon>
           </v-btn>
 
           <!--viewport less < 1024-->
-          <v-btn v-model="selectedChoices" round class="ml-6-restricted round lightPurple" @click="handleClick(8)"
+          <v-btn v-model="selectedChoices" round lower class="ml-6-restricted round lower lightPurple" @click="handleClick(8)"
           v-bind:class="{ 'lightPurple': isLightPurple(8), 'darkPurple': isDarkPurple(8)}"> Stats on participation
             <v-icon v-bind:class="{ 'dark': isLightPurple(8)}" center>
-            {{isLightPurple(8) ? 'remove_circle_outline': 'add_circle_outline'}}
+            {{isLightPurple(8) ? 'add_circle_outline': 'remove_circle_outline'}}
             </v-icon>
           </v-btn>
 
 
-          <v-btn v-model="selectedChoices" round class=" round  lightPurple ml-6 " @click="handleClick(9)"
+          <v-btn v-model="selectedChoices" round lower class=" round lower  lightPurple ml-6 " @click="handleClick(9)"
           v-bind:class="{ 'lightPurple': isLightPurple(9), 'darkPurple': isDarkPurple(9)}"> Personal performace
             <v-icon v-bind:class="{ 'dark': isLightPurple(9)}" center>
-            {{isLightPurple(9) ? 'remove_circle_outline': 'add_circle_outline'}}
+            {{isLightPurple(9) ? 'add_circle_outline': 'remove_circle_outline'}}
             </v-icon>
           </v-btn>
       <!--<v-select id="wouldLike" class="col-md-8 ml-6" label="Select choices" v-bind:items="returnChoices" v-model="selectedOptionFour" multiple chips hint="remove choices by clicking the X" persistent-hint></v-select>-->
@@ -193,7 +194,8 @@ export default {
       ],
       ex8: 'radio-1',
       turn: false,
-      selectedChoices: [null, null, null, null, null, null, null, null, null],
+      selectedChoices: ['g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g'],
+      intial: [true, true, true, true, true, true, true, true, true],
       lightPurpleDisk: 'g',
       darkPurpleDisk: 'b',
       moves: []
@@ -322,6 +324,14 @@ export default {
     },
     isDarkPurple: function (idx1) {
       return !(this.turn == null) && (this.selectedChoices[idx1] === this.darkPurpleDisk)
+    },
+    isInitial: function (index) {
+      if (this.intial[index]) {
+        this.intial[index] = false
+        return true
+      } else {
+        return this.intial[index]
+      }
     }
   },
   directives: {

@@ -248,22 +248,6 @@
     box-shadow: 10px 10px 10px #888888;
   }
 
-  // button {
-  //   @media (max-width: 767px) {
-  //     margin-left: 30% !important;
-  //     width: 40%;
-  //   }
-    
-  //   border-radius: 5px;
-  //   background-color: #31117D;
-  //   border: thin;
-  //   color: white;
-  //   padding: 5px 5px;
-  //   text-transform: uppercase;
-  //   width: 20%;
-  //   margin-left: 43%;
-  // }
-
   select{
       text-align-last:center;
       padding-right: 29px;
@@ -283,27 +267,21 @@
           margin-left: 10%;
       }
   }
-
-  // button#walkthrough {
-  //   @media (max-width: 767px) {
-  //       width: 80%;
-  //       margin-left: 7% !important;
-  //   }
-  //   margin-left: auto;
-  // }
-
   
   footer {
     display: none;
   }
 
   .round {
+    font-weight: bold;
     border-radius: 100px !important; 
     text-align: center !important;
+    font-family: "San Francisco Text" !important;
    }
 
   .lead {
     color: #3b4a63;
+    font-weight: normal;
   }
 
   .long {
