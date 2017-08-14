@@ -1,20 +1,17 @@
 <template>
   <v-app  id="start">
-    <div class="row">
+    <div class="row progressBar">
     <span v-if="!isEligiblePartTwo">
-    <div class="indicatorEmpty" v-bind:class="{indicatorFilled: isInterested}"> . </div>
-    <div class="indicatorEmpty offset-2" v-bind:class="{indicatorFilled: selectedOptionTwo.length != 0 || selectedOptionThree !== ''}"> .</div>
-    <div class="indicatorEmpty offset-4" v-bind:class="{indicatorFilled: isWilling}"> .</div>
-    <div class="indicatorEmpty offset-6 " v-bind:class="{indicatorFilled: hasAnsweredWouldLike}"> .</div>
-    <div class="indicatorEmpty offset-8" v-bind:class="{indicatorFilled: isPlaceAnswered}"> .</div> 
-    <div class="indicatorEmpty offset-10" v-bind:class="{indicatorFilled: hasChosenOption}"> .</div> 
+    <div class="indicatorEmpty offset" v-bind:class="{indicatorFilled: isInterested}">  </div>
+    <div class="indicatorEmpty offset one" v-bind:class="{indicatorFilled: selectedOptionTwo.length !== 0 || selectedOptionThree !== ''}"> </div>
+    <div class="indicatorEmpty offset two" v-bind:class="{indicatorFilled: isWilling}"> </div>
+    <div class="indicatorEmpty offset three" v-bind:class="{indicatorFilled: hasAnsweredWouldLike}"> </div>
+    <div class="indicatorEmpty offset four" v-bind:class="{indicatorFilled: isPlaceAnswered}"> </div> 
+    <div class="indicatorEmpty offset five" v-bind:class="{indicatorFilled: hasChosenOption}"> </div> 
     </span>
-    <div class="indicatorEmpty green" v-if="isEligiblePartTwo"></div>
-    <br>
     </div>
-
-    <div class="row">    
     <br>
+    <div class="row">    
     <p class="col-sm-8 ml-6 "> Why are you interested in joining mPower? </p>
     <p class="col-md-10 ml-6 text-left tiny lead"> Select your reasons by selecting them below. You can remove them by clicking the X. </p>
     

@@ -2,6 +2,10 @@
 
 
   <div class="page-overview">
+    <div class="row progressBar">
+    <div class="green"></div>
+    <br>
+    </div>
 
     <div class="row">
 

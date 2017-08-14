@@ -116,19 +116,53 @@
     }
   }
 
+.progressBar {
+  position: fixed;
+  background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);    box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
+  top: 89px !important;
+  width: 100% !important;
+  height: 16px !important;
+  z-index: 1000;
+}
+
+.offset {
+  opacity: 1 !important;
+  &.one {
+    margin-left: 16.74%;
+  }
+  
+  &.two {
+    margin-left: 33.48%;
+  }
+
+  &.three {
+    margin-left: 50.22%;
+
+  }
+
+  &.four {
+    margin-left: 66.96%;
+
+  }
+
+  &.five {
+    margin-left: 83.7%;
+  }
+}
   .indicatorEmpty {
       position: fixed;
       top: 90px !important;
       width: 16.3%;
-      height: 10px;
+      height: 15px;
       color: transparent;
       opacity: 0.2;
       float: left;
-      background-color: #68BF60;
+      background-color: rgba(238,238,238,0.7);
       z-index: 1000;
   }
   .indicatorFilled {
-    background-color: rgba(238,238,238,0.7);
+    @extend .indicatorEmpty;
+    background-color: #68BF60 !important;
     opacity: 1 !important;
   }
 

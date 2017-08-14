@@ -1,19 +1,17 @@
 <template>
   <v-app class="page-overview">
 
-   <div class="row">
-    <span v-if="!isEligible">
-    <div class="indicatorEmpty"> . </div>
-    <div class="indicatorEmpty offset-2"> .</div>
-    <div class="indicatorEmpty offset-4" > .</div>
-    <div class="indicatorEmpty offset-6 " > .</div>
-    <div class="indicatorEmpty offset-8"> .</div> 
-    <div class="indicatorEmpty offset-10" > .</div> 
+   <div class="row progressBar">
+    <span v-if="true">
+    <div class="indicatorFilled offset">  </div>
+    <div class="indicatorFilled offset one"> </div>
+    <div class="indicatorEmpty offset two" v-bind:class="{indicatorFilled: isUnderage !== null && !isUnderage}" > </div>
+    <div class="indicatorEmpty offset three" v-bind:class="{indicatorFilled: isPlaceAnswered}"> </div>
+    <div class="indicatorEmpty offset four" v-bind:class="{indicatorFilled: isEligible}"> </div> 
+    <div class="indicatorEmpty offset five" > </div> 
     </span>
-    <div class="indicatorEmpty green" v-if="false"></div>
-    <br>
     </div>
-
+    <br>
     <div class="row">
       <p class="lead col-sm-8 ml-6"> You would be a great fit for the mPower study! </p>
       <p class="lead tiny light col-sm-8 ml-6"> We'd just like a few more pieces of information to make sure you're eligible </p>
