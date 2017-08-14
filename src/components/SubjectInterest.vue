@@ -106,7 +106,7 @@
     <br class="visible-md-up">
     <div class="row"> 
       <p class="col-md-8 ml-6 lead"> What would you like from us? </p>
-       <v-btn v-model="selectedChoices" round lower class="ml-6 round lower x-long lightPurple" @click="handleClick(7)"
+       <v-btn v-model="selectedChoices"  class="ml-6 round lower x-long lightPurple" @click="handleClick(7)"
           v-bind:class="{ 'lightPurple': isLightPurple(7), 'darkPurple': isDarkPurple(7)}"> Updates on the study
             <v-icon v-bind:class="{ 'dark': isLightPurple(7)}" center>
             {{isLightPurple(7) ? 'add_circle_outline': 'remove_circle_outline'}}
@@ -114,7 +114,7 @@
           </v-btn>
 
           <!--viewport less < 1024-->
-          <v-btn v-model="selectedChoices" round lower class="ml-6-restricted round lower lightPurple" @click="handleClick(8)"
+          <v-btn v-model="selectedChoices"  class="ml-6-restricted round lower lightPurple" @click="handleClick(8)"
           v-bind:class="{ 'lightPurple': isLightPurple(8), 'darkPurple': isDarkPurple(8)}"> Stats on participation
             <v-icon v-bind:class="{ 'dark': isLightPurple(8)}" center>
             {{isLightPurple(8) ? 'add_circle_outline': 'remove_circle_outline'}}
@@ -122,7 +122,7 @@
           </v-btn>
 
 
-          <v-btn v-model="selectedChoices" round lower class=" round lower  lightPurple ml-6 " @click="handleClick(9)"
+          <v-btn v-model="selectedChoices"  class="round lower lightPurple ml-6-restricted " @click="handleClick(9)"
           v-bind:class="{ 'lightPurple': isLightPurple(9), 'darkPurple': isDarkPurple(9)}"> Personal performace
             <v-icon v-bind:class="{ 'dark': isLightPurple(9)}" center>
             {{isLightPurple(9) ? 'add_circle_outline': 'remove_circle_outline'}}
@@ -194,7 +194,7 @@ export default {
       ],
       ex8: 'radio-1',
       turn: false,
-      selectedChoices: ['g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g'],
+      selectedChoices: ['g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g'],
       intial: [true, true, true, true, true, true, true, true, true],
       lightPurpleDisk: 'g',
       darkPurpleDisk: 'b',

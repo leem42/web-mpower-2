@@ -12,13 +12,16 @@
     </span>
     </div>
     <br>
+    <br class="visible-md-up">
+    <br class="visible-md-up">
+
     <div class="row">
-      <p class="lead col-sm-8 ml-6"> You would be a great fit for the mPower study! </p>
-      <p class="lead tiny light col-sm-8 ml-6"> We'd just like a few more pieces of information to make sure you're eligible </p>
+      <p class="lead col-sm-8 ml-6 mx-auto "> You would be a great fit for the mPower study! </p>
+      <p class="lead tiny light col-sm-8 mx-auto  ml-6"> We'd just like a few more pieces of information to make sure you're eligible </p>
   
       <p class="col-12 col-sm-auto text-center ml-6"> I am </p>
       <v-flex class="col-12 col-sm-3">
-        <v-text-field suffix="years old" name="input-1" label="enter age" id="testing" type="number" pattern="\d*" single-line v-model.number="age" class="pb-4"></v-text-field>
+        <v-text-field  suffix="years old" name="input-1" label="enter age" id="testing" type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
       </v-flex>
 
         <p class="col-sm-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>

@@ -25,7 +25,7 @@
         <p class="lead light tiny">
           There will be 13 sections in the consent process. These
           sections will help you to understand what is involved and how the study will
-          work, After the consent introduction, there will be a short quiz on what
+          work. After the consent introduction, there will be a short quiz on what
           you have learned about the study.
         </p>
         <br>

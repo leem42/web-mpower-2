@@ -94,6 +94,15 @@
   }
 
   @media(max-width: 767px) {
+    input#testing, input#placeField {
+      padding-bottom: 10px;
+      text-align: center !important    
+    }
+
+    input#comfortable {
+      text-align: center !important;
+    }
+
     p {
       color: #31117D;
       font-size: $font-size-base * 0.8 !important;
@@ -232,11 +241,11 @@
       }
    }
 
-  *:focus {
-    -webkit-box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
-    -moz-box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
-    box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
-  }
+  // *:focus {
+  //   -webkit-box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
+  //   -moz-box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
+  //   box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
+  // }
 
   input {
     text-align: center;
