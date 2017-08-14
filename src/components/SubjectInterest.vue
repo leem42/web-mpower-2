@@ -16,11 +16,11 @@
 
     <div class="row">    
     <br>
-    <p class="col-md-8 offset-md-2 text-left "> Why are you interested in joining mPower? </p>
-    <p class="col-md-10 offset-md-2 text-left tiny lead"> Select your reasons by selecting them below. You can remove them by clicking the X. </p>
+    <p class="col-sm-8 ml-6 "> Why are you interested in joining mPower? </p>
+    <p class="col-md-10 ml-6 text-left tiny lead"> Select your reasons by selecting them below. You can remove them by clicking the X. </p>
     
 
-     <v-btn v-model="selectedChoices" round class="offset-sm-2 round long lightPurple" @click="handleClick(0)"
+     <v-btn v-model="selectedChoices" round class="ml-6 round long lightPurple" @click="handleClick(0)"
     v-bind:class="{ 'lightPurple': isLightPurple(0), 'darkPurple': isDarkPurple(0)}"> Want to help myself
       <v-icon v-bind:class="{ 'dark': isLightPurple(0)}" center>
       {{isLightPurple(0) ? 'remove_circle_outline': 'add_circle_outline'}}
@@ -44,7 +44,7 @@
     </v-btn>
 
 
-     <v-btn v-model="selectedChoices" round class=" round  lightPurple offset-sm-2" @click="handleClick(3)"
+     <v-btn v-model="selectedChoices" round class=" round  lightPurple ml-6" @click="handleClick(3)"
     v-bind:class="{ 'lightPurple': isLightPurple(3), 'darkPurple': isDarkPurple(3)}"> Am curious
       <v-icon v-bind:class="{ 'dark': isLightPurple(3)}" center>
       {{isLightPurple(3) ? 'remove_circle_outline': 'add_circle_outline'}}
@@ -57,9 +57,9 @@
     <div class="row">
   
       <br class="visible-md-up">
-      <p class="col-md-8 offset-md-2 text-left"> I'd be willing to try </p>
+      <p class="col-md-8 ml-6 text-left"> I'd be willing to try </p>
 
-      <v-btn v-model="selectedChoices" round class="offset-sm-2 round x-long lightPurple" @click="handleClick(4)"
+      <v-btn v-model="selectedChoices" round class="ml-6 round x-long lightPurple" @click="handleClick(4)"
           v-bind:class="{ 'lightPurple': isLightPurple(4), 'darkPurple': isDarkPurple(4)}"> Finger Tapping
             <v-icon v-bind:class="{ 'dark': isLightPurple(4)}" center>
             {{isLightPurple(4) ? 'remove_circle_outline': 'add_circle_outline'}}
@@ -85,8 +85,8 @@
       <br class="visible-md-up">
       <br class="visible-md-up">
       
-      <p class="col-md-8 offset-md-2 text-left"> I'd be willing to do this/these activities: </p>
-      <v-flex class="col-sm-2 offset-sm-2 col-4" >
+      <p class="col-md-8 ml-6 text-left"> I'd be willing to do this/these activities: </p>
+      <v-flex class="col-sm-2 ml-6 col-4" >
         <v-radio label="Daily" value="radio-1" v-model="ex8" ></v-radio>
       </v-flex>
       <v-flex class="col-sm-2 col-8">
@@ -99,14 +99,14 @@
         <v-radio value="weekly" label="weekly" v-model="ex8" ></v-radio>
       </v-flex>
 
-      <!--<v-select class="col-12 offset-md-2 col-md-4" label="Select frequency" v-bind:items="frequencyChoices" v-model="selectedOptionThree" chips hint="remove choices by clicking the X" persistent-hint></v-select>-->
+      <!--<v-select class="col-12 ml-6 col-md-4" label="Select frequency" v-bind:items="frequencyChoices" v-model="selectedOptionThree" chips hint="remove choices by clicking the X" persistent-hint></v-select>-->
     
     </div>
 
     <br class="visible-md-up">
     <div class="row"> 
-      <p class="col-md-8 offset-md-2"> What would you like from us? </p>
-       <v-btn v-model="selectedChoices" round class="offset-md-2 round x-long lightPurple" @click="handleClick(7)"
+      <p class="col-md-8 ml-6"> What would you like from us? </p>
+       <v-btn v-model="selectedChoices" round class="ml-6 round x-long lightPurple" @click="handleClick(7)"
           v-bind:class="{ 'lightPurple': isLightPurple(7), 'darkPurple': isDarkPurple(7)}"> Updates on the study
             <v-icon v-bind:class="{ 'dark': isLightPurple(7)}" center>
             {{isLightPurple(7) ? 'remove_circle_outline': 'add_circle_outline'}}
@@ -122,20 +122,20 @@
           </v-btn>
 
 
-          <v-btn v-model="selectedChoices" round class=" round  lightPurple offset-sm-2" @click="handleClick(9)"
+          <v-btn v-model="selectedChoices" round class=" round  lightPurple ml-6" @click="handleClick(9)"
           v-bind:class="{ 'lightPurple': isLightPurple(9), 'darkPurple': isDarkPurple(9)}"> Personal performace
             <v-icon v-bind:class="{ 'dark': isLightPurple(9)}" center>
             {{isLightPurple(9) ? 'remove_circle_outline': 'add_circle_outline'}}
             </v-icon>
           </v-btn>
-      <!--<v-select id="wouldLike" class="col-md-8 offset-md-2" label="Select choices" v-bind:items="returnChoices" v-model="selectedOptionFour" multiple chips hint="remove choices by clicking the X" persistent-hint></v-select>-->
+      <!--<v-select id="wouldLike" class="col-md-8 ml-6" label="Select choices" v-bind:items="returnChoices" v-model="selectedOptionFour" multiple chips hint="remove choices by clicking the X" persistent-hint></v-select>-->
     
       </div>
       <br>
       <div class="row">
         <br>
         <br>
-          <v-btn v-on:click="clicked" id="submit" class="col-md-2 offset-md-2" light> Submit</v-btn>
+          <v-btn v-on:click="clicked" id="submit" class="col-md-2 ml-6" light> Submit</v-btn>
           
           <!--<button v-on:click="clicked" v-bind:class="{dim: !isEligiblePartTwo}" v-focus="isEligiblePartTwo" id="next"> Submit </button>-->
       </div>
@@ -233,7 +233,7 @@ export default {
   methods: {
     clicked () {
       // if (this.isEligiblePartOne && this.isEligiblePartTwo) {
-      this.$router.push('Congratulations')
+      this.$router.push('Eligibility')
       // }
     },
     findValues (start, stop) {

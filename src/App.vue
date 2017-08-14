@@ -1,14 +1,14 @@
 <template>
   <div id="app" name="top">
     <nav class="navbar navbar-fixed-top navbar-light pt-0 pb-0">
-      <div class="navbar-header">
+      <div class="container-fluid" style="display: block;">
         <div class="row">
 
-          <div class="col-12 text-center text-md-left col-md-4">
+          <div class="col-12 pl-1 text-center text-sm-left col-md-4">
             <h1 class="lead light tiny" id="status">  Eligibility </a></h1>
           </div>
 
-          <div class="col-md-8 text-md-right text-center">
+          <div class="col-md-8 text-sm-right">
               <img src="./images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
               <img src="./images/survey.svg" ></img>
               <img src="./images/ic_lock_black_48px.svg" ></img>            
@@ -34,11 +34,13 @@
 
 <style lang="scss">
   @import 'css/bootstrap/bootstrap';
+
   #status {    
       font-weight: 400;
       color: white;
       font-size: $font-size-base !important;
   }
+
 
   label {
     color: black !important;
@@ -71,6 +73,10 @@
     }
     div.btn__content {
       font-size: 20px !important;
+    }
+
+    .ml-6 {
+      margin-left: 16.66% !important;
     }
   }
   @media(max-width: 767px) {
@@ -153,8 +159,6 @@
     background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);    box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
     height: 90px;
     // below is used for aligning the element in the middle vertically
-    display: flex;
-    flex-direction: column;
     justify-content: center;
 
     top: 0px;
