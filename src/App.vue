@@ -112,7 +112,8 @@ div.input-group__hint {
 @media(max-width: 767px) {
   input#testing,
   input#placeField {
-    padding-bottom: 10px;
+    // padding-bottom: 20px;
+    min-height: 50px !important; 
     text-align: center !important
   }
 
@@ -196,7 +197,7 @@ div.input-group__hint {
 
 #submit {
   border-radius: 5px !important;
-  background-color: #3A539B !important;
+  background-color: #31117D !important;
   color: white;
   font-weight: 500;
   height: 3.83%;

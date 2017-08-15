@@ -1,6 +1,8 @@
 <template>
   <v-app class="page-overview"> 
     <br>
+    <br class="visible-md-up">
+    <br class="visible-md-up">
 
     <div class="row">
       <p class="lead col-sm-8 ml-6 mx-auto "> You would be a great fit for the mPower study! </p>
