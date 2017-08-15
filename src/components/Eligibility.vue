@@ -1,19 +1,6 @@
 <template>
-  <v-app class="page-overview">
-
-   <div class="row progressBar">
-    <span v-if="true">
-    <div class="indicatorFilled offset">  </div>
-    <div class="indicatorFilled offset one"> </div>
-    <div class="indicatorEmpty offset two" v-bind:class="{indicatorFilled: isUnderage !== null && !isUnderage}" > </div>
-    <div class="indicatorEmpty offset three" v-bind:class="{indicatorFilled: isPlaceAnswered}"> </div>
-    <div class="indicatorEmpty offset four" v-bind:class="{indicatorFilled: isEligible}"> </div> 
-    <div class="indicatorEmpty offset five" > </div> 
-    </span>
-    </div>
+  <v-app class="page-overview"> 
     <br>
-    <br class="visible-md-up">
-    <br class="visible-md-up">
 
     <div class="row">
       <p class="lead col-sm-8 ml-6 mx-auto "> You would be a great fit for the mPower study! </p>

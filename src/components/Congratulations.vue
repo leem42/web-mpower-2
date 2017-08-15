@@ -2,14 +2,7 @@
 
 
   <div class="page-overview">
-    <div class="row progressBar">
-    <div class="indicatorFilled offset">  </div>
-    <div class="indicatorFilled offset one"> </div>
-    <div class="indicatorFilled offset two" > </div>
-    <div class="indicatorFilled offset three"> </div>
-    <div class="indicatorFilled offset four"> </div> 
-    <div class="indicatorFilled offset five" > </div>     <br>
-    </div>
+    
 
     <div class="row">
 
