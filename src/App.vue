@@ -161,7 +161,7 @@
   .indicatorEmpty {
       position: fixed;
       top: 90px !important;
-      width: 16.3%;
+      width: 16.55%;
       height: 15px;
       color: transparent;
       opacity: 0.2;

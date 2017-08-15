@@ -21,7 +21,7 @@
   
       <p class="col-12 col-sm-auto text-center ml-6"> I am </p>
       <v-flex class="col-12 col-sm-3">
-        <v-text-field  suffix="years old" name="input-1" label="enter age" id="testing" type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
+        <v-text-field  suffix="years old" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
       </v-flex>
 
         <p class="col-sm-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>
