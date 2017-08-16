@@ -60,7 +60,11 @@
       display: inline-block;
   }
 
-  @media(min-width: 767px) {  
+  @media(min-width: 767px) { 
+        
+    .subText {
+      font-size: $font-size-base * 0.65 !important;
+    } 
     p {
       color: #31117D;
       font-size: $font-size-base !important;
@@ -100,6 +104,12 @@
     }
 
   @media(max-width: 767px) {
+
+
+    .subText {
+      font-size: $font-size-base * 0.45 !important;
+    }
+    
     input#testing, input#placeField {
       padding-bottom: 10px;
       text-align: center !important    
@@ -163,10 +173,6 @@
   &.five {
     margin-left: 83.7%;
   }
-}
-
-.subText {
-  font-size: $font-size-base * 0.65 !important;
 }
 
 .dark-lead {

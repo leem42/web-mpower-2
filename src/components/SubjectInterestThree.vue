@@ -41,8 +41,6 @@
     </div>
     <br>
     <div class="row" v-if="containsValues()">
-      <br class="visible-sm-up">
-      <br class="visible-sm-up">
       <v-btn v-on:click="clicked" id="submit" class="col-md-2 ml-6" light> Submit</v-btn>
     </div>
     </div>
