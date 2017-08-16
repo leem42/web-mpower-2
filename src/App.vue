@@ -177,18 +177,38 @@ div.input-group__hint {
 }
 
 @media(max-width: 1024px) {
-    .intercom {
-      position: fixed;
-      bottom: 100px !important;
-      right: 10px !important; 
-      background-color: #3DBFA3;
-      box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
-      border-radius: 50px;
-      height: 60px;
-      width: 60px;
-      padding-top: 5px;
-      padding-left: 10px;
-    }
+
+  .indicatorEmpty {
+    position: fixed;
+    bottom: 61px !important;
+    width: 16.55%;
+    height: 9px;
+    z-index: 1000;
+  }
+
+
+  .progressBar {
+    bottom: 60px !important;
+    width: 100% !important;
+    height: 8px !important;
+  }
+
+
+  .intercom {
+    position: fixed;
+    bottom: 80px !important;
+    right: 10px !important; 
+    background-color: #3DBFA3;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
+    border-radius: 50px;
+    height: 60px;
+    width: 60px;
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+  .expand {
+    height: 125px !important;
+  }
 }
 @media(max-width: 767px) {
 
@@ -196,7 +216,9 @@ div.input-group__hint {
     justify-content: center;
   }
 
+
   .expand {
+    height: 125px !important;
     padding-left: 60px;
     padding-right: 60px;
   }
