@@ -4,8 +4,8 @@
   
 
     
-    
-    <v-card height="0px" class="bottom-custom-nav">
+    <v-icon dark class="intercom" x-large >fa-comment</v-icon>
+    <v-card height="0px" class="bottom-custom-nav">      
       <v-bottom-nav shift class="bottom-custom-nav expand">        
         <v-btn flat light class="white--text" @click.native="e1 = 1" :value="e1 === 1">
           <span v-bind:class="{shrunk: shrunkCalled}">mPower</span>
@@ -46,6 +46,18 @@
   padding-top: 50px;
 }
 
+.intercom {
+  position: fixed;
+  bottom: 110px !important;
+  right: 30px !important; 
+  background-color: #3DBFA3;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
+  border-radius: 50px;
+  height: 90px;
+  width: 90px;
+  padding-top: 20px;
+  padding-left: 25px;
+}
 .expand {
   height: 140px !important;
 }
@@ -164,7 +176,22 @@ div.input-group__hint {
   }
 }
 
+@media(max-width: 1024px) {
+    .intercom {
+      position: fixed;
+      bottom: 100px !important;
+      right: 10px !important; 
+      background-color: #3DBFA3;
+      box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
+      border-radius: 50px;
+      height: 60px;
+      width: 60px;
+      padding-top: 5px;
+      padding-left: 10px;
+    }
+}
 @media(max-width: 767px) {
+
   .bottom-custom-nav {
     justify-content: center;
   }
