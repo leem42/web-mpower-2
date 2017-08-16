@@ -5,8 +5,8 @@
 
     
     
-    <v-card height="200px" class="bottom-custom-nav">
-      <v-bottom-nav shift v-bind:class="{shrunk: shrunkCalled, expand: !shrunkCalled}" class="bottom-custom-nav">        
+    <v-card height="0px" class="bottom-custom-nav">
+      <v-bottom-nav shift class="bottom-custom-nav expand">        
         <v-btn flat light class="white--text" @click.native="e1 = 1" :value="e1 === 1">
           <span v-bind:class="{shrunk: shrunkCalled}">mPower</span>
           <v-icon medium >local_florist</v-icon>
@@ -17,12 +17,12 @@
           <v-icon medium >fa-comment</v-icon>
         </v-btn>
 
-        <v-btn flat light class="navArrow left white--text" @click.native="e1 = 1"  :value="e1 === 1">
+        <v-btn flat light class="navArrow left white--text" v-on:click="backward()" @click.native="e1 = 1"  :value="e1 === 1">
           <span v-bind:class="{shrunk: shrunkCalled}">Back</span>
           <v-icon medium>navigate_before</v-icon>
         </v-btn>
 
-        <v-btn flat light class="navArrow right white--text" @click.native="e1 = 1"  :value="e1 === 1">
+        <v-btn flat light class="navArrow right white--text" v-on:click="forward()" @click.native="e1 = 1"  :value="e1 === 1">
           <span v-bind:class="{shrunk: shrunkCalled}">Next</span>
           <v-icon medium>navigate_next</v-icon>
         </v-btn>
@@ -112,7 +112,7 @@ div.input-group__hint {
   background-color: #31117D;
   border-style: none !important;
   box-shadow: none;
-  padding-bottom: 50px;
+  padding-bottom: 50px; 
 }
 
 @media(min-width: 767px) {
@@ -168,8 +168,17 @@ div.input-group__hint {
   .bottom-custom-nav {
     justify-content: center;
   }
+
+  .expand {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+
   .navArrow {
-   padding-bottom: 0px !important;
+    min-width: 70px !important;
+    max-width: 90px !important;
+    padding-bottom: 0px !important;
   }
 
   input#testing, input#placeField {
@@ -370,6 +379,12 @@ footer {
     methods: {
       click () {
         this.shrunkCalled = !this.shrunkCalled
+      },
+      backward () {
+        this.$router.back()
+      },
+      forward () {
+        this.$router.forward()
       }
     }
   }

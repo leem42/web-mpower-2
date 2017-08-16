@@ -25,8 +25,8 @@
   
     </div>
   
-    <div v-if="isUnderage" class="alert alert-danger col-sm-3" id="ageError" role="alert">
-      <strong>Sorry.</strong> Participants must be at least 18 years of age to register.
+    <div v-if="isUnderage" class="alert alert-danger col-sm-auto" id="ageError" role="alert">
+      <strong>Sorry. </strong> &nbsp; Participants must be at least 18 years of age to register.
     </div>
   
     <div id="option" class="row" v-if="isPlaceAnswered !== null && isPlaceAnswered">
