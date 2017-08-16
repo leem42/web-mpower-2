@@ -1,23 +1,24 @@
 <template>
   <v-app class="page-overview"> 
-    <br>
-    <br class="visible-md-up">
-    <br class="visible-md-up">
-
     <div class="row">
       <p class="lead col-sm-8 ml-6 mx-auto "> You would be a great fit for the mPower study! </p>
       <p class="lead tiny light col-sm-8 mx-auto  ml-6"> We'd just like a few more pieces of information to make sure you're eligible </p>
   
       <p class="col-12 col-sm-auto text-center ml-6"> I am </p>
       <v-flex class="col-12 col-sm-3">
-        <v-text-field  suffix="years old" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
+        <v-text-field  suffix="years old" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" v-model.number="age"></v-text-field>
       </v-flex>
 
         <p class="col-sm-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>
-        <v-flex class="col-12 col-sm-3" v-if="isUnderage !== null && !isUnderage">
-        <v-text-field suffix="zipcode" single-line pattern="\d*" bottom name="input-1" label="5-digit zipcode" id="placeField" type="number" v-model.number="zipCode"></v-text-field>
-      </v-flex>
-  
+        <v-flex v-if="isUnderage !== null && !isUnderage">
+            <v-select type="text"
+              v-bind:items="states"
+              v-model="zipCode"
+              label="Select Stated"
+              autocomplete
+            ></v-select>
+          </v-flex>
+        
       <div v-if="isPlaceAnswered !== null && !isPlaceAnswered" class="alert text-center lead light alert-danger col-sm-3" role="alert" id="zipError">
         <strong>Sorry.</strong> Zipcodes must contain at least 5 numbers, if there is a mistake please email sagebase.org
       </div>
@@ -28,7 +29,7 @@
       <strong>Sorry.</strong> Participants must be at least 18 years of age to register.
     </div>
   
-    <div id="option" class="row" v-if="isPlaceAnswered">
+    <div id="option" class="row" v-if="true">
       <p class="col-12 text-center col-sm-auto ml-6 ">
         and I feel </p>
       <v-select bottom id="comfortable" class="col-sm-3 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
@@ -56,7 +57,23 @@
         isPlaceAnswered: null,
         hasChosenOption: false,
         isEligible: false,
-        phoneChoices: ['comfortable', 'uncomfortable']
+        phoneChoices: ['comfortable', 'uncomfortable'],
+        states: [
+          'Alabama', 'Alaska', 'American Samoa', 'Arizona',
+          'Arkansas', 'California', 'Colorado', 'Connecticut',
+          'Delaware', 'District of Columbia', 'Federated States of Micronesia',
+          'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho',
+          'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
+          'Louisiana', 'Maine', 'Marshall Islands', 'Maryland',
+          'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+          'Missouri', 'Montana', 'Nebraska', 'Nevada',
+          'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
+          'North Carolina', 'North Dakota', 'Northern Mariana Islands', 'Ohio',
+          'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico',
+          'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+          'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia',
+          'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+        ]
       }
     },
     watch: {
@@ -98,7 +115,7 @@
       ),
       setIsPlaceAnswered: _.debounce(
         function () {
-          this.isPlaceAnswered = (this.zipCode !== '' && this.zipCode >= 10000)
+          this.isPlaceAnswered = (this.zipCode !== '')
           if (this.isPlaceAnswered) {
             this.scrollPage('#comfortable')
           } else {

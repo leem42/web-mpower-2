@@ -2,25 +2,31 @@
   <v-app id="app" name="top">
     <router-view class="router container-fluid"></router-view>
   
+
+    
+    
     <v-card height="200px" class="bottom-custom-nav">
-      <v-bottom-nav shift v-bind:class="{shrunk: shrunkCalled, expand: !shrunkCalled}" class="bottom-custom-nav">
-        <v-btn flat light class="white--text" @click="click()" @click.native="e1 = 1" :value="e1 === 1">
-          <span v-bind:class="{shrunk: shrunkCalled}"> Shrink </span>
-          <v-icon v-if="!shrunkCalled">trending_down</v-icon>
-          <v-icon x-large v-if="shrunkCalled">trending_up</v-icon>
-        </v-btn>
-        
+      <v-bottom-nav shift v-bind:class="{shrunk: shrunkCalled, expand: !shrunkCalled}" class="bottom-custom-nav">        
         <v-btn flat light class="white--text" @click.native="e1 = 1" :value="e1 === 1">
           <span v-bind:class="{shrunk: shrunkCalled}">mPower</span>
-          <v-icon v-if="!shrunkCalled">home</v-icon>
-          <v-icon x-large  v-if="shrunkCalled">home</v-icon>
+          <v-icon medium >local_florist</v-icon>
 
         </v-btn>
         <v-btn flat light class="white--text" @click.native="e1 = 1"  :value="e1 === 1">
           <span v-bind:class="{shrunk: shrunkCalled}">Help?</span>
-          <v-icon v-if="!shrunkCalled">message</v-icon>
-          <v-icon x-large v-if="shrunkCalled">message</v-icon>
+          <v-icon medium >fa-comment</v-icon>
         </v-btn>
+
+        <v-btn flat light class="navArrow left white--text" @click.native="e1 = 1"  :value="e1 === 1">
+          <span v-bind:class="{shrunk: shrunkCalled}">Back</span>
+          <v-icon medium>navigate_before</v-icon>
+        </v-btn>
+
+        <v-btn flat light class="navArrow right white--text" @click.native="e1 = 1"  :value="e1 === 1">
+          <span v-bind:class="{shrunk: shrunkCalled}">Next</span>
+          <v-icon medium>navigate_next</v-icon>
+        </v-btn>
+
       </v-bottom-nav>
     </v-card>
   
@@ -44,12 +50,36 @@
   height: 140px !important;
 }
 
+.indicatorEmpty {
+  position: fixed;
+  bottom: 81px !important;
+  width: 16.55%;
+  height: 15px;
+  color: transparent;
+  opacity: 0.2;
+  float: left;
+  background-color: rgba(238, 238, 238, 0.7);
+  z-index: 1000;
+}
 
-.bottom-custom-nav {
-  background-color: #31117D;
-  border-style: none !important;
-  box-shadow: none;
-  padding-bottom: 50px;
+.indicatorFilled {
+  @extend .indicatorEmpty;
+  background-color: #68BF60 !important;
+  opacity: 1 !important;
+}
+
+.progressBar {
+  position: fixed;
+  background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);
+  box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
+  bottom: 80px !important;
+  width: 100% !important;
+  height: 16px !important;
+  z-index: 1000;
+}
+
+.progressBarShrunk {
+  bottom: 50px !important;
 }
 
 #status {
@@ -77,7 +107,31 @@ div.input-group__hint {
   display: inline-block;
 }
 
+.bottom-custom-nav {
+  background-color: #31117D;
+  border-style: none !important;
+  box-shadow: none;
+  padding-bottom: 50px;
+}
+
 @media(min-width: 767px) {
+  .navArrow {
+    padding-bottom: 50px !important;
+    position: absolute;
+    &.left {
+      right: 90px !important; 
+    }
+
+    &.right {
+      right: 0px !important; 
+    }
+  }
+
+
+  .bottom-custom-nav {
+    justify-content: left !important;
+  }
+
   p {
     color: #31117D;
     font-size: $font-size-base !important;
@@ -110,8 +164,14 @@ div.input-group__hint {
 }
 
 @media(max-width: 767px) {
-  input#testing,
-  input#placeField {
+  .bottom-custom-nav {
+    justify-content: center;
+  }
+  .navArrow {
+   padding-bottom: 0px !important;
+  }
+
+  input#testing, input#placeField {
     // padding-bottom: 20px;
     min-height: 50px !important; 
     text-align: center !important
@@ -144,16 +204,6 @@ div.input-group__hint {
   }
 }
 
-.progressBar {
-  position: fixed;
-  background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);
-  box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
-  top: 89px !important;
-  width: 100% !important;
-  height: 16px !important;
-  z-index: 1000;
-}
-
 .offset {
   opacity: 1 !important;
   &.one {
@@ -175,24 +225,6 @@ div.input-group__hint {
   &.five {
     margin-left: 83.7%;
   }
-}
-
-.indicatorEmpty {
-  position: fixed;
-  top: 90px !important;
-  width: 16.55%;
-  height: 15px;
-  color: transparent;
-  opacity: 0.2;
-  float: left;
-  background-color: rgba(238, 238, 238, 0.7);
-  z-index: 1000;
-}
-
-.indicatorFilled {
-  @extend .indicatorEmpty;
-  background-color: #68BF60 !important;
-  opacity: 1 !important;
 }
 
 #submit {
@@ -335,8 +367,6 @@ footer {
     },
     methods: {
       click () {
-        console.log('was clicked')
-        console.log(this.shrunkCalled)
         this.shrunkCalled = !this.shrunkCalled
       }
     }

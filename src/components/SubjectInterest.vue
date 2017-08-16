@@ -1,13 +1,13 @@
 <template>
   <v-app>
-    <!--<div class="row progressBar">
-        <div class="indicatorEmpty offset"> </div>
+    <div class="row progressBar">
+        <div class="indicatorEmpty offset" > </div>
         <div class="indicatorEmpty offset one"> </div>
         <div class="indicatorEmpty offset two"> </div>
         <div class="indicatorEmpty offset three"> </div>
         <div class="indicatorEmpty offset four"> </div>
         <div class="indicatorEmpty offset five"> </div>
-    </div>-->  
+    </div>  
     <div class="row">
       <p class="col-sm-8 ml-6 "> Why are you interested in joining mPower? </p>
       <p class="col-md-10 ml-6 text-left tiny lead"> Select your reasons by choosing below. You can remove them by clicking the X. </p>
@@ -191,14 +191,6 @@ export default {
     },
     isDarkPurple: function (idx1) {
       return !(this.turn == null) && (this.selectedChoices[idx1] === this.darkPurpleDisk)
-    },
-    isInitial: function (index) {
-      if (this.intial[index]) {
-        this.intial[index] = false
-        return true
-      } else {
-        return this.intial[index]
-      }
     }
   },
   directives: {
