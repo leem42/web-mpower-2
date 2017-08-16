@@ -5,12 +5,12 @@
       <p class="lead tiny light col-sm-8 mx-auto  ml-6"> We'd just like a few more pieces of information to make sure you're eligible </p>
   
       <p class="col-12 col-sm-auto text-center ml-6"> I am </p>
-      <v-flex class="col-12 col-sm-3">
+      <v-flex class="col-12 col-sm-6 col-lg-2">
         <v-text-field  suffix="years old" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" v-model.number="age"></v-text-field>
       </v-flex>
 
-        <p class="col-sm-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>
-        <v-flex v-if="isUnderage !== null && !isUnderage">
+        <p class="ml-6-restricted col-sm-auto col-lg-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>
+        <v-flex class="col-sm-3 col-md-auto text-center" v-if="isUnderage !== null && !isUnderage">
             <v-select type="text"
               v-bind:items="states"
               v-model="zipCode"
@@ -29,7 +29,7 @@
       <strong>Sorry.</strong> Participants must be at least 18 years of age to register.
     </div>
   
-    <div id="option" class="row" v-if="true">
+    <div id="option" class="row" v-if="isPlaceAnswered !== null && isPlaceAnswered">
       <p class="col-12 text-center col-sm-auto ml-6 ">
         and I feel </p>
       <v-select bottom id="comfortable" class="col-sm-3 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>

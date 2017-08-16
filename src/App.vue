@@ -70,7 +70,8 @@
 
 .progressBar {
   position: fixed;
-  background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);
+  background-color: gray;
+  // background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);
   box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
   bottom: 80px !important;
   width: 100% !important;
@@ -267,7 +268,8 @@ div.input-group__hint {
 nav {
 
   color: white !important;
-  background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);
+  background-color: gray;
+  // background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);
   box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
   height: 90px; // below is used for aligning the element in the middle vertically
   justify-content: center;
