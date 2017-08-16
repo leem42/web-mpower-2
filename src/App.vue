@@ -25,19 +25,8 @@
     <router-view class="router container-fluid"></router-view>
     <!--- TODO: must update to make sure application is only single page -->
 
-
-    <footer class="footer containder">
-      <div class="row">
-        <h2 class="col offset-2"> Copyright 2017 SageBionetworks</h2>
-        <nav class="col">
-          <ul>
-            <li>
-              <router-link to="PrivacyPolicy">Privacy Policy</router-link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
+    <footer class="footer">
+      <h2> Copyright 2017 SageBionetworks</h2>
     </footer>
 
   </div>

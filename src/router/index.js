@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import SubjectInterest from '@/components/SubjectInterest.vue'
 import Eligibility from '@/components/Eligibility.vue'
 import Congratulations from '@/components/Congratulations.vue'
-import PrivacyPolicy from '@/components/PrivacyPolicy.vue'
 
 Vue.use(Router)
 
@@ -23,11 +22,6 @@ export default new Router({
       path: '/Congratulations',
       name: 'Congratulations',
       component: Congratulations
-    },
-    {
-      path: '/PrivacyPolicy',
-      name: 'PrivacyPolicy',
-      component: PrivacyPolicy
     }
   ]
 })
