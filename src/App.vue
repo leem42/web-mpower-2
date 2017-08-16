@@ -1,5 +1,5 @@
 <template>
-  <div id="app" name="top">
+  <v-app id="app" name="top">
     <nav class="navbar navbar-fixed-top navbar-light pt-0 pb-0">
       <div class="container-fluid" style="display: block;">
         <div class="row">
@@ -29,7 +29,7 @@
       <h2> Copyright 2017 SageBionetworks</h2>
     </footer>-->
 
-  </div>
+  </v-app>
 </template>
 
 <style lang="scss">
@@ -66,7 +66,7 @@
       font-size: $font-size-base !important;
     }
     .tiny {
-      font-size: $font-size-base * 0.7 !important;
+      font-size: $font-size-base * 0.8 !important;
     }
     span.chip, div {
         font-size: $font-size-base * 0.80 !important;
@@ -92,6 +92,12 @@
       margin-left: 16.66% !important;
     }
   }
+
+    input#testing, input#placeField {
+      min-height: 35px;
+      padding-bottom: 10px;
+      font-size: $font-size-base * 0.7 !important;
+    }
 
   @media(max-width: 767px) {
     input#testing, input#placeField {
@@ -158,6 +164,15 @@
     margin-left: 83.7%;
   }
 }
+
+.subText {
+  font-size: $font-size-base * 0.65 !important;
+}
+
+.dark-lead {
+  color: #4A4A4A !important;
+}
+
   .indicatorEmpty {
       position: fixed;
       top: 90px !important;
@@ -174,10 +189,10 @@
     background-color: #68BF60 !important;
     opacity: 1 !important;
   }
-
+    
   #submit {
+    background-color: #3A539B;
     border-radius: 5px !important;
-    background-color: #3A539B !important;
     color: white;
     font-weight: 500;
     height: 3.83%;

@@ -2,7 +2,7 @@
   <v-app>
     <div class="row progressBar">
         <div class="indicatorFilled offset"> </div>
-        <div class="indicatorEmpty offset one"> </div>
+        <div class="indicatorFilled offset one"> </div>
         <div class="indicatorEmpty offset two"> </div>
         <div class="indicatorEmpty offset three"> </div>
         <div class="indicatorEmpty offset four"> </div>
@@ -12,47 +12,44 @@
     <br>
   
     <div class="row">
-      <p class="lead col-sm-8 ml-6 "> Why are you interested in joining mPower? </p>
+      <p class="col-sm-8 ml-6 lead"> Why are you interested in joining mPower? </p>
       <p class="col-md-10 ml-6 text-left subText dark-lead"> Select your reasons by choosing below. You can remove them by clicking the X. </p>
       <br>
       <br>
+    </div>
   
-      <p class="tiny lead col-sm-8 ml-6"> I'm interested in the joining mPower because I </p>
-      <v-btn v-model="optionOne.color" class="ml-6 round lower long lightPurple" @click="handleClick(0)" v-bind:class="{ 'lightPurple': optionOne.color === 'lightPurple', 'darkPurple': optionOne.color === 'darkPurple'}"> Want to help myself &nbsp;
+    <div class="row">
+      <p class="tiny col-md-8 ml-6 lead"> I would like to receive </p>
+      <v-btn v-model="optionOne.color" class="ml-6 round lower x-long lightPurple" @click="handleClick(0)" v-bind:class="{ 'lightPurple': optionOne.color === 'lightPurple', 'darkPurple': optionOne.color === 'darkPurple'}"> Updates on the study &nbsp;
         <v-icon v-bind:class="{ 'dark': optionOne.color === 'lightPurple'}" center>
           {{optionOne.color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
   
-      <v-btn v-model="optionTwo.color" class="ml-6-restricted round lower x-long lightPurple" @click="handleClick(1)" v-bind:class="{ 'lightPurple':  optionTwo.color == 'lightPurple', 'darkPurple': optionTwo.color == 'darkPurple'}"> Want to help a loved one &nbsp;
+      <v-btn v-model="optionTwo.color" class="ml-6-restricted round lower lightPurple" @click="handleClick(1)" v-bind:class="{ 'lightPurple': optionTwo.color === 'lightPurple', 'darkPurple': optionTwo.color === 'darkPurple'}"> Stats on participation &nbsp;
         <v-icon v-bind:class="{ 'dark': optionTwo.color === 'lightPurple'}" center>
           {{optionTwo.color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
   
-      <v-btn v-model="optionThree.color" class="ml-6-restricted-x round lower lightPurple" @click="handleClick(2)" v-bind:class="{ 'lightPurple':  optionThree.color == 'lightPurple', 'darkPurple': optionThree.color == 'darkPurple'}"> help others &nbsp;
+      <v-btn v-model="optionThree.color" class="round lower lightPurple ml-6 " @click="handleClick(2)" v-bind:class="{ 'lightPurple': optionThree.color === 'lightPurple', 'darkPurple': optionThree.color === 'darkPurple'}"> Personal performace &nbsp;
         <v-icon v-bind:class="{ 'dark': optionThree.color === 'lightPurple'}" center>
           {{optionThree.color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
   
-      <v-btn v-model="optionFour.color" class=" round lower lightPurple ml-6-restricted" @click="handleClick(3)" v-bind:class="{ 'lightPurple':  optionFour.color == 'lightPurple', 'darkPurple': optionFour.color == 'darkPurple'}"> Am curious &nbsp;
-        <v-icon v-bind:class="{ 'dark': optionFour.color === 'lightPurple'}" center>
-          {{optionFour.color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
-        </v-icon>
-      </v-btn>
-      <br class="visible-md-up">
-      <br class="visible-md-up">
     </div>
-
-     <div class="row" v-if="containsValue()">
+    <br>
+    <div class="row" v-if="containsValues()">
       <br class="visible-sm-up">
       <br class="visible-sm-up">
       <v-btn v-on:click="clicked" id="submit" class="col-md-2 ml-6" light> Submit</v-btn>
     </div>
-  
+    </div>
   </v-app>
 </template>
+
+
 
 <script>
 import { Focus } from '../directives/focus.js'
@@ -64,7 +61,6 @@ export default {
       optionOne: {color: 'lightPurple'},
       optionTwo: {color: 'lightPurple'},
       optionThree: {color: 'lightPurple'},
-      optionFour: {color: 'lightPurple'},
       lightPurpleDisk: 'lightPurple',
       darkPurpleDisk: 'darkPurple',
       turn: false
@@ -72,12 +68,12 @@ export default {
   },
   computed: {
     selectedChoice: function () {
-      return [this.optionOne, this.optionTwo, this.optionThree, this.optionFour]
+      return [this.optionOne, this.optionTwo, this.optionThree]
     }
   },
   methods: {
     clicked () {
-      this.$router.push('InterestTwo')
+      this.$router.push('Eligibility')
     },
     scrollPage: _.debounce(
       function (arg1) {
@@ -91,7 +87,7 @@ export default {
         this.selectedChoice[index].color = 'darkPurple'
       }
     },
-    containsValue: function () {
+    containsValues: function () {
       for (var i = 0; i < this.selectedChoice.length; i++) {
         if (this.selectedChoice[i].color === 'darkPurple') {
           return true
