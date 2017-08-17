@@ -1,5 +1,18 @@
 <template>
   <v-app class="page-overview"> 
+
+   
+    <div class="row progressBar">
+      <div class="indicatorEmpty offset"> </div>
+      <div class="indicatorEmpty offset one"> </div>
+      <div class="indicatorEmpty offset two"> </div>
+      <div class="indicatorEmpty offset three"> </div>
+      <div class="indicatorEmpty offset four"> </div>
+      <div class="indicatorEmpty offset five"> </div>
+    </div>
+
+
+
     <div class="row">
       <p class="lead col-sm-8 ml-6 mx-auto "> You would be a great fit for the mPower study! </p>
       <p class="lead tiny light col-sm-8 mx-auto  ml-6"> We'd just like a few more pieces of information to make sure you're eligible </p>

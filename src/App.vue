@@ -2,8 +2,6 @@
   <v-app id="app" name="top">
     <router-view class="router container-fluid"></router-view>
   
-
-    
     <v-icon dark class="intercom" x-large >fa-comment</v-icon>
     <v-card height="0px" class="bottom-custom-nav">      
       <v-bottom-nav shift class="bottom-custom-nav expand">        
