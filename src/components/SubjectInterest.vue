@@ -16,7 +16,7 @@
       <br>
       <br>
   
-      <p class="lead col-sm-8 ml-6"> I'm interested in the joining mPower because I </p>
+      <p id="interest" class="lead col-sm-8 ml-6"> I'm interested in joining mPower because I </p>
       <v-btn v-model="selectedChoice[0].color" class="ml-6 round lower long lightPurple" @click="handleClick(0)" v-bind:class="{ 'lightPurple': selectedChoice[0].color === 'lightPurple', 'darkPurple': selectedChoice[0].color === 'darkPurple'}"> Want to help myself &nbsp;
   
         <v-icon v-bind:class="{ 'dark': selectedChoice[0].color === 'lightPurple' }" center>
@@ -89,7 +89,7 @@
   
     <!--<br class="visible-md-up" v-if="containsValue(7,9)">-->
     <div class="row" v-if="radioChoice !== ''">
-      <p class="col-md-8 ml-6 lead"> What would you like from us? </p>
+      <p id="userRequest" class="col-md-8 ml-6 lead"> What would you like from us? </p>
       <v-btn v-model="selectedChoice[7].color" class="ml-6 round lower x-long lightPurple" @click="handleClick(7)" v-bind:class="{ 'lightPurple': selectedChoice[7].color === 'lightPurple' , 'darkPurple': selectedChoice[7].color === 'darkPurple'}"> Updates on the study &nbsp;
         <v-icon v-bind:class="{ 'dark': selectedChoice[7].color === 'lightPurple' }" center>
           {{selectedChoice[7].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
