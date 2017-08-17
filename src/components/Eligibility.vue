@@ -16,7 +16,7 @@
     <br class="visible-md-up">
 
     <div class="row">
-      <p class="lead col-sm-8 ml-6 mx-auto "> You would be a great fit for the mPower study! </p>
+      <p id="greatFit" class="lead col-sm-8 ml-6 mx-auto "> You would be a great fit for the mPower study! </p>
       <p class="lead tiny light col-sm-8 mx-auto  ml-6"> We'd just like a few more pieces of information to make sure you're eligible </p>
   
       <p class="col-12 col-sm-auto text-center ml-6"> I am </p>
@@ -24,9 +24,9 @@
         <v-text-field  suffix="years old" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
       </v-flex>
 
-        <p class="col-sm-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>
+        <p id="placeField" class="col-sm-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>
         <v-flex class="col-12 col-sm-3" v-if="isUnderage !== null && !isUnderage">
-        <v-text-field suffix="zipcode" single-line pattern="\d*" bottom name="input-1" label="5-digit zipcode" id="placeField" type="number" v-model.number="zipCode"></v-text-field>
+        <v-text-field suffix="zipcode" single-line pattern="\d*" bottom name="input-1" label="5-digit zipcode" type="number" v-model.number="zipCode"></v-text-field>
       </v-flex>
   
       <div v-if="isPlaceAnswered !== null && !isPlaceAnswered" class="alert text-center lead light alert-danger col-sm-3" role="alert" id="zipError">
