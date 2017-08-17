@@ -10,10 +10,10 @@
 
           <div class="col-md-8 text-center text-sm-right">
               <img src="./images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
-              <img src="./images/survey.svg" ></img>
-              <img src="./images/ic_lock_black_48px.svg" ></img>            
-              <img src="./images/ic_lock_black_48px.svg" ></img>           
-              <img src="./images/ic_lock_black_48px.svg" ></img>
+              <img class="survey" src="./images/survey.svg" ></img>
+              <v-icon class="grey--text  border hidden-sm-up" medium>fa-lock</v-icon>
+              <v-icon class="grey--text  border hidden-sm-up" medium>fa-lock</v-icon>
+              <v-icon class="grey--text  border hidden-sm-up" medium>fa-lock</v-icon>
           </div>
 
         </div>
@@ -35,6 +35,9 @@
 <style lang="scss">
   @import 'css/bootstrap/bootstrap';
 
+  .awesome {
+    font-family: FontAwesome !important;
+  }
   #status {    
       font-weight: 400;
       color: white;
@@ -123,6 +126,13 @@
       height: 30px !important;
       width: 30px !important;
     }
+
+  .border {
+      padding-top: 3px;
+      padding-right: 13px;
+      height: 30px !important;
+      width: 30px !important;
+  }
   }
 
 .progressBar {
@@ -185,8 +195,11 @@
   
   .greenText {
     color: #68BF60;
+    }
+  
+  .btn__content:before {
+    background-color: #F1F0F5 !important;
   }
-
 
   .green {
     background-color: #4caf50 !important;
@@ -196,7 +209,7 @@
 
   .lightPurple {
     color: #473B7B !important;    
-    background-color: rgba(71,59,123,0.08) !important;
+    background-color:#F1F0F5 !important;
   }
   .large {
     min-width: 250px;
@@ -226,7 +239,17 @@
 
   }
 
-
+  .border {
+      border-radius: 50%;
+      // background-color: rgba(65, 73, 90, 0.1);
+      background-color: whitesmoke;
+      top: 50% !important;
+      // padding: 8px;
+      padding-top: 3px;
+      padding-right: 13px;
+      height: 55px;
+      width: 55px;
+  }
    nav * img {
       border-radius: 50%;
       // background-color: rgba(65, 73, 90, 0.1);
@@ -285,7 +308,8 @@
     font-weight: bold;
     border-radius: 100px !important; 
     text-align: center !important;
-    font-family: "San Francisco Text" !important;
+    box-shadow: none;
+    // font-family: "San Francisco Text" !important;
    }
 
   .lead {
