@@ -1,23 +1,27 @@
 import Vue from 'vue'
-import SubjectInterest from '@/components/SubjectInterest'
+import SubjectInterestThree from '@/components/SubjectInterestThree'
 
-describe('SubjectInterest.vue', () => {
+describe('SubjectInterestThree.vue', () => {
   it('should render correct contents', () => {
-    const Constructor = Vue.extend(SubjectInterest)
+    const Constructor = Vue.extend(SubjectInterestThree)
     const vm = new Constructor().$mount()
     expect(vm.$el.querySelector('div.row > p.lead').textContent.trim())
       .to.equal('Why are you interested in joining mPower?')
   })
   describe('interest reason', () =>
-    it('should ask for interest in joining the study', done => {
-      const Constructor = Vue.extend(SubjectInterest)
+    it('should ask for items willing to try in study', done => {
+      const Constructor = Vue.extend(SubjectInterestThree)
       const vm = new Constructor().$mount()
 
       // user submit button should not show without any selection made
       expect(vm.$el.querySelector('#submit')).to.equal(null)
 
       expect(vm.$el.querySelector('p.tiny.lead').textContent.trim()).to
-      .equal('I\'m interested in joining mPower because I')
+      .equal('I would like to recieve')
+
+      expect(vm.$el.querySelector('v-icon').textContent.trim()).to
+      .equal('fa-plus-circle')
+
       // if user clicks an item
       vm.selectedChoice[0].color = 'darkPurple'
 
