@@ -302,11 +302,16 @@
     display: none;
   }
 
+  .btn__content:before {
+    background-color: #F1F0F5 !important;
+  }
+
   .round {
     font-weight: bold;
     border-radius: 100px !important; 
     text-align: center !important;
-    font-family: "San Francisco Text" !important;
+    box-shadow: none;
+    // font-family: "San Francisco Text" !important;
    }
 
   .lead {

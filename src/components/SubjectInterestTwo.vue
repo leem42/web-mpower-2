@@ -25,19 +25,19 @@
       <p class="tiny col-md-8 ml-6 text-left lead"> I'd be willing to try </p>
   
       <v-btn v-model="selectedChoice[0].color" class="ml-6 round lower lightPurple" @click="handleClick(0)" v-bind:class="{ 'lightPurple': selectedChoice[0].color === 'lightPurple', 'darkPurple': selectedChoice[0].color === 'darkPurple'}"> Finger Tapping &nbsp;
-        <v-icon v-bind:class="{ 'dark': selectedChoice[0].color === 'lightPurple'}" center>
+        <v-icon v-bind:class="{ 'white--text': selectedChoice[0].color === 'darkPurple', 'dark': selectedChoice[0].color === 'lightPurple'}" center>
           {{selectedChoice[0].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
   
       <v-btn v-model="selectedChoice[1].color" class=" round lower lightPurple" @click="handleClick(1)" v-bind:class="{ 'lightPurple': selectedChoice[1].color === 'lightPurple', 'darkPurple': selectedChoice[1].color === 'darkPurple'}"> Walking &nbsp;
-        <v-icon v-bind:class="{ 'dark': selectedChoice[1].color === 'lightPurple'}" center>
+        <v-icon v-bind:class="{ 'white--text': selectedChoice[1].color === 'darkPurple', 'dark': selectedChoice[1].color === 'lightPurple'}" center>
           {{selectedChoice[1].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
   
       <v-btn v-model="selectedChoice[2].color" class="ml-6-restricted  round lower  lightPurple" @click="handleClick(2)" v-bind:class="{ 'lightPurple': selectedChoice[2].color === 'lightPurple', 'darkPurple': selectedChoice[2].color === 'darkPurple'}"> Balance &nbsp;
-        <v-icon v-bind:class="{ 'dark': selectedChoice[2].color === 'lightPurple'}" center>
+        <v-icon v-bind:class="{ 'white--text': selectedChoice[2].color === 'darkPurple', 'dark': selectedChoice[2].color === 'lightPurple'}" center>
           {{selectedChoice[2].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
