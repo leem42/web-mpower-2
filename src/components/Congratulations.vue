@@ -29,7 +29,7 @@
           you have learned about the study.
         </p>
         <br>
-        <v-btn id="submit" class="large" light> Review Consent </v-btn>
+        <v-btn id="submit" class="text-capitalize large" light> Review Consent </v-btn>
       </div>
     </div>
 
