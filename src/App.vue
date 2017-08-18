@@ -1,5 +1,8 @@
 <template>
   <v-app id="app" name="top">
+
+    <v-icon dark class="intercom d-print-md-none" medium >fa-comment</v-icon>
+    <v-icon dark class="intercom hideOnSmall" x-large>fa-comment</v-icon>
     <nav class="navbar navbar-fixed-top navbar-light pt-0 pb-0">
       <div class="container-fluid" style="display: block;">
         <div class="row">
@@ -40,6 +43,18 @@
 <style lang="scss">
   @import 'css/bootstrap/bootstrap';
  
+ .intercom {
+    position: fixed;
+    bottom: 80px !important;
+    right: 10px !important; 
+    background-color: #3DBFA3;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
+    border-radius: 50px;
+    height: 80px;
+    width: 80px;
+    display: flex !important;
+  }
+
   i.custom-purple {
     color: #31117D !important;
   }
@@ -146,8 +161,15 @@
     }
 
   @media(max-width: 767px) {
+    
+    .intercom {
+        height: 50px;
+        width: 50px;
+      }
 
-
+    .intercom.hideOnSmall {
+      display: none !important;
+    }
     .subText {
       font-size: $font-size-base * 0.45 !important;
     }
