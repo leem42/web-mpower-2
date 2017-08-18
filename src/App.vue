@@ -51,6 +51,7 @@
     box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
     border-radius: 50px;
     height: 80px;
+    z-index: 10000 !important;
     width: 80px;
     display: flex !important;
   }
