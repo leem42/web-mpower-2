@@ -14,7 +14,7 @@
 
 
     <div class="row">
-      <p class="lead col-sm-8 ml-6 mx-auto "> You would be a great fit for the mPower study! </p>
+      <p id="greatFit" class="lead col-sm-8 ml-6 mx-auto "> You would be a great fit for the mPower study! </p>
       <p class="lead tiny light col-sm-8 mx-auto  ml-6"> We'd just like a few more pieces of information to make sure you're eligible </p>
   
       <p class="col-12 col-sm-auto text-center ml-6"> I am </p>
@@ -43,11 +43,11 @@
     </div>
   
     <div id="option" class="row" v-if="isPlaceAnswered !== null && isPlaceAnswered">
-      <p class="col-12 text-center col-sm-auto ml-6 ">
+      <p class="lead col-12 text-center col-sm-auto ml-6 ">
         and I feel </p>
       <v-select bottom id="comfortable" class="col-sm-3 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
       </select>
-      <p class="col-12 text-center col-sm-auto"> using my phone </p>
+      <p class="lead col-12 text-center col-sm-auto"> using my phone </p>
       <div class="col-12 text-center " v-if="isEligible">
         <v-btn light v-on:click="clicked" v-bind:class="{dim: !isEligible}" v-focus="isEligible" id="submit" class="large" > Submit </v-btn>
       </div>
@@ -120,7 +120,7 @@
             this.isUnderage = this.age < 18
           }
           if (!this.isUnderage) {
-            this.scrollPage('#live')
+            this.scrollPage('#placeField')
           } else {
             this.scrollPage('#ageError')
           }
@@ -145,7 +145,7 @@
         function () {
           this.isEligible = (!this.isUnderage && this.isPlaceAnswered && this.hasChosenOption)
           if (this.isEligible) {
-            this.scrollPage('#next')
+            this.scrollPage('#submit')
           }
         }, 500
       )

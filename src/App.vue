@@ -56,6 +56,19 @@
   padding-top: 20px;
   padding-left: 25px;
 }
+
+ i.custom-purple {
+    color: #31117D !important;
+  }
+  .robot {
+    font-family: 'Roboto' !important;
+  }
+  @font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  }
+
 .expand {
   height: 140px !important;
 }
@@ -81,7 +94,6 @@
 .progressBar {
   position: fixed;
   background-color: gray;
-  // background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);
   box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
   bottom: 80px !important;
   width: 100% !important;
@@ -213,6 +225,13 @@ div.input-group__hint {
   .bottom-custom-nav {
     justify-content: center;
   }
+
+  .intercom.hideOnSmall {
+      display: none !important;
+    }
+    .subText {
+      font-size: $font-size-base * 0.45 !important;
+    }
 
 
   .expand {
@@ -374,11 +393,8 @@ select {
   display: inline !important;
 }
 
-.phoneInput {
-  @media(max-width: 767px) {
-    max-width: 80%;
-    margin-left: 10%;
-  }
+.btn__content:before {
+  background-color: #F1F0F5 !important;
 }
 
 footer {
