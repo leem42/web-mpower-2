@@ -12,28 +12,28 @@
     <br>
   
     <div class="row">
-      <p class="col-sm-8 ml-6 lead"> Why are you interested in joining mPower? </p>
-      <p class="col-md-10 ml-6 text-left subText dark-lead"> Select your reasons by choosing below. You can remove them by clicking the X. </p>
+      <p class="robot col-sm-8 ml-6 lead"> Why are you interested in joining mPower? </p>
+      <p class="robot col-md-10 ml-6 text-left subText dark-lead"> Select your reasons by choosing below. You can remove them by clicking the X. </p>
       <br>
       <br>
     </div>
   
     <div class="row">
-      <p class="tiny col-md-8 ml-6 lead"> I would like to recieve </p>
+      <p class="francisco tiny col-md-8 ml-6 lead"> I would like to recieve </p>
       <v-btn v-model="selectedChoice[0].color" class="ml-6 round lower x-long lightPurple" @click="handleClick(0)" v-bind:class="{ 'lightPurple': selectedChoice[0].color === 'lightPurple', 'darkPurple': selectedChoice[0].color === 'darkPurple'}"> Updates on the study &nbsp;
-        <v-icon v-bind:class="{ 'white--text': selectedChoice[0].color === 'darkPurple', 'dark': selectedChoice[0].color === 'lightPurple'}" center>
+        <v-icon v-bind:class="{ 'white--text': selectedChoice[0].color === 'darkPurple', 'custom-purple': selectedChoice[0].color === 'lightPurple'}" center>
           {{selectedChoice[0].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
   
       <v-btn v-model="selectedChoice[1].color" class="ml-6-restricted round lower lightPurple" @click="handleClick(1)" v-bind:class="{ 'lightPurple': selectedChoice[1].color === 'lightPurple', 'darkPurple': selectedChoice[1].color === 'darkPurple'}"> Stats on participation &nbsp;
-        <v-icon v-bind:class="{ 'white--text': selectedChoice[1].color === 'darkPurple', 'dark': selectedChoice[1].color === 'lightPurple'}" center>
+        <v-icon v-bind:class="{ 'white--text': selectedChoice[1].color === 'darkPurple', 'custom-purple': selectedChoice[1].color === 'lightPurple'}" center>
           {{selectedChoice[1].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
   
       <v-btn v-model="selectedChoice[2].color" class="round lower lightPurple ml-6 " @click="handleClick(2)" v-bind:class="{ 'lightPurple': selectedChoice[2].color === 'lightPurple', 'darkPurple': selectedChoice[2].color === 'darkPurple'}"> Personal performace &nbsp;
-        <v-icon v-bind:class="{ 'white--text': selectedChoice[2].color === 'darkPurple', 'dark': selectedChoice[2].color === 'lightPurple'}" center>
+        <v-icon v-bind:class="{ 'white--text': selectedChoice[2].color === 'darkPurple', 'custom-purple': selectedChoice[2].color === 'lightPurple'}" center>
           {{selectedChoice[2].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
@@ -41,7 +41,7 @@
     </div>
     <br>
     <div class="row" v-if="containsValues()">
-      <v-btn v-on:click="clicked" id="submit" class="col-md-2 ml-6" light> Submit</v-btn>
+      <v-btn v-on:click="clicked" id="submit" class="col-md-2 ml-6" light> Next </v-btn>
     </div>
     </div>
   </v-app>

@@ -24,7 +24,7 @@
         <v-text-field  suffix="years old" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
       </v-flex>
 
-        <p class="lead col-sm-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>
+        <p id="live" class="lead col-sm-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>
         <v-flex class="col-12 col-sm-3" v-if="isUnderage !== null && !isUnderage">
         <v-text-field suffix="zipcode" single-line pattern="\d*" bottom name="input-1" label="5-digit zipcode" id="placeField" type="number" v-model.number="zipCode"></v-text-field>
       </v-flex>
@@ -126,7 +126,7 @@
         function () {
           this.isEligible = (!this.isUnderage && this.isPlaceAnswered && this.hasChosenOption)
           if (this.isEligible) {
-            this.scrollPage('#next')
+            this.scrollPage('#submit')
           }
         }, 500
       )

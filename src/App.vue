@@ -10,10 +10,15 @@
 
           <div class="col-md-8 text-center text-sm-right">
               <img src="./images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
-              <img src="./images/survey.svg" ></img>
-              <img src="./images/ic_lock_black_48px.svg" ></img>            
-              <img src="./images/ic_lock_black_48px.svg" ></img>           
-              <img src="./images/ic_lock_black_48px.svg" ></img>
+              <!--<img src="./images/survey.svg" ></img>-->
+              <v-icon large class="d-none d-md-inline-block grey--text border">fa-lock</v-icon>
+              <v-icon large class="d-none d-md-inline-block grey--text border">fa-lock</v-icon>
+              <v-icon large class="d-none d-md-inline-block grey--text border">fa-lock</v-icon>
+              <v-icon large class="d-none d-md-inline-block grey--text border">fa-lock</v-icon>
+              <v-icon medium class="d-md-none grey--text border small">fa-lock</v-icon>
+              <v-icon medium class="d-md-none grey--text border small">fa-lock</v-icon>
+              <v-icon medium class="d-md-none grey--text border small">fa-lock</v-icon>
+              <v-icon medium class="d-md-none grey--text border small">fa-lock</v-icon>
           </div>
 
         </div>
@@ -34,11 +39,48 @@
 
 <style lang="scss">
   @import 'css/bootstrap/bootstrap';
+ 
+  i.custom-purple {
+    color: #31117D !important;
+  }
+  .robot {
+    font-family: 'Roboto' !important;
+  }
+  @font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  }
+
+  .francisco {
+    font-family: 'San Francisco';
+  }
+
+  div.btn__content {
+    @extend .francisco;
+  }
 
   #status {    
       font-weight: 400;
       color: white;
-      font-size: $font-size-base !important;
+      font-size: $font-size-base * 0.9 !important;
+      padding-top: 6px ;
+      font-family: 'Roboto';
+  }
+
+  .border {
+    @extend img;
+    opacity: 0.9;
+    padding-left: 5px !important;
+    padding-top: 5px !important;
+    padding-right: 15px !important;
+    margin-left: 25px !important;
+  }
+
+  .border.small {
+    padding-left: 5px !important;
+    padding-top: 0px !important;
+    margin-left: 2px !important;
   }
 
 
@@ -146,7 +188,7 @@
   background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);    box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
   top: 89px !important;
   width: 100% !important;
-  height: 16px !important;
+  height: 10px !important;
   z-index: 1000;
 }
 
@@ -181,9 +223,9 @@
 
   .indicatorEmpty {
       position: fixed;
-      top: 90px !important;
+      top: 89px !important;
       width: 16.55%;
-      height: 15px;
+      height: 10px;
       color: transparent;
       opacity: 0.2;
       float: left;
