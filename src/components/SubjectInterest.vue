@@ -16,7 +16,7 @@
       <br>
       <br>
   
-      <p class="francisco tiny lead col-sm-8 ml-6"> I'm interested in joining mPower because I </p>
+      <p id="interest" class="francisco tiny lead col-sm-8 ml-6"> I'm interested in joining mPower because I </p>
       <v-btn v-model="selectedChoice[0].color" class="ml-6 round lower long lightPurple" @click="handleClick(0)" v-bind:class="{ 'lightPurple': selectedChoice[0].color === 'lightPurple', 'darkPurple': selectedChoice[0].color === 'darkPurple'}"> Want to help myself &nbsp;
         <v-icon v-bind:class="{ 'custom-purple': selectedChoice[0].color === 'lightPurple', 'white--text': selectedChoice[0].color == 'darkPurple'}" center>
           {{selectedChoice[0].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
