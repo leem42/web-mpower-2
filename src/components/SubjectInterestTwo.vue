@@ -70,20 +70,7 @@
           {{selectedChoice[6].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
-      
-      <!--<v-flex v-if="containsValues()" class="col-sm-2 ml-6 col-4">
-        <v-radio label="Daily" value="radio-1" v-model="radioChoice"></v-radio>
-      </v-flex>
-      <v-flex v-if="containsValues()" class="col-sm-2 col-8">
-        <v-radio value="3x per week" label="3x/week" v-model="radioChoice"></v-radio>
-      </v-flex>
-      <v-flex v-if="containsValues()" class="col-sm-2 col-6">
-        <v-radio value="2x per week" label="2x/week" v-model="radioChoice"></v-radio>
-      </v-flex>
-      <v-flex v-if="containsValues()" class="col-sm-2 col-6">
-        <v-radio value="weekly" label="weekly" v-model="radioChoice"></v-radio>
-      </v-flex>-->
-  
+ 
     </div>
   
     <div class="row" v-if="containsValues()">

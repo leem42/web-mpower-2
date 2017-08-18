@@ -45,7 +45,7 @@
  
  .intercom {
     position: fixed;
-    bottom: 80px !important;
+    bottom: 50px !important;
     right: 10px !important; 
     background-color: #3DBFA3;
     box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
@@ -166,6 +166,7 @@
     .intercom {
         height: 50px;
         width: 50px;
+        bottom: 20px !important;
       }
 
     .intercom.hideOnSmall {
