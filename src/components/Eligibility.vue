@@ -29,15 +29,15 @@
         <v-text-field suffix="zipcode" single-line pattern="\d*" bottom name="input-1" label="5-digit zipcode" id="placeField" type="number" v-model.number="zipCode"></v-text-field>
       </v-flex>
   
-      <div v-if="isPlaceAnswered !== null && !isPlaceAnswered" class="alert text-center lead light alert-danger col-sm-3" role="alert" id="zipError">
+      <!--<div v-if="isPlaceAnswered !== null && !isPlaceAnswered" class="alert text-center lead light alert-danger col-sm-3" role="alert" id="zipError">
         <strong>Sorry.</strong> Zipcodes must contain at least 5 numbers, if there is a mistake please email sagebase.org
-      </div>
+      </div>-->
   
     </div>
   
-    <div v-if="isUnderage" class="alert alert-danger col-sm-3" id="ageError" role="alert">
+    <!--<div v-if="isUnderage" class="alert alert-danger col-sm-3" id="ageError" role="alert">
       <strong>Sorry.</strong> Participants must be at least 18 years of age to register.
-    </div>
+    </div>-->
   
     <div id="option" class="row" v-if="isPlaceAnswered">
       <p class="lead col-12 text-center col-sm-auto ml-6 ">
@@ -91,6 +91,8 @@
       clicked () {
         if (this.isEligible) {
           this.$router.push('Congratulations') // TODO: Flip to the top of the next page
+        } else {
+          this.$router.push('Ineligible') // TODO: Flip to the top of the next page
         }
       },
       setIsUnderage: _.debounce(

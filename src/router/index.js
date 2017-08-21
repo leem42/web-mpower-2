@@ -5,6 +5,7 @@ import SubjectInterestTwo from '@/components/SubjectInterestTwo.vue'
 import SubjectInterestThree from '@/components/SubjectInterestThree.vue'
 import Eligibility from '@/components/Eligibility.vue'
 import Congratulations from '@/components/Congratulations.vue'
+import Ineligible from '@/components/Ineligible.vue'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/Congratulations',
       name: 'Congratulations',
       component: Congratulations
+    },
+    {
+      path: '/Ineligible',
+      name: 'Ineligible',
+      component: Ineligible
     }
   ]
 })

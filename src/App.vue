@@ -42,7 +42,21 @@
 
 <style lang="scss">
   @import 'css/bootstrap/bootstrap';
- 
+
+.sorryRect {
+  // border-radius: 5px !important;
+  background-color: #3A539B !important;
+  height: 50px;
+  width: 200px;
+  color: white !important;
+  font-family: "San Francisco Text";
+  font-weight: bold; 
+}
+
+ .orangeText {
+   color: #F2806F;
+   font-family: 'Roboto' !important;
+ }
  .intercom {
     position: fixed;
     bottom: 50px !important;
