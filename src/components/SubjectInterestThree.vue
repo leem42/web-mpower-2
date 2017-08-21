@@ -10,10 +10,12 @@
     </div>
     <br>
     <br>
-  
+  <!--// >= 18 live in us and comfortable-->
+  <!--biweekly & month -->
+  <!-- and every choie ^^
+  dnot live in the US -->
     <div class="row">
       <p class="robot col-sm-8 ml-6 lead"> Why are you interested in joining mPower? </p>
-      <p class="robot col-md-10 ml-6 text-left subText dark-lead"> Select your reasons by choosing below. You can remove them by clicking the X. </p>
       <br>
       <br>
     </div>

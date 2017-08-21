@@ -5,9 +5,9 @@
     <span v-if="true">
     <div class="indicatorFilled offset">  </div>
     <div class="indicatorFilled offset one"> </div>
-    <div class="indicatorEmpty offset two" v-bind:class="{indicatorFilled: isUnderage !== null && !isUnderage}" > </div>
+    <div class="indicatorEmpty offset two" v-bind:class="{indicatorFilled: isAgeAnswered !== null}" > </div>
     <div class="indicatorEmpty offset three" v-bind:class="{indicatorFilled: isPlaceAnswered}"> </div>
-    <div class="indicatorEmpty offset four" v-bind:class="{indicatorFilled: isEligible}"> </div> 
+    <div class="indicatorEmpty offset four" v-bind:class="{indicatorFilled: hasAnsweredAll}"> </div> 
     <div class="indicatorEmpty offset five" > </div> 
     </span>
     </div>
@@ -21,32 +21,35 @@
   
       <p class="lead col-12 col-sm-auto text-center ml-6"> I am </p>
       <v-flex class="col-12 col-sm-3">
-        <v-text-field  suffix="years old" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
+        <v-text-field  append-icon="fa-calendar-o" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
       </v-flex>
 
-        <p id="live" class="lead col-sm-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>
-        <v-flex class="col-12 col-sm-3" v-if="isUnderage !== null && !isUnderage">
-        <v-text-field suffix="zipcode" single-line pattern="\d*" bottom name="input-1" label="5-digit zipcode" id="placeField" type="number" v-model.number="zipCode"></v-text-field>
+        <p id="live" class="lead col-sm-auto text-center" v-if="isAgeAnswered !== null" > I live in </p>
+        <v-flex class="col-12 col-sm-3" v-if="isAgeAnswered !== null">
+        <v-select append-icon="map" v-bind:items="states"
+          hide-details auto suffix="zipcode" single-line pattern="\d*" name="input-1" label="5-digit zipcode" id="placeField" type="number" v-model="place"></v-select>
+        <!--<v-select
+          v-bind:items="states"
+          v-model="e1"
+          label="Select"
+          single-line
+          auto
+          prepend-icon="map"
+          hide-details
+        ></v-select>-->
+
       </v-flex>
   
-      <!--<div v-if="isPlaceAnswered !== null && !isPlaceAnswered" class="alert text-center lead light alert-danger col-sm-3" role="alert" id="zipError">
-        <strong>Sorry.</strong> Zipcodes must contain at least 5 numbers, if there is a mistake please email sagebase.org
-      </div>-->
-  
     </div>
-  
-    <!--<div v-if="isUnderage" class="alert alert-danger col-sm-3" id="ageError" role="alert">
-      <strong>Sorry.</strong> Participants must be at least 18 years of age to register.
-    </div>-->
-  
+    
     <div id="option" class="row" v-if="isPlaceAnswered">
       <p class="lead col-12 text-center col-sm-auto ml-6 ">
         and I feel </p>
-      <v-select bottom id="comfortable" class="col-sm-3 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
+      <v-select label="Select" single-line append-icon="fa-mobile" bottom id="comfortable" class="col-sm-3 col-12" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
       </select>
       <p class="lead col-12 text-center col-sm-auto"> using my phone </p>
-      <div class="col-12 text-center " v-if="isEligible">
-        <v-btn light v-on:click="clicked" v-bind:class="{dim: !isEligible}" v-focus="isEligible" id="submit" class="large" > Submit </v-btn>
+      <div class="col-12 text-center " v-if="hasAnsweredAll">
+        <v-btn light v-on:click="clicked" v-bind:class="{dim: !hasAnsweredAll}" v-focus="hasAnsweredAll" id="submit" class="large" > Submit </v-btn>
       </div>
     </div>
   
@@ -61,25 +64,48 @@
     data () {
       return {
         age: '',
-        zipCode: '',
+        place: '',
         selectedOptionForPhone: null,
-        isUnderage: null,
+        isAgeAnswered: null,
         isPlaceAnswered: null,
         hasChosenOption: false,
         isEligible: false,
-        phoneChoices: ['comfortable', 'uncomfortable']
+        phoneChoices: ['comfortable', 'uncomfortable'],
+        states: [
+          'Outside the US', 'Alabama', 'Alaska', 'American Samoa', 'Arizona',
+          'Arkansas', 'California', 'Colorado', 'Connecticut',
+          'Delaware', 'District of Columbia', 'Federated States of Micronesia',
+          'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho',
+          'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
+          'Louisiana', 'Maine', 'Marshall Islands', 'Maryland',
+          'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+          'Missouri', 'Montana', 'Nebraska', 'Nevada',
+          'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
+          'North Carolina', 'North Dakota', 'Northern Mariana Islands', 'Ohio',
+          'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico',
+          'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+          'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia',
+          'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+        ],
+        underage: null,
+        isFromUS: null,
+        isComfortable: null,
+        hasAnsweredAll: null
       }
     },
     watch: {
       age: function (newAge) {
         this.setIsUnderage()
+        this.underage = this.age < 18
       },
-      zipCode: function (newZip) {
+      place: function (newZip) {
         this.setIsPlaceAnswered()
+        this.isFromUS = (this.place !== 'Outside the US')
       },
       selectedOptionForPhone: function (newOption) {
         this.setHasChosenOption()
-        this.setIsEligible()
+        this.isComfortable = (this.selectedOptionForPhone === 'comfortable')
+        this.setHasAnsweredAll()
       }
     },
     methods: {
@@ -92,26 +118,31 @@
         if (this.isEligible) {
           this.$router.push('Congratulations') // TODO: Flip to the top of the next page
         } else {
+          this.$router.data = {
+            underage: this.age < 18,
+            isFromUS: (this.place !== 'Outside the US'),
+            isComfortable: (this.selectedOptionForPhone === 'comfortable')
+          }
           this.$router.push('Ineligible') // TODO: Flip to the top of the next page
         }
       },
       setIsUnderage: _.debounce(
         function () {
           if (this.age === '') {
-            this.isUnderage = null
+            this.isAgeAnswered = null
           } else {
-            this.isUnderage = this.age < 18
+            this.isAgeAnswered = this.age > 0
           }
-          if (!this.isUnderage) {
+          if (!this.isAgeAnswered) {
             this.scrollPage('#live')
           } else {
-            this.scrollPage('#ageError')
+            this.scrollPage('#live')
           }
         }, 500
       ),
       setIsPlaceAnswered: _.debounce(
         function () {
-          this.isPlaceAnswered = (this.zipCode !== '' && this.zipCode >= 10000)
+          this.isPlaceAnswered = (this.place !== '')
           if (this.isPlaceAnswered) {
             this.scrollPage('#comfortable')
           } else {
@@ -124,12 +155,11 @@
           this.hasChosenOption = (this.selectedOptionForPhone !== '')
         }, 500
       ),
-      setIsEligible: _.debounce(
+      setHasAnsweredAll: _.debounce(
         function () {
-          this.isEligible = (!this.isUnderage && this.isPlaceAnswered && this.hasChosenOption)
-          if (this.isEligible) {
-            this.scrollPage('#submit')
-          }
+          this.hasAnsweredAll = this.isAgeAnswered && this.isPlaceAnswered && this.hasChosenOption
+          this.isEligible = !this.underage && this.isFromUS && this.isComfortable
+          this.scrollPage('#submit')
         }, 500
       )
     },

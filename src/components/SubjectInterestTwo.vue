@@ -13,7 +13,6 @@
   
     <div class="row">
       <p class="robot lead col-sm-8 ml-6 "> Why are you interested in joining mPower? </p>
-      <p class="robot col-md-10 ml-6 text-left subText dark-lead"> Select your reasons by choosing below. You can remove them by clicking the X. </p>
       <br>
       <br>
         
@@ -47,25 +46,25 @@
   
       <p id="willing" v-if="containsValues()" class="francisco tiny col-md-8 ml-6 text-left lead"> I'd be willing to do this/these activities: </p>
       
-      <v-btn v-if="containsValues()" v-model="selectedChoice[3].color" class="ml-6 round lower lightPurple" @click="handleClick(3)" v-bind:class="{ 'lightPurple': selectedChoice[3].color === 'lightPurple', 'darkPurple': selectedChoice[3].color === 'darkPurple'}"> Daily &nbsp;
+      <v-btn v-if="containsValues()" v-model="selectedChoice[3].color" class="ml-6 round lower lightPurple" @click="handleClick(3)" v-bind:class="{ 'lightPurple': selectedChoice[3].color === 'lightPurple', 'darkPurple': selectedChoice[3].color === 'darkPurple'}"> Monthly &nbsp;
         <v-icon v-bind:class="{ 'white--text': selectedChoice[3].color === 'darkPurple', 'custom-purple': selectedChoice[3].color === 'lightPurple'}" center>
           {{selectedChoice[3].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
   
-      <v-btn v-if="containsValues()" v-model="selectedChoice[4].color" class=" round lower lightPurple" @click="handleClick(4)" v-bind:class="{ 'lightPurple': selectedChoice[4].color === 'lightPurple', 'darkPurple': selectedChoice[4].color === 'darkPurple'}"> 4x/week &nbsp;
+      <v-btn v-if="containsValues()" v-model="selectedChoice[4].color" class=" round lower lightPurple" @click="handleClick(4)" v-bind:class="{ 'lightPurple': selectedChoice[4].color === 'lightPurple', 'darkPurple': selectedChoice[4].color === 'darkPurple'}"> Every other week &nbsp;
         <v-icon v-bind:class="{ 'white--text': selectedChoice[4].color === 'darkPurple', 'custom-purple': selectedChoice[4].color === 'lightPurple'}" center>
           {{selectedChoice[4].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
   
-      <v-btn v-if="containsValues()" v-model="selectedChoice[5].color" class="ml-6-restricted  round lower  lightPurple" @click="handleClick(5)" v-bind:class="{ 'lightPurple': selectedChoice[5].color === 'lightPurple', 'darkPurple': selectedChoice[5].color === 'darkPurple'}"> 2x/week &nbsp;
+      <v-btn v-if="containsValues()" v-model="selectedChoice[5].color" class="ml-6-restricted  round lower  lightPurple" @click="handleClick(5)" v-bind:class="{ 'lightPurple': selectedChoice[5].color === 'lightPurple', 'darkPurple': selectedChoice[5].color === 'darkPurple'}"> Weekly &nbsp;
         <v-icon v-bind:class="{ 'white--text': selectedChoice[5].color === 'darkPurple', 'custom-purple': selectedChoice[5].color === 'lightPurple'}" center>
           {{selectedChoice[5].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
       </v-btn>
 
-      <v-btn v-if="containsValues()" v-model="selectedChoice[6].color" class="ml-6-restricted  round lower  lightPurple" @click="handleClick(6)" v-bind:class="{ 'lightPurple': selectedChoice[6].color === 'lightPurple', 'darkPurple': selectedChoice[6].color === 'darkPurple'}"> Weekly &nbsp;
+      <v-btn v-if="containsValues()" v-model="selectedChoice[6].color" class="ml-6-restricted  round lower  lightPurple" @click="handleClick(6)" v-bind:class="{ 'lightPurple': selectedChoice[6].color === 'lightPurple', 'darkPurple': selectedChoice[6].color === 'darkPurple'}"> Twice a week &nbsp;
         <v-icon v-bind:class="{ 'white--text': selectedChoice[6].color === 'darkPurple', 'custom-purple': selectedChoice[6].color === 'lightPurple'}" center>
           {{selectedChoice[6].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
@@ -134,7 +133,7 @@ export default {
     },
     containsValues: function () {
       for (var i = 0; i < this.selectedChoice.length; i++) {
-        if (this.selectedChoice[i].color === 'darkPurple' && i < 4) {
+        if (this.selectedChoice[i].color === 'darkPurple' && i < 3) {
           return true
         }
       }

@@ -43,6 +43,11 @@
 <style lang="scss">
   @import 'css/bootstrap/bootstrap';
 
+
+.center {
+  text-align: center !important;
+}
+
 .sorryRect {
   // border-radius: 5px !important;
   background-color: #3A539B !important;
@@ -115,7 +120,7 @@
 
 
   label {
-    color: black !important;
+    // color: black !important;
     font-size: $font-size-base * 0.85 !important;
   }
 

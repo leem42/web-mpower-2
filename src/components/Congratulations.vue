@@ -21,15 +21,15 @@
         <p class="greenText"> Congratulations, you're eligible! </p>
         <p class="lead tiny"> It's now time for consent, how does it work? </p>
       </div>
-      <div class="col-12 col-sm-6 mx-auto">
-        <p class="lead light tiny">
+      <div class="col-12 col-sm-8 mx-auto">
+        <p class="lead light tiny text-center">
           There will be 13 sections in the consent process. These
           sections will help you to understand what is involved and how the study will
           work. After the consent introduction, there will be a short quiz on what
           you have learned about the study.
         </p>
         <br>
-        <v-btn id="submit" class="text-capitalize large" light> Review Consent </v-btn>
+        <v-btn id="submit" class="text-capitalize large center" light> Review Consent </v-btn>
       </div>
     </div>
 
