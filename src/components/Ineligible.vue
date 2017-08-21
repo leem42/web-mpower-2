@@ -18,11 +18,11 @@
           
         <img src="../images/unhappy_face.png" class="img-fluid"  alt="image of a check marked circle">
       </div>
-      <div class="col-8 mx-auto">
+      <div class="col-sm-8 mx-auto">
       <br>
-        <p class="orangeText text-center"> We're sorry to say, unfortunately you are not eligible to partipcate
+        <p class="orangeText text-sm-center"> We're sorry to say, unfortunately you are not eligible to partipcate
             in this study. </p>
-        <p class="lead subText text-center"> Please feel free to follow the study at <a href=" https://parkinsonmpower.org/"> https://parkinsonmpower.org/ </a>
+        <p class="lead subText text-sm-center"> Please feel free to follow the study at <a href=" https://parkinsonmpower.org/"> https://parkinsonmpower.org/ </a>
             and recommend the study to friends or family. </p>
       </div>
       <br>

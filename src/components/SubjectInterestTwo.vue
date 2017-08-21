@@ -72,8 +72,8 @@
       </v-btn>
  
     </div>
-  
-    <div class="row" v-if="containsValues()">
+    <br>
+    <div class="row" v-if="getIsEligible()">
       <v-btn v-on:click="clicked" id="submit" class="robot col-md-2 ml-6 text-capitalize" light> Next </v-btn>
     </div>
     </div>
@@ -98,13 +98,15 @@ export default {
       optionSix: {color: 'lightPurple'},
       optionSeven: {color: 'lightPurple'},
       lightPurpleDisk: 'lightPurple',
-      darkPurpleDisk: 'darkPurple',
-      turn: false
+      darkPurpleDisk: 'darkPurple'
     }
   },
   computed: {
     selectedChoice: function () {
       return [this.optionOne, this.optionTwo, this.optionThree, this.optionFour, this.optionFive, this.optionSix, this.optionSeven]
+    },
+    isEligible: function () {
+      this.isEligible = this.getIsEligible()
     }
   },
   methods: {
@@ -132,11 +134,25 @@ export default {
     },
     containsValues: function () {
       for (var i = 0; i < this.selectedChoice.length; i++) {
-        if (this.selectedChoice[i].color === 'darkPurple') {
+        if (this.selectedChoice[i].color === 'darkPurple' && i < 4) {
           return true
         }
       }
       return false
+    },
+    getIsEligible: function () {
+      var firstHalf = 0
+      var secondHalf = 0
+      for (var i = 0; i < this.selectedChoice.length; i++) {
+        if (this.selectedChoice[i].color === 'darkPurple') {
+          if (i <= 3) {
+            firstHalf = firstHalf + 1
+          } else {
+            secondHalf = secondHalf + 1
+          }
+        }
+      }
+      return (firstHalf > 0) && (secondHalf > 0)
     }
   },
   directives: {
