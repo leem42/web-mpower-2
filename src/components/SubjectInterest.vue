@@ -18,7 +18,43 @@
       <br>
   
       <p class="francisco tiny lead col-sm-8 ml-6"> I'm interested in joining mPower because I </p>
-      <v-btn v-model="selectedChoice[0].color" class="ml-6 round lower long lightPurple" @click="handleClick(0)" v-bind:class="{ 'lightPurple': selectedChoice[0].color === 'lightPurple', 'darkPurple': selectedChoice[0].color === 'darkPurple'}"> Want to help myself &nbsp;
+        
+        <!--<label>Select</label>
+        <div class="input-group__input">
+          <div class="input-group__selections" style="overflow: hidden;">
+            <div>
+              <span tabindex="-1" class="chip chip--removable chip--select-multi">want to help a loved one
+                <a class="chip__close" href="javascript:;">-->
+                  <!--<i class="material-icons icon icon--right">cancel</i>-->
+                  <!--<i center="" class="fa icon fa-times white--text"></i>
+                </a>
+              </span>
+              <span tabindex="-1" class="chip chip--removable chip--select-multi">help others
+                <a class="chip__close" href="javascript:;">
+                  <i center="" class="fa icon fa-times white--text"></i>
+                </a>
+              </span>
+            </div>
+          </div>
+          <div class="menu" style="display: inline-block;"></div>
+          <i class="material-icons icon input-group__append-icon">arrow_drop_down</i>
+        </div>
+        <div class="input-group__details">
+          <div class="input-group__messages"></div>
+        </div>
+      </div>-->
+        
+        
+        <v-select class="ml-6 col-sm-6"
+            label="Select"
+            v-bind:items="interestReasons"
+            v-model="interestReasonsPicked"
+            multiple
+            chips
+            single-line
+          ></v-select>
+
+      <!--<v-btn v-model="selectedChoice[0].color" class="ml-6 round lower long lightPurple" @click="handleClick(0)" v-bind:class="{ 'lightPurple': selectedChoice[0].color === 'lightPurple', 'darkPurple': selectedChoice[0].color === 'darkPurple'}"> Want to help myself &nbsp;
         <v-icon v-bind:class="{ 'custom-purple': selectedChoice[0].color === 'lightPurple', 'white--text': selectedChoice[0].color == 'darkPurple'}" center>
           {{selectedChoice[0].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
@@ -40,7 +76,7 @@
         <v-icon v-bind:class="{ 'custom-purple': selectedChoice[3].color === 'lightPurple', 'white--text': selectedChoice[3].color == 'darkPurple'}" center>
           {{selectedChoice[3].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
-      </v-btn>
+      </v-btn>-->
       <br class="visible-md-up">
       <br class="visible-md-up">
     </div>
@@ -59,6 +95,8 @@ export default {
   name: 'subjectInterest',
   data () {
     return {
+      interestReasons: ['want to help myself', 'want to help a loved one', 'help others', 'am curious'],
+      interestReasonsPicked: [],
       optionOne: {color: 'lightPurple'},
       optionTwo: {color: 'lightPurple'},
       optionThree: {color: 'lightPurple'},
@@ -90,12 +128,7 @@ export default {
       }
     },
     containsValue: function () {
-      for (var i = 0; i < this.selectedChoice.length; i++) {
-        if (this.selectedChoice[i].color === 'darkPurple') {
-          return true
-        }
-      }
-      return false
+      return this.interestReasonsPicked.length > 0
     }
   },
   directives: {

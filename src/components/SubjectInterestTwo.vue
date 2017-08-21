@@ -23,7 +23,12 @@
       <br class="visible-md-up">
       <p class="tiny francisco col-md-8 ml-6 text-left lead"> I'd be willing to try </p>
   
-      <v-btn v-model="selectedChoice[0].color" class="ml-6 round lower lightPurple" @click="handleClick(0)" v-bind:class="{ 'lightPurple': selectedChoice[0].color === 'lightPurple', 'darkPurple': selectedChoice[0].color === 'darkPurple'}"> Finger Tapping &nbsp;
+      <v-select class="ml-6
+        col-sm-6" label="Select" v-model="willingReasonsPicked" v-bind:items="willingReasons" multiple chips single-line >
+        </v-select>
+
+ 
+      <!--<v-btn v-model="selectedChoice[0].color" class="ml-6 round lower lightPurple" @click="handleClick(0)" v-bind:class="{ 'lightPurple': selectedChoice[0].color === 'lightPurple', 'darkPurple': selectedChoice[0].color === 'darkPurple'}"> Finger Tapping &nbsp;
         <v-icon v-bind:class="{ 'white--text': selectedChoice[0].color === 'darkPurple', 'custom-purple': selectedChoice[0].color === 'lightPurple'}" center>
           {{selectedChoice[0].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
@@ -39,7 +44,7 @@
         <v-icon v-bind:class="{ 'white--text': selectedChoice[2].color === 'darkPurple', 'custom-purple': selectedChoice[2].color === 'lightPurple'}" center>
           {{selectedChoice[2].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
         </v-icon>
-      </v-btn>
+      </v-btn>-->
   
       <br class="visible-md-up">
       <br class="visible-md-up">
@@ -89,6 +94,8 @@ export default {
   data () {
     return {
       radioChoice: '',
+      willingReasons: ['Finger Tapping', 'Walking', 'Balance'],
+      willingReasonsPicked: [],
       optionOne: {color: 'lightPurple'},
       optionTwo: {color: 'lightPurple'},
       optionThree: {color: 'lightPurple'},
@@ -132,12 +139,7 @@ export default {
       }
     },
     containsValues: function () {
-      for (var i = 0; i < this.selectedChoice.length; i++) {
-        if (this.selectedChoice[i].color === 'darkPurple' && i < 3) {
-          return true
-        }
-      }
-      return false
+      return this.willingReasonsPicked.length > 0
     },
     getIsEligible: function () {
       var firstHalf = 0
@@ -151,7 +153,7 @@ export default {
           }
         }
       }
-      return (firstHalf > 0) && (secondHalf > 0)
+      return this.containsValues() && (secondHalf > 0)
     }
   },
   directives: {
@@ -162,7 +164,7 @@ export default {
 
 <style>
 button:disabled {
-  opacity: 0.5;
+    opacity: 0.5;
 }
 
 .dim {

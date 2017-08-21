@@ -1,8 +1,9 @@
 <template>
   <v-app id="app" name="top">
 
-    <v-icon dark class="intercom d-print-md-none" medium >fa-comment</v-icon>
-    <v-icon dark class="intercom hideOnSmall" x-large>fa-comment</v-icon>
+    <v-btn class="round question darkPurple"> Need Help? </v-btn>
+    <!--<v-icon dark class="intercom d-print-md-none" medium >fa-comment</v-icon>
+    <v-icon dark class="intercom hideOnSmall" x-large>fa-comment</v-icon>-->
     <nav class="navbar navbar-fixed-top navbar-light pt-0 pb-0">
       <div class="container-fluid" style="display: block;">
         <div class="row">
@@ -43,6 +44,25 @@
 <style lang="scss">
   @import 'css/bootstrap/bootstrap';
 
+span.chip.chip--removable {
+  @extend .round;
+  @extend .darkPurple;
+  @extend .lower;
+  min-height: 40px;
+  font-size: $font-size-base * 0.6 !important;
+}
+
+.application--light .input-group.input-group--selection-controls.checkbox {
+  color: #31117D;
+}
+
+.question {
+  position: fixed;
+  bottom: 50px !important;
+  right: 10px !important; 
+  height: 80px;
+  z-index: 10000 !important;
+}
 
 .center {
   text-align: center !important;
@@ -181,7 +201,13 @@
     }
 
   @media(max-width: 767px) {
-    
+    .question {
+        bottom: 30px !important;
+        right: 0px !important;
+        width: 120px !important;
+        height: 50px;
+    }
+
     .intercom {
         height: 50px;
         width: 50px;
