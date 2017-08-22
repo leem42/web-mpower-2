@@ -124,18 +124,13 @@ export default {
       return this.willingReasonsPicked.length > 0
     },
     getIsEligible: function () {
-      var firstHalf = 0
-      var secondHalf = 0
-      for (var i = 0; i < this.selectedChoice.length; i++) {
+      var count = 0
+      for (var i = 3; i < this.selectedChoice.length; i++) {
         if (this.selectedChoice[i].color === 'darkPurple') {
-          if (i <= 3) {
-            firstHalf = firstHalf + 1
-          } else {
-            secondHalf = secondHalf + 1
-          }
+          count = count + 1
         }
       }
-      return this.containsValues() && (secondHalf > 0)
+      return this.containsValues() && (count > 0)
     }
   },
   directives: {

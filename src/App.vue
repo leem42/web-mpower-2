@@ -4,7 +4,7 @@
     <v-btn class="round question darkPurple"> Need Help? </v-btn>
     <!--<v-icon dark class="intercom d-print-md-none" medium >fa-comment</v-icon>
     <v-icon dark class="intercom hideOnSmall" x-large>fa-comment</v-icon>-->
-    <nav class="navbar navbar-fixed-top navbar-light pt-0 pb-0">
+    <nav class="top navbar navbar-fixed-top navbar-light pt-0 pb-0">
       <div class="container-fluid" style="display: block;">
         <div class="row">
 
@@ -44,6 +44,10 @@
 <style lang="scss">
   @import 'css/bootstrap/bootstrap';
 
+.eligibility.input-group.input-group--dirty {
+  padding-top: 5px;
+}
+
 span.chip.chip--removable {
   @extend .round;
   @extend .darkPurple;
@@ -56,6 +60,9 @@ span.chip.chip--removable {
   color: #31117D;
 }
 
+nav.top {
+  z-index: 10000 !important;
+}
 .question {
   position: fixed;
   bottom: 50px !important;
@@ -260,7 +267,7 @@ span.chip.chip--removable {
   top: 89px !important;
   width: 100% !important;
   height: 10px !important;
-  z-index: 1000;
+  z-index: 10000 !important;
 }
 
 .offset {

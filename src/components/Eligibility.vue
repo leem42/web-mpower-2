@@ -2,14 +2,12 @@
   <v-app class="page-overview">
 
    <div class="row progressBar">
-    <span v-if="true">
     <div class="indicatorFilled offset">  </div>
     <div class="indicatorFilled offset one"> </div>
     <div class="indicatorEmpty offset two" v-bind:class="{indicatorFilled: isAgeAnswered !== null}" > </div>
     <div class="indicatorEmpty offset three" v-bind:class="{indicatorFilled: isPlaceAnswered}"> </div>
     <div class="indicatorEmpty offset four" v-bind:class="{indicatorFilled: hasAnsweredAll}"> </div> 
     <div class="indicatorEmpty offset five" > </div> 
-    </span>
     </div>
     <br>
     <br class="visible-md-up">
@@ -21,12 +19,12 @@
   
       <p class="lead col-12 col-sm-auto text-center ml-6"> I am </p>
       <v-flex class="col-12 col-sm-3">
-        <v-text-field append-icon="fa-calendar-o" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
+        <v-text-field class="eligibility" append-icon="fa-calendar-o" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
       </v-flex>
 
         <p id="live" class="lead col-sm-auto text-center" v-if="isAgeAnswered !== null" > I live in </p>
         <v-flex class="col-12 col-sm-3" v-if="isAgeAnswered !== null">
-        <v-select append-icon="map" v-bind:items="states"
+        <v-select class="eligibility" append-icon="map" v-bind:items="states"
           hide-details auto single-line pattern="\d*" name="input-1" label="choose state" id="placeField"v-model="place"></v-select>
 
       </v-flex>
@@ -36,10 +34,10 @@
     <div id="option" class="row" v-if="isPlaceAnswered">
       <p class="lead col-12 text-center col-sm-auto ml-6 ">
         and I feel </p>
-      <v-select label="Select" single-line append-icon="fa-mobile" bottom id="comfortable" class="col-sm-3 col-12" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
+      <v-select label="Select" single-line append-icon="fa-mobile" bottom id="comfortable" class="eligibility col-sm-5 col-12" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
       </select>
       <div class="col-12 text-center " v-if="hasAnsweredAll">
-        <v-btn light v-on:click="clicked" v-bind:class="{dim: !hasAnsweredAll}" v-focus="hasAnsweredAll" id="submit" class="large" > Submit </v-btn>
+        <v-btn light v-on:click="clicked" v-bind:class="{dim: !hasAnsweredAll}" v-focus="hasAnsweredAll" id="submit" class="eligibility large" > Submit </v-btn>
       </div>
     </div>
   
