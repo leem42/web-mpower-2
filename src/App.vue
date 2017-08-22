@@ -60,7 +60,7 @@ span.chip.chip--removable {
   position: fixed;
   bottom: 50px !important;
   right: 10px !important; 
-  height: 80px;
+  height: 55px;
   z-index: 10000 !important;
 }
 
@@ -196,7 +196,7 @@ span.chip.chip--removable {
 
     input#testing, input#placeField {
       min-height: 35px;
-      padding-bottom: 10px;
+      z-index: 1000;
       font-size: $font-size-base * 0.7 !important;
     }
 
@@ -222,12 +222,14 @@ span.chip.chip--removable {
     }
     
     input#testing, input#placeField {
-      padding-bottom: 10px;
+      padding: 0px !important;
       text-align: center !important    
     }
 
     input#comfortable {
-      text-align: center !important;
+      // text-align: center !important;
+      // white-space: nowrap !important;
+      word-break: break-all !important;
     }
 
     p {

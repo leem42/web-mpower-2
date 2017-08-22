@@ -24,28 +24,10 @@
       <p class="tiny francisco col-md-8 ml-6 text-left lead"> I'd be willing to try </p>
   
       <v-select class="ml-6
-        col-sm-6" label="Select" v-model="willingReasonsPicked" v-bind:items="willingReasons" multiple chips single-line >
+        col-sm-6" label="Select" v-model="willingReasonsPicked" v-bind:items="willingReasons" multiple chips single-line>
         </v-select>
 
  
-      <!--<v-btn v-model="selectedChoice[0].color" class="ml-6 round lower lightPurple" @click="handleClick(0)" v-bind:class="{ 'lightPurple': selectedChoice[0].color === 'lightPurple', 'darkPurple': selectedChoice[0].color === 'darkPurple'}"> Finger Tapping &nbsp;
-        <v-icon v-bind:class="{ 'white--text': selectedChoice[0].color === 'darkPurple', 'custom-purple': selectedChoice[0].color === 'lightPurple'}" center>
-          {{selectedChoice[0].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
-        </v-icon>
-      </v-btn>
-  
-      <v-btn v-model="selectedChoice[1].color" class=" round lower lightPurple" @click="handleClick(1)" v-bind:class="{ 'lightPurple': selectedChoice[1].color === 'lightPurple', 'darkPurple': selectedChoice[1].color === 'darkPurple'}"> Walking &nbsp;
-        <v-icon v-bind:class="{ 'white--text': selectedChoice[1].color === 'darkPurple', 'custom-purple': selectedChoice[1].color === 'lightPurple'}" center>
-          {{selectedChoice[1].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
-        </v-icon>
-      </v-btn>
-  
-      <v-btn v-model="selectedChoice[2].color" class="ml-6-restricted  round lower  lightPurple" @click="handleClick(2)" v-bind:class="{ 'lightPurple': selectedChoice[2].color === 'lightPurple', 'darkPurple': selectedChoice[2].color === 'darkPurple'}"> Balance &nbsp;
-        <v-icon v-bind:class="{ 'white--text': selectedChoice[2].color === 'darkPurple', 'custom-purple': selectedChoice[2].color === 'lightPurple'}" center>
-          {{selectedChoice[2].color === 'lightPurple' ? 'fa-plus-circle': 'fa-times'}}
-        </v-icon>
-      </v-btn>-->
-  
       <br class="visible-md-up">
       <br class="visible-md-up">
   

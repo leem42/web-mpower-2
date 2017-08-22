@@ -22,7 +22,7 @@
       <br>
         <p class="orangeText text-sm-center"> We're sorry to say, unfortunately you are not eligible to partipcate
             in this study. </p>
-        <ul class="lead tiny"> The reason were:
+        <ul class="lead tiny"> The reason(s) were:
             <li v-if="underage"> Participants must be at least 18 years of age </li>
             <li v-if="!isFromUS"> Participants must live in the US </li>
             <li v-if="!isComfortable"> Partipcants have to be comfortable using their phone  </li>

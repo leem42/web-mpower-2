@@ -21,22 +21,13 @@
   
       <p class="lead col-12 col-sm-auto text-center ml-6"> I am </p>
       <v-flex class="col-12 col-sm-3">
-        <v-text-field  append-icon="fa-calendar-o" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
+        <v-text-field append-icon="fa-calendar-o" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" single-line v-model.number="age"></v-text-field>
       </v-flex>
 
         <p id="live" class="lead col-sm-auto text-center" v-if="isAgeAnswered !== null" > I live in </p>
         <v-flex class="col-12 col-sm-3" v-if="isAgeAnswered !== null">
         <v-select append-icon="map" v-bind:items="states"
-          hide-details auto suffix="zipcode" single-line pattern="\d*" name="input-1" label="5-digit zipcode" id="placeField" type="number" v-model="place"></v-select>
-        <!--<v-select
-          v-bind:items="states"
-          v-model="e1"
-          label="Select"
-          single-line
-          auto
-          prepend-icon="map"
-          hide-details
-        ></v-select>-->
+          hide-details auto single-line pattern="\d*" name="input-1" label="choose state" id="placeField"v-model="place"></v-select>
 
       </v-flex>
   
@@ -47,7 +38,6 @@
         and I feel </p>
       <v-select label="Select" single-line append-icon="fa-mobile" bottom id="comfortable" class="col-sm-3 col-12" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
       </select>
-      <p class="lead col-12 text-center col-sm-auto"> using my phone </p>
       <div class="col-12 text-center " v-if="hasAnsweredAll">
         <v-btn light v-on:click="clicked" v-bind:class="{dim: !hasAnsweredAll}" v-focus="hasAnsweredAll" id="submit" class="large" > Submit </v-btn>
       </div>
@@ -70,7 +60,7 @@
         isPlaceAnswered: null,
         hasChosenOption: false,
         isEligible: false,
-        phoneChoices: ['comfortable', 'uncomfortable'],
+        phoneChoices: ['comfortable using my phone', 'uncomfortable using my phone'],
         states: [
           'Outside the US', 'Alabama', 'Alaska', 'American Samoa', 'Arizona',
           'Arkansas', 'California', 'Colorado', 'Connecticut',
