@@ -46,7 +46,7 @@ export default {
   name: 'subjectInterest',
   data () {
     return {
-      interestReasons: ['want to help myself', 'want to help a loved one', 'help others', 'am curious'],
+      interestReasons: ['want to help myself', 'want to help a loved one', 'want to help others', 'am curious', 'Other'],
       interestReasonsPicked: [],
       optionOne: {color: 'lightPurple'},
       optionTwo: {color: 'lightPurple'},

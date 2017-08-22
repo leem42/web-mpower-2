@@ -68,7 +68,8 @@ nav.top {
   bottom: 50px !important;
   right: 10px !important; 
   height: 55px;
-  z-index: 10000 !important;
+  opacity: 0.9;
+  z-index: 10001 !important;
 }
 
 .center {
@@ -132,6 +133,7 @@ nav.top {
 
   .border {
     @extend img;
+    background-color: #dadfe1 !important;
     opacity: 0.9;
     padding-left: 5px !important;
     padding-top: 5px !important;
@@ -210,10 +212,11 @@ nav.top {
   @media(max-width: 767px) {
     .question {
         bottom: 30px !important;
+        // top: 95px !important;
         right: 0px !important;
         width: 120px !important;
-        height: 50px;
-    }
+        height: 35px;
+    } 
 
     .intercom {
         height: 50px;
