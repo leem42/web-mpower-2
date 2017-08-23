@@ -1,8 +1,11 @@
 <template>
   <v-app id="app" name="top">
 
-    <v-icon dark class="intercom d-print-md-none" medium >fa-comment</v-icon>
-    <v-icon dark class="intercom hideOnSmall" x-large>fa-comment</v-icon>
+    <!--<v-icon dark class="intercom d-print-md-none" medium >fa-comment</v-icon>
+    <v-icon dark class="intercom hideOnSmall" x-large>fa-comment</v-icon>-->
+    <v-btn class="darkPurple text-lowercase helpButton hideOnSmall"> Have a question for us? </v-btn> 
+
+
     <nav class="navbar navbar-fixed-top navbar-light pt-0 pb-0">
       <div class="container-fluid" style="display: block;">
         <div class="row">
@@ -37,12 +40,76 @@
       <h2> Copyright 2017 SageBionetworks</h2>
     </footer>-->
 
+
+    <v-bottom-nav value="true" class="darkBlue customAlign">
+      <img class="logo" src="./images/mpower-logo.png"> </img>
+      <span class="pt-3 pt-sm-2 francisco white--text">mPower</span>
+      <v-btn id="question">
+        <v-icon large class="white--text">fa-question-circle</v-icon>
+      </v-btn>
+      
+    </v-bottom-nav>
+
   </v-app>
 </template>
 
 <style lang="scss">
   @import 'css/bootstrap/bootstrap';
- 
+
+  #controller {
+    bottom: 50px !important;
+    position: fixed;
+    left: 40%;
+  }
+
+  div.customCheck {
+    color: #31117D !important;
+  }
+
+  #next {
+    height: 70px;
+    border-radius: 16px;
+    width: 200px;
+  }
+
+  div.customCheck > label {
+    font-size: $font-size-base * 0.7 !important;
+    padding-left: 20px;
+    color: rgba(58, 83, 155, 0.87) !important;
+  }
+
+  #question {
+    display:none;
+  }
+
+  div.customCheck > div.input-group__details {
+    display: none;
+    // padding-top: 25px;
+  }
+
+
+.helpButton {
+  bottom: 50px;
+  right: 10px;
+  position: fixed;
+  height: 50px;
+}
+
+ .customAlign {
+   justify-content: inherit;
+ }
+
+ .logo {
+   height: 40px;
+   width: 42px;
+   margin-left: 3%;
+   margin-right: 2%;
+   margin-top: 8px;
+ }
+
+ .darkBlue {
+  background-color: #5c6c88 !important;
+ }
  .intercom {
     position: fixed;
     bottom: 40px !important;
@@ -166,12 +233,17 @@
 
   @media(max-width: 767px) {
     
+    #question {
+      display: block;
+      margin-left: 100px !important;
+    }
+
     .intercom {
         height: 50px;
         width: 50px;
       }
 
-    .intercom.hideOnSmall {
+    .hideOnSmall {
       display: none !important;
     }
     .subText {
@@ -349,12 +421,6 @@
         box-shadow: 0 0 12px 0 #D5D5D5;
       }
    }
-
-  // *:focus {
-  //   -webkit-box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
-  //   -moz-box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
-  //   box-shadow: 0px 0px 29px 3px rgba(92,179,253,0.63);
-  // }
 
   input {
     text-align: center;
