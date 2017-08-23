@@ -36,7 +36,7 @@
           
           <v-btn v-if="selectedChoice[4]" class=" round lower darkPurple"> another reason 
           </v-btn>
-          <v-btn  class="blue white--text text-capitalize" @click.native="handleEdit()" > {{firstEdit ? "Edit": "Hide"}} </v-btn>
+          <v-btn  class="blue white--text text-capitalize" @click.native="handleEdit(0)" > {{firstEdit ? "Edit": "Hide"}} </v-btn>
       </span>
 
       <v-checkbox v-if="!firstClick || !firstEdit" label="want to help myself" v-model="selectedChoice[0]" class="ml-6 col-12 customCheck darkPurple--text"></v-checkbox>
@@ -56,33 +56,34 @@
       <p class="col-md-8 ml-6 text-left lead"> I'd be willing to try  </p>
   
       <span v-if="secondClick || clickedTwice" class="ml-6">
-        <v-btn v-if="selectedChoice[5]" class="round lower darkPurple"> surveys 
+        <v-btn v-if="selectedChoice[5]" class="round lower darkPurple"> finger tapping activity 
         </v-btn>
-        <v-btn v-if="selectedChoice[6]" class="round lower darkPurple"> surveys 
+        <v-btn v-if="selectedChoice[6]" class="round lower darkPurple"> hand tremor activity 
         </v-btn>
-        <v-btn v-if="selectedChoice[7]" class="round lower darkPurple"> surveys 
+        <v-btn v-if="selectedChoice[7]" class="round lower darkPurple"> balance activity 
         </v-btn>
-        <v-btn v-if="selectedChoice[8]" class="round lower darkPurple"> surveys 
+        <v-btn v-if="selectedChoice[8]" class="round lower darkPurple"> brain teaser activity 
         </v-btn>
         <v-btn v-if="selectedChoice[9]" class="round lower darkPurple"> surveys 
         </v-btn>
 
-        <v-btn class="blue white--text text-capitalize" v-on:click="secondClick = !secondClick, clickedTwice=true"> {{secondClick ? "Edit": "Hide"}} </v-btn>
+        <v-btn class="blue white--text text-capitalize" v-on:click="handleEdit(1)"> {{secondEdit ? "Edit": "Hide"}} </v-btn>
       </span>
 
-      <v-checkbox v-if="!secondClick" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 col-12 customCheck darkPurple--text"></v-checkbox>
-      <v-checkbox v-if="!secondClick" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6 col-12 customCheck darkPurple--text"></v-checkbox>
-      <v-checkbox v-if="!secondClick" label="balance activity" v-model="selectedChoice[7]" class="ml-6 col-12 customCheck darkPurple--text"></v-checkbox>
-      <v-checkbox v-if="!secondClick" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6 col-12 customCheck darkPurple--text"></v-checkbox>
-      <v-checkbox v-if="!secondClick" label="surveys" v-model="selectedChoice[9]" class="ml-6 col-12 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox v-if="!secondClick || !secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 col-12 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox v-if="!secondClick || !secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6 col-12 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox v-if="!secondClick || !secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6 col-12 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox v-if="!secondClick || !secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6 col-12 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox v-if="!secondClick || !secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6 col-12 customCheck darkPurple--text"></v-checkbox>
 
   
       <br class="visible-md-up">
       <br class="visible-md-up">
     </div>
-    <div class="row" v-if="containsValue(7,9)">
+    <div class="row" v-if="thirdClick">
+
     <p v-if="containsValue(4,6)" class="col-md-8 ml-6 text-left lead"> I'd be willing to do this/these activities: </p>
-    <v-flex v-if="containsValue(4,6)" class="col-sm-2 ml-6 col-4">
+    <!--<v-flex v-if="containsValue(4,6)" class="col-sm-2 ml-6 col-4">
       <v-radio label="Daily" value="radio-1" v-model="radioChoice"></v-radio>
     </v-flex>
     <v-flex v-if="containsValue(4,6)" class="col-sm-2 col-8">
@@ -93,7 +94,7 @@
     </v-flex>
     <v-flex v-if="containsValue(4,6)" class="col-sm-2 col-6">
       <v-radio value="weekly" label="weekly" v-model="radioChoice"></v-radio>
-    </v-flex>
+    </v-flex>-->
 
     </div>
   
@@ -121,7 +122,7 @@
     <br>
     <br>
     </div>
-    <div class="row" v-if="containsValue(7,9)">
+    <div class="row" v-if="false">
       <v-btn v-on:click="clicked" id="submit" class="col-md-2 ml-6" light> Submit</v-btn>
     </div>
     <br>
@@ -146,7 +147,7 @@ export default {
       thirdClick: false,
       third: false,
       firstEdit: true,
-      secondEdit: false
+      secondEdit: true
     }
   },
   methods: {
@@ -158,8 +159,12 @@ export default {
         this.$scrollTo(arg1, 1500, { easing: 'linear' })
       }
     , 200),
-    handleEdit: function () {
-      this.firstEdit = !this.firstEdit
+    handleEdit: function (index) {
+      if (index === 0) {
+        this.firstEdit = !this.firstEdit
+      } else if (index === 1) {
+        this.secondEdit = !this.secondEdit
+      }
     },
     handleClick: function (index) {
       this.selectedChoice[index] = !this.selectedChoice[index]
