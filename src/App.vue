@@ -56,6 +56,18 @@
 <style lang="scss">
   @import 'css/bootstrap/bootstrap';
 
+.clickableLink {
+  // box-shadow: none;
+  text-decoration: underline;
+  color: #31117D !important;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.mr-6 {
+  padding-right: 200px;
+}
+
   #controller {
     bottom: 50px !important;
     position: fixed;
