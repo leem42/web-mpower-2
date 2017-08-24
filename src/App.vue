@@ -34,12 +34,7 @@
     <br>
     <router-view class="router container-fluid"></router-view>
     <!--- TODO: must update to make sure application is only single page -->
-  
-    <!--<footer class="footer">
-        <a href="#top"></a>
-        <h2> Copyright 2017 SageBionetworks</h2>
-      </footer>-->
-  
+    
     <v-bottom-nav value="true" class="darkBlue customAlign">
       <img class="logo" src="./images/mpower-logo.png"> </img>
       <span class="pt-3 pt-sm-2 francisco white--text">mPower</span>
@@ -58,9 +53,15 @@
 .clickableLink {
   // box-shadow: none;
   text-decoration: underline;
-  color: #31117D !important;
+  color: #3a539b !important;
   padding-left: 0px;
   padding-right: 0px;
+  margin-left: 0px; 
+  margin-right: 0px;
+}
+
+div.radio > label {
+  color: rgba(58, 83, 155, 0.87) !important;
 }
 
 .mr-6 {
@@ -269,6 +270,7 @@ input#placeField {
     height: 44px;
     width: 100px;
   }
+
 
 
 

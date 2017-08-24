@@ -12,125 +12,174 @@
     <br>
   
     <div class="row" id="nextBtn">
-      <v-btn class="controller darkPurple mx-auto" @click.native="handleController()"> {{radioChoice === '' ? "Next": "Submit"}} </v-btn>
-    </div
-    >
+      <v-btn class="controller darkPurple mx-auto" @click.native="handleController()"> {{thirdClick ? "Next": "Submit"}} </v-btn>
+    </div>
     <div class="row" id="backBtn">
       <v-btn class="controller darkPurple mx-auto" @click.native="handleController()"> Back </v-btn>
     </div>
-
-    <div class="row">
-      <p class="robot lead col-sm-8 ml-6 "> Why are you interested in joining mPower? </p>
-      <p id="interest" class="francisco tiny lead col-sm-8 ml-6"> I'm interested in joining mPower because I </p>  
   
-      <span v-if="firstClick && firstEdit" class="ml-6 mr-6">
-        <v-btn flat v-if="selectedChoice[0]" @click.native="handleEdit(0)"  class="light-blue--text text-capitalize clickableLink francisco">  Want to help myself  
+    <div class="row">
+      <p class="robot lead col-sm-8 ml-6 "> Why are you interested in joining mPower?         
+      </p>
+      <span id="interest" class="francisco tiny lead col-sm-8 ml-6"> I'm interested in joining mPower because I 
+
+      <span v-if="firstEdit" class="p-0">
+        <v-btn flat v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink francisco"> Want to help myself
         </v-btn>
         <!--<span> {{ getPlacementText(0,5)}} </span>-->
-        <v-btn flat v-if="selectedChoice[1]" @click.native="handleEdit(0)"  class="francisco light-blue--text text-capitalize clickableLink" >  Want to help a loved one 
+        <v-btn flat v-if="selectedChoice[1]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> Want to help a loved one
         </v-btn>
         <!--<span> {{ getPlacementText(1,5)}} </span>  -->
-        <v-btn flat v-if="selectedChoice[2]" @click.native="handleEdit(0)"  class="francisco light-blue--text text-capitalize clickableLink" >  help others
+        <v-btn flat v-if="selectedChoice[2]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> help others
         </v-btn>
         <!--<span> {{ getPlacementText(2,5)}} </span>-->
-        <v-btn flat v-if="selectedChoice[3]" @click.native="handleEdit(0)"  class="francisco light-blue--text text-capitalize clickableLink" >  Am curious
+        <v-btn flat v-if="selectedChoice[3]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> Am curious
         </v-btn>
         <!--<span> {{ getPlacementText(3,5)}} </span>-->
-        <v-btn flat v-if="selectedChoice[4]" @click.native="handleEdit(0)"  class="francisco light-blue--text text-capitalize clickableLink">  another reason 
+        <v-btn flat v-if="selectedChoice[4]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> another reason
         </v-btn>
+      </span>        
+        
       </span>
-    </div>
 
-    <v-btn v-if="first" v-bind:class="{'ml-6': firstEdit}" class="francisco ml-6 light-blue--text clickableLink white--text text-capitalize" @click.native="handleEdit(0)"> {{firstEdit ? "(Edit choices)": "Undo"}} </v-btn>
-    
-    <div class="row">
-      <v-checkbox v-if="!firstClick || !firstEdit" label="want to help myself" v-model="selectedChoice[0]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
     </div>
-    <div class="row">    
-      <v-checkbox v-if="!firstClick || !firstEdit" label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
-    </div>
+  
+    <v-btn v-if="first" v-bind:class="{'ml-6': firstEdit}" flat class="francisco ml-6 clickableLink white--text text-capitalize" @click.native="handleEdit(0)"> {{firstEdit ? "(Edit choices)": "Resubmit"}} </v-btn>
+  
     <div class="row">
-      <v-checkbox v-if="!firstClick || !firstEdit" label="want to help others" v-model="selectedChoice[2]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox v-if="!firstEdit" label="want to help myself" v-model="selectedChoice[0]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
     </div>
     <div class="row">
-      <v-checkbox v-if="!firstClick || !firstEdit" label="am curious" v-model="selectedChoice[3]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox v-if="!firstEdit" label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
     </div>
     <div class="row">
-      <v-checkbox v-if="!firstClick || !firstEdit" label="another reason" v-model="selectedChoice[4]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox v-if="!firstEdit" label="want to help others" v-model="selectedChoice[2]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+    </div>
+    <div class="row">
+      <v-checkbox v-if="!firstEdit" label="am curious" v-model="selectedChoice[3]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+    </div>
+    <div class="row">
+      <v-checkbox v-if="!firstEdit" label="another reason" v-model="selectedChoice[4]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
     </div>
     <span v-if="firstClick">
       <div class="row">
-        <p class="col-md-8 ml-6 text-left lead"> I would be willing to try </p>
-    
-        <span v-if="secondClick || second" class="ml-6">
-          <v-btn flat v-if="selectedChoice[5]" class="light-blue--text text-capitalize clickableLink francisco"> finger tapping activity
+        <span class="col-md-8 ml-6 tiny text-left lead"> I would be willing to try
+        <span v-if="secondClick || second" class="p-0">
+          <v-btn flat v-if="selectedChoice[5]" class=" text-capitalize clickableLink francisco"> finger tapping activity
           </v-btn>
           <!--<span> {{ getPlacementText(5,10)}} </span>-->
-          <v-btn flat v-if="selectedChoice[6]" class="light-blue--text text-capitalize clickableLink francisco"> hand tremor activity
+          <v-btn flat v-if="selectedChoice[6]" class=" text-capitalize clickableLink francisco"> hand tremor activity
           </v-btn>
           <!--<span> {{ getPlacementText(6,10)}} </span>-->
-          <v-btn flat v-if="selectedChoice[7]" class="light-blue--text text-capitalize clickableLink francisco"> balance activity
+          <v-btn flat v-if="selectedChoice[7]" class=" text-capitalize clickableLink francisco"> balance activity
           </v-btn>
           <!--<span> {{ getPlacementText(7,10)}} </span>-->
-          <v-btn flat v-if="selectedChoice[8]" class="light-blue--text text-capitalize clickableLink francisco"> brain teaser activity
+          <v-btn flat v-if="selectedChoice[8]" class=" text-capitalize clickableLink francisco"> brain teaser activity
           </v-btn>
           <!--<span> {{ getPlacementText(8,10)}} </span>-->
-          <v-btn flat v-if="selectedChoice[9]" class="light-blue--text text-capitalize clickableLink francisco"> surveys
+          <v-btn flat v-if="selectedChoice[9]" class=" text-capitalize clickableLink francisco"> surveys
           </v-btn>
-        <v-btn class="light-blue--text white--text text-capitalize" v-on:click="handleEdit(1)"> {{secondEdit ? "Edit Choices": "Undo"}} </v-btn>
-      </span>
+          <v-btn flat class="clickableLink text-capitalize" v-on:click="handleEdit(1)"> {{secondEdit ? "(Edit Choices)": "Resubmit"}} </v-btn>
+        </span>
+        </span>  
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!secondClick || !secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondClick || !secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondClick || !secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondClick || !secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondClick || !secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
       </div>
-    </div>
-    </span>    
-    <br v-if="!secondClick">
-    <br v-if="!secondClick">
-    <br v-if="!secondClick">
+    </span>
+    
+    <br>
+
     <span v-if="secondClick">
       <div class="row">
-        <p class="col-md-8 ml-6 text-left lead"> I'd be willing to do this/these activities:</p>
+        <p class="col-md-8 ml-6 tiny text-left lead"> on a {{(thirdClick 
+          || third)? "": "_____"}} 
+        <span class="p-0" v-if="thirdClick || third">
+          <v-btn flat v-if="secondClick || second" class=" text-capitalize clickableLink francisco"> {{radioChoice}}
+          </v-btn>
+        basis
+          <v-btn flat class=" white--text text-capitalize clickableLink" v-on:click="handleEdit(2)"> {{thirdEdit ? "(Edit Choices)": "Resubmit"}} </v-btn>
+        </span>
+        </p>
       </div>
-      <div class="row">
-        <v-flex class="col-sm-2 ml-6 ">
-          <v-radio class="light-blue--text" label="Daily" value="radio-1" v-model="radioChoice"></v-radio>
-        </v-flex>
-      </div>
-      <div class="row">
-        <v-flex class="col-sm-2 ml-6">
-          <v-radio class="light-blue--text"  value="3x per week" label="3x/week" v-model="radioChoice"></v-radio>
-        </v-flex>
-      </div>
-      <div class="row">
-        <v-flex class="col-sm-2 ml-6">
-          <v-radio class="light-blue--text"  value="2x per week" label="2x/week" v-model="radioChoice"></v-radio>
-        </v-flex>
-      </div>
-      <div class="row">
-        <v-flex class="col-sm-2 ml-6">
-          <v-radio class="light-blue--text"  value="weekly" label="weekly" v-model="radioChoice"></v-radio>
-        </v-flex>
-      </div>    
-    </span>
-    <br v-if="!thirdClick">
-    <br v-if="!thirdClick">
-    <br v-if="!thirdClick">
 
-    </div>
+      <div class="row">
+        <span class="ml-6" v-if="thirdClick || third">
+        <v-btn flat v-if="secondClick || second" class=" text-capitalize clickableLink francisco"> {{radioChoice}}
+        </v-btn>
+         <v-btn class=" white--text text-capitalize" flat v-on:click="handleEdit(2)"> {{thirdEdit ? "(Edit Choices)": "Resubmit"}} </v-btn>
+        </span>
+      </div>
+
+      <div class="row" v-if="!thirdEdit">
+        <v-flex class="col-sm-2 ml-6 ">
+          <v-radio class=" francisco" label="Daily" value="Daily" v-model="radioChoice"></v-radio>
+        </v-flex>
+      </div>
+      <div class="row" v-if="!thirdEdit">
+        <v-flex class="col-sm-2 ml-6">
+          <v-radio class=" francisco" value="weekly" label="weekly" v-model="radioChoice"></v-radio>
+        </v-flex>
+      </div>
+      <div class="row" v-if="!thirdEdit">
+        <v-flex class="col-sm-2 ml-6">
+          <v-radio class=" francisco" value="biweekly" label="biweekly" v-model="radioChoice"></v-radio>
+        </v-flex>
+      </div>
+      <div class="row" v-if="!thirdEdit">
+        <v-flex class="col-sm-2 ml-6">
+          <v-radio class=" francisco" value="monthly" label="monthly" v-model="radioChoice"></v-radio>
+        </v-flex>
+      </div>
+    </span>
+
+    <span v-if="thirdClick">
+      <div class="row">
+        <p class="ml-6 col-sm-8 lead"> What would you like from us? </p>
+        <span v-if="fourthEdit" class="ml-6">
+          <v-btn flat v-if="selectedChoice[10]" class=" text-capitalize clickableLink francisco"> Updates on the study
+          </v-btn>
+          <!--<span> {{ getPlacementText(5,10)}} </span>-->
+          <v-btn flat v-if="selectedChoice[11]" class=" text-capitalize clickableLink francisco"> Updates on my progress
+          </v-btn>
+          <!--<span> {{ getPlacementText(6,10)}} </span>-->
+          <v-btn flat v-if="selectedChoice[12]" class=" text-capitalize clickableLink francisco"> Updates on the app
+          </v-btn>  
+        </span>
+        <v-btn
+
+      </div>
+
+       <div class="row">
+        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+      </div>
+      <div class="row">
+        <v-checkbox v-if="!fourthEdit" label="Updates on my progress" v-model="selectedChoice[11]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+      </div>
+      <div class="row">
+        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+      </div>
+
+  </span>
+
+      <br>
+      <br>
+      <br>
+  
+      </div>
   </v-app>
 </template>
 
@@ -142,14 +191,19 @@ export default {
   data () {
     return {
       radioChoice: '',
-      selectedChoice: [false, false, false, false, false, false, false, false, false, false, false],
+      selectedChoice: [false, false, false, false, false, false, false, false, false, false, false, false, false, false],
       firstClick: false,
       first: false,
       secondClick: false,
       second: false,
       thirdClick: false,
-      firstEdit: true,
-      secondEdit: true
+      third: false,
+      fourthClick: false,
+      fourth: false,
+      firstEdit: false,
+      secondEdit: false,
+      thirdEdit: false,
+      fourthEdit: false
     }
   },
   methods: {
@@ -166,20 +220,32 @@ export default {
         this.firstEdit = !this.firstEdit
       } else if (index === 1) {
         this.secondEdit = !this.secondEdit
+      } else if (index === 2) {
+        this.thirdEdit = !this.thirdEdit
       }
     },
     handleClick: function (index) {
       this.selectedChoice[index] = !this.selectedChoice[index]
     },
     handleController: function () {
-      if (this.firstClick && !this.secondClick) {
+      if (!this.firstClick) {
+        this.firstClick = true
+        this.firstEdit = true
+        this.first = true
+      } else if (!this.secondClick) {
         this.secondClick = true
         this.second = true
-      } else if (this.secondClick) {
+        this.secondEdit = true
+      } else if (this.radioChoice !== '' && !this.thirdClick) {
         this.thirdClick = true
+        this.third = true
+        this.thirdEdit = true
+      } else if (!this.fourthClick) {
+        this.fourthClick = true
+        this.fourth = true
+        this.fourthEdit = true
       } else {
-        this.firstClick = true
-        this.first = true
+        this.$router.push('Eligibility')
       }
     },
     containsValue: function (start, stop) {
