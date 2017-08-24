@@ -11,8 +11,12 @@
     <br>
     <br>
   
-    <div class="row" id="controller">
-      <v-btn id="next" class="darkPurple mx-auto" @click.native="handleController()"> {{radioChoice === '' ? "Next": "Submit"}} </v-btn>
+    <div class="row" id="nextBtn">
+      <v-btn class="controller darkPurple mx-auto" @click.native="handleController()"> {{radioChoice === '' ? "Next": "Submit"}} </v-btn>
+    </div
+    >
+    <div class="row" id="backBtn">
+      <v-btn class="controller darkPurple mx-auto" @click.native="handleController()"> Back </v-btn>
     </div>
 
     <div class="row">
@@ -78,19 +82,19 @@
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!secondClick || !secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 col-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondClick || !secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondClick || !secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6 col-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondClick || !secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondClick || !secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6 col-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondClick || !secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondClick || !secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6 col-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondClick || !secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondClick || !secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6 col-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondClick || !secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
       </div>
     </div>
     </span>    
@@ -102,22 +106,22 @@
         <p class="col-md-8 ml-6 text-left lead"> I'd be willing to do this/these activities:</p>
       </div>
       <div class="row">
-        <v-flex class="col-2 ml-6 col-4">
+        <v-flex class="col-sm-2 ml-6 ">
           <v-radio class="light-blue--text" label="Daily" value="radio-1" v-model="radioChoice"></v-radio>
         </v-flex>
       </div>
       <div class="row">
-        <v-flex class="col-2 ml-6">
+        <v-flex class="col-sm-2 ml-6">
           <v-radio class="light-blue--text"  value="3x per week" label="3x/week" v-model="radioChoice"></v-radio>
         </v-flex>
       </div>
       <div class="row">
-        <v-flex class="col-2 ml-6">
+        <v-flex class="col-sm-2 ml-6">
           <v-radio class="light-blue--text"  value="2x per week" label="2x/week" v-model="radioChoice"></v-radio>
         </v-flex>
       </div>
       <div class="row">
-        <v-flex class="col-2 ml-6">
+        <v-flex class="col-sm-2 ml-6">
           <v-radio class="light-blue--text"  value="weekly" label="weekly" v-model="radioChoice"></v-radio>
         </v-flex>
       </div>    
