@@ -12,12 +12,17 @@
     <br>
   
     <div class="row" id="nextBtn">
-      <v-btn class="controller darkPurple mx-auto" @click.native="handleController()"> {{thirdClick ? "Next": "Submit"}} </v-btn>
+      <v-btn class="controller darkPurple mx-auto" @click.native="handleController()"> {{thirdClick ? "Submit": "Next"}} </v-btn>
     </div>
     <div class="row" id="backBtn">
       <v-btn class="controller darkPurple mx-auto" @click.native="handleController()"> Back </v-btn>
     </div>
   
+    <!-- Section 1.
+
+      I'm interest in joining because
+
+    -->
     <div class="row">
       <p class="robot lead col-sm-8 ml-6 "> Why are you interested in joining mPower?         
       </p>
@@ -26,25 +31,23 @@
       <span v-if="firstEdit" class="p-0">
         <v-btn flat v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink francisco"> Want to help myself
         </v-btn>
-        <!--<span> {{ getPlacementText(0,5)}} </span>-->
-        <v-btn flat v-if="selectedChoice[1]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> Want to help a loved one
+        {{getPlacementText(0,5)}}
+        <v-btn flat v-if="selectedChoice[1]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> Want to help a loved one 
         </v-btn>
-        <!--<span> {{ getPlacementText(1,5)}} </span>  -->
+        {{getPlacementText(1,5)}}
         <v-btn flat v-if="selectedChoice[2]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> help others
         </v-btn>
-        <!--<span> {{ getPlacementText(2,5)}} </span>-->
+        {{getPlacementText(2,5)}} 
         <v-btn flat v-if="selectedChoice[3]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> Am curious
         </v-btn>
-        <!--<span> {{ getPlacementText(3,5)}} </span>-->
+         {{ getPlacementText(3,5)}}
         <v-btn flat v-if="selectedChoice[4]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> another reason
         </v-btn>
-      </span>        
-        
+      </span>                
+      <v-btn v-if="first" flat class="francisco clickableLink white--text text-capitalize" @click.native="handleEdit(0)"> {{firstEdit ? "(Edit choices)": "Resubmit"}} </v-btn>
       </span>
-
     </div>
   
-    <v-btn v-if="first" v-bind:class="{'ml-6': firstEdit}" flat class="francisco ml-6 clickableLink white--text text-capitalize" @click.native="handleEdit(0)"> {{firstEdit ? "(Edit choices)": "Resubmit"}} </v-btn>
   
     <div class="row">
       <v-checkbox v-if="!firstEdit" label="want to help myself" v-model="selectedChoice[0]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
@@ -61,26 +64,33 @@
     <div class="row">
       <v-checkbox v-if="!firstEdit" label="another reason" v-model="selectedChoice[4]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
     </div>
-    <span v-if="firstClick">
+
+    <br>
+    <!-- Section 2.
+
+    I would be willing to try
+      
+    -->
+    <span id="willing" v-if="firstClick">
       <div class="row">
-        <span class="col-md-8 ml-6 tiny text-left lead"> I would be willing to try
-        <span v-if="secondClick || second" class="p-0">
+        <span class="francisco col-md-8 ml-6 tiny text-left lead"> I would be willing to try
+        <span v-if="secondEdit" class="p-0">
           <v-btn flat v-if="selectedChoice[5]" class=" text-capitalize clickableLink francisco"> finger tapping activity
           </v-btn>
-          <!--<span> {{ getPlacementText(5,10)}} </span>-->
+          {{ getPlacementText(5,10)}}  
           <v-btn flat v-if="selectedChoice[6]" class=" text-capitalize clickableLink francisco"> hand tremor activity
           </v-btn>
-          <!--<span> {{ getPlacementText(6,10)}} </span>-->
+          {{ getPlacementText(6,10)}}  
           <v-btn flat v-if="selectedChoice[7]" class=" text-capitalize clickableLink francisco"> balance activity
           </v-btn>
-          <!--<span> {{ getPlacementText(7,10)}} </span>-->
+          {{ getPlacementText(7,10)}}  
           <v-btn flat v-if="selectedChoice[8]" class=" text-capitalize clickableLink francisco"> brain teaser activity
           </v-btn>
-          <!--<span> {{ getPlacementText(8,10)}} </span>-->
+          {{ getPlacementText(8,10)}}  
           <v-btn flat v-if="selectedChoice[9]" class=" text-capitalize clickableLink francisco"> surveys
           </v-btn>
-          <v-btn flat class="clickableLink text-capitalize" v-on:click="handleEdit(1)"> {{secondEdit ? "(Edit Choices)": "Resubmit"}} </v-btn>
         </span>
+          <v-btn v-if="secondClick" flat class="clickableLink text-capitalize" v-on:click="handleEdit(1)"> {{secondEdit ? "(Edit Choices)": "Resubmit"}} </v-btn>
         </span>  
       </div>
   
@@ -102,26 +112,22 @@
     </span>
     
     <br>
+    <!-- Section 3.
 
-    <span v-if="secondClick">
+      On a _____ Basis
+
+    -->
+    <span id="basis" v-if="secondClick">
       <div class="row">
-        <p class="col-md-8 ml-6 tiny text-left lead"> on a {{(thirdClick 
+        <p class="francisco col-md-8 ml-6 tiny text-left lead"> on a {{(thirdClick 
           || third)? "": "_____"}} 
         <span class="p-0" v-if="thirdClick || third">
           <v-btn flat v-if="secondClick || second" class=" text-capitalize clickableLink francisco"> {{radioChoice}}
           </v-btn>
+        </span>
         basis
-          <v-btn flat class=" white--text text-capitalize clickableLink" v-on:click="handleEdit(2)"> {{thirdEdit ? "(Edit Choices)": "Resubmit"}} </v-btn>
-        </span>
+          <v-btn flat class=" white--text text-capitalize clickableLink" v-on:click="handleEdit(2)"> {{thirdEdit ? "(Edit Choice)": "Resubmit"}} </v-btn>
         </p>
-      </div>
-
-      <div class="row">
-        <span class="ml-6" v-if="thirdClick || third">
-        <v-btn flat v-if="secondClick || second" class=" text-capitalize clickableLink francisco"> {{radioChoice}}
-        </v-btn>
-         <v-btn class=" white--text text-capitalize" flat v-on:click="handleEdit(2)"> {{thirdEdit ? "(Edit Choices)": "Resubmit"}} </v-btn>
-        </span>
       </div>
 
       <div class="row" v-if="!thirdEdit">
@@ -146,21 +152,27 @@
       </div>
     </span>
 
-    <span v-if="thirdClick">
-      <div class="row">
-        <p class="ml-6 col-sm-8 lead"> What would you like from us? </p>
-        <span v-if="fourthEdit" class="ml-6">
-          <v-btn flat v-if="selectedChoice[10]" class=" text-capitalize clickableLink francisco"> Updates on the study
-          </v-btn>
-          <!--<span> {{ getPlacementText(5,10)}} </span>-->
-          <v-btn flat v-if="selectedChoice[11]" class=" text-capitalize clickableLink francisco"> Updates on my progress
-          </v-btn>
-          <!--<span> {{ getPlacementText(6,10)}} </span>-->
-          <v-btn flat v-if="selectedChoice[12]" class=" text-capitalize clickableLink francisco"> Updates on the app
-          </v-btn>  
-        </span>
-        <v-btn
+    <br>
+    <!-- Section 4.
 
+        What would you like from us
+
+    -->
+    <span id="request" v-if="thirdClick">
+      <div class="row">
+        <p class="francisco ml-6 col-sm-8 tiny lead"> I would like to recieve
+          <span v-if="fourthEdit">
+            <v-btn flat v-if="selectedChoice[10]" class=" text-capitalize clickableLink francisco"> Updates on the study
+            </v-btn>
+            {{ getPlacementText(10,12)}}  
+            <v-btn flat v-if="selectedChoice[11]" class=" text-capitalize clickableLink francisco"> Updates on my progress
+            </v-btn>
+            {{ getPlacementText(11,12)}}  
+            <v-btn flat v-if="selectedChoice[12]" class=" text-capitalize clickableLink francisco"> Updates on the app
+            </v-btn>  
+          </span>
+          <v-btn v-if="fourthClick" flat class="white--text text-capitalize clickableLink" v-on:click="handleEdit(3)"> {{thirdEdit ? "(Edit Choice)": "Resubmit"}} </v-btn>
+        </p>
       </div>
 
        <div class="row">
@@ -222,6 +234,8 @@ export default {
         this.secondEdit = !this.secondEdit
       } else if (index === 2) {
         this.thirdEdit = !this.thirdEdit
+      } else {
+        this.fourthEdit = !this.fourthEdit
       }
     },
     handleClick: function (index) {
@@ -232,14 +246,17 @@ export default {
         this.firstClick = true
         this.firstEdit = true
         this.first = true
+        this.scrollPage('#willing')
       } else if (!this.secondClick) {
         this.secondClick = true
         this.second = true
         this.secondEdit = true
+        this.scrollPage('#basis')
       } else if (this.radioChoice !== '' && !this.thirdClick) {
         this.thirdClick = true
         this.third = true
         this.thirdEdit = true
+        this.scrollPage('#requests')
       } else if (!this.fourthClick) {
         this.fourthClick = true
         this.fourth = true

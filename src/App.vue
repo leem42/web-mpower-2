@@ -49,11 +49,15 @@
 
 <style lang="scss">
 @import 'css/bootstrap/bootstrap';
+  button.clickableLink > div.btn__content {
+    padding: 0px !important;
+  }
 
 .clickableLink {
   // box-shadow: none;
   text-decoration: underline;
   color: #3a539b !important;
+  font-weight: bold;
   padding-left: 0px;
   padding-right: 0px;
   margin-left: 0px; 
@@ -62,6 +66,10 @@
 
 div.radio > label {
   color: rgba(58, 83, 155, 0.87) !important;
+}
+
+div.radio {
+  padding: 2px;
 }
 
 .mr-6 {
