@@ -12,11 +12,12 @@
     <br>
   
     <div class="row" id="nextBtn">
-      <v-btn class="controller darkPurple mx-auto" @click.native="handleController()"> {{thirdClick ? "Submit": "Next"}} </v-btn>
+      <v-btn class="controller white--text mx-auto text-capitalize" @click.native="handleController()"> {{thirdClick ? "Submit": "Next"}} </v-btn>
     </div>
-    <div class="row" id="backBtn">
-      <v-btn class="controller darkPurple mx-auto" @click.native="handleController()"> Back </v-btn>
-    </div>
+  
+    <!--<div class="row" id="backBtn">
+      <v-btn class="controller white--text text-capitalize mx-auto" @click.native="handleController()"> Back </v-btn>
+    </div>-->
   
     <!-- Section 1.
 
@@ -24,7 +25,7 @@
 
     -->
     <div class="row">
-      <p class="robot lead col-sm-8 ml-6 "> Why are you interested in joining mPower?         
+      <p class="robot hideOnSmall lead col-sm-8 ml-6 "> Why are you interested in joining mPower?         
       </p>
       <span id="interest" class="francisco tiny lead col-sm-8 ml-6"> I'm interested in joining mPower because I 
 
@@ -44,26 +45,27 @@
         <v-btn flat v-if="selectedChoice[4]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> another reason
         </v-btn>
       </span>                
-      <v-btn v-if="first" flat class="francisco clickableLink white--text text-capitalize" @click.native="handleEdit(0)"> {{firstEdit ? "(Edit choices)": "Resubmit"}} </v-btn>
+      <v-btn v-if="firstClick" flat class="francisco clickableLink white--text text-capitalize" @click.native="handleEdit(0)"> {{firstEdit ? "(Edit choices)": "Resubmit"}} </v-btn>
       </span>
     </div>
   
-  
+    <span v-if="!firstEdit">
     <div class="row">
-      <v-checkbox v-if="!firstEdit" label="want to help myself" v-model="selectedChoice[0]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
     </div>
     <div class="row">
-      <v-checkbox v-if="!firstEdit" label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
     </div>
     <div class="row">
-      <v-checkbox v-if="!firstEdit" label="want to help others" v-model="selectedChoice[2]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
     </div>
     <div class="row">
-      <v-checkbox v-if="!firstEdit" label="am curious" v-model="selectedChoice[3]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox label="am curious" v-model="selectedChoice[3]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
     </div>
     <div class="row">
-      <v-checkbox v-if="!firstEdit" label="another reason" v-model="selectedChoice[4]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
-    </div>
+      <v-checkbox label="another reason" v-model="selectedChoice[4]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+    </div >
+    </span>
 
     <br>
     <!-- Section 2.
@@ -126,7 +128,7 @@
           </v-btn>
         </span>
         basis
-          <v-btn flat class=" white--text text-capitalize clickableLink" v-on:click="handleEdit(2)"> {{thirdEdit ? "(Edit Choice)": "Resubmit"}} </v-btn>
+          <v-btn v-if="thirdClick" flat class=" white--text text-capitalize clickableLink" v-on:click="handleEdit(2)"> {{thirdEdit ? "(Edit Choice)": "Resubmit"}} </v-btn>
         </p>
       </div>
 
