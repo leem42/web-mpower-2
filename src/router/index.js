@@ -6,6 +6,7 @@ import YourStory from '@/components/YourStory.vue'
 import About from '@/components/About.vue'
 import Team from '@/components/Team.vue'
 import SubjectInterest from '@/components/SubjectInterest.vue'
+import OverviewEligibility from '@/components/OverviewEligibility.vue'
 import Eligibility from '@/components/Eligibility.vue'
 import Congratulations from '@/components/Congratulations.vue'
 import NullPage from '@/components/NullPage'
@@ -42,8 +43,8 @@ export default new Router({
 
             },
             {
-              path: 'about',
-              name: 'about',
+              path: 'About',
+              name: 'About',
               component: About
             },
             {
@@ -66,6 +67,11 @@ export default new Router({
               path: 'Eligibility',
               name: 'Eligibility',
               component: Eligibility
+            },
+            {
+              path: 'OverviewEligibility',
+              name: 'OverviewEligibility',
+              component: OverviewEligibility
             },
             {
               path: 'Congratulations',

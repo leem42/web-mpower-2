@@ -43,3 +43,7 @@
     name: 'congratulations'
   }
 </script>
+
+<style scoped lang="scss">
+@import '../css/bootstrap/custom_onboarding';
+</style>

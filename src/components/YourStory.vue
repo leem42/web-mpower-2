@@ -71,10 +71,8 @@
     background-color: rgba(238, 238, 238, 0.5);
 }
 
-.people {
-    // width: 80%;
-    // height: 50%;
-    // width: 820px;
-    // height: 542.9px;
-}
+</style>
+
+<style scoped lang="scss">
+@import '../css/bootstrap/custom_web';
 </style>

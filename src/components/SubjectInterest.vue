@@ -308,3 +308,7 @@ button:disabled {
   opacity: 0.5
 }
 </style>
+
+<style lang="scss">
+@import '../css/bootstrap/custom_onboarding';
+</style>

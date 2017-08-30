@@ -3,14 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/index'
-import Multiselect from 'vue-multiselect'
 import Vuetify from 'vuetify'
-Vue.use(Vuetify)
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
-  // register globally
+// register globally
 var vueScrollTo = require('vue-scrollto')
 Vue.use(vueScrollTo)
-Vue.component(Multiselect)
+Vue.use(VueAxios, axios)
+Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 

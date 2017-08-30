@@ -39,7 +39,7 @@ export default {
 
 function pretendRequest (email, pass, cb) {
   setTimeout(() => {
-    if (email === 'joe@example.com' && pass === 'passwordRequest') {
+    if (email === 'test@sagebase.org' && pass === 'bridgeDev') {
       cb({
         authenticated: true,
         token: Math.random().toString(36).substring(7)

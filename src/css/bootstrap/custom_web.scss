@@ -1,0 +1,52 @@
+  @import '../css/bootstrap/bootstrap';
+  nav {
+    z-index: 1000 !important;
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
+    &.fixed-bottom {
+       background-image: linear-gradient(to left, #6b2ef7, #2a067d) !important;
+       color: white;
+       height: 60px;
+    }
+  }
+  
+  .tiny {
+    font-size: $font-size-base * 0.4 !important;
+  }
+
+  body * {
+    font-family: 'Roboto' !important;
+  }
+
+  .medium {
+    font-size: $font-size-base * 0.7 !important;
+  }
+
+  .darkPurple {
+      color: #5b34b6;
+  }
+
+
+  .mediumTitle {
+    font-size: $font-size-base * 0.7 !important;
+  }
+  @media(max-width: 767px) {
+
+    .mediumTitle {
+      font-size: $font-size-base * 0.7 !important;
+    }
+    .medium {
+      font-size: $font-size-base * 0.4 !important;
+    }
+  }
+  .default {
+    color: #3b4a63;
+  }
+
+  .navyBlue {
+      background-color: #3a539b !important;
+  }
+
