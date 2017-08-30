@@ -1,20 +1,80 @@
 <template>
-
     <v-app class="page-overview">
-
-    <div class="row">
-        <p class="darkPurple mx-auto"> Your Story </p>
-    </div>
-
-    <div class="row">
-
-    <p class="medium default col-md-8 mr-6"> Living with Parkinson’s disease is an ever-changing story. 
-        Parkinson’s disease can bring on symptoms and relapses unexpectedly. 
-        Some days are easy, while other days your symptoms may consume your story.
-    </p>
-    </div>
-
+        <br>
+        <br>
+        <div class="row">
+            <p class="darkPurple mx-auto mediumTitle"> Your Story </p>
+        </div>
+    
+        <div class="row">
+            <p class="medium mx-auto default col-lg-8 "> Living with Parkinson’s disease is an ever-changing story. Parkinson’s disease can bring on symptoms and relapses unexpectedly. Some days are easy, while other days your symptoms may consume your story.
+            </p>
+        </div>
+    
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+                <img class=" img-fluid" src="../images/your-story-image_2x.png"> </img>
+            </div>
+        </div>
+    
+        <div class="row sectionTwo pt-5 pb-5">
+            <div class="mx-auto text-center col-12 order-1 col-sm-6 order-lg-1 ">
+                <img class="img-fluid helpUnderstand " src="../images/help-us-understand-image_2x.png"> </img>
+            </div>
+            <div class="subText col-12 col-lg-6 order-2 order-lg-2">
+                <p class="darkPurple mediumTitle"> Help us Understand </p>
+                <p class="medium default"> No two people are alike when it comes to living with Parkinson’s disease. The mPower study is an effort to better understand what may trigger flare up of Parkinson’s symptoms? In research, every story counts. Whether you have PD, are touched by someone who has or has had PD or you want to help, we invite you to participate in this study and share your story.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mx-auto col-12 order-1 col-sm-6 order-lg-1 ">
+                <img class="pl-lg-5 img-fluid" src="../images/telling-your-story-image.png">
+                <!--<img class="img-fluid helpUnderstand " src="../images/help-us-understand-image_2x.png"> </img>-->
+            </div>
+            <div class="pt-lg-5 mt-lg-5 subText col-12 col-lg-6 order-2 order-lg-2">
+                <p class="darkPurple mediumTitle"> Telling your Story </p>
+                <p class="medium default"> Life with Parkinson’s disease isn’t a one size fits all. Everyone has unique experiences even though there are common symptoms. mPower is a tool for you to understand your Parkinson’s disease symptoms and the factors that impact you. Reflecting on your story over time may provide you with insights into your own story and overall wellness.
+                </p>
+            </div>
+        </div>
+        <div class="row sectionTwo">
+            <div class="mx-auto col-12 order-1 col-sm-6 order-lg-1 ">
+                <img class="pl-lg-5 img-fluid" src="../images/join-the-study-image_2x.png">
+                <!--<img class="img-fluid helpUnderstand " src="../images/help-us-understand-image_2x.png"> </img>-->
+            </div>
+            <div class="pt-lg-5 mt-lg-5 mt-5subText col-12 col-lg-6 order-2 order-lg-2">
+                <p class="darkPurple mediumTitle"> Join the study </p>
+                <p class="medium default"> In just a minute you can see if you are eligible to participate in the mPower study. Find out now! 
+                <v-btn class="col-auto medium navyBlue text-capitalize white--text"> Let's go </v-btn>
+                </p>
+            </div>
+        </div>
+    
     </v-app>
-
 </template>
 
+<style lang="scss">
+
+.mr-7 {
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.helpUnderstand {
+    width: 472px;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.sectionTwo {
+    background-color: rgba(238, 238, 238, 0.5);
+}
+
+.people {
+    // width: 80%;
+    // height: 50%;
+    // width: 820px;
+    // height: 542.9px;
+}
+</style>

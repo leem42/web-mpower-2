@@ -49,7 +49,7 @@
   </v-app>
 </template>
 
-<style lang="scss">
+<style  lang="scss">
 @import '../css/bootstrap/bootstrap';
   button.clickableLink > div.btn__content {
     padding: 0px !important;
