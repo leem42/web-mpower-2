@@ -16,6 +16,26 @@ $font-weight-normal: bold;
 $lead-font-size:   $font-size-base;
 $lead-font-weight: 600;
 
+.center {
+  text-align: center !important;
+}
+
+.sorryRect {
+  // border-radius: 5px !important;
+  background-color: #3A539B !important;
+  height: 50px;
+  width: 200px;
+  color: white !important;
+  font-family: "San Francisco Text";
+  font-weight: bold;
+}
+
+.orangeText {
+  color: #F2806F;
+  font-family: 'Roboto' !important;
+}
+
+
 nav.web {
   z-index: 1000 !important;
   background-color: white;

@@ -23,6 +23,7 @@
     </form>
 
     <v-btn v-on:click="login()" v-if="this.$router.currentRoute.fullPath === '/' && loggedIn" style="width: 120px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> Home Page</v-btn>
+    <!--<v-btn v-on:click="getResponse()" style="width: 180px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> getResponse </v-btn>-->
 
     <template>
       <router-view></router-view>
@@ -61,7 +62,7 @@ export default {
       })
     },
     getResponse () {
-      this.axios.post('https://webservices.sagebridge.org/v3/auth/signIn',
+      var output = this.axios.post('https://webservices.sagebridge.org/v3/auth/signIn',
         {
             /* eslint-disable */
             email: this.email,
@@ -75,6 +76,8 @@ export default {
         console.log('server call being made')
         console.log(response.data)
       })
+
+      console.log(output)
     }
   },
   created () {

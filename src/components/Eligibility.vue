@@ -29,14 +29,6 @@
         <v-text-field suffix="zipcode" single-line pattern="\d*" bottom name="input-1" label="5-digit zipcode" type="number" v-model.number="zipCode"></v-text-field>
       </v-flex>
   
-      <div v-if="isPlaceAnswered !== null && !isPlaceAnswered" class="alert text-center lead light alert-danger col-sm-3" role="alert" id="zipError">
-        <strong>Sorry.</strong> Zipcodes must contain at least 5 numbers, if there is a mistake please email sagebase.org
-      </div>
-  
-    </div>
-  
-    <div v-if="isUnderage" class="alert alert-danger col-sm-3" id="ageError" role="alert">
-      <strong>Sorry.</strong> Participants must be at least 18 years of age to register.
     </div>
   
     <div id="option" class="row" v-if="isPlaceAnswered">
@@ -89,8 +81,16 @@
         }
       , 200),
       clicked () {
-        if (this.isEligible) {
+        this.isNotEligible = (this.age < 18) || (this.zipCode < 10000) || (this.selectedOptionForPhone === 'comfortable')
+        if (!this.isNotEligible) {
           this.$router.push('Congratulations') // TODO: Flip to the top of the next page
+        } else {
+          this.$router.data = {
+            underage: this.age < 18,
+            isFromUS: (this.zipCode > 1000),
+            isComfortable: (this.selectedOptionForPhone === 'comfortable')
+          }
+          this.$router.push('Ineligible') // TODO: Flip to the top of the next page
         }
       },
       setIsUnderage: _.debounce(
@@ -98,7 +98,7 @@
           if (this.age === '') {
             this.isUnderage = null
           } else {
-            this.isUnderage = this.age < 18
+            this.isUnderage = this.age < 1
           }
           if (!this.isUnderage) {
             this.scrollPage('#placeField')
@@ -109,7 +109,7 @@
       ),
       setIsPlaceAnswered: _.debounce(
         function () {
-          this.isPlaceAnswered = (this.zipCode !== '' && this.zipCode >= 10000)
+          this.isPlaceAnswered = (this.zipCode !== '')
           if (this.isPlaceAnswered) {
             this.scrollPage('#comfortable')
           } else {
