@@ -309,6 +309,6 @@ button:disabled {
 }
 </style>
 
-<style lang="scss">
-@import '../css/bootstrap/custom_onboarding';
+<style scoped lang="scss">
+@import '../css/bootstrap/custom_web';
 </style>

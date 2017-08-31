@@ -2,8 +2,11 @@
     <v-app class="page-overview">
         <br>
         <br>
+        <br>
+        <br>
+        <br>
         <div class="row">
-            <p class="darkPurple mx-auto mediumTitle"> Your Story </p>
+            <p class="darkPurpleText mx-auto largeTitle"> Your Story </p>
         </div>
     
         <div class="row">
@@ -22,7 +25,7 @@
                 <img class="img-fluid helpUnderstand " src="../images/help-us-understand-image_2x.png"> </img>
             </div>
             <div class="subText col-12 col-lg-6 order-2 order-lg-2">
-                <p class="darkPurple mediumTitle"> Help us Understand </p>
+                <p class="darkPurpleText mediumTitle"> Help us Understand </p>
                 <p class="medium default"> No two people are alike when it comes to living with Parkinson’s disease. The mPower study is an effort to better understand what may trigger flare up of Parkinson’s symptoms? In research, every story counts. Whether you have PD, are touched by someone who has or has had PD or you want to help, we invite you to participate in this study and share your story.
                 </p>
             </div>
@@ -30,10 +33,9 @@
         <div class="row">
             <div class="mx-auto col-12 order-1 col-sm-6 order-lg-1 ">
                 <img class="pl-lg-5 img-fluid" src="../images/telling-your-story-image.png">
-                <!--<img class="img-fluid helpUnderstand " src="../images/help-us-understand-image_2x.png"> </img>-->
             </div>
             <div class="pt-lg-5 mt-lg-5 subText col-12 col-lg-6 order-2 order-lg-2">
-                <p class="darkPurple mediumTitle"> Telling your Story </p>
+                <p class="darkPurpleText mediumTitle"> Telling your Story </p>
                 <p class="medium default"> Life with Parkinson’s disease isn’t a one size fits all. Everyone has unique experiences even though there are common symptoms. mPower is a tool for you to understand your Parkinson’s disease symptoms and the factors that impact you. Reflecting on your story over time may provide you with insights into your own story and overall wellness.
                 </p>
             </div>
@@ -41,13 +43,16 @@
         <div class="row sectionTwo">
             <div class="mx-auto col-12 order-1 col-sm-6 order-lg-1 ">
                 <img class="pl-lg-5 img-fluid" src="../images/join-the-study-image_2x.png">
-                <!--<img class="img-fluid helpUnderstand " src="../images/help-us-understand-image_2x.png"> </img>-->
             </div>
             <div class="pt-lg-5 mt-lg-5 mt-5subText col-12 col-lg-6 order-2 order-lg-2">
-                <p class="darkPurple mediumTitle"> Join the study </p>
+                <p class="darkPurpleText mediumTitle"> Join the study </p>
                 <p class="medium default"> In just a minute you can see if you are eligible to participate in the mPower study. Find out now! 
-                <v-btn class="col-auto medium navyBlue text-capitalize white--text"> Let's go </v-btn>
+                <br>
+                <br>
+                <v-btn large class="col-auto navyBlue text-capitalize white--text"> Let's go </v-btn>
                 </p>
+                <br>
+                <br>
             </div>
         </div>
     

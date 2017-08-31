@@ -5,7 +5,7 @@
       <v-icon dark class="intercom hideOnSmall" x-large>fa-comment</v-icon>-->
     <v-btn class="darkPurple text-lowercase helpButton hideOnSmall"> Have a question for us? </v-btn>
   
-    <nav class="navbar navbar-fixed-top navbar-light pt-0 pb-0">
+    <nav class="onboarding navbar navbar-fixed-top navbar-light pt-0 pb-0">
       <div class="container-fluid" style="display: block;">
         <div class="row">
   
@@ -49,6 +49,6 @@
   </v-app>
 </template>
 
-<style scoped lang="scss">
-@import '../css/bootstrap/custom_onboarding';
+<style  lang="scss">
+@import '../css/bootstrap/custom_web';
 </style>
