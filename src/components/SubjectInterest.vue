@@ -33,7 +33,7 @@
         <v-btn flat v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink francisco"> Want to help myself
         </v-btn>
         {{getPlacementText(0,5)}}
-        <v-btn flat v-if="selectedChoice[1]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> Want to help a loved one 
+        <v-btn flat v-if="selectedChoice[1]" @click.native="handleEdit(0)" class="francisco text-capitalize clickableLink"> Want to help a loved one 
         </v-btn>
         {{getPlacementText(1,5)}}
         <v-btn flat v-if="selectedChoice[2]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> help others
@@ -54,7 +54,7 @@
       <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
     </div>
     <div class="row">
-      <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+      <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 col-sm-4 customCheck darkPurple--text"></v-checkbox>
     </div>
     <div class="row">
       <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
@@ -77,19 +77,19 @@
       <div class="row">
         <span class="francisco col-md-8 ml-6 tiny text-left lead"> I would be willing to try
         <span v-if="secondEdit" class="p-0">
-          <v-btn flat v-if="selectedChoice[5]" class=" text-capitalize clickableLink francisco"> finger tapping activity
+          <v-btn flat v-if="selectedChoice[5]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> finger tapping activity
           </v-btn>
           {{ getPlacementText(5,10)}}  
-          <v-btn flat v-if="selectedChoice[6]" class=" text-capitalize clickableLink francisco"> hand tremor activity
+          <v-btn flat v-if="selectedChoice[6]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> hand tremor activity
           </v-btn>
           {{ getPlacementText(6,10)}}  
-          <v-btn flat v-if="selectedChoice[7]" class=" text-capitalize clickableLink francisco"> balance activity
+          <v-btn flat v-if="selectedChoice[7]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> balance activity
           </v-btn>
           {{ getPlacementText(7,10)}}  
-          <v-btn flat v-if="selectedChoice[8]" class=" text-capitalize clickableLink francisco"> brain teaser activity
+          <v-btn flat v-if="selectedChoice[8]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> brain teaser activity
           </v-btn>
           {{ getPlacementText(8,10)}}  
-          <v-btn flat v-if="selectedChoice[9]" class=" text-capitalize clickableLink francisco"> surveys
+          <v-btn flat v-if="selectedChoice[9]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> surveys
           </v-btn>
         </span>
           <v-btn v-if="secondClick" flat class="clickableLink text-capitalize" v-on:click="handleEdit(1)"> {{secondEdit ? "(Edit Choices)": "Resubmit"}} </v-btn>
@@ -97,7 +97,7 @@
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 col-sm-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
         <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
@@ -178,13 +178,13 @@
       </div>
 
        <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="ml-6 col-sm-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on my progress" v-model="selectedChoice[11]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on my progress" v-model="selectedChoice[11]" class="ml-6 col-sm-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="ml-6 col-sm-4 customCheck darkPurple--text"></v-checkbox>
       </div>
 
   </span>
@@ -307,8 +307,4 @@ button:disabled {
 .dim {
   opacity: 0.5
 }
-</style>
-
-<style scoped lang="scss">
-@import '../css/bootstrap/custom_web';
 </style>

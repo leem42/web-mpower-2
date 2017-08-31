@@ -29,11 +29,11 @@
 
     <nav class="web navbar fixed-bottom">
       <div class="row mx-md-auto">
-        <v-btn class="col-2 col-md-2 tiny mr-md-1 ml-md-1 white--text" flat> 2017 mPower </v-btn>
-        <v-btn class="col-1 tiny mr-md-1 ml-md-1 white--text" flat> FAQ </v-btn>
-        <v-btn class="col-3 col-md-2 tiny  mr-md-1 ml-md-1 white--text" flat> Privacy Policy </v-btn>
-        <v-btn class="col-4 col-md-2 tiny mr-md-1 ml-md-1 white--text" flat> Terms of service </v-btn>
-        <v-btn class="col-1 tiny mr-md-1 ml-md-1 white--text" flat> Contact </v-btn>
+        <v-btn flat class="col-2 zeroOpacity col-md-2 tiny mr-md-1 ml-md-1 white--text"> 2017 mPower </v-btn>
+        <v-btn flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> FAQ </v-btn>
+        <v-btn flat class="col-3 zeroOpacity col-md-2 tiny  mr-md-1 ml-md-1 white--text"> Privacy Policy </v-btn>
+        <v-btn flat class="col-4 zeroOpacity col-md-2 tiny mr-md-1 ml-md-1 white--text"> Terms of service </v-btn>
+        <v-btn flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> Contact </v-btn>
         <span class="col-3 x-tiny">mPower is for research use only and does not provide medical advice, diagnosis or treatment.</span>
       </div>
     </nav>
@@ -62,5 +62,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../css/bootstrap/custom_web';
+@import '../css/bootstrap/bootstrap';
+@import '../css/bootstrap/custom';
 </style>

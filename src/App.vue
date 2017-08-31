@@ -18,10 +18,10 @@
         <input v-model="type" placeholder="type">
       </label>
       <br>
-      <button type="submit">login</button>
+      <v-btn v-on:click="login()" style="width: 100px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit" >login</v-btn>
       <p v-if="error" class="error">Bad login information</p>
     </form>
-  
+    <p v-if="wasClicked"> I was clicked {{count}} times </p>
     <template>
       <router-view></router-view>
     </template>
@@ -40,12 +40,16 @@ export default {
       password: '',
       error: false,
       study: '',
-      type: ''
+      type: '',
+      wasClicked: false,
+      count: 0
     }
   },
   methods: {
     login () {
       auth.login(this.email, this.password, loggedIn => {
+        this.wasClicked = true
+        this.count = this.count + 1
         if (!loggedIn) {
           this.error = true
         } else {

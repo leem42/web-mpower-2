@@ -1,4 +1,4 @@
-@import '../css/bootstrap/bootstrap';
+@import './bootstrap.scss';
 nav.web {
   z-index: 1000 !important;
   background-color: white;
@@ -16,10 +16,6 @@ nav.web {
 .x-tiny {
   font-size: $font-size-base * 0.4;
 }
-
-// body * {
-//   font-family: 'Roboto' !important;
-// }
 
 .largeTitle {
   font-size: $font-size-base;
@@ -275,8 +271,8 @@ div.input-group__hint {
 
 input#testing,
 input#placeField {
-  min-height: 35px;
-  padding-bottom: 10px;
+  // min-height: 35px;
+  // padding-bottom: 10px;
   font-size: $font-size-base * 0.7 !important;
 }
 
