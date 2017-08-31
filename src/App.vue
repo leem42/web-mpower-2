@@ -21,7 +21,9 @@
       <v-btn v-on:click="login()" style="width: 100px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit" >login</v-btn>
       <p v-if="error" class="error">Bad login information</p>
     </form>
-    <p v-if="wasClicked"> I was clicked {{count}} times </p>
+
+    <v-btn v-on:click="login()" v-if="this.$router.currentRoute.fullPath === '/' && loggedIn" style="width: 120px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> Home Page</v-btn>
+
     <template>
       <router-view></router-view>
     </template>
