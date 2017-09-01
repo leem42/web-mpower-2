@@ -2,8 +2,7 @@
     <v-app class="page-overview">
         <br>
         <br>
-        <br>
-        <br>
+
         <br>
         <div class="row">
             <p class="darkPurpleText mx-auto largeTitle"> Your Story </p>

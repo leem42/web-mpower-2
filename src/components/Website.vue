@@ -7,7 +7,7 @@
           <div class="text-center col-md-2">
             <span class="darkPurpleText pr-sm-5 medium"> mPower  </span>
           </div>
-          <div clas="col-sm-8 text-center mr-0 ml-0 pl-0 pr-0">
+          <div class="col-sm-8 text-center text-sm-left mr-0 ml-0 pl-0 pr-0">
             <v-btn  v-on:click="go(0)" flat class="routerBtn mr-0 ml-0 pl-0 pr-0">
               <router-link class="text-capitalize default medium" to="./NullPage/Website/About">Your Story </router-link>
             </v-btn>
