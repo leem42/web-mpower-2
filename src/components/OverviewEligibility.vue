@@ -14,95 +14,97 @@
             </p>
         </div>
 
-        <div class="row customRow mb-4">
+        <div class="row customRow mb-4 ml-1 mr-1 ml-1 mr-1">
             <div class="mx-auto rect white col-md-8" v-bind:class="{currentSection: section.isOnEligibility}">
                 <div class="row">
-                    <div class="col-1 verticalCenter ml-3 mr-5">
+                    <div class="col-1 verticalCenter ml-md-3 mr-5">
                         <img  src="../assets/check.png" class="checkOnOverview"> </img>
                     </div>
-                    <div class="col mb-0">
+                    <div class="col-md-9 col-7 mb-0 mr-0 pr-0">
                         <p class="medium default mb-0 bold--text"><strong>  Eligibility </strong>
                             <p class="pb-0 mb-0 medium-small"> Let’s see if you are eligible for the Parkinsons Disease study. </p>
                             <p class="x-tiny default"> 2 minutes </p>
                         </p>
                     </div>
-                    <div class="col-1 text-center verticalCenter">
-                        <v-icon large v-bind:class="{greenText: section.hasCompletedEligibility}" class="lock">{{section.hasCompletedEligibility ? 'check': 'fa-lock'  }}</v-icon>
+                    <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
+                        <v-btn flat class="ml-0 pl-0 mr-5 pr-4"  :to="{name: 'SubjectInterest'}" >
+                            <v-icon large v-bind:class="{greenText: section.hasCompletedEligibility}" class="lock">{{section.hasCompletedEligibility ? 'fa-chevron-right': 'fa-lock'  }}</v-icon>
+                        </v-btn>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row customRow mb-4">
+        <div class="row customRow mb-4 ml-1 mr-1">
             <div class="mx-auto rect white col-md-8" v-bind:class="{currentSection: section.isOnConsent, completedSection: section.hasCompletedConsent}">
                 <div class="row">
-                    <div class="col-1 verticalCenter ml-3 mr-5">
+                    <div class="col-1 verticalCenter ml-md-3 mr-5">
                         <img  src="../images/survey.png"> </img>
                     </div>
-                    <div class="col mb-0">
+                    <div class="col-7 col-md-9 mb-0">
                         <p class="medium default mb-0 bold--text"><strong>  Consent </strong>
                             <p class="pb-0 mb-0 medium-small"> Learn about the study and the risks and benefits of joining. </p>
                             <p class="x-tiny default"> 5 minutes </p>
                         </p>
                     </div>
-                    <div class="col-1 text-center verticalCenter">
+                    <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: section.hasCompletedConsent}" class="lock">{{section.hasCompletedConsent ? 'check': 'fa-lock'  }}</v-icon>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row customRow mb-4">
+        <div class="row customRow mb-4 ml-1 mr-1">
             <div class="mx-auto rect white col-md-8" v-bind:class="{currentSection: section.isOnQuiz, completedSection: section.hasCompletedQuiz}">
                 <div class="row">
-                    <div class="col-1 verticalCenter ml-3 mr-5">
+                    <div class="col-1 verticalCenter ml-md-3 mr-5">
                         <img  src="../assets/check.png" class="checkOnOverview"> </img>
                     </div>
-                    <div class="col mb-0">
+                    <div class="col-7 col-md-9 mb-0">
                         <p class="medium default mb-0 bold--text"><strong>  Quiz </strong>
                             <p class="pb-0 mb-0 medium-small"> Let’s see what you have learned from the consent document. </p>
                             <p class="x-tiny default"> 5 minutes </p>
                         </p>
                     </div>
-                    <div class="col-1 text-center verticalCenter">
+                    <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: section.hasCompletedQuiz}" class="lock">{{section.hasCompletedQuiz ? 'check': 'fa-lock'  }}</v-icon>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row customRow mb-4">
+        <div class="row customRow mb-4 ml-1 mr-1">
             <div class="mx-auto rect white col-md-8" v-bind:class="{currentSection: section.isOnSign, completedSection: section.hasCompletedSign}">
                 <div class="row">
-                    <div class="col-1 verticalCenter ml-3 mr-5">
+                    <div class="col-1 verticalCenter ml-md-3 mr-5">
                         <img  src="../assets/check.png" class="checkOnOverview"> </img>
                     </div>
-                    <div class="col mb-0">
+                    <div class="col-7 col-md-8  mb-0">
                         <p class="medium default mb-0 bold--text"><strong>  Sign </strong>
                             <p class="pb-0 mb-0 medium-small"> Sign the consent document. </p>
                             <p class="x-tiny default"> 2 minutes </p>
                         </p>
                     </div>
-                    <div class="col-1 text-center verticalCenter">
+                    <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: section.hasCompletedSign}" class="lock">{{section.hasCompletedSign ? 'check': 'fa-lock'  }}</v-icon>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row customRow mb-4">
+        <div class="row customRow mb-4 ml-1 mr-1">
             <div class="mx-auto rect white col-md-8" v-bind:class="{currentSection: section.isOnRegistration, completedSection: section.hasCompletedRegistration}">
                 <div class="row">
-                    <div class="col-1 verticalCenter ml-3 mr-5">
+                    <div class="col-1 verticalCenter ml-md-3 mr-5">
                         <img  src="../assets/check.png" class="checkOnOverview"> </img>
                     </div>
-                    <div class="col mb-0">
+                    <div class="col-7 col-md-8 mb-0">
                         <p class="medium default mb-0 bold--text"><strong>  Registration </strong>
                             <p class="pb-0 mb-0 medium-small"> Add your phone number so you can join the study! </p>
                             <p class="x-tiny default"> 2 minutes </p>
                         </p>
                     </div>
-                    <div class="col-1 text-center verticalCenter">
+                    <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: section.hasCompletedRegistration}" class="lock">{{section.hasCompletedRegistration ? 'check': 'fa-lock'  }}</v-icon>
                     </div>
                 </div>
@@ -118,7 +120,7 @@
 
 <style scope lang="scss">
 
-    .customRow mb-4 {
+    .customRow mb-4 ml-1 mr-1 {
         height: 113px;
     }
     .checkOnOverview {

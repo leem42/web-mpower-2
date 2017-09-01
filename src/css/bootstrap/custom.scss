@@ -80,6 +80,9 @@ nav.web {
   font-size: $font-size-base * 0.7 !important;
 }
 @media(max-width: 766px) {
+  .medium-small {
+    font-size: $font-size-base * 0.35 !important;
+  }
 
   nav.web.fixed-bottom {
     height: 180px;
