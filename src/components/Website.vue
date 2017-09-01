@@ -32,9 +32,9 @@
         <v-btn flat class="col-2 zeroOpacity col-md-2 tiny mr-md-1 ml-md-1 white--text"> 2017 mPower </v-btn>
         <v-btn flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> FAQ </v-btn>
         <v-btn flat class="col-3 zeroOpacity col-md-2 tiny  mr-md-1 ml-md-1 white--text"> Privacy Policy </v-btn>
-        <v-btn flat class="col-4 zeroOpacity col-md-2 tiny mr-md-1 ml-md-1 white--text"> Terms of service </v-btn>
+        <v-btn flat class="col-3 zeroOpacity col-md-2 tiny mr-md-1 ml-md-1 white--text"> Terms of service </v-btn>
         <v-btn flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> Contact </v-btn>
-        <span class="col-3 x-tiny">mPower is for research use only and does not provide medical advice, diagnosis or treatment.</span>
+        <span class="col-md-3 x-tiny">mPower is for research use only and does not provide medical advice, diagnosis or treatment.</span>
       </div>
     </nav>
 

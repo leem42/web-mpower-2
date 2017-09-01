@@ -55,7 +55,12 @@ nav.web {
 }
 
 .x-tiny {
-  font-size: $font-size-base * 0.4;
+  font-size: $font-size-base * 0.4 !important;
+}
+
+.medium-small {
+  font-size: $font-size-base * 0.6 !important;
+  color: #4a4a4a !important;
 }
 
 .largeTitle {
