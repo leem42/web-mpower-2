@@ -388,11 +388,18 @@ input#placeField {
   input#testing,
   input#placeField {
     // padding-bottom: 10px;
-    text-align: center !important
+    text-align: center !important;
+  }
+
+  .list__tile__title {
+    font-size: $font-size-base * .5 !important;
   }
 
   input#comfortable {
     text-align: center !important;
+  }
+  .input-group__selections__comma {
+    font-size: $font-size-base * 0.5 !important;
   }
 
   p {
@@ -484,8 +491,12 @@ input#placeField {
   background-color: #3A539B;
   border-radius: 5px !important;
   color: white;
-  font-weight: 500;
   height: 3.83%;
+  & > .btn__content {
+    font-size:$font-size-base !important;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
 }
 
 .greenText {
