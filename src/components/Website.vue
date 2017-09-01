@@ -8,17 +8,20 @@
             <span class="darkPurpleText pr-sm-5 medium"> mPower  </span>
           </div>
           <div clas="col-sm-8 text-center mr-0 ml-0 pl-0 pr-0">
-            <v-btn  v-on:click="go(0)" flat class="mr-0 ml-0 pl-0 pr-0">
+            <v-btn  v-on:click="go(0)" flat class="routerBtn mr-0 ml-0 pl-0 pr-0">
               <router-link class="text-capitalize default medium" to="./NullPage/Website/About">Your Story </router-link>
             </v-btn>
-            <v-btn v-on:click="go(1)" flat class="mr-0 ml-0 pl-0 pr-0">
-              <router-link class="text-capitalize  default medium" to="NullPage/Website/About" >About</router-link>
+            <v-btn v-on:click="go(1)" flat class="routerBtn mr-0 ml-0 pl-0 pr-0">
+              <router-link class="text-capitalize default medium" to="NullPage/Website/About" >About</router-link>
             </v-btn>
-            <v-btn v-on:click="go(2)" flat class="mr-0 ml-0 pl-0 pr-0" >
+            <v-btn v-on:click="go(2)" flat class="routerBtn mr-0 ml-0 pl-0 pr-0" >
               <router-link class="text-capitalize  default medium" to="/NullPage/Website/Team" >Team</router-link>
             </v-btn>
+            <!--<v-btn v-on:click="go(2)" flat class="routerBtn mr-0 ml-0 pl-0 pr-0" >
+              <router-link class="text-capitalize  default medium" to="/NullPage/Website/Team" >Join</router-link>
+            </v-btn>-->
             </div>
-            <v-btn v-on:click="go(3)" class="d-none ml-auto d-sm-inline col-1 medium navyBlue text-capitalize white--text"> Join </v-btn>
+            <v-btn large v-on:click="go(3)" class="d-none ml-auto d-sm-inline col-1 medium navyBlue text-capitalize white--text"> Join </v-btn>
         </div>
 
       </div>  
@@ -32,7 +35,7 @@
         <v-btn flat class="col-2 zeroOpacity col-md-2 tiny mr-md-1 ml-md-1 white--text"> 2017 mPower </v-btn>
         <v-btn flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> FAQ </v-btn>
         <v-btn flat class="col-3 zeroOpacity col-md-2 tiny  mr-md-1 ml-md-1 white--text"> Privacy Policy </v-btn>
-        <v-btn flat class="col-3 zeroOpacity col-md-2 tiny mr-md-1 ml-md-1 white--text"> Terms of service </v-btn>
+        <v-btn flat class="col-3 zeroOpacity ml-4 col-md-2 tiny mr-md-1 ml-md-1 white--text"> Terms of service </v-btn>
         <v-btn flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> Contact </v-btn>
         <span class="col-md-3 x-tiny">mPower is for research use only and does not provide medical advice, diagnosis or treatment.</span>
       </div>
@@ -64,4 +67,8 @@ export default {
 <style lang="scss">
 @import '../css/bootstrap/bootstrap';
 @import '../css/bootstrap/custom';
+
+.routerBtn > div.btn__content{
+  padding: 0px;
+}
 </style>

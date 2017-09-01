@@ -49,7 +49,7 @@
                 <p class="medium default"> In just a minute you can see if you are eligible to participate in the mPower study. Find out now! 
                 <br>
                 <br>
-                <v-btn large :to="{name: 'OverviewEligibility'}" class="col-auto navyBlue text-capitalize white--text"> Let's go </v-btn>
+                <v-btn id="join" :to="{name: 'OverviewEligibility'}" class="col-auto navyBlue text-capitalize white--text"> Let's go </v-btn>
                 </p>
                 <br>
                 <br>

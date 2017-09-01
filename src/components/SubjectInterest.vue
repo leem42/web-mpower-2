@@ -164,16 +164,16 @@
       <div class="row">
         <p class="francisco ml-6 col-sm-8 tiny lead"> I would like to recieve
           <span v-if="fourthEdit">
-            <v-btn flat v-if="selectedChoice[10]" class=" text-capitalize clickableLink francisco"> Updates on the study
+            <v-btn flat v-if="selectedChoice[10]"  v-on:click="handleEdit(3)" class=" text-capitalize clickableLink francisco"> Updates on the study
             </v-btn>
             {{ getPlacementText(10,12)}}  
-            <v-btn flat v-if="selectedChoice[11]" class=" text-capitalize clickableLink francisco"> Updates on my progress
+            <v-btn flat v-if="selectedChoice[11]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink francisco"> Updates on my progress
             </v-btn>
             {{ getPlacementText(11,12)}}  
-            <v-btn flat v-if="selectedChoice[12]" class=" text-capitalize clickableLink francisco"> Updates on the app
+            <v-btn flat v-if="selectedChoice[12]"  v-on:click="handleEdit(3)" class=" text-capitalize clickableLink francisco"> Updates on the app
             </v-btn>  
           </span>
-          <v-btn v-if="fourthClick" flat class="white--text text-capitalize clickableLink" v-on:click="handleEdit(3)"> {{thirdEdit ? "(Edit Choice)": "Resubmit"}} </v-btn>
+          <v-btn v-if="fourthClick" flat class="white--text text-capitalize clickableLink" v-on:click="handleEdit(3)"> {{fourthEdit ? "(Edit Choice)": "Resubmit"}} </v-btn>
         </p>
       </div>
 
