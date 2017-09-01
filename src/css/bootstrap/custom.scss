@@ -89,6 +89,10 @@ nav.web {
   font-size: $font-size-base * 0.7 !important;
 }
 @media(max-width: 766px) {
+    button.clickableLink > div.btn__content {
+        font-size: $font-size-base * 0.40 !important;
+    }
+
   .medium-small {
     font-size: $font-size-base * 0.35 !important;
   }
@@ -113,11 +117,6 @@ nav.web {
     background-color: #3a539b !important;
 }
 
-
-button.clickableLink > div.btn__content {
-    padding: 0px !important;
-    font-size: $font-size-base * 0.75 !important;
-}
 
 
   .mediumGray {
@@ -292,6 +291,11 @@ div.input-group__hint {
 }
 
 @media(min-width: 767px) {
+
+  button.clickableLink > div.btn__content {
+    padding: 0px !important;
+    font-size: $font-size-base * 0.70 !important;
+  }
 
   .subText {
     font-size: $font-size-base * 0.65 !important;
