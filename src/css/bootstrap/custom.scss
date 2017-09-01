@@ -116,7 +116,8 @@ nav.web {
 
 button.clickableLink > div.btn__content {
     padding: 0px !important;
-  }
+    font-size: $font-size-base * 0.75 !important;
+}
 
 
   .mediumGray {

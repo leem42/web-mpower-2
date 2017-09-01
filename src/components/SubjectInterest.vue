@@ -30,7 +30,7 @@
       <span id="interest" class="francisco tiny lead col-sm-8 ml-6"> I'm interested in joining mPower because I 
 
       <span v-if="firstEdit" class="p-0">
-        <v-btn flat v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink francisco"> Want to help myself
+        <v-btn flat v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink middle francisco"> Want to help myself
         </v-btn>
         {{getPlacementText(0,5)}}
         <v-btn flat v-if="selectedChoice[1]" @click.native="handleEdit(0)" class="francisco text-capitalize clickableLink"> Want to help a loved one 
@@ -123,8 +123,8 @@
       <div class="row">
         <p class="francisco col-md-8 ml-6 tiny text-left lead"> on a {{(thirdClick 
           || third)? "": "_____"}} 
-        <span class="p-0" v-if="thirdClick || third">
-          <v-btn flat v-if="secondClick || second" class=" text-capitalize clickableLink francisco"> {{radioChoice}}
+        <span class="p-0" v-if="thirdEdit">
+          <v-btn v-on:click="handleEdit(2)" flat v-if="secondClick || second" class=" text-capitalize clickableLink francisco"> {{radioChoice}}
           </v-btn>
         </span>
         basis
@@ -300,6 +300,7 @@ export default {
 </script>
 
 <style>
+
 button:disabled {
   opacity: 0.5;
 }
