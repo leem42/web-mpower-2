@@ -34,9 +34,9 @@
     <div id="option" class="row" v-if="isPlaceAnswered">
       <p class="lead col-12 text-center col-sm-auto ml-6 ">
         and I feel </p>
-      <v-select bottom id="comfortable" class="col-sm-3 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
-      </select>
-      <p class="lead col-12 text-center col-sm-auto"> using my phone </p>
+      <v-select single-line id="comfortable" class="col-sm-3 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
+      </v-select>
+      <!--<p class="lead col-12 text-center col-sm-auto"> using my phone </p>-->
       <div class="col-12 text-center " v-if="isEligible">
         <v-btn light v-on:click="clicked" v-bind:class="{dim: !isEligible}" v-focus="isEligible" id="submit" class="large" > Submit </v-btn>
       </div>
@@ -59,7 +59,7 @@
         isPlaceAnswered: null,
         hasChosenOption: false,
         isEligible: false,
-        phoneChoices: ['comfortable', 'uncomfortable']
+        phoneChoices: ['comfortable using my phone', 'uncomfortable using my phone']
       }
     },
     watch: {
@@ -137,7 +137,12 @@
   }
 </script>
 
-<style scoped>
+<style>
+
+  div.menu__content {
+    z-index: 1000 !important;
+  }
+
   button:disabled {
     opacity: 0.5;
   }

@@ -23,8 +23,7 @@
     </form>
 
     <v-btn v-on:click="login()" v-if="this.$router.currentRoute.fullPath === '/' && loggedIn" style="width: 120px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> Home Page</v-btn>
-    <!--<v-btn v-on:click="getResponse()" style="width: 180px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> getResponse </v-btn>-->
-
+    <v-btn v-on:click="getResponse()" style="width: 180px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> getResponse </v-btn>
     <template>
       <router-view></router-view>
     </template>
@@ -62,13 +61,15 @@ export default {
       })
     },
     getResponse () {
-      var output = this.axios.post('https://webservices.sagebridge.org/v3/auth/signIn',
+      var output = this.axios.post('https://webservices.sagebridge.org/v3/auth/email/signIn',
         {
             /* eslint-disable */
-            email: this.email,
-            password: this.password,
-            study: this.study,
-            type: this.type
+            email: 'michael.lee+test@sagebase.org',
+            password: '$ageTest1',
+            study: 'parkinson-android',
+            sessionToken: '16b59112-95e1-49ef-b0d2-b468e1821afb',
+            type: 'SignIn'
+            // 
             /* eslint-enable */
         }
       )
