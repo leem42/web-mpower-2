@@ -2,30 +2,32 @@
   <div id="app">
   
     <p v-if="!loggedIn">You are logged {{ loggedIn ? 'in' : 'out' }}</p>
-    <form v-if="!loggedIn" @submit.prevent="login">
-      Log into to view the demo site
-      <br>
+    <form @submit.prevent="login"  v-if="!loggedIn">
       <label>
         <input v-model="email" placeholder="email">
       </label>
       <label>
-        <input v-model="password" placeholder="password" type="password">
+        <input v-model="password" placeholder="password">
       </label>
       <br>
-      <!--<label>
+      <label>
         <input v-model="study" placeholder="study">
       </label>
       <br>
       <label>
         <input v-model="type" placeholder="type">
-      </label>-->
+      </label>
       <br>
       <v-btn v-on:click="login()" style="width: 100px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit" >login</v-btn>
       <p v-if="error" class="error">Bad login information</p>
     </form>
-
     <v-btn v-on:click="login()" v-if="this.$router.currentRoute.fullPath === '/' && loggedIn" style="width: 120px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> Home Page</v-btn>
-    <!--<v-btn v-on:click="getResponse()" style="width: 180px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> getResponse </v-btn>-->
+    <!--<br>-->
+    <v-btn v-on:click="signIn()"  v-if="!loggedIn" style="width: 180px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> signIn </v-btn>
+    <!--<br>-->
+    <v-btn v-on:click="self()"  v-if="!loggedIn" style="width: 180px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> self </v-btn>
+    <!--<v-btn v-on:click="signIn()" style
+    ="width: 180px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> signIn </v-btn>-->
 
     <template>
       <router-view></router-view>
@@ -47,7 +49,9 @@ export default {
       study: '',
       type: '',
       wasClicked: false,
-      count: 0
+      HTTP: null,
+      userId: null,
+      loginInfo: null
     }
   },
   methods: {
@@ -63,8 +67,8 @@ export default {
         }
       })
     },
-    getResponse () {
-      var output = this.axios.post('https://webservices.sagebridge.org/v3/auth/signIn',
+    signIn () {
+      this.axios.post('https://webservices.sagebridge.org/v3/auth/signIn',
         {
             /* eslint-disable */
             email: this.email,
@@ -75,11 +79,35 @@ export default {
         }
       )
       .then((response) => {
-        console.log('server call being made')
         console.log(response.data)
       })
-
-      console.log(output)
+      .catch(error => {
+        console.log('eror being made')
+        this.loginInfo = JSON.parse(JSON.stringify(error)).response.data
+        console.log('')
+        console.log(this.loginInfo)
+        console.log('')
+        var sessionToken = this.loginInfo.sessionToken
+        this.userId = this.loginInfo.id
+        this.HTTP = this.createBaseHTTP(sessionToken)
+      })
+    },
+    createBaseHTTP (sessionToken) {
+      return this.axios.create({
+        baseURL: 'https://webservices.sagebridge.org/',
+        headers: {
+          'Bridge-Session': sessionToken
+        }
+      })
+    },
+    self () {
+      this.HTTP.get('/v3/participants/self',
+        {}
+          // studyId: 'parkinson-android',
+          // userId: this.userId
+      ).then(response => {
+        console.log(response.data)
+      })
     }
   },
   created () {

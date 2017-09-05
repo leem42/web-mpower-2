@@ -36,6 +36,7 @@ $lead-font-weight: 600;
 }
 
 
+
 nav.web {
   z-index: 1000 !important;
   background-color: white;
@@ -124,6 +125,7 @@ nav.web {
   }
 
 .clickableLink {
+  tabindex: 0;
   text-decoration: underline;
   color: #3a539b !important;
   font-weight: bold;
@@ -154,7 +156,8 @@ div.radio {
 }
 
 div.customCheck {
-  color: #31117D !important;
+   color: #1bb191;
+  // color: #31117D !important;
 }
 
 .controller {
@@ -568,7 +571,7 @@ nav.onboarding * img {
   top: 50% !important;
   height: 55px;
   width: 55px;
-  &.check {
+  &.e {
     box-shadow: 0 0 12px 0 #D5D5D5;
   }
 }

@@ -16,8 +16,8 @@
     <br class="visible-md-up">
 
     <div class="row">
-      <p id="greatFit" class="lead col-sm-8 ml-6 mx-auto "> You would be a great fit for the mPower study! </p>
-      <p class="lead tiny light col-sm-8 mx-auto  ml-6"> We'd just like a few more pieces of information to make sure you're eligible </p>
+      <p id="greatFit" class="lead col-sm-8 ml-6 mx-auto "> Let's see if you're eligible for the mPower study </p>
+      <p class="lead tiny light col-sm-8 mx-auto  ml-6"> We just need a few pieces of information to make sure you would be a good fit for the study </p>
   
       <p class="lead col-12 col-sm-auto text-center ml-6"> I am </p>
       <v-flex class="col-12 col-sm-3">
@@ -81,14 +81,14 @@
         }
       , 200),
       clicked () {
-        this.isNotEligible = (this.age < 18) || (this.zipCode < 10000) || (this.selectedOptionForPhone === 'comfortable')
+        this.isNotEligible = (this.age < 18) || (this.zipCode < 10000) || (this.selectedOptionForPhone !== 'comfortable using my phone')
         if (!this.isNotEligible) {
           this.$router.push('Congratulations') // TODO: Flip to the top of the next page
         } else {
           this.$router.data = {
             underage: this.age < 18,
             isFromUS: (this.zipCode > 1000),
-            isComfortable: (this.selectedOptionForPhone === 'comfortable')
+            isComfortable: (this.selectedOptionForPhone === 'comfortable using my phone')
           }
           this.$router.push('Ineligible') // TODO: Flip to the top of the next page
         }
