@@ -124,8 +124,11 @@ nav.web {
     background-color: #dadfe1 !important;
   }
 
+  .sectionTwo {
+      background-color: rgba(238, 238, 238, 0.5);
+  }
+
 .clickableLink {
-  tabindex: 0;
   text-decoration: underline;
   color: #3a539b !important;
   font-weight: bold;

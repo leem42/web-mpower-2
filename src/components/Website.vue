@@ -53,9 +53,9 @@ export default {
       if (index === 0) {
         this.$router.push({name: 'YourStory'})
       } else if (index === 1) {
-        this.$router.push({name: 'Team'})
-      } else if (index === 2) {
         this.$router.push({name: 'About'})
+      } else if (index === 2) {
+        this.$router.push({name: 'Team'})
       } else {
         this.$router.push({name: 'SubjectInterest'})
       }

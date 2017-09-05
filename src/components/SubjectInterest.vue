@@ -134,22 +134,22 @@
       <v-radio-group v-model="radioChoice">
         <div class="row mb-3" v-if="!thirdEdit">
           <v-flex class="col-sm-2 ml-6 ">
-            <v-radio class=" francisco" label="Daily" value="Daily"></v-radio>
+            <v-radio v-on:keyup.enter="handleRadio(0)" class=" francisco" label="Daily" value="Daily"></v-radio>
           </v-flex>
         </div>
         <div class="row mb-3 mt-2" v-if="!thirdEdit">
           <v-flex class="col-sm-2 ml-6">
-            <v-radio class=" francisco" value="weekly" label="weekly"></v-radio>
+            <v-radio v-on:keyup.enter="handleRadio(1)" class=" francisco" value="Weekly" label="Weekly"></v-radio>
           </v-flex>
         </div>
         <div class="row mb-3 mt-2" v-if="!thirdEdit">
           <v-flex class="col-sm-2 ml-6">
-            <v-radio class=" francisco" value="biweekly" label="biweekly"></v-radio>
+            <v-radio v-on:keyup.enter="handleRadio(2)" class=" francisco" value="Biweekly" label="Biweekly"></v-radio>
           </v-flex>
         </div>
         <div class="row mb-3 mt-2" v-if="!thirdEdit">
           <v-flex class="col-sm-2 ml-6">
-            <v-radio class=" francisco" value="monthly" label="monthly"></v-radio>
+            <v-radio v-on:keyup.enter="handleRadio(3)" class=" francisco" value="Monthly" label="Monthly"></v-radio>
           </v-flex>
         </div>
       </v-radio-group>
@@ -217,7 +217,8 @@ export default {
       firstEdit: false,
       secondEdit: false,
       thirdEdit: false,
-      fourthEdit: false
+      fourthEdit: false,
+      radioTexts: ['Daily', 'Weekly', 'Biweekly', 'Monthly']
     }
   },
   methods: {
@@ -291,6 +292,10 @@ export default {
         }
         // else on choice and return nothing
       }
+    },
+    handleRadio (index) {
+      this.radioChoice = this.radioTexts[index]
+      console.log('radio called')
     }
   },
   directives: {
@@ -300,7 +305,12 @@ export default {
 </script>
 
 <style>
+*:focus {
+  box-shadow: 2px; 
+  opacity: 0.75;
 
+
+}
 button:focus {
   opacity: 0.8;
 }
