@@ -10,6 +10,7 @@ import OverviewEligibility from '@/components/OverviewEligibility.vue'
 import Eligibility from '@/components/Eligibility.vue'
 import Congratulations from '@/components/Congratulations.vue'
 import Ineligible from '@/components/Ineligible.vue'
+import Registration from '@/components/Registration'
 import NullPage from '@/components/NullPage'
 import auth from '../auth/auth'
 
@@ -83,6 +84,11 @@ export default new Router({
               path: 'Ineligible',
               name: 'Ineligible',
               component: Ineligible
+            },
+            {
+              path: 'Registration',
+              name: 'Registration',
+              component: Registration
             }
           ]
         }

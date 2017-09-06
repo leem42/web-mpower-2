@@ -33,8 +33,6 @@
         </div>
       </div>
     </nav>
-    <br>
-    <br>
     <router-view class="router container-fluid"></router-view>
     <!--- TODO: must update to make sure application is only single page -->
     <!--<v-bottom-nav value="true" class="hideOnSmall darkBlue customAlign">

@@ -7,18 +7,34 @@
           <div class="text-center col-sm-2">
             <span class="darkPurpleText pr-sm-5 medium"> mPower  </span>
           </div>
-          <div class="col-sm-8 text-center text-sm-left mr-0 ml-0 pl-0 pr-0">
-            <v-btn :to="{name: 'YourStory'}" flat class="routerBtn mr-0 ml-0 pl-0 pr-0 text-capitalize default medium">
-              YourStory
-            </v-btn>
-            <v-btn :to="{name: 'About'}" flat class="routerBtn mr-0 ml-0 pl-0 pr-0 text-capitalize default medium">
-              About
-            </v-btn>
-            <v-btn :to="{name: 'Team'}" flat class="routerBtn mr-0 ml-0 pl-0 pr-0 text-capitalize default medium" >
-              Team
-            </v-btn>
-            <v-btn :to="{name: 'OverviewEligibility'}" class="routerBtn mr-0 ml-0 pl-0 pr-0 navyBlue text-capitalize white--text medium"> Join </v-btn>
+
+            <div class="col-3 col-sm-auto  m-0 p-0 ">
+              <v-btn :to="{name: 'YourStory'}" flat class="routerBtn m-0 p-0  text-capitalize default medium">
+                YourStory
+              </v-btn>
             </div>
+
+            <div class="col-3 col-sm-auto m-0 p-0 ">
+              <v-btn :to="{name: 'About'}" flat class="routerBtn m-0 p-0 text-capitalize default medium">
+                About
+              </v-btn>
+            </div>
+
+            
+            <div class="col-3 col-sm-auto m-0 p-0 ">
+              <v-btn :to="{name: 'Team'}" flat class="routerBtn m-0 p-0 text-capitalize default medium" >
+                Team
+              </v-btn>
+            </div>
+
+            <div class="col-3 col-sm-auto m-0 p-0 ">
+              <v-btn :to="{name: 'OverviewEligibility'}" class="routerBtn m-0 p-0  navyBlue text-capitalize white--text medium"> 
+                Join 
+              </v-btn>
+            </div>
+
+          </div>
+
         </div>
 
       </div>  

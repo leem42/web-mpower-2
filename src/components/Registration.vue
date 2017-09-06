@@ -1,39 +1,15 @@
 <template>
   <div id="app">
   
-    <p v-if="!loggedIn">You are logged {{ loggedIn ? 'in' : 'out' }}</p>
-    <form @submit.prevent="login"  v-if="!loggedIn">
-      <label>
-        <input v-model="email" placeholder="email">
-      </label>
-      <label>
-        <input v-model="password" placeholder="password">
-      </label>
-      <br>
-      <!--<label>
-        <input v-model="study" placeholder="study">
-      </label>
-      <br>
-      <label>
-        <input v-model="type" placeholder="type">
-      </label>-->
-      <br>
-      <v-btn v-on:click="login()" style="width: 100px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit" >login</v-btn>
-      <p v-if="error" class="error">Bad login information</p>
-    </form>
-    <v-btn v-on:click="login()" v-if="(this.$router.currentRoute.fullPath === '/' || this.$router.currentRoute.fullPath === '/NullPage/') && loggedIn" style="width: 120px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> Home Page</v-btn>
-    <!--<v-btn :to="{name: 'Registration'}"  style="width: 180px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> Register </v-btn>-->
-
-    <template>
-      <router-view></router-view>
-    </template>
-  
+    <p class="text-center"> Registration </p>
+   
+   
   </div>
 </template>
 
 
 <script>
-import auth from './auth/auth'
+import auth from '../auth/auth'
 export default {
   data () {
     return {
