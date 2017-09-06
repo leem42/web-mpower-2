@@ -3,9 +3,9 @@
         <br>
         <br>
         <br>
-        <p class="text-center medium"> About the study </p>
+        <p class="text-center mediumTitle"> About the study </p>
         <div class="row">
-            <div class="mx-auto col-8">
+            <div class="mx-auto col-sm-8">
             <p class="mx-auto default medium-small">
                 The elevateMS study, developed in collaboration by Sage Bionetworks (nonprofit) and Novartis
                 Pharmaceuticals Corporation, monitors wellbeing and changes in selected symptoms of MS such 
@@ -24,13 +24,114 @@
             </div>
         </div>
 
+        <br>
+        <br>
+
         <div class="row sectionTwo">
 
-            <p class="text-center">  </p>
-        
-        </div>
-        
-    
+            <div class="col-lg-3 mx-auto col-4 mr-2 mx-lg-print">
 
+                <div class="row ml-sm-5">
+                    <div class="col yellowTop yellowBottom">
+                        <p class="medium-small mb-1 darkPurpleText font-weight-bold"> Step 1 </p>
+                        <p class="medium-small mb-1 darkPurpleText font-weight-bold"> Eligibility & consent </p>
+                    </div>
+                </div>
+                <div class="row ml-sm-5">
+                    <div class="col yellowBottom mx-auto">
+                        <p class="medium-small mb-1 darkPurpleText"> Step 2 </p>
+                        <p class="medium-small mb-1 darkPurpleText"> Download the app </p>
+                    </div>
+                </div>
+                <div class="row ml-sm-5">
+                    <div class="col yellowBottom mx-auto">
+                        <p class="medium-small mb-1 darkPurpleText"> Step 3 </p>
+                        <p class="medium-small mb-1 darkPurpleText"> Perform simple tasks </p>
+                    </div>
+                </div>
+                <div class="row ml-sm-5">
+                    <div class="col yellowBottom mx-auto">
+                        <p class="medium-small mb-1 darkPurpleText"> Step 4 </p>
+                        <p class="medium-small mb-1 darkPurpleText"> Track your health </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ml-lg-0 mr-0 col-6 pr-lg-0 col-lg-auto mx-auto">
+                <img class="img-fluid scaledPhone" src="../images/dark-blue-smartphone.png"> </img>
+            </div>
+
+            <div class="col-lg-4 ml-lg-0 mx-auto">
+                <p class="darkPurpleText mediumTitle text-center font-weight-bold"> Eligibility & Consent </p>
+                <p class="medium default">
+                    Once you have received confirmation of your eligibility, we will ask you to do
+                    an informed consent process. It takes about 20 minutes. We will also ask you to do
+                    a one-time health survey. It takes about 20 minutes.
+                </p>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+         <div class="row ">
+            <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
+                <img class="pl-lg-5 img-fluid logo2" src="../images/sage-logo.png">
+                <img class="pl-lg-5 img-fluid logo2" src="../images/robert-wood-johnson-foundation-logo.png">
+            </div>
+            <div class="mx-auto pt-lg-5 mt-lg-5 mt-5 subText col-12 col-lg-6 order-2 order-lg-2">
+                <p class="darkPurpleText mediumTitle"> Who is Involved? </p>
+                <p class="medium default"> 
+                    Life with Parkinson’s disease  isn’t a one size fits all.
+                    Everyone has unique experiences even though there are common symptoms.
+                    mPower is a tool for you to understand your Parkinson’s disease symptoms 
+                    and the factors that impact you. 
+                    Reflecting on your story over time may provide you with insights into your own story and overall wellness. 
+                </p>
+            </div>
+        </div>
+
+
+
+         <div class="row sectionTwo">
+            <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
+                <img class="pl-lg-5 img-fluid logo2" src="../images/join-the-study-image_2x.png">
+            </div>
+            <div class="mx-auto pt-lg-5 mt-lg-5 mt-5 subText col-12 col-lg-6 order-2 order-lg-2">
+                <p class="darkPurpleText  mediumTitle"> Join the study </p>
+                <p class="medium default"> In just a minute you can see if you are eligible to participate in the mPower study. Find out now! 
+                <br>
+                <br>
+                <v-btn id="join" :to="{name: 'OverviewEligibility'}" class="col-auto navyBlue text-capitalize white--text"> Let's go </v-btn>
+                </p>
+                <br>
+                <br>
+            </div>
+        </div>
     </v-app>
 </template>
+
+<style lang="scss">
+    .yellowBottom {
+        border-bottom: solid;
+        border-bottom-color: #ffda8a;
+    }
+
+    .yellowTop {
+        border-top: solid;
+        border-top-color: #ffda8a;
+    }
+
+    .logo2 {
+        width: 380px;
+    }
+
+
+    @media(max-width: 760px) {
+        .scaledPhone {
+            width: 125px;
+        }
+    }
+
+</style>

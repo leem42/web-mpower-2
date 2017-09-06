@@ -44,11 +44,13 @@ nav.web {
   height: 80px;
   background-color: #ffffff;
   box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
-  &.fixed-bottom {
-      background-image: linear-gradient(to left, #6b2ef7, #2a067d) !important;
-      color: white;
-      height: 60px;
-  }
+    &.fixed-bottom {
+        background-image: -webkit-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
+        background-image: -moz-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
+        background-image: -o-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
+        background-image: linear-gradient(87deg, #473b7b, #3584a7 76%, #30d2be);      color: white;
+        height: 60px;
+    }
 }
 
 .zeroOpacity > div.btn__content::before {
@@ -61,7 +63,7 @@ nav.web {
 
 .medium-small {
   font-size: $font-size-base * 0.6 !important;
-  color: #4a4a4a !important;
+  // color: #4a4a4a !important;
 }
 
 .largeTitle {
