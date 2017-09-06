@@ -27,7 +27,7 @@
                         </p>
                     </div>
                     <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
-                        <v-btn flat class="ml-0 pl-0 mr-5 pr-4"  :to="{name: 'Eligibility'}" >
+                        <v-btn flat class="ml-0 pl-0 mr-5 pr-4"  :to="{name: 'SubjectInterest'}" >
                             <v-icon large v-bind:class="{greenText: section.hasCompletedEligibility}" class="lock">{{section.hasCompletedEligibility ? 'fa-chevron-right': 'fa-lock'  }}</v-icon>
                         </v-btn>
                     </div>
@@ -39,7 +39,7 @@
             <div class="mx-auto rect white col-md-8" v-bind:class="{currentSection: section.isOnConsent, completedSection: section.hasCompletedConsent}">
                 <div class="row">
                     <div class="col-1 verticalCenter ml-md-3 mr-5">
-                        <img  src="../images/survey.png"> </img>
+                        <img  src="../images/consent-icon.png"> </img>
                     </div>
                     <div class="col-7 col-md-9 mb-0">
                         <p class="medium default mb-0 bold--text"><strong>  Consent </strong>
@@ -58,7 +58,7 @@
             <div class="mx-auto rect white col-md-8" v-bind:class="{currentSection: section.isOnQuiz, completedSection: section.hasCompletedQuiz}">
                 <div class="row">
                     <div class="col-1 verticalCenter ml-md-3 mr-5">
-                        <img  src="../assets/check.png" class="checkOnOverview"> </img>
+                        <img  src="../images/quiz-onboarding-icon.png" class="checkOnOverview"> </img>
                     </div>
                     <div class="col-7 col-md-9 mb-0">
                         <p class="medium default mb-0 bold--text"><strong>  Quiz </strong>
@@ -77,7 +77,7 @@
             <div class="mx-auto rect white col-md-8" v-bind:class="{currentSection: section.isOnSign, completedSection: section.hasCompletedSign}">
                 <div class="row">
                     <div class="col-1 verticalCenter ml-md-3 mr-5">
-                        <img  src="../assets/check.png" class="checkOnOverview"> </img>
+                        <img  src="../images/sign-consent-icon.png" class="checkOnOverview"> </img>
                     </div>
                     <div class="col-7 col-md-8  mb-0">
                         <p class="medium default mb-0 bold--text"><strong>  Sign </strong>
@@ -96,7 +96,7 @@
             <div class="mx-auto rect white col-md-8" v-bind:class="{currentSection: section.isOnRegistration, completedSection: section.hasCompletedRegistration}">
                 <div class="row">
                     <div class="col-1 verticalCenter ml-md-3 mr-5">
-                        <img  src="../assets/check.png" class="checkOnOverview"> </img>
+                        <img  src="../images/number-icon.png" class="checkOnOverview"> </img>
                     </div>
                     <div class="col-7 col-md-8 mb-0">
                         <p class="medium default mb-0 bold--text"><strong>  Registration </strong>
@@ -126,7 +126,7 @@
     .checkOnOverview {
         // width: 50.9px;
         height: 80px;
-        background-color: #5eae57;
+        // background-color: #5eae57;
     }
 
     .rect {

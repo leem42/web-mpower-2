@@ -51,19 +51,19 @@
   
     <span v-if="!firstEdit">
       <div class="row">
-        <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 col-sm-3 customCheck "></v-checkbox>
+        <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 col-sm-6 col-md-5  col-lg-4  customCheck "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 col-sm-4 customCheck "></v-checkbox>
+        <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 col-sm-7 col-md-6 col-lg-5 customCheck "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="ml-6 col-sm-3 customCheck "></v-checkbox>
+        <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="ml-6 col-sm-5 col-md-5 col-lg-4 customCheck "></v-checkbox>
       </div>
       <div class="row">
         <v-checkbox label="am curious" v-model="selectedChoice[3]" class="ml-6 col-sm-3 customCheck "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="another reason" v-model="selectedChoice[4]" class="ml-6 col-sm-3 customCheck "></v-checkbox>
+        <v-checkbox label="another reason" v-model="selectedChoice[4]" class="ml-6 col-sm-4 customCheck "></v-checkbox>
       </div>
     </span>
   
@@ -97,16 +97,16 @@
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 col-sm-4 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 col-sm-7 col-md-6 col-lg-5 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6 col-sm-6 col-md-5  col-lg-4  customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6 col-sm-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6 col-sm-6 col-md-5  col-lg-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
         <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
@@ -138,17 +138,17 @@
           </v-flex>
         </div>
         <div class="row mb-3 mt-2" v-if="!thirdEdit">
-          <v-flex class="col-sm-2 ml-6">
+          <v-flex class="col-sm-3 ml-6">
             <v-radio v-on:keyup.enter="handleRadio(1)" class=" francisco" value="Weekly" label="Weekly"></v-radio>
           </v-flex>
         </div>
         <div class="row mb-3 mt-2" v-if="!thirdEdit">
-          <v-flex class="col-sm-2 ml-6">
+          <v-flex class="col-sm-3 ml-6">
             <v-radio v-on:keyup.enter="handleRadio(2)" class=" francisco" value="Biweekly" label="Biweekly"></v-radio>
           </v-flex>
         </div>
         <div class="row mb-3 mt-2" v-if="!thirdEdit">
-          <v-flex class="col-sm-2 ml-6">
+          <v-flex class="col-sm-3 ml-6">
             <v-radio v-on:keyup.enter="handleRadio(3)" class=" francisco" value="Monthly" label="Monthly"></v-radio>
           </v-flex>
         </div>
@@ -178,13 +178,13 @@
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="ml-6 col-sm-4 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="ml-6 col-sm-6 col-md-6  col-lg-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on my progress" v-model="selectedChoice[11]" class="ml-6 col-sm-4 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on my progress" v-model="selectedChoice[11]" class="ml-6 col-sm-7 col-md-6 col-lg-5 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="ml-6 col-sm-4 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="ml-6 col-sm-6 col-md-5  col-lg-4 customCheck darkPurple--text"></v-checkbox>
       </div>
   
     </span>

@@ -26,7 +26,7 @@
 
         <div class="row sectionTwo">
 
-            <p class="text-center"> asdfasdf </p>
+            <p class="text-center">  </p>
         
         </div>
         

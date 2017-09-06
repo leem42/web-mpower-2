@@ -59,6 +59,10 @@
 
 <style lang="scss">
 
+button:focus {
+    opacity: 0.8;
+}
+
 .mr-7 {
     padding-left: 25%;
     padding-right: 25%;
@@ -68,10 +72,6 @@
     width: 472px;
     padding-left: 8%;
     padding-right: 8%;
-}
-
-.sectionTwo {
-    background-color: rgba(238, 238, 238, 0.5);
 }
 
 </style>

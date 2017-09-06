@@ -18,23 +18,51 @@
     <div class="row">
       <p id="greatFit" class="lead col-sm-8 ml-6 mx-auto "> Let's see if you're eligible for the mPower study </p>
       <p class="lead tiny light col-sm-8 mx-auto  ml-6"> We just need a few pieces of information to make sure you would be a good fit for the study </p>
-  
-      <p class="lead col-12 col-sm-auto text-center ml-6"> I am </p>
-      <v-flex class="col-12 col-sm-3">
-        <v-text-field  suffix="years old" name="input-1" label="enter age" id="testing" single-line type="number" pattern="\d*" v-model.number="age"></v-text-field>
-      </v-flex>
+    </div>
+    <div class="row">
 
-        <p class="lead col-sm-auto text-center" v-if="isUnderage !== null && !isUnderage" > I live in </p>
-        <v-flex class="col-12 col-sm-3" v-if="isUnderage !== null && !isUnderage">
-        <v-text-field suffix="zipcode" single-line pattern="\d*" id="placeField"  name="input-1" label="5-digit zipcode" type="number" v-model.number="zipCode"></v-text-field>
-      </v-flex>
-  
+      <div class="ml-6 col-lg-8 col-md-8">
+        <div class="row">
+          <p class="lead col-md-auto text-center text-md-left"> I am </p>
+          <v-flex class="col-md-8 col-lg-3 ">
+            <v-text-field  
+            suffix="years old"
+            name="input-1"
+            label="age" 
+            placeholder="45" 
+            id="testing"
+            type="number" 
+            pattern="\d*" 
+            required
+            auto-grow
+            :rules="[() => !!age || (age < 100) || 'Age must be less than 120']"
+            v-model.number="age">
+            </v-text-field>
+          </v-flex>
+
+          <p class="lead col-md-auto  text-center text-md-left" v-if="isUnderage !== null && !isUnderage" > I live in </p>
+          <v-flex class="col-12 col-md-8 col-lg-auto" v-if="isUnderage !== null && !isUnderage">
+          <v-text-field 
+            label="ZIP/Postal Code"
+            required
+            :rules="[() => (zipCode === 0) || ( zipCode > 9999 && zipCode < 100000) || 'Zipcodes must be 5 digits']"
+            v-model.number="zipCode"
+            ref="zipCode"
+            placeholder="79938"
+            pattern="\d*" 
+            id="placeField"
+            name="input-1" 
+            type="number">
+          </v-text-field>
+        </v-flex>
+          </div>
+      </div>
     </div>
   
     <div id="option" class="row" v-if="isPlaceAnswered">
-      <p class="lead col-12 text-center col-sm-auto ml-6 ">
+      <p class="lead col-12 text-center col-md-auto ml-6 ">
         and I feel </p>
-      <v-select single-line id="comfortable" class="col-sm-5 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
+      <v-select single-line id="comfortable" class="col-md-5 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
       </v-select>
       <!--<p class="lead col-12 text-center col-sm-auto"> using my phone </p>-->
       <div class="col-12 text-center " v-if="isEligible">
@@ -137,7 +165,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
 
   div.menu__content {
     z-index: 1000 !important;
@@ -150,4 +178,12 @@
   .dim {
       opacity: 0.5    
   }
+
+  @media(max-width: 992px) {
+    .ml-6-restricted {
+      margin-left: 16.66% !important;
+    }
+  }
+
+  
 </style>

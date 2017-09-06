@@ -4,24 +4,21 @@
     <nav class="web navbar fixed-top navbar-light">
       <div class="container-fluid" style="display: block;">
         <div class="row">
-          <div class="text-center col-md-2">
+          <div class="text-center col-sm-2">
             <span class="darkPurpleText pr-sm-5 medium"> mPower  </span>
           </div>
           <div class="col-sm-8 text-center text-sm-left mr-0 ml-0 pl-0 pr-0">
-            <v-btn  v-on:click="go(0)" flat class="routerBtn mr-0 ml-0 pl-0 pr-0">
-              <router-link class="text-capitalize default medium" to="./NullPage/Website/About">Your Story </router-link>
+            <v-btn :to="{name: 'YourStory'}" flat class="routerBtn mr-0 ml-0 pl-0 pr-0 text-capitalize default medium">
+              YourStory
             </v-btn>
-            <v-btn v-on:click="go(1)" flat class="routerBtn mr-0 ml-0 pl-0 pr-0">
-              <router-link class="text-capitalize default medium" to="NullPage/Website/About" >About</router-link>
+            <v-btn :to="{name: 'About'}" flat class="routerBtn mr-0 ml-0 pl-0 pr-0 text-capitalize default medium">
+              About
             </v-btn>
-            <v-btn v-on:click="go(2)" flat class="routerBtn mr-0 ml-0 pl-0 pr-0" >
-              <router-link class="text-capitalize  default medium" to="/NullPage/Website/Team" >Team</router-link>
+            <v-btn :to="{name: 'Team'}" flat class="routerBtn mr-0 ml-0 pl-0 pr-0 text-capitalize default medium" >
+              Team
             </v-btn>
-            <!--<v-btn v-on:click="go(2)" flat class="routerBtn mr-0 ml-0 pl-0 pr-0" >
-              <router-link class="text-capitalize  default medium" to="/NullPage/Website/Team" >Join</router-link>
-            </v-btn>-->
+            <v-btn :to="{name: 'OverviewEligibility'}" class="routerBtn mr-0 ml-0 pl-0 pr-0 navyBlue text-capitalize white--text medium"> Join </v-btn>
             </div>
-            <v-btn large v-on:click="go(3)" class="d-none ml-auto d-sm-inline col-1 medium navyBlue text-capitalize white--text"> Join </v-btn>
         </div>
 
       </div>  
@@ -68,7 +65,19 @@ export default {
 @import '../css/bootstrap/bootstrap';
 @import '../css/bootstrap/custom';
 
+.scaledJoinButton {
+  width: 2em;
+  height: 2em;
+}
+
 .routerBtn > div.btn__content{
   padding: 0px;
+}
+
+.routerBtn:focus {
+  opacity: 0.7;
+  border-bottom: solid;
+  border-bottom-color: yellow;
+  font-weight: 800;
 }
 </style>

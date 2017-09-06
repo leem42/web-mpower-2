@@ -10,18 +10,18 @@
         <input v-model="password" placeholder="password">
       </label>
       <br>
-      <label>
+      <!--<label>
         <input v-model="study" placeholder="study">
       </label>
       <br>
       <label>
         <input v-model="type" placeholder="type">
-      </label>
+      </label>-->
       <br>
       <v-btn v-on:click="login()" style="width: 100px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit" >login</v-btn>
       <p v-if="error" class="error">Bad login information</p>
     </form>
-    <v-btn v-on:click="login()" v-if="this.$router.currentRoute.fullPath === '/' && loggedIn" style="width: 120px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> Home Page</v-btn>
+    <v-btn v-on:click="login()" v-if="(this.$router.currentRoute.fullPath === '/' || this.$router.currentRoute.fullPath === '/NullPage/') && loggedIn" style="width: 120px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> Home Page</v-btn>
     <!--<br>-->
     <v-btn v-on:click="signIn()"  v-if="!loggedIn" style="width: 180px; font-size: 20px; box-shadow: 2px; background-color: lightgrey; height: 70px;" type="submit"> signIn </v-btn>
     <!--<br>-->
