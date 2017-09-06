@@ -3,7 +3,7 @@
         <br>
         <br>
         <br>
-        <p class="text-center mediumTitle"> About the study </p>
+        <p class="text-center largeTitle"> About the study </p>
         <div class="row">
             <div class="mx-auto col-sm-8">
             <p class="mx-auto default medium-small">
@@ -63,7 +63,7 @@
             </div>
 
             <div class="col-lg-4 ml-lg-0 mx-auto">
-                <p class="darkPurpleText mediumTitle text-center font-weight-bold"> Eligibility & Consent </p>
+                <p class="darkPurpleText largeTitle text-center font-weight-bold"> Eligibility & Consent </p>
                 <p class="medium default">
                     Once you have received confirmation of your eligibility, we will ask you to do
                     an informed consent process. It takes about 20 minutes. We will also ask you to do
@@ -73,15 +73,14 @@
         </div>
 
         <br>
-        <br>
 
          <div class="row ">
             <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
-                <img class="pl-lg-5 img-fluid logo2" src="../images/sage-logo.png">
-                <img class="pl-lg-5 img-fluid logo2" src="../images/robert-wood-johnson-foundation-logo.png">
+                <img class="pl-lg-5 img-fluid fittedImg" src="../images/sage-logo.png">
+                <img class="pl-lg-5 img-fluid fittedImg" src="../images/robert-wood-johnson-foundation-logo.png">
             </div>
-            <div class="mx-auto pt-lg-5 mt-lg-5 mt-5 subText col-12 col-lg-6 order-2 order-lg-2">
-                <p class="darkPurpleText mediumTitle"> Who is Involved? </p>
+            <div class="mx-auto mt-0 pt-0 subText col-12 col-lg-6 order-2 order-lg-2">
+                <p class="darkPurpleText largeTitle"> Who is Involved? </p>
                 <p class="medium default"> 
                     Life with Parkinson’s disease  isn’t a one size fits all.
                     Everyone has unique experiences even though there are common symptoms.
@@ -96,14 +95,14 @@
 
          <div class="row sectionTwo">
             <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
-                <img class="pl-lg-5 img-fluid logo2" src="../images/join-the-study-image_2x.png">
+                <img class="pl-lg-5 img-fluid fittedImg" src="../images/join-the-study-image_2x.png">
             </div>
             <div class="mx-auto pt-lg-5 mt-lg-5 mt-5 subText col-12 col-lg-6 order-2 order-lg-2">
-                <p class="darkPurpleText  mediumTitle"> Join the study </p>
+                <p class="darkPurpleText  largeTitle"> Join the study </p>
                 <p class="medium default"> In just a minute you can see if you are eligible to participate in the mPower study. Find out now! 
                 <br>
                 <br>
-                <v-btn id="join" :to="{name: 'OverviewEligibility'}" class="col-auto navyBlue text-capitalize white--text"> Let's go </v-btn>
+                <v-btn id="join" :to="{name: 'OverviewEligibility'}" class="col-auto navyBlue text-capitalize white--text"> Join </v-btn>
                 </p>
                 <br>
                 <br>
@@ -123,7 +122,7 @@
         border-top-color: #ffda8a;
     }
 
-    .logo2 {
+    .fittedImg {
         width: 380px;
     }
 

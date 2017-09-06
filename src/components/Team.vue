@@ -1,7 +1,109 @@
 <template>
-    <v-app>
+    <v-app class="white">
         <br>
-        <br>
+            <br>
+            <br>
+            <p class="text-center largeTitle"> About the study </p>
+            <div class="row">
+                <div class="mx-auto col-sm-8">
+                <p class="mx-auto default medium-small">
+                  A little bit of text about who these people are.
+                  A little bit of text about who these people are.
+                  A little bit of text about who these people are.
+                </p>    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="row">
+                        <div class="col-4 text-center oval"> 
+                            Name 1
+                        </div>
+                        <div class="col-4 text-center oval"> 
+                            Name 2
+                        </div>
+                        <div class="col-4 text-center oval"> 
+                            Name 3
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="row">
+                        <div class="col-4 text-center oval"> 
+                            Name 1
+                        </div>
+                        <div class="col-4 text-center oval"> 
+                            Name 2
+                        </div>
+                        <div class="col-4 text-center oval"> 
+                            Name 3
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row sectionTwo">
+
+                <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
+                    <img class="pl-lg-5 img-fluid fittedImg" src="../images/scientists-icon.png">
+                </div>
+
+                <div class="mx-auto mt-0 subText col-12 col-lg-6 order-2 order-lg-2">
+                    <p class="darkPurpleText largeTitle"> Scientists Make Discoveries</p>
+                    <p class="medium default"> 
+                        When you use the app you contribute to research on MS.
+                        By combining the information from many people who are using the app,
+                        researchers expect to find patterns. The information you provide 
+                        through the elevateMS app gets encrypted on the phone to protect your
+                        privacy. As you participate over time, you help create a powerful dataset
+                        that may lead to scientific breakthrough and to new ways to help people 
+                        with MS improve their well being. You do not need to have MS to participate. 
+                        This study will last about one year.
+                        We’d like you to participate for three consecutive months or longer if you can.
+                    </p>
+                </div>
+
+            </div>
+            
+            <div class="row">
+                <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
+                    <img class="pl-lg-5 img-fluid fittedImg" src="../images/partner-icon.png">
+                </div>
+
+                <div class="mx-auto mt-0 pt-0 subText col-12 col-lg-6 order-2 order-lg-2">
+                    <p class="darkPurpleText largeTitle"> Interested in becoming a partner?</p>
+                    <p class="medium default"> 
+                        Join the Synapse community. Some text about how you will get the data.
+                    </p>
+                    <br>
+                    <br>
+                    <v-btn id="join" :to="{name: 'OverviewEligibility'}" class="col-auto navyBlue text-capitalize white--text"> Join </v-btn>
+                    </p>
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            </div>
         
     </v-app>
 </template>
+
+<style>
+    .oval {
+        height: 150px;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+        border-radius: 100px;
+        background-color:  #d8d8d8;
+    }
+</style>

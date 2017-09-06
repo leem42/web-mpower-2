@@ -8,8 +8,10 @@
     <div class="indicatorFilled offset two" > </div>
     <div class="indicatorFilled offset three"> </div>
     <div class="indicatorFilled offset four"> </div> 
-    <div class="indicatorFilled offset five" > </div>     <br>
+    <div class="indicatorFilled offset five" > </div>     
     </div>
+    <br>
+    <br>
 
     <div class="row">
 

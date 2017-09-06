@@ -8,27 +8,27 @@
             <span class="darkPurpleText pr-sm-5 medium"> mPower  </span>
           </div>
 
-            <div class="col-3 col-sm-auto  m-0 p-0 ">
+            <div class="col-2 col-sm-auto ml-2 mr-2 p-0 ">
               <v-btn :to="{name: 'YourStory'}" flat class="routerBtn m-0 p-0  text-capitalize default medium">
                 YourStory
               </v-btn>
             </div>
 
-            <div class="col-3 col-sm-auto m-0 p-0 ">
+            <div class="col-2 col-sm-auto ml-2 mr-2 p-0 ">
               <v-btn :to="{name: 'About'}" flat class="routerBtn m-0 p-0 text-capitalize default medium">
                 About
               </v-btn>
             </div>
 
             
-            <div class="col-3 col-sm-auto m-0 p-0 ">
+            <div class="col-2 col-sm-auto ml-2 mr-2 p-0 ">
               <v-btn :to="{name: 'Team'}" flat class="routerBtn m-0 p-0 text-capitalize default medium" >
                 Team
               </v-btn>
             </div>
 
-            <div class="col-3 col-sm-auto m-0 p-0 ">
-              <v-btn :to="{name: 'OverviewEligibility'}" class="routerBtn m-0 p-0  navyBlue text-capitalize white--text medium"> 
+            <div class="col-2 col-sm-auto ml-2 mr-2 pl-2">
+              <v-btn :to="{name: 'OverviewEligibility'}" class="routerBtn join m-0 p-0 navyBlue text-capitalize white--text medium"> 
                 Join 
               </v-btn>
             </div>
@@ -80,6 +80,10 @@ export default {
 <style lang="scss">
 @import '../css/bootstrap/bootstrap';
 @import '../css/bootstrap/custom';
+
+.join {
+  margin-right: 10px !important;
+}
 
 .scaledJoinButton {
   width: 2em;
