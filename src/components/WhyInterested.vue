@@ -8,11 +8,11 @@
         <br>
         <br>
         <div class="row midPage">
-            <p class="mx-auto largeTitle col-sm-8 robot lead font-weight-bold"> Why are you interested in mPower? </p>
+            <p class="mx-auto largeTitle col-sm-8 lead font-weight-bold"> Why are you interested in mPower? </p>
         </div>
 
         <div class="row">
-            <p class="mx-auto col-sm-8 mediumLarge  robot default "> 
+            <p class="mx-auto col-sm-8 mediumLarge  default "> 
                 Understanding what interests you and what
                 you are willing to do helps us shape an experience
                 that aligns with your expectations. 

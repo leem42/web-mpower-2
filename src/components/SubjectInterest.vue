@@ -26,9 +26,9 @@
       -->
       <br>
     <div class="row">
-      <p class="robot hideOnSmall lead col-sm-8 ml-6 "> Why are you interested in joining mPower?
+      <p class="hideOnSmall lead col-sm-8 ml-6 "> Why are you interested in joining mPower?
       </p>
-      <span id="interest" class="francisco tiny lead col-sm-8 ml-6"> I'm interested in joining mPower because I
+      <span id="interest" class="francisco lato tiny lead col-sm-8 ml-6"> I'm interested in joining mPower because I
   
         <span v-if="firstEdit" class="p-0">
           <v-btn flat v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink middle francisco"> Want to help myself

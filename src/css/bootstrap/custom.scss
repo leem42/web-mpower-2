@@ -5,7 +5,7 @@
 // $body-color: #5B34B6;
 // $link-color: #5B34B6;
 
-$font-family: 'Roboto';
+$font-family: 'Lato';
 $font-size-base: 1rem * 2.5; // Assumes the browser default, typically `16px`
 $font-size-lg:   1.25rem * 1.5;
 $font-size-sm:   .875rem * 1.5;
@@ -247,6 +247,10 @@ i.custom-purple {
   font-family: 'Roboto' !important;
 }
 
+.lato {
+  font-family: 'Lato', sans-serif !important;
+}
+
 @font-face {
   font-family: "San Francisco";
   font-weight: 400;
@@ -299,6 +303,8 @@ label {
   font-size: $font-size-base * 0.85 !important;
 }
 
+
+
 input {
   font-size: $font-size-base * 0.85 !important;
   margin-bottom: 3px !important;
@@ -311,6 +317,11 @@ div.input-group__hint {
 .custom-fig {
   display: inline-block;
 }
+
+p {
+  font-family: 'Roboto','sans-serif' !important;
+}
+
 
 @media(min-width: 767px) {
 

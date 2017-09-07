@@ -16,9 +16,9 @@
         </div>
 
         <div class="row customRow mb-4 ml-1 mr-1 ml-1 mr-1">
-            <div class="mx-auto rect white col-md-8" v-bind:class="{currentSection: section.isOnEligibility}">
+            <div v-on:click="$router.push({name: 'WhyInterested'})" class=" mx-auto rect white col-md-8" v-bind:class="{currentSection: section.isOnEligibility}">
                 <div class="row">
-                    <div class="col-1 verticalCenter ml-md-3 mr-5">
+                    <div class="col-1 verticalCenter ml-md-3 mr-5 ">
                         <img  src="../assets/check.png" class="checkOnOverview"> </img>
                     </div>
                     <div class="col-md-8 col-7 mb-0 pr-0">
@@ -27,11 +27,9 @@
                             <p class="x-tiny default"> 2 minutes </p>
                         </p>
                     </div>
-                    <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
-                        <v-btn flat class="ml-0 pl-0 mr-5 pr-4"  :to="{name: 'WhyInterested'}" >
-                            <v-icon large v-bind:class="{greenText: section.hasCompletedEligibility}" class="lock">{{section.hasCompletedEligibility ? 'fa-chevron-right': 'fa-lock'  }}</v-icon>
-                        </v-btn>
-                    </div>
+                    <!--<div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">-->
+                        <!--<v-icon large v-bind:class="{greenText: section.hasCompletedEligibility}" class="lock">{{section.hasCompletedEligibility ? 'check': ''  }}</v-icon>-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>
