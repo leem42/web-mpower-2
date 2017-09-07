@@ -5,6 +5,8 @@ import OnBoarding from '@/components/OnBoarding.vue'
 import YourStory from '@/components/YourStory.vue'
 import About from '@/components/About.vue'
 import Team from '@/components/Team.vue'
+import Privacy from '@/components/Privacy.vue'
+import WhyInterested from '@/components/WhyInterested.vue'
 import SubjectInterest from '@/components/SubjectInterest.vue'
 import OverviewEligibility from '@/components/OverviewEligibility.vue'
 import Eligibility from '@/components/Eligibility.vue'
@@ -53,6 +55,11 @@ export default new Router({
               path: 'Team',
               name: 'Team',
               component: Team
+            },
+            {
+              path: 'Privacy',
+              name: 'Privacy',
+              component: Privacy
             }
           ]
         },
@@ -89,6 +96,11 @@ export default new Router({
               path: 'Registration',
               name: 'Registration',
               component: Registration
+            },
+            {
+              path: 'WhyInterested',
+              name: 'WhyInterested',
+              component: WhyInterested
             }
           ]
         }

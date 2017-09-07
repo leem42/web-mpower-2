@@ -36,7 +36,13 @@ $lead-font-weight: 600;
 }
 
 
-
+.fadeBackground {
+    background-image: -webkit-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
+    background-image: -moz-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
+    background-image: -o-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
+    background-image: linear-gradient(54deg, #473b7b, #3584a7 76%, #30d2be);
+}
+    
 nav.web {
   z-index: 1000 !important;
   background-color: white;
@@ -78,11 +84,6 @@ nav.web {
     color: #5b34b6;
 }
 
-#join {
-  width: 100px;
-  height: 60px;
-}
-
 #join > div.btn__content {
     font-size: $font-size-base * 0.7 !important;
 }
@@ -122,6 +123,10 @@ nav.web {
 
 .lightGrayText {
     color: #4a4a4a;
+}
+
+.mediumLarge {
+  font-size: $font-size-base * 0.6 !important;
 }
 
   .mediumGray {
@@ -200,6 +205,10 @@ div.customCheck>div.input-group__details {
 
 .customAlign {
   justify-content: inherit;
+}
+
+.defaultBlue {
+    color: #3a539b;
 }
 
 .logo {
@@ -315,7 +324,7 @@ div.input-group__hint {
     font-size: $font-size-base !important;
   }
   .tiny {
-    font-size: $font-size-base * 0.8 !important;
+    font-size: $font-size-base * 0.6 !important;
   }
 
   span.chip,
@@ -324,6 +333,10 @@ div.input-group__hint {
   }
   div.btn__content {
     font-size: $font-size-base * 0.50 !important;
+  }
+
+  .mediumLarge > div.btn__content {
+    font-size: $font-size-base * 0.60 !important;
   }
 
   .ml-6 {
@@ -351,11 +364,15 @@ input#placeField {
 
 @media(max-width: 767px) {
   .tiny {
-    font-size: $font-size-base * 0.2 !important;
+    font-size: $font-size-base * 0.45 !important;
   }
   .indicatorEmpty {
     top: 89px !important;
     height: 4px !important;
+  }
+
+  .mediumLarge > div.btn__content {
+  font-size: $font-size-base * 0.45 !important;
   }
 
   .progressBar {
@@ -429,9 +446,9 @@ input#placeField {
     font-size: $font-size-base * 0.60 !important;
   }
 
-  .tiny {
-    font-size: $font-size-base * 0.6 !important;
-  }
+  // .tiny {
+  //   font-size: $font-size-base * 0.6 !important;
+  // }
 
   nav * img {
     height: 30px !important;

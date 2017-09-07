@@ -1,5 +1,5 @@
 <template>
-    <div class="page-overview">
+    <v-app class="page-overview fadeBackground">
         <div class="row progressBar">
             <div class="indicatorFilled offset"> </div>
             <div class="indicatorFilled offset one"> </div>
@@ -9,41 +9,52 @@
             <div class="indicatorFilled offset five"> </div>
         </div>
         <br>
+        <br>
+        <br>
+    
+        <br>
     
         <div class="row">
             <div class="col-sm-8 mx-auto">
-                <p class="orangeText text-sm-center"> We're sorry to say, unfortunately you are not eligible to partipcate in this study. </p>
-                <ul class="lead tiny"> The reason(s) were:
-                    <li v-if="underage"> Participants must be at least 18 years of age </li>
-                    <li v-if="!isFromUS"> Participants must live in the US </li>
-                    <li v-if="!isComfortable"> Partipcants have to be comfortable using their phone </li>
-                </ul>
-    
-                <p class="lead subText">
-                    *If this information doesn't seem correct please email sage.org or try entering your infomation in the study again. </p>
+                <p class="white--text text-center"> Sorry, you are not eligible</p>
+                <p class="white--text text-center tiny">
+                    You must 
+                        {{isUnderage ? "be at least 18" + getProperCharacter(0): "" }} 
+                        {{isNotComfortable ? "have an iPhone 5 or higher"
+                        + getProperCharacter(1): "" }} 
+                        {{isNotFromUS ? "live in the United States.": "" }} 
+                </p>
+                    
     
                 <br>
-                <p class="lead text-sm-center">
-                    Please feel free to follow the study at
-                    <a href=" https://parkinsonmpower.org/"> parkinsonmpower.org </a>
-                    and recommend the study to friends or family.
+                <p class="white--text tiny text-center">
+                    You can still help by telling others about the study
                 </p>
             </div>
             <br>
             <div class="col-12 text-center">
-                <v-btn class=" sorryRect"> Share &nbsp;
-                    <v-icon class="white--text">share</v-icon>
+                <v-btn  class="roundBtn orange"> 
+                    <v-icon medium class="white--text">fa-facebook</v-icon>
                 </v-btn>
-                <v-btn class=" sorryRect"> Text &nbsp;
-                    <v-icon class="white--text">fa-mobile-phone</v-icon>
+                <v-btn  class="roundBtn orange">
+                    <v-icon medium class="white--text">fa-twitter</v-icon>
                 </v-btn>
-                <v-btn class=" sorryRect"> Email &nbsp;
-                    <v-icon class="white--text">email</v-icon>
+                <v-btn class="roundBtn orange"> 
+                    <v-icon medium class="white--text">message</v-icon>
                 </v-btn>
-    
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="mx-auto">
+                <v-btn large class="white text-capitalize" :to="{name: 'YourStory'}">  
+                    Go Back
+                </v-btn>
             </div>
         </div>
-    </div>
+    </v-app>
 </template>
 
 
@@ -52,16 +63,47 @@
     name: 'congratulations',
     data: function () {
       return {
-        underage: null,
-        isFromUS: null,
-        isComfortable: null
+        isUnderage: null,
+        isNotFromUS: null,
+        isNotComfortable: null,
+        personStates: []
       }
     },
     mounted: function () {
-      this.underage = this.$router.data.underage
-      this.isFromUS = this.$router.data.isFromUS
-      this.isComfortable = this.$router.data.isComfortable
+      this.isUnderage = this.$router.data.isUnderage
+      this.isNotFromUS = this.$router.data.isNotFromUS
+      this.isNotComfortable = this.$router.data.isNotComfortable
+      this.personStates = [this.isUnderage, this.isNotComfortable, this.isNotFromUS]
+    },
+    methods: {
+      getProperCharacter: function (index) {
+        if (this.personStates[index]) {
+          var count = 0
+          index = index + 1
+          for (var i = index; i < this.personStates.length; i++) {
+            if (this.personStates[i]) {
+              count = count + 1
+            }
+          }
+          if (count === 2) {
+            return ','
+          } else if (count === 1) {
+            return ' and'
+          } else {
+            return '.'
+          }
+        }
+      }
     }
   }
 </script>
 
+<style lang="scss">
+
+    .roundBtn {
+        border-radius: 50px !important;
+        width: 50px;
+        height: 50px;
+    }
+
+</style>

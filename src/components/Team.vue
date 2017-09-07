@@ -80,19 +80,14 @@
                         Join the Synapse community. Some text about how you will get the data.
                     </p>
                     <br>
-                    <br>
                     <v-btn id="join" :to="{name: 'OverviewEligibility'}" class="col-auto navyBlue text-capitalize white--text"> Join </v-btn>
                     </p>
-                    <br>
-                    <br>
                 </div>
 
             </div>
 
             <br>
-            <br>
-            <br>
-            <br>
+
             </div>
         
     </v-app>

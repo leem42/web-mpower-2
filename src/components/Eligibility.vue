@@ -41,11 +41,11 @@
           </v-flex>
 
           <p class="lead col-md-auto  text-center text-md-left" v-if="isUnderage !== null && !isUnderage" > I live in </p>
-          <v-flex class="col-12 col-md-8 col-lg-auto" v-if="isUnderage !== null && !isUnderage">
+          <v-flex class="col-12 col-md-8 col-lg-4" v-if="isUnderage !== null && !isUnderage">
           <v-text-field 
             label="ZIP/Postal Code"
             required
-            :rules="[() => (zipCode === 0) || ( zipCode > 9999 && zipCode < 100000) || 'Zipcodes must be 5 digits']"
+            :rules="[() => (zipCode === 0) || ( zipCode > 9999 && zipCode < 100000) || 'Zip must be 5 digits']"
             v-model.number="zipCode"
             ref="zipCode"
             placeholder="79938"
@@ -114,9 +114,9 @@
           this.$router.push('Congratulations') // TODO: Flip to the top of the next page
         } else {
           this.$router.data = {
-            underage: this.age < 18,
-            isFromUS: (this.zipCode > 1000),
-            isComfortable: (this.selectedOptionForPhone === 'comfortable using my phone')
+            isUnderage: this.age < 18,
+            isNotFromUS: (this.zipCode < 1000),
+            isNotComfortable: (this.selectedOptionForPhone !== 'comfortable using my phone')
           }
           this.$router.push('Ineligible') // TODO: Flip to the top of the next page
         }

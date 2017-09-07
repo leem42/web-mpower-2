@@ -28,7 +28,7 @@
                         </p>
                     </div>
                     <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
-                        <v-btn flat class="ml-0 pl-0 mr-5 pr-4"  :to="{name: 'SubjectInterest'}" >
+                        <v-btn flat class="ml-0 pl-0 mr-5 pr-4"  :to="{name: 'WhyInterested'}" >
                             <v-icon large v-bind:class="{greenText: section.hasCompletedEligibility}" class="lock">{{section.hasCompletedEligibility ? 'fa-chevron-right': 'fa-lock'  }}</v-icon>
                         </v-btn>
                     </div>
@@ -144,13 +144,6 @@
 
     .currentSection {
       opacity: 1 !important;   
-    }
-
-    .fadeBackground {
-        background-image: -webkit-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
-        background-image: -moz-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
-        background-image: -o-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
-        background-image: linear-gradient(54deg, #473b7b, #3584a7 76%, #30d2be);
     }
 
     .verticalCenter {
