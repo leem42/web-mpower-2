@@ -14,6 +14,7 @@ import OverviewEligibility from '@/components/OverviewEligibility.vue'
 import Eligibility from '@/components/Eligibility.vue'
 import Congratulations from '@/components/Congratulations.vue'
 import Ineligible from '@/components/Ineligible.vue'
+import QuestionOne from '@/components/Quiz/QuestionOne.vue'
 import Registration from '@/components/Registration'
 import NullPage from '@/components/NullPage'
 import auth from '../auth/auth'
@@ -113,6 +114,11 @@ export default new Router({
               path: 'WhyInterested',
               name: 'WhyInterested',
               component: WhyInterested
+            },
+            {
+              path: 'QuestionOne',
+              name: 'QuestionOne',
+              component: QuestionOne
             }
           ]
         }
