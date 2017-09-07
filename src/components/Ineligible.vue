@@ -42,6 +42,9 @@
                 <v-btn class="roundBtn orange"> 
                     <v-icon medium class="white--text">message</v-icon>
                 </v-btn>
+                <v-btn class="roundBtn orange"> 
+                    <v-icon medium class="white--text">fa-envelope</v-icon>
+                </v-btn>
             </div>
 
         </div>

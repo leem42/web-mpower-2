@@ -333,11 +333,9 @@
         </div>
     </div>
 
+    <br>
+    <br>
 
   </v-app>
   
 </template>
-
-<style lang="scss">
-
-</style>

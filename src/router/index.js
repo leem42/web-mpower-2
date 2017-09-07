@@ -6,6 +6,8 @@ import YourStory from '@/components/YourStory.vue'
 import About from '@/components/About.vue'
 import Team from '@/components/Team.vue'
 import Privacy from '@/components/Privacy.vue'
+import Contact from '@/components/Contact.vue'
+import FAQ from '@/components/FAQ.vue'
 import WhyInterested from '@/components/WhyInterested.vue'
 import SubjectInterest from '@/components/SubjectInterest.vue'
 import OverviewEligibility from '@/components/OverviewEligibility.vue'
@@ -60,6 +62,16 @@ export default new Router({
               path: 'Privacy',
               name: 'Privacy',
               component: Privacy
+            },
+            {
+              path: 'Contact',
+              name: 'Contact',
+              component: Contact
+            },
+            {
+              path: 'FAQ',
+              name: 'FAQ',
+              component: FAQ
             }
           ]
         },

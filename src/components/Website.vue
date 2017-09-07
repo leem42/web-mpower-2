@@ -5,7 +5,7 @@
       <div class="container-fluid" style="display: block;">
         <div class="row">
           <div class="text-center col-sm-2">
-            <span class="darkPurpleText pr-sm-5 mediumLarge"> mPower  </span>
+            <span class="defaultBlue pr-sm-5 mediumLarge"> mPower  </span>
           </div>
 
             <div class="col-2 col-sm-auto ml-1 mr-2 p-0 ">
@@ -46,10 +46,10 @@
     <nav class="web navbar fixed-bottom">
       <div class="row mx-md-auto">
         <v-btn flat class="col-2 zeroOpacity col-md-2 tiny mr-md-1 ml-md-1 white--text"> 2017 mPower </v-btn>
-        <v-btn flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> FAQ </v-btn>
+        <v-btn :to="{name: 'FAQ'}" flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> FAQ </v-btn>
         <v-btn :to="{name: 'Privacy'}" flat class="col-3 zeroOpacity col-md-2 tiny  mr-md-1 ml-md-1 white--text"> Privacy Policy </v-btn>
         <v-btn flat class="col-3 zeroOpacity ml-4 col-md-2 tiny mr-md-1 ml-md-1 white--text"> Terms of service </v-btn>
-        <v-btn flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> Contact </v-btn>
+        <v-btn :to="{name: 'Contact'}" flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> Contact </v-btn>
         <span class="col-md-3 x-tiny">mPower is for research use only and does not provide medical advice, diagnosis or treatment.</span>
       </div>
     </nav>

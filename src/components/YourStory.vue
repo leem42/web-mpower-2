@@ -29,23 +29,22 @@
             </div>
         </div>
         <div class="row">
-            <div class="mx-auto col-12 order-1 col-sm-auto order-lg-1 ">
-                <img class="pl-lg-5 img-fluid" src="../images/telling-your-story-image.png">
+            <div class="mx-auto text-center col-12 order-1 col-sm-auto order-lg-1 ">
+                <img class="img-fluid  fittedImg" src="../images/telling-your-story-image.png">
             </div>
-            <div class="pt-lg-5 mt-lg-5 subText col-12 col-lg-6 order-2 order-lg-2">
+            <div class="pt-lg-2 mt-lg-3 subText col-12 col-lg-6 order-2 order-lg-2">
                 <p class="darkPurpleText largeTitle"> Telling your Story </p>
                 <p class="medium default"> Life with Parkinson’s disease isn’t a one size fits all. Everyone has unique experiences even though there are common symptoms. mPower is a tool for you to understand your Parkinson’s disease symptoms and the factors that impact you. Reflecting on your story over time may provide you with insights into your own story and overall wellness.
                 </p>
             </div>
         </div>
         <div class="row sectionTwo">
-            <div class="mx-auto col-12 order-1 col-sm-auto paperImg order-lg-1 ">
-                <img class="pl-lg-5 img-fluid" src="../images/join-the-study-image_2x.png">
+            <div class="mx-auto text-center col-4 order-1 col-sm-4 col-lg-auto order-lg-1 ">
+                <img class="pl-lg-5 img-fluid fittedImg" src="../images/join-the-study-image_2x.png">
             </div>
-            <div class="pt-lg-5 mt-lg-5 mt-5 subText col-12 col-lg-6 order-2 order-lg-2">
+            <div class="pt-lg-3 mt-lg-3 mt-3 col-12 col-sm-6 order-2 order-lg-2">
                 <p class="darkPurpleText largeTitle"> Join the study </p>
                 <p class="medium default"> In just a minute you can see if you are eligible to participate in the mPower study. Find out now! 
-                <br>
                 <br>
                 <v-btn id="join" :to="{name: 'OverviewEligibility'}" class="col-auto navyBlue text-capitalize white--text"> Join </v-btn>
                 </p>
