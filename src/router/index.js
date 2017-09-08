@@ -1,22 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Website from '@/components/Website.vue'
-import OnBoarding from '@/components/OnBoarding.vue'
-import YourStory from '@/components/YourStory.vue'
-import About from '@/components/About.vue'
-import Team from '@/components/Team.vue'
-import Privacy from '@/components/Privacy.vue'
-import Contact from '@/components/Contact.vue'
-import FAQ from '@/components/FAQ.vue'
-import WhyInterested from '@/components/WhyInterested.vue'
-import SubjectInterest from '@/components/SubjectInterest.vue'
-import OverviewEligibility from '@/components/OverviewEligibility.vue'
-import Eligibility from '@/components/Eligibility.vue'
-import Congratulations from '@/components/Congratulations.vue'
-import Ineligible from '@/components/Ineligible.vue'
-import QuestionOne from '@/components/Quiz/QuestionOne.vue'
-import Registration from '@/components/Registration'
+
+import Website from '@/components/web_components/Website.vue'
+import YourStory from '@/components/web_components/YourStory.vue'
+import About from '@/components/web_components/About.vue'
+import Team from '@/components/web_components/Team.vue'
+import Privacy from '@/components/web_components/Privacy.vue'
+import Contact from '@/components/web_components/Contact.vue'
+import FAQ from '@/components/web_components/FAQ.vue'
+
+import OnBoarding from '@/components/on_boarding_components/OnBoarding.vue'
+import WhyInterested from '@/components/on_boarding_components/WhyInterested.vue'
+import SubjectInterest from '@/components/on_boarding_components/SubjectInterest.vue'
+import OverviewEligibility from '@/components/on_boarding_components/OverviewEligibility.vue'
+import Eligibility from '@/components/on_boarding_components/Eligibility.vue'
+import Congratulations from '@/components/on_boarding_components/Congratulations.vue'
+import Ineligible from '@/components/on_boarding_components/Ineligible.vue'
+import QuestionOne from '@/components/on_boarding_components/quiz/QuestionOne.vue'
+import QuestionTwo from '@/components/on_boarding_components/quiz/QuestionTwo.vue'
+import QuestionThree from '@/components/on_boarding_components/quiz/QuestionThree.vue'
+import QuestionFour from '@/components/on_boarding_components/quiz/QuestionFour.vue'
+import QuestionFive from '@/components/on_boarding_components/quiz/QuestionFive.vue'
+import Registration from '@/components/on_boarding_components/Registration'
 import NullPage from '@/components/NullPage'
+
 import auth from '../auth/auth'
 
 Vue.use(Router)
@@ -119,6 +126,26 @@ export default new Router({
               path: 'QuestionOne',
               name: 'QuestionOne',
               component: QuestionOne
+            },
+            {
+              path: 'QuestionTwo',
+              name: 'QuestionTwo',
+              component: QuestionTwo
+            },
+            {
+              path: 'QuestionThree',
+              name: 'QuestionThree',
+              component: QuestionThree
+            },
+            {
+              path: 'QuestionFour',
+              name: 'QuestionFour',
+              component: QuestionFour
+            },
+            {
+              path: 'QuestionFive',
+              name: 'QuestionFive',
+              component: QuestionFive
             }
           ]
         }

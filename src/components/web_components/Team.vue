@@ -49,7 +49,7 @@
             <div class="row sectionTwo">
 
                 <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
-                    <img class="pl-lg-5 img-fluid fittedImg" src="../images/scientists-icon.png">
+                    <img class="pl-lg-5 img-fluid fittedImg" src="../../images/scientists-icon.png">
                 </div>
 
                 <div class="mx-auto mt-0 subText col-12 col-lg-6 order-2 order-lg-2">
@@ -71,7 +71,7 @@
             
             <div class="row">
                 <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
-                    <img class="pl-lg-5 img-fluid fittedImg" src="../images/partner-icon.png">
+                    <img class="pl-lg-5 img-fluid fittedImg" src="../../images/partner-icon.png">
                 </div>
 
                 <div class="mx-auto mt-0 pt-0 subText col-12 col-lg-6 order-2 order-lg-2">

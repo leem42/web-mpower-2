@@ -20,7 +20,7 @@
         </div>
 
         <div class="row">
-            <v-btn large :to="{name: 'SubjectInterest'}" class="col-auto mx-auto Begin text-capitalize navyBlue mediumLarge white--text"> Begin </v-btn>
+            <v-btn large :to="{name: 'SubjectInterest'}" class="col-auto mx-auto bigButton text-capitalize navyBlue mediumLarge white--text"> Begin </v-btn>
         </div>
 
     </v-app>
@@ -31,9 +31,4 @@
         top: 50% !important;
     }
 
-    .Begin {
-        width: 280px;
-        height: 70px;
-        border-radius: 12px;
-    }
 </style>

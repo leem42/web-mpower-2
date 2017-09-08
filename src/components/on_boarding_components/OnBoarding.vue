@@ -9,8 +9,10 @@
       <div class="container-fluid" style="display: block;">
         <div class="row">
   
-          <div class="col-6 pl-1 text-center text-sm-left col-sm-4">
-            <span class="lead light tiny white--text headerText"> Eligibility
+          <div class="col-6 pl-1 mx-auto text-center text-sm-left col-sm-4">
+            <p class="lead light mediumTitle  white--text"> {{getHeader()}}
+            </p>
+            <span v-if="$router.currentRoute.fullPath === '/NullPage/OnBoarding/WhyInterested'" class="lead light mediumTitle  white--text"> Eligibility
             </span>
           </div>
           <div class="text-center d-sm-none col-6">
@@ -18,7 +20,7 @@
           </div>
 
           <div class="col-sm-8 text-center text-sm-right">
-            <img src="../images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
+            <img src="../../images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
             <!--<img src="./images/survey.svg" ></img>-->
             <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
             <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
@@ -48,6 +50,27 @@
 </template>
 
 <style lang="scss">
-@import '../css/bootstrap/bootstrap';
-@import '../css/bootstrap/custom';
+@import '../../css/bootstrap/bootstrap';
+@import '../../css/bootstrap/custom';
 </style>
+
+<script>
+  export default {
+    // Here we get the correct placement text when switching between pages
+    methods: {
+      getHeader () {
+        var path = '/NullPage/OnBoarding/'
+        var route = this.$router.currentRoute.fullPath
+        console.log(path)
+        console.log(route)
+        if (route === (path + 'OverviewEligibility')) {
+          return 'Overview'
+        } else if (route === (path + 'Eligibility') || route === (path + 'SubjectInterest')) {
+          return 'Eligibility'
+        } else if (route.indexOf('Question') !== -1) {
+          return 'Test your knowledge'
+        }
+      }
+    }
+  }
+</script>

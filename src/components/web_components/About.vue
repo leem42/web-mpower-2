@@ -59,7 +59,7 @@
             </div>
 
             <div class="ml-lg-0 mr-0 col-6 pr-lg-0 col-lg-auto mx-auto">
-                <img class="img-fluid scaledPhone" src="../images/dark-blue-smartphone.png"> </img>
+                <img class="img-fluid scaledPhone" src="../../images/dark-blue-smartphone.png"> </img>
             </div>
 
             <div class="col-lg-4 ml-lg-0 mx-auto">
@@ -76,8 +76,8 @@
 
          <div class="row ">
             <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
-                <img class="pl-lg-5 img-fluid fittedImg" src="../images/sage-logo.png">
-                <img class="pl-lg-5 img-fluid fittedImg" src="../images/robert-wood-johnson-foundation-logo.png">
+                <img class="pl-lg-5 img-fluid fittedImg" src="../../images/sage-logo.png">
+                <img class="pl-lg-5 img-fluid fittedImg" src="../../images/robert-wood-johnson-foundation-logo.png">
             </div>
             <div class="mx-auto mt-0 pt-0 subText col-12 col-lg-6 order-2 order-lg-2">
                 <p class="darkPurpleText largeTitle"> Who is Involved? </p>
@@ -95,7 +95,7 @@
 
          <div class="row sectionTwo">
             <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
-                <img class="pl-lg-5 img-fluid fittedImg" src="../images/join-the-study-image_2x.png">
+                <img class="pl-lg-5 img-fluid fittedImg" src="../../images/join-the-study-image_2x.png">
             </div>
             <div class="mx-auto pt-lg-5 mt-lg-5 mt-5 subText col-12 col-lg-6 order-2 order-lg-2">
                 <p class="darkPurpleText  largeTitle"> Join the study </p>

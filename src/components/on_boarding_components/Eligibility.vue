@@ -111,7 +111,10 @@
       clicked () {
         this.isNotEligible = (this.age < 18) || (this.zipCode < 10000) || (this.selectedOptionForPhone !== 'comfortable using my phone')
         if (!this.isNotEligible) {
-          this.$router.push('Congratulations') // TODO: Flip to the top of the next page
+          this.$router.params = {
+            hasCompletedEligibility: true
+          }
+          this.$router.push('OverviewEligibility') // TODO: Flip to the top of the next page
         } else {
           this.$router.data = {
             isUnderage: this.age < 18,

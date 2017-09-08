@@ -199,7 +199,7 @@
 </template>
 
 <script>
-import { Focus } from '../directives/focus.js'
+import { Focus } from '@/directives/focus.js'
 import _ from 'lodash'
 export default {
   name: 'subjectInterest',

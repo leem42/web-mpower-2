@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Eligibility from '@/components/Eligibility'
+import Eligibility from '@/components/on_boarding_components/Eligibility'
 
 describe('Eligibility.vue', () => {
   it('should render correct contents', () => {

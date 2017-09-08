@@ -5,12 +5,12 @@
       <div class="container-fluid" style="display: block;">
         <div class="row">
           <div class="text-center col-sm-2">
-            <span class="defaultBlue pr-sm-5 mediumLarge"> mPower  </span>
+            <span class="defaultBlue pr-sm-5 mediumTitle"> mPower  </span>
           </div>
 
             <div class="col-2 col-sm-auto ml-1 mr-2 p-0 ">
-              <v-btn :to="{name: 'YourStory'}" flat class="routerBtn m-0 p-0  text-capitalize default mediumLarge">
-                YourStory
+              <v-btn :to="{name: 'YourStory'}" flat class="routerBtn m-0 p-0 text-capitalize default mediumLarge">
+                Your Story
               </v-btn>
             </div>
 
@@ -78,8 +78,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../css/bootstrap/bootstrap';
-@import '../css/bootstrap/custom';
+@import '../../css/bootstrap/bootstrap';
+@import '../../css/bootstrap/custom';
 
 .join {
   margin-right: 10px !important;
@@ -94,11 +94,11 @@ export default {
   padding: 0px;
 }
 
-.routerBtn:focus {
-  opacity: 0.7;
+.routerBtn:hover {
+  // opacity: 0.7;
   border-bottom: solid;
-  border-bottom-color: yellow;
-  font-weight: 800;
+  border-bottom-color: #ffda8a;
+  font-weight: bold;
 }
 
 </style>

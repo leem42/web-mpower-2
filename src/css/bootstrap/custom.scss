@@ -297,6 +297,21 @@ div.btn__content {
   margin-left: 6% !important;
 }
 
+div.radio.noLabel > label{
+  display: none !important;
+}
+
+div.noLabel {
+  max-width: 45px !important;
+}
+
+.bigButton {
+    width: 280px;
+    height: 70px;
+    border-radius: 12px;
+
+}
+
 
 label {
   color: black !important;
@@ -455,6 +470,10 @@ input#placeField {
     font-size: 13px !important;
   }
 
+  .bigButton > div.btn__content {
+    font-size: $font-size-base * 0.7 !important;
+  }
+
   span.chip,
   div {
     font-size: $font-size-base * 0.60 !important;
@@ -563,9 +582,6 @@ input#placeField {
   background-color: #F1F0F5 !important;
 }
 
-.large {
-  min-width: 250px;
-}
 
 .darkPurple {
   color: white !important;

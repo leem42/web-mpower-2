@@ -14,13 +14,13 @@
     
         <div class="row">
             <div class="col-sm-auto mx-auto">
-                <img class="yourStory img-fluid" src="../images/your-story-image.png"> </img>
+                <img class="yourStory img-fluid" src="../../images/your-story-image.png"> </img>
             </div>
         </div>
     
         <div class="row sectionTwo pt-5 pb-5">
             <div class="mx-auto text-center col-12 order-1 col-sm-auto order-lg-1 ">
-                <img class="img-fluid helpUnderstand " src="../images/help-us-understand-image_2x.png"> </img>
+                <img class="img-fluid helpUnderstand " src="../../images/help-us-understand-image_2x.png"> </img>
             </div>
             <div class="subText col-12 col-lg-6 order-2 order-lg-2">
                 <p class="darkPurpleText largeTitle"> Help us Understand </p>
@@ -30,7 +30,7 @@
         </div>
         <div class="row">
             <div class="mx-auto text-center col-12 order-1 col-sm-auto order-lg-1 ">
-                <img class="img-fluid  fittedImg" src="../images/telling-your-story-image.png">
+                <img class="img-fluid  fittedImg" src="../../images/telling-your-story-image.png">
             </div>
             <div class="pt-lg-2 mt-lg-3 subText col-12 col-lg-6 order-2 order-lg-2">
                 <p class="darkPurpleText largeTitle"> Telling your Story </p>
@@ -40,7 +40,7 @@
         </div>
         <div class="row sectionTwo">
             <div class="mx-auto text-center col-4 order-1 col-sm-4 col-lg-auto order-lg-1 ">
-                <img class="pl-lg-5 img-fluid fittedImg" src="../images/join-the-study-image_2x.png">
+                <img class="pl-lg-5 img-fluid fittedImg" src="../../images/join-the-study-image_2x.png">
             </div>
             <div class="pt-lg-3 mt-lg-3 mt-3 col-12 col-sm-6 order-2 order-lg-2">
                 <p class="darkPurpleText largeTitle"> Join the study </p>
