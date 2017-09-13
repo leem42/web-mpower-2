@@ -10,8 +10,9 @@
         <div class="row">
   
           <div class="col-6 pl-1 mx-auto text-center text-sm-left col-sm-4">
-            <p class="lead light mediumTitle  white--text"> {{getHeader()}}
-            </p>
+            <p class="lead light mediumTitle   white--text" v-bind:class="{medium: $router.currentRoute.fullPath.includes('Question')}">
+               {{getHeader()}}
+           </p>
             <span v-if="$router.currentRoute.fullPath === '/NullPage/OnBoarding/WhyInterested'" class="lead light mediumTitle  white--text"> Eligibility
             </span>
           </div>

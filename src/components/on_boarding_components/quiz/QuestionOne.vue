@@ -15,10 +15,10 @@
         <div class="row ml-6">
              <v-radio-group v-model="choice" class="col-12">
                 <div class="row"> 
-                    <v-radio class="noLabel col-1 pr-0" value="1">  </v-radio>
-                    <div class="col-11 dark-lead pl-0"> Understand the fluctuations of Parkinson’s disease symptoms </div>
-                    <v-radio class=" default noLabel col-1 pr-0" value="2"> </v-radio>
-                    <div class="col-11 dark-lead pl-0"> Give medical advice and diagnose people with Parkinson’s disease </div>
+                    <v-radio class="col-12 wrapLabel mb-5 pr-0" value="1" label="Understand the fluctuations of Parkinson’s disease symptoms">  </v-radio>
+                    <v-radio class="col-12 wrapLabel mt-5 mb-5 pr-0" value="1" label="Understand the fluctuations of Parkinson’s disease symptoms">  </v-radio>
+                    <!--<v-radio class=" default noLabel col-1 pr-0" value="2"> </v-radio>
+                    <div class="col-11 dark-lead pl-0"> Give medical advice and diagnose people with Parkinson’s disease </div>-->
                 </div>
              </v-radio-group> 
         </div>
