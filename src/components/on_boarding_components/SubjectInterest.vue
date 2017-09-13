@@ -28,7 +28,7 @@
     <div class="row">
       <p class="hideOnSmall lead col-sm-8 ml-6 "> Why are you interested in joining mPower?
       </p>
-      <span id="interest" class="francisco lato tiny lead col-sm-8 ml-6"> I'm interested in joining mPower because I
+      <span id="interest" class="francisco lato mediumTitle lead pt-5 pt-sm-0 col-sm-8 ml-6"> I'm interested in joining mPower because I
   
         <span v-if="firstEdit" class="p-0">
           <v-btn flat v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink middle francisco"> Want to help myself
@@ -76,8 +76,9 @@
       -->
     <span id="willing" v-if="firstClick">
       <div class="row">
-        <span class="francisco col-md-8 ml-6 tiny text-left lead"> I would be willing to try
+        <span class="francisco col-md-8 ml-6 mediumTitle text-left lead"> I would be willing to try
           <span v-if="secondEdit" class="p-0">
+            
             <v-btn flat v-if="selectedChoice[5]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> finger tapping activity
             </v-btn>
             {{ getPlacementText(5,10)}}
@@ -122,7 +123,7 @@
       -->
     <span id="basis" v-if="secondClick">
       <div class="row">
-        <p class="francisco col-md-8 ml-6 tiny text-left lead"> on a {{(thirdClick || third)? "": "_____"}}
+        <p class="francisco col-md-8 ml-6 mediumTitle text-left lead"> on a {{(thirdClick || third)? "": "_____"}}
           <span class="p-0" v-if="thirdEdit">
             <v-btn v-on:click="handleEdit(2)" flat class=" text-capitalize clickableLink francisco"> {{radioChoice}}
             </v-btn>
@@ -163,7 +164,7 @@
       -->
     <span id="request" v-if="thirdClick">
       <div class="row">
-        <p class="francisco ml-6 col-sm-8 tiny lead"> I would like to recieve
+        <p class="francisco ml-6 col-sm-8 mediumTitle lead"> I would like to recieve
           <span v-if="fourthEdit">
             <v-btn flat v-if="selectedChoice[10]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink francisco"> Updates on the study
             </v-btn>
@@ -296,7 +297,6 @@ export default {
     },
     handleRadio (index) {
       this.radioChoice = this.radioTexts[index]
-      console.log('radio called')
     }
   },
   directives: {
@@ -305,18 +305,22 @@ export default {
 }
 </script>
 
-<style>
-*:focus {
-  box-shadow: 2px; 
-  opacity: 0.75;
+<style lang="scss">
+
+  .clickableLink > div.btn__content:focus,div.btn__content:hover {
+    background-color: rgba(59,74,99,0.1) !important;
+  }
 
 
-}
-button:focus {
-  opacity: 0.8;
-}
+  .customCheck > label:focus,label:hover {
+    background-color: rgba(59,74,99,0.1) !important;
+  }
 
-.dim {
-  opacity: 0.5
-}
+  button:focus {
+    opacity: 0.8;
+  }
+
+  .dim {
+    opacity: 0.5
+  }
 </style>

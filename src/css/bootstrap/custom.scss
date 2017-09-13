@@ -175,6 +175,10 @@ div.customCheck {
   // color: #31117D !important;
 }
 
+.customCheck > label{
+  margin-left: 10px;
+}
+
 .controller {
   z-index: 2001 !important;
   height: 70px;
@@ -188,6 +192,7 @@ div.customCheck>label {
   font-size: $font-size-base * 0.7 !important;
   padding-left: 20px;
   color: rgba(58, 83, 155, 0.87) !important;
+  min-height: 40px;
 }
 
 #question {
@@ -205,6 +210,10 @@ div.customCheck>div.input-group__details {
   position: fixed;
   height: 50px;
 }
+
+.material-icons {
+    font-size: $font-size-base * 1.2;
+  }
 
 .customAlign {
   justify-content: inherit;
@@ -409,7 +418,7 @@ input#placeField {
   }
 
   div.customCheck>label, div.radio > label {
-    font-size: $font-size-base * 0.5 !important;
+    font-size: $font-size-base * 0.6 !important;
   }
 
   #nextBtn {
@@ -479,10 +488,6 @@ input#placeField {
     font-size: $font-size-base * 0.60 !important;
   }
 
-  // .tiny {
-  //   font-size: $font-size-base * 0.6 !important;
-  // }
-
   nav * img {
     height: 30px !important;
     width: 30px !important;
@@ -543,6 +548,13 @@ input#placeField {
   float: left;
   background-color: rgba(238, 238, 238, 0.7);
   z-index: 1000;
+}
+
+div[role=radio] > label {
+  padding-left: 20px;
+  padding-top: 2px;
+  margin-bottom: 10px;
+  min-height: 40px;
 }
 
 .indicatorFilled {

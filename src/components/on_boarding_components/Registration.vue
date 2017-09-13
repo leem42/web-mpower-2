@@ -107,11 +107,6 @@
       <v-btn v-on:click="getSelf()" class="text-center white--text navyBlue ml-6"> getSelf </v-btn>
     </div>
 
-
-
-
-
-    
   </v-app>
 </template>
 
