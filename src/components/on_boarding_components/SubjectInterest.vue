@@ -308,14 +308,40 @@ export default {
 
 <style lang="scss">
 
-  .clickableLink > div.btn__content:focus,div.btn__content:hover {
+  .addedHeight {
+    height: 50px;
+  }
+
+  .centerVertical {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+// Align tabbing over to use background color
+  .input-group--tab-focused >  div.input-group__input {
+    background-color: rgba(59,74,99,0.1) !important;
+  }
+  
+  .customCheck:hover > div.input-group__input{
     background-color: rgba(59,74,99,0.1) !important;
   }
 
-
-  .customCheck > label:focus,label:hover {
-    background-color: rgba(59,74,99,0.1) !important;
+  .inheritHeight {
+    min-height: 50px;
+    height: inherit !important;
   }
+
+  i.icon {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .customCheck > div.input-group__input {
+      height: inherit;
+  }
+
 
   button:focus {
     opacity: 0.8;

@@ -95,7 +95,12 @@ nav.web {
 .mediumTitle {
   font-size: $font-size-base * 0.7 !important;
 }
+
+#notAdvice {
+  font-size: $font-size-base * 0.35;
+}
 @media(max-width: 766px) {
+
       div.wrapLabel > label {
       min-height: 60px !important;
       white-space: normal;
@@ -213,6 +218,7 @@ div.customCheck>div.input-group__details {
   bottom: 0px;
   right: 0px;
   position: fixed;
+  z-index: 10000;
   height: 50px;
 }
 
@@ -362,6 +368,11 @@ p {
     padding: 0px !important;
     font-size: $font-size-base * 0.70 !important;
   }
+  
+  
+  #nextBtn > button.btn > .btn__content {
+    font-size: $font-size-base * 0.6 !important;
+  }
 
   .subText {
     font-size: $font-size-base * 0.65 !important;
@@ -390,7 +401,9 @@ p {
   .ml-6 {
     margin-left: 16.66% !important;
   }
-} // For button elements that need specific spacing
+} 
+
+// For button elements that need specific spacing
 @media(min-width: 767px) and (max-width: 1023px) {
   .ml-6-restricted {
     margin-left: 16.66% !important;
@@ -405,12 +418,14 @@ p {
 
 input#testing,
 input#placeField {
-  // min-height: 35px;
-  // padding-bottom: 10px;
   font-size: $font-size-base * 0.7 !important;
 }
 
+
 @media(max-width: 767px) {
+  #notAdvice {
+    font-size: $font-size-base * 0.3 !important;
+  }
 
   div.btn__content {
     font-size: $font-size-base * 0.28 !important;
@@ -461,6 +476,14 @@ input#placeField {
     height: 50px;
     width: 50px;
   }
+
+
+
+.centerVertical {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
   .hideOnSmall {
     display: none !important;

@@ -3,7 +3,7 @@
   
     <!--<v-icon dark class="intercom d-print-md-none" medium >fa-comment</v-icon>
       <v-icon dark class="intercom hideOnSmall" x-large>fa-comment</v-icon>-->
-    <v-btn class="darkPurple text-lowercase helpButton hideOnSmall"> Have a question for us? </v-btn>
+    <v-btn class="darkPurple text--normal mb-0 pb-0 helpButton hideOnSmall"> Have a question for us? </v-btn>
   
     <nav class="onboarding navbar navbar-fixed-top navbar-light pt-0 pb-0">
       <div class="container-fluid" style="display: block;">

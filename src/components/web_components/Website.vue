@@ -45,21 +45,21 @@
 
     <nav class="web navbar fixed-bottom">
       <div class="row" style="height: inherit; width: 100%;"  >
-        <div class="col-md-9 pr-0 pl-0 centerVertical">
+        <div class="col-md-8 pr-0 pl-0 centerVertical">
           <div class="row">
-            <v-btn id="mPower" flat :ripple="false" class="mb-0 mt-0  mb-sm-auto mt-sm-auto col-12 col-sm-1 zeroOpacity  minWidthReset text--normal text-left-force tiny mr-0 ml-0 ml-lg-3 pl-2 pr-0 white--text"> 2017 mPower</v-btn> 
-            <v-btn :to="{name: 'FAQ'}" flat class="col-2 zeroOpacity  minWidthReset ml-md-5 mr-0 pl-0 pr-0 white--text"> FAQ </v-btn> 
+            <v-btn id="mPower" flat :ripple="false" class="mb-0 mt-0  mb-sm-auto mt-sm-auto col-12 col-sm-1 zeroOpacity  minWidthReset text--normal text-left-force tiny mr-md-4 ml-0 ml-lg-3 pl-2 pr-0 white--text"> 2017 mPower</v-btn> 
+            <v-btn :to="{name: 'FAQ'}" flat class="col-2 col-sm-1 zeroOpacity  minWidthReset ml-md-5 ml-lg-3 mr-0 pl-0 pr-0 white--text"> FAQ </v-btn> 
             <span  class="centerVertical"> | </span>
-            <v-btn :to="{name: 'Privacy'}" flat class="col-3 col-sm-2 zeroOpacity  minWidthReset mr-md-3 ml-md-3 ml-0 mr-0 pl-0 pr-0 white--text"> Privacy Policy</v-btn> 
+            <v-btn :to="{name: 'Privacy'}" flat class="col-3 col-sm-2 ml-xl-0 mr-xl-0 zeroOpacity  minWidthReset ml-md-3 ml-lg-2 mr-md-3 mr-lg-1 ml-0 mr-0 pl-0 pr-0 white--text"> Privacy Policy</v-btn> 
             <span class="centerVertical"> | </span>
-            <v-btn flat class="zeroOpacity  minWidthReset col-3 col-sm-2 pl-0 pr-0 ml-md-3 mr-md-3 white--text"> Terms of service </v-btn>
+            <v-btn flat class="zeroOpacity  minWidthReset col-3 col-sm-2 ml-xl-0 mr-xl-0 pl-0 pr-0 ml-md-4 ml-lg-2 mr-md-4 mr-lg-2 white--text"> Terms of service </v-btn>
             <span class="centerVertical"> | </span>
-            <v-btn :to="{name: 'Contact'}" flat class="col-2 zeroOpacity minWidthReset mr-md-0 ml-0 pl-0 white--text"> Contact </v-btn>
+            <v-btn :to="{name: 'Contact'}" flat class="col-1 ml-xl-0 zeroOpacity minWidthReset white--text"> Contact </v-btn>
           </div>
         </div>
-        <div class="col-md-3 ml-0 mr-0 pl-0 pr-0 centerVertical">
+        <div class="col-md-4 ml-0 mr-0 pl-0 pr-0 centerVertical">
           <div class="row">
-            <span class="col-12 x-tiny text-left ml-2 mr-2 mb-2 ">mPower is for research use only and does not provide medical advice, diagnosis or treatment.</span>
+            <span id="notAdvice" class="col-12 text-left ml-2 mr-2 mb-2 ">mPower is for research use only and does not provide medical advice, diagnosis or treatment.</span>
           </div>
         </div>
       </div>
@@ -91,10 +91,6 @@ export default {
 <style lang="scss">
 @import '../../css/bootstrap/bootstrap';
 @import '../../css/bootstrap/custom';
-
-// #mPower > div.btn__content {
-//   font-size: 12px !important;
-// }
 
 .minWidthReset {
   min-width: 0px !important;
