@@ -64,7 +64,7 @@ nav.web {
 }
 
 .x-tiny {
-  font-size: $font-size-base * 0.4 !important;
+  font-size: $font-size-base * 0.3 !important;
 }
 
 .medium-small {
@@ -110,7 +110,7 @@ nav.web {
   }
 
   nav.web.fixed-bottom {
-    height: 180px;
+    height: 150px;
     position: relative !important;
   }
 
@@ -226,6 +226,10 @@ div.customCheck>div.input-group__details {
 
 .defaultBlue {
     color: #3a539b;
+}
+
+.text--normal {
+  text-transform: none;
 }
 
 .logo {
@@ -374,8 +378,9 @@ p {
   div {
     font-size: $font-size-base * 0.80 !important;
   }
+
   div.btn__content {
-    font-size: $font-size-base * 0.50 !important;
+    font-size: $font-size-base * 0.44 !important;
   }
 
   .mediumLarge > div.btn__content {
@@ -406,6 +411,11 @@ input#placeField {
 }
 
 @media(max-width: 767px) {
+
+  div.btn__content {
+    font-size: $font-size-base * 0.2 !important;
+  }
+
   .tiny {
     font-size: $font-size-base * 0.45 !important;
   }
@@ -480,9 +490,7 @@ input#placeField {
     color: #31117D;
     font-size: $font-size-base * 0.6 !important;
   }
-  div.btn__content {
-    font-size: 13px !important;
-  }
+  
 
   .bigButton > div.btn__content {
     font-size: $font-size-base * 0.7 !important;

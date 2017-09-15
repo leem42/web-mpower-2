@@ -27,7 +27,7 @@
               </v-btn>
             </div>
 
-            <div class="col-2 col-sm-auto ml-2 mr-2 pl-2">
+            <div class="col-2 col-sm-auto ml-2 mr-2 pl-2 ml-md-auto">
               <v-btn :to="{name: 'OverviewEligibility'}" class="routerBtn join m-0 p-0 navyBlue text-capitalize white--text mediumLarge"> 
                 Join 
               </v-btn>
@@ -44,13 +44,24 @@
     <router-view class="router container-fluid"></router-view>
 
     <nav class="web navbar fixed-bottom">
-      <div class="row mx-md-auto">
-        <v-btn flat class="col-2 zeroOpacity col-md-2 tiny mr-md-1 ml-md-1 white--text"> 2017 mPower </v-btn>
-        <v-btn :to="{name: 'FAQ'}" flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> FAQ </v-btn>
-        <v-btn :to="{name: 'Privacy'}" flat class="col-3 zeroOpacity col-md-2 tiny  mr-md-1 ml-md-1 white--text"> Privacy Policy </v-btn>
-        <v-btn flat class="col-4 zeroOpacity ml-3 pl-2 col-md-2 tiny mr-md-1 ml-md-1 white--text"> Terms of service </v-btn>
-        <v-btn :to="{name: 'Contact'}" flat class="col-1 zeroOpacity tiny mr-md-1 ml-md-1 white--text"> Contact </v-btn>
-        <span class="col-md-3 x-tiny">mPower is for research use only and does not provide medical advice, diagnosis or treatment.</span>
+      <div class="row" style="height: inherit;"  >
+        <div class="col-md-9 pr-0 pl-0 centerVertical">
+          <div class="row">
+            <v-btn flat :ripple="false" class="col-12 col-sm-2 zeroOpacity  minWidthReset text--normal text-left-force tiny mr-0 ml-0 pl-4 pr-0 white--text"> 2017 mPower</v-btn> 
+            <v-btn :to="{name: 'FAQ'}" flat class="col-2 col-sm-1 zeroOpacity  minWidthReset ml-0 mr-0 pl-0 pr-0 white--text"> FAQ </v-btn> 
+            <span  class="centerVertical"> | </span>
+            <v-btn :to="{name: 'Privacy'}" flat class="col-3 col-sm-3 zeroOpacity  minWidthReset mr-md-0 ml-md-0 ml-0 mr-0 pl-0 pr-0 white--text"> Privacy Policy</v-btn> 
+            <span class="centerVertical"> | </span>
+            <v-btn flat class="zeroOpacity  minWidthReset col-3 col-sm-3 pl-0 pr-0 ml-0 mr-0 white--text"> Terms of service </v-btn>
+            <span class="centerVertical"> | </span>
+            <v-btn :to="{name: 'Contact'}" flat class="col-2 col-sm-2 zeroOpacity  minWidthReset mr-md-0 ml-0 pl-0 white--text"> Contact </v-btn>
+          </div>
+        </div>
+        <div class="col-md-3 pl-0 pr-0 centerVertical">
+          <div class="row">
+            <span class="col-12 x-tiny text-left ml-2 mr-2 text-md-left">mPower is for research use only and does not provide medical advice, diagnosis or treatment.</span>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -81,10 +92,21 @@ export default {
 @import '../../css/bootstrap/bootstrap';
 @import '../../css/bootstrap/custom';
 
+.minWidthReset {
+  min-width: 0px !important;
+}
 .join {
   margin-right: 10px !important;
 }
 
+.text-left-force > div{
+  justify-content: left !important;
+}
+.centerVertical {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .scaledJoinButton {
   width: 2em;
   height: 2em;

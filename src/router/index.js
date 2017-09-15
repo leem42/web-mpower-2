@@ -28,6 +28,14 @@ import auth from '../auth/auth'
 
 Vue.use(Router)
 
+const scrollBehavior = (to, from, savedPosition) => {
+  const position = {}
+  position.x = 0
+  position.y = 0
+  console.log('scrolling')
+  return { position }
+}
+
 function requireAuth (to, from, next) {
   if (!auth.loggedIn()) {
     next({
@@ -40,7 +48,10 @@ function requireAuth (to, from, next) {
 }
 
 export default new Router({
+  // mode: 'history', TODO: Configure history mode
+  scrollBehavior: scrollBehavior,
   routes: [
+    // { path: '*', component: NotFoundComponent },
     {
       path: '/NullPage',
       component: NullPage,
