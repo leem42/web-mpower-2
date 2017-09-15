@@ -28,7 +28,7 @@
     <div class="row">
       <p class="lead col-sm-8 mediumTitle ml-6 pt-5 pt-md-0"> Why are you interested in joining mPower?
       </p>
-      <span id="interest" class="francisco lato mediumLarge lead pt-sm-0 col-sm-8 ml-6"> I'm interested in joining mPower because I
+      <span id="interest" class="francisco lato mediumLarge lead pt-sm-0 col-sm-8 ml-6 mb-4"> I'm interested in joining mPower because I
   
         <span v-if="firstEdit" class="ml-0 p-0">
           <v-btn flat :ripple="false" v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink middle francisco"> Want to help myself         
@@ -47,25 +47,25 @@
           {{ getPlacementText(3,5)}}
           </v-btn>
         </span>
-        <v-btn v-if="firstClick" flat class="francisco clickableLink white--text text-capitalize" @click.native="handleEdit(0)"> {{firstEdit ? "(Edit choices)": "Resubmit"}} </v-btn>
+        <v-btn v-if="firstClick" flat class="francisco clickableLink white--text text-capitalize" @click.native="handleEdit(0)"> {{firstEdit ? "(Add More)": "Resubmit"}} </v-btn>
       </span>
     </div>
   
     <span v-if="!firstEdit">
       <div class="row">
-        <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 col-sm-6 col-md-5  col-lg-4  customCheck "></v-checkbox>
+        <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 pt-3 pb-3  centerVertical stencilBorderTop stencilBorder col-sm-6 col-md-5  col-lg-4  customCheck "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-5 customCheck wrapLabel"></v-checkbox>
+        <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 pt-3 pb-3  centerVertical stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-4 customCheck wrapLabel"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="ml-6 col-sm-5 col-md-5 col-lg-4 customCheck "></v-checkbox>
+        <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="ml-6 pt-3 pb-3  centerVertical stencilBorder col-sm-5 col-md-5 col-lg-4 customCheck "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="am curious" v-model="selectedChoice[3]" class="ml-6 col-sm-3 customCheck "></v-checkbox>
+        <v-checkbox label="am curious" v-model="selectedChoice[3]" class="ml-6 pt-3 pb-3  centerVertical stencilBorder col-sm-3 customCheck col-lg-4 "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="another reason" v-model="selectedChoice[4]" class="ml-6 col-sm-4 customCheck "></v-checkbox>
+        <v-checkbox label="another reason" v-model="selectedChoice[4]" class="ml-6 pt-3 pb-3  centerVertical stencilBorderBottom col-sm-4 customCheck col-lg-4"></v-checkbox>
       </div>
     </span>
   
@@ -95,7 +95,7 @@
             <v-btn flat :ripple="false" v-if="selectedChoice[9]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> surveys
             </v-btn>
           </span>
-          <v-btn v-if="secondClick" flat class="clickableLink text-capitalize" v-on:click="handleEdit(1)"> {{secondEdit ? "(Edit Choices)": "Resubmit"}} </v-btn>
+          <v-btn v-if="secondClick" flat class="clickableLink text-capitalize" v-on:click="handleEdit(1)"> {{secondEdit ? "(Add Choices)": "Resubmit"}} </v-btn>
         </span>
       </div>
   
@@ -176,7 +176,7 @@
             <v-btn flat :ripple="false" v-if="selectedChoice[12]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink francisco"> Updates on the app
             </v-btn>
           </span>
-          <v-btn v-if="fourthClick" flat class="white--text text-capitalize clickableLink" v-on:click="handleEdit(3)"> {{fourthEdit ? "(Edit Choice)": "Resubmit"}} </v-btn>
+          <v-btn v-if="fourthClick" flat class="white--text text-capitalize clickableLink" v-on:click="handleEdit(3)"> {{fourthEdit ? "(Add Choices)": "Resubmit"}} </v-btn>
         </p>
       </div>
   
@@ -336,6 +336,22 @@ export default {
   .inheritHeight {
     min-height: 50px;
     height: inherit !important;
+  }
+
+  .stencilBorderTop {
+    border-top: solid;
+    border-width: 1px;
+    border-color: rgba(0,0,0,0.1);
+  }
+  .stencilBorder {
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: rgba(0,0,0,0.1);
+  }
+  .stencilBorderBottom {
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: rgba(0,0,0,0.1);
   }
 
   i.icon {
