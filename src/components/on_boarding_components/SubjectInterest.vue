@@ -26,9 +26,9 @@
       -->
       <br>
     <div class="row">
-      <p class="hideOnSmall lead col-sm-8 ml-6 "> Why are you interested in joining mPower?
+      <p class="lead col-sm-8 mediumTitle ml-6 pt-5 pt-md-0"> Why are you interested in joining mPower?
       </p>
-      <span id="interest" class="francisco lato mediumTitle lead pt-5 pt-sm-0 col-sm-8 ml-6"> I'm interested in joining mPower because I
+      <span id="interest" class="francisco lato mediumLarge lead pt-sm-0 col-sm-8 ml-6"> I'm interested in joining mPower because I
   
         <span v-if="firstEdit" class="ml-0 p-0">
           <v-btn flat :ripple="false" v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink middle francisco"> Want to help myself         
@@ -319,7 +319,7 @@ export default {
   }
 
 // Align tabbing over to use background color
-  .input-group--tab-focused >  div.input-group__input {
+  div[role=checkbox].input-group--tab-focused >  div.input-group__input {
     background-color: rgba(59,74,99,0.1) !important;
   }
   
@@ -327,6 +327,12 @@ export default {
     background-color: rgba(59,74,99,0.1) !important;
   }
 
+  button.clickableLink:focus{
+    background-color: rgba(59,74,99,0.1) !important;
+  }
+  div.btn__content:hover {
+    background-color: rgba(59,74,99,0.1) !important;
+  }
   .inheritHeight {
     min-height: 50px;
     height: inherit !important;

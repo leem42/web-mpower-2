@@ -3,16 +3,16 @@
   
     <!--<v-icon dark class="intercom d-print-md-none" medium >fa-comment</v-icon>
       <v-icon dark class="intercom hideOnSmall" x-large>fa-comment</v-icon>-->
-    <v-btn class="darkPurple text--normal mb-0 pb-0 helpButton hideOnSmall"> Have a question for us? </v-btn>
+    <v-btn class="darkPurple text-lowercase helpButton hideOnSmall"> Have a question for us? </v-btn>
   
     <nav class="onboarding navbar navbar-fixed-top navbar-light pt-0 pb-0">
       <div class="container-fluid" style="display: block;">
         <div class="row">
   
           <div class="col-6 pl-1 mx-auto text-center text-sm-left col-sm-4">
-            <p class="lead light mediumTitle   white--text" v-bind:class="{medium: $router.currentRoute.fullPath.includes('Question')}">
+            <span class="lead light mediumTitle centerVertical   white--text" v-bind:class="{medium: $router.currentRoute.fullPath.includes('Question')}">
                {{getHeader()}}
-           </p>
+           </span>
             <span v-if="$router.currentRoute.fullPath === '/NullPage/OnBoarding/WhyInterested'" class="lead light mediumTitle  white--text"> Eligibility
             </span>
           </div>
@@ -27,10 +27,10 @@
             <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
             <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
             <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-            <v-icon medium class="d-md-none mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <v-icon medium class="d-md-none mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <v-icon medium class="d-md-none mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <v-icon medium class="d-md-none mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+            <v-icon medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+            <v-icon medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+            <v-icon medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+            <v-icon medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
           </div>
   
         </div>
