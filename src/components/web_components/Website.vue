@@ -47,7 +47,7 @@
       <div class="row" style="height: inherit; width: 100%;"  >
         <div class="col-md-9 pr-0 pl-0 centerVertical">
           <div class="row">
-            <v-btn id="mPower" flat :ripple="false" class="col-12 col-sm-1 zeroOpacity  minWidthReset text--normal text-left-force tiny mr-0 ml-0 ml-lg-3 pl-2 pr-0 white--text"> 2017 mPower</v-btn> 
+            <v-btn id="mPower" flat :ripple="false" class="mb-0 mt-0  mb-sm-auto mt-sm-auto col-12 col-sm-1 zeroOpacity  minWidthReset text--normal text-left-force tiny mr-0 ml-0 ml-lg-3 pl-2 pr-0 white--text"> 2017 mPower</v-btn> 
             <v-btn :to="{name: 'FAQ'}" flat class="col-2 zeroOpacity  minWidthReset ml-md-5 mr-0 pl-0 pr-0 white--text"> FAQ </v-btn> 
             <span  class="centerVertical"> | </span>
             <v-btn :to="{name: 'Privacy'}" flat class="col-3 col-sm-2 zeroOpacity  minWidthReset mr-md-3 ml-md-3 ml-0 mr-0 pl-0 pr-0 white--text"> Privacy Policy</v-btn> 
@@ -59,7 +59,7 @@
         </div>
         <div class="col-md-3 ml-0 mr-0 pl-0 pr-0 centerVertical">
           <div class="row">
-            <span class="col-12 x-tiny text-left ml-2 mr-2 ">mPower is for research use only and does not provide medical advice, diagnosis or treatment.</span>
+            <span class="col-12 x-tiny text-left ml-2 mr-2 mb-2 ">mPower is for research use only and does not provide medical advice, diagnosis or treatment.</span>
           </div>
         </div>
       </div>
