@@ -5,20 +5,18 @@
         <br>
         <br>
         <div class="row">
-            <p class="ml-6 pl-2 light defaultBlue tiny text-uppercase"> Question 12 </p>
+            <p class="ml-6 pl-2 lightLead tiny text-uppercase"> Question 1 </p>
         </div>
 
         <div class="row">
-            <p class="ml-6 pl-2 defaultBlue"> What is the purpse of this study? </p>
+            <p class="ml-6 pl-2 lightGrayText"> What is the purpse of this study? </p>
         </div>
         
-        <div class="row ml-6">
+        <div class="row ml-6 mt-4">
              <v-radio-group v-model="choice" class="col-12">
                 <div class="row"> 
-                    <v-radio class="col-12 wrapLabel mb-5 pr-0" value="1" label="Understand the fluctuations of Parkinson’s disease symptoms">  </v-radio>
-                    <v-radio class="col-12 wrapLabel mt-5 mb-5 pr-0" value="1" label="Understand the fluctuations of Parkinson’s disease symptoms">  </v-radio>
-                    <!--<v-radio class=" default noLabel col-1 pr-0" value="2"> </v-radio>
-                    <div class="col-11 dark-lead pl-0"> Give medical advice and diagnose people with Parkinson’s disease </div>-->
+                    <v-radio class="col-12 wrapLabel lightGrayText mb-5 pr-0" value="1" label="Understand the fluctuations of Parkinson’s disease symptoms">  </v-radio>
+                    <v-radio class="col-12 wrapLabel lightGrayText pr-0" value="2" label="Give medical advice and diagnose people with Parkinson’s disease">  </v-radio>
                 </div>
              </v-radio-group> 
         </div>

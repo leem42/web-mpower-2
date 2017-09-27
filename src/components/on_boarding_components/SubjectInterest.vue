@@ -53,19 +53,19 @@
   
     <span v-if="!firstEdit">
       <div class="row">
-        <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 pt-3 pb-3  centerVertical stencilBorderTop stencilBorder col-sm-6 col-md-5  col-lg-4  customCheck "></v-checkbox>
+        <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 pt-3 pb-3  stencilBorderTop stencilBorder col-sm-7 col-md-6  col-lg-4  customCheck "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 pt-3 pb-3  centerVertical stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-4 customCheck wrapLabel"></v-checkbox>
+        <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 pt-3 pb-3   stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-4 customCheck wrapLabel"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="ml-6 pt-3 pb-3  centerVertical stencilBorder col-sm-5 col-md-5 col-lg-4 customCheck "></v-checkbox>
+        <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="ml-6 pt-sm-3 pt-0 pb-3  stencilBorder col-sm-7 col-md-6 col-lg-4 customCheck "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="am curious" v-model="selectedChoice[3]" class="ml-6 pt-3 pb-3  centerVertical stencilBorder col-sm-3 customCheck col-lg-4 "></v-checkbox>
+        <v-checkbox label="am curious" v-model="selectedChoice[3]" class="ml-6 pt-3 pb-3  stencilBorder col-sm-7 col-md-6 customCheck col-lg-4 "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="another reason" v-model="selectedChoice[4]" class="ml-6 pt-3 pb-3  centerVertical stencilBorderBottom col-sm-4 customCheck col-lg-4"></v-checkbox>
+        <v-checkbox label="another reason" v-model="selectedChoice[4]" class="ml-6 pt-3 pb-3  stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-4"></v-checkbox>
       </div>
     </span>
   
@@ -77,7 +77,7 @@
       -->
     <span id="willing" v-if="firstClick">
       <div class="row">
-        <span class="francisco col-md-8 ml-6 mediumTitle text-left lead"> I would be willing to try
+        <span class="francisco col-md-8 ml-6 mediumTitle mb-4 text-left lead"> I would be willing to try
           <span v-if="secondEdit" class="p-0">
             
             <v-btn flat :ripple="false" v-if="selectedChoice[5]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> finger tapping activity
@@ -100,19 +100,19 @@
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 col-sm-7 col-md-6 col-lg-5 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 stencilBorderTop stencilBorder pt-3 pb-3  col-sm-7 col-md-6 col-lg-5 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6 col-sm-6 col-md-5  col-lg-4  customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6   stencilBorder pt-3 pb-3 col-sm-6 col-md-5  col-lg-4  customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6 col-sm-4 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6 col-sm-6 col-md-5  col-lg-4 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-md-5  col-lg-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6  stencilBorderTop stencilBorder pt-3 pb-3 col-sm-3 customCheck darkPurple--text"></v-checkbox>
       </div>
     </span>
   

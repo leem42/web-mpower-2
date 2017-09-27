@@ -135,8 +135,9 @@ nav.web {
 }
 
 .lightGrayText {
-    color: #4a4a4a;
+    color: #4a4a4a !important;
 }
+
 
 .mediumLarge {
   font-size: $font-size-base * 0.6 !important;
@@ -160,8 +161,12 @@ nav.web {
   margin-right: 0px;
 }
 
-div.radio > label {
+.radio > label {
   color: rgba(58, 83, 155, 0.87) !important;
+}
+
+.radio.lightGrayText > label {
+  @extend .lightGrayText;
 }
 
 div.radio {
@@ -423,6 +428,10 @@ input#placeField {
 
 
 @media(max-width: 767px) {
+  #nextBtn > button.btn > .btn__content {
+    font-size: $font-size-base * 0.5 !important;
+  }
+
   #notAdvice {
     font-size: $font-size-base * 0.3 !important;
   }
@@ -732,6 +741,10 @@ footer {
 .lead {
   color: #3b4a63;
   font-weight: normal;
+}
+
+.lightLead {
+  color: #6C7A89; 
 }
 
 .long {
