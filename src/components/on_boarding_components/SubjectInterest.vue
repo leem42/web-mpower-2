@@ -31,23 +31,23 @@
       <span id="interest" class="francisco lato mediumLarge lead pt-sm-0 col-sm-8 ml-6 mb-4"> I'm interested in joining mPower because I
   
         <span v-if="firstEdit" class="ml-0 p-0">
-          <v-btn flat :ripple="false" v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink middle francisco"> Want to help myself         
-            {{getPlacementText(0,5)}}
+          <v-btn flat :ripple="false" v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink pl-0 middle francisco"> Want to help myself         
           </v-btn>
-          <v-btn flat :ripple="false" v-if="selectedChoice[1]" @click.native="handleEdit(0)" class="francisco text-capitalize clickableLink"> Want to help a loved one 
+            {{getPlacementText(0,5)}}
+          <v-btn flat :ripple="false" v-if="selectedChoice[1]" @click.native="handleEdit(0)" class="francisco text-capitalize clickableLink pl-0"> Want to help a loved one 
               {{getPlacementText(1,5)}}
           </v-btn>
-          <v-btn flat :ripple="false" v-if="selectedChoice[2]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> help others
-          {{getPlacementText(1,5)}}
+          <v-btn flat :ripple="false" v-if="selectedChoice[2]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> help others
           </v-btn>
-          <v-btn flat :ripple="false" v-if="selectedChoice[3]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> Am curious
           {{getPlacementText(2,5)}}
+          <v-btn flat :ripple="false" v-if="selectedChoice[3]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> Am curious
           </v-btn>
-          <v-btn flat :ripple="false" v-if="selectedChoice[4]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink"> another reason
-          {{ getPlacementText(3,5)}}
+          {{getPlacementText(3,5)}}
+          <v-btn flat :ripple="false" v-if="selectedChoice[4]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> another reason
           </v-btn>
+          {{ getPlacementText(4,5)}}
         </span>
-        <v-btn v-if="firstClick" flat class="francisco clickableLink white--text text-capitalize" @click.native="handleEdit(0)"> {{firstEdit ? "(Add More)": "Resubmit"}} </v-btn>
+        <v-btn v-if="firstClick" flat class="francisco clickableLink white--text text-capitalize pl-0" @click.native="handleEdit(0)"> {{firstEdit ? "(Add More)": "Resubmit"}} </v-btn>
       </span>
     </div>
   
@@ -69,7 +69,7 @@
       </div>
     </span>
   
-    <br>
+    
     <!-- Section 2.
   
       I would be willing to try
@@ -80,44 +80,43 @@
         <span class="francisco col-md-8 ml-6 mediumTitle mb-4 text-left lead"> I would be willing to try
           <span v-if="secondEdit" class="p-0">
             
-            <v-btn flat :ripple="false" v-if="selectedChoice[5]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> finger tapping activity
+            <v-btn flat :ripple="false" v-if="selectedChoice[5]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> finger tapping activity
             </v-btn>
             {{ getPlacementText(5,10)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[6]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> hand tremor activity
+            <v-btn flat :ripple="false" v-if="selectedChoice[6]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> hand tremor activity
             </v-btn>
             {{ getPlacementText(6,10)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[7]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> balance activity
+            <v-btn flat :ripple="false" v-if="selectedChoice[7]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> balance activity
             </v-btn>
             {{ getPlacementText(7,10)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[8]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> brain teaser activity
+            <v-btn flat :ripple="false" v-if="selectedChoice[8]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> brain teaser activity
             </v-btn>
             {{ getPlacementText(8,10)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[9]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink francisco"> surveys
+            <v-btn flat :ripple="false" v-if="selectedChoice[9]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> surveys
             </v-btn>
           </span>
-          <v-btn v-if="secondClick" flat class="clickableLink text-capitalize" v-on:click="handleEdit(1)"> {{secondEdit ? "(Add Choices)": "Resubmit"}} </v-btn>
+          <v-btn v-if="secondClick" flat class="clickableLink pl-0 text-capitalize" v-on:click="handleEdit(1)"> {{secondEdit ? "(Add Choices)": "Resubmit"}} </v-btn>
         </span>
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 stencilBorderTop stencilBorder pt-3 pb-3  col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 stencilBorderTop stencilBorder pt-3 pb-3  col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6   stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6   stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
       </div>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6  stencilBorderTop stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6  stencilBorderTop stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
       </div>
     </span>
   
-    <br>
     <!-- Section 3.
   
         On a _____ Basis
@@ -127,11 +126,11 @@
       <div class="row">
         <p class="francisco col-md-8 ml-6 mediumTitle text-left lead"> on a {{(thirdClick || third)? "": "_____"}}
           <span class="p-0" v-if="thirdEdit">
-            <v-btn v-on:click="handleEdit(2)" flat class=" text-capitalize clickableLink francisco"> {{radioChoice}}
+            <v-btn v-on:click="handleEdit(2)" flat class=" text-capitalize pl-0 clickableLink francisco"> {{radioChoice}}
             </v-btn>
           </span>
           basis
-          <v-btn v-if="thirdClick" flat class=" white--text text-capitalize clickableLink" v-on:click="handleEdit(2)"> {{thirdEdit ? "(Edit Choice)": "Resubmit"}} </v-btn>
+          <v-btn v-if="thirdClick" flat class=" white--text text-capitalize pl-0 clickableLink" v-on:click="handleEdit(2)"> {{thirdEdit ? "(Edit Choice)": "Resubmit"}} </v-btn>
         </p>
       </div>
   
@@ -168,27 +167,27 @@
       <div class="row">
         <p class="francisco ml-6 col-sm-8 mediumTitle lead"> I would like to recieve
           <span v-if="fourthEdit">
-            <v-btn flat :ripple="false" v-if="selectedChoice[10]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink francisco"> Updates on the study
+            <v-btn flat :ripple="false" v-if="selectedChoice[10]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the study
             </v-btn>
             {{ getPlacementText(10,12)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[11]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink francisco"> Updates on my progress
+            <v-btn flat :ripple="false" v-if="selectedChoice[11]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on my progress
             </v-btn>
             {{ getPlacementText(11,12)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[12]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink francisco"> Updates on the app
+            <v-btn flat :ripple="false" v-if="selectedChoice[12]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the app
             </v-btn>
           </span>
-          <v-btn v-if="fourthClick" flat class="white--text text-capitalize clickableLink" v-on:click="handleEdit(3)"> {{fourthEdit ? "(Add Choices)": "Resubmit"}} </v-btn>
+          <v-btn v-if="fourthClick" flat class="white--text text-capitalize clickableLink pl-0" v-on:click="handleEdit(3)"> {{fourthEdit ? "(Add Choices)": "Resubmit"}} </v-btn>
         </p>
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="stencilBorderTop stencilBorder pt-3 pb-3 ml-6 col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="stencilBorderTop stencilBorder pt-3 pb-3 ml-6 col-sm-6 col-lg-4  customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on my progress" v-model="selectedChoice[11]" class="stencilBorder pt-3 pb-3 ml-6  col-sm-6 col-lg-4 col-xl-3 mb-4 mb-sm-0 customCheck darkPurple--text wrapLabel"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" id="updates" label="Updates on my progress" v-model="selectedChoice[11]" class="stencilBorder pt-3 pb-3 ml-6  col-sm-6 col-lg-4 mb-sm-0 customCheck darkPurple--text wrapLabel"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="stencilBorder pt-3 pb-3 ml-6  col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="stencilBorder pt-3 pb-3 ml-6  col-sm-6 col-lg-4  customCheck darkPurple--text"></v-checkbox>
       </div>
   
     </span>
@@ -231,7 +230,7 @@ export default {
     },
     scrollPage: _.debounce(
       function (arg1) {
-        this.$scrollTo(arg1, 1500, { easing: 'linear' })
+        this.$scrollTo(arg1, 1500, { easing: 'linear', offset: -90 }).offset().top
       }
     , 200),
     handleEdit: function (index) {
@@ -263,7 +262,7 @@ export default {
         this.thirdClick = true
         this.third = true
         this.thirdEdit = true
-        this.scrollPage('#requests')
+        this.scrollPage('#request')
       } else if (!this.fourthClick) {
         this.fourthClick = true
         this.fourth = true
@@ -309,8 +308,17 @@ export default {
 
 <style lang="scss">
 
+  .clickableLink.pl-0 > div.btn__content{
+    padding-left: 0px !important;
+    padding-right: 2px !important;
+  }
+
   .addedHeight {
     height: 50px;
+  }
+
+  #updates > label {
+    max-width: 80% !important;
   }
 
   .centerVertical {
