@@ -7,7 +7,7 @@
         <div class="indicatorFilled offset one"> </div>
         <div class="indicatorEmpty offset two" v-bind:class="{indicatorFilled: isUnderage !== null && !isUnderage}"> </div>
         <div class="indicatorEmpty offset three" v-bind:class="{indicatorFilled: isResident}"> </div>
-        <div class="indicatorEmpty offset four" v-bind:class="{indicatorFilled: isEligible}"> </div>
+        <div class="indicatorEmpty offset four" v-bind:class="{indicatorFilled: hasCompletedForm}"> </div>
         <div class="indicatorEmpty offset five"> </div>
       </span>
     </div>
@@ -24,13 +24,13 @@
         <div class="row">
           <p class="lead col-auto mx-auto mx-md-0"> I am </p>
           <v-flex class="col-md-3">
-            <v-text-field suffix="years old" name="input-1" label="age" placeholder="45" id="testing" type="number" pattern="\d*" required auto-grow :rules="[() => !!age || (age < 100) || 'Age must be less than 120']" v-model.number="age">
+            <v-text-field suffix="years old" name="input-1" label="enter age" placeholder="45" id="testing" type="number" pattern="\d*" auto-grow :rules="[() => !!age || (age < 100) || 'Age must be less than 120']" v-model.number="age">
             </v-text-field>
           </v-flex>
 
           <p class="lead col-auto mx-auto mx-md-0" v-if="isUnderage !== null"> I live in </p>
           <v-flex class="col-12 mb-3 col-md-4" v-if="isUnderage !== null && !isUnderage">
-            <v-select class="eligibility" v-bind:items="states" hide-details auto single-line pattern="\d*" name="input-1" label="select where" id="placeField" v-model="isResident"></v-select>
+            <v-select class="eligibility" v-bind:items="states" hide-details auto single-line pattern="\d*" name="input-1" label="select where" id="placeField" v-model="stateChosen"></v-select>
           </v-flex>
           
           <!--<v-flex class="col-12 col-md-8 col-lg-4" v-if="isUnderage !== null && !isUnderage">
@@ -42,14 +42,14 @@
       </div>
     </div>
 
-    <div id="option" class="row mt-2 text-center text-sm-auto" v-if="isResident">
+    <div id="option" class="row mt-2 text-center text-sm-auto" v-if="stateChosen !== ''">
       <p class="lead col-12 col-md-auto ml-6">
         and I feel </p>
       <v-select single-line id="comfortable" class="col-md-5 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
       </v-select>
       <!--<p class="lead col-12 text-center col-sm-auto"> using my phone </p>-->
-      <div class="col-12 text-center " v-if="isEligible">
-        <v-btn light v-on:click="clicked" v-bind:class="{dim: !isEligible}" v-focus="isEligible" id="submit" class="large"> Submit </v-btn>
+      <div class="col-12 text-center " v-if="hasCompletedForm">
+        <v-btn light v-on:click="clicked" v-bind:class="{dim: !hasCompletedForm}" v-focus="hasCompletedForm" id="submit" class="large"> Submit </v-btn>
       </div>
     </div>
 
@@ -70,7 +70,7 @@
         isUnderage: null,
         isResident: null,
         hasChosenOption: false,
-        isEligible: false,
+        hasCompletedForm: false,
         phoneChoices: ['comfortable using my phone', 'uncomfortable using my phone'],
         states: [
           'I don\'t live in the US', 'Alabama', 'Alaska', 'American Samoa', 'Arizona',
@@ -88,6 +88,7 @@
           'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia',
           'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
         ],
+        stateChosen: '',
         requirements: requirements
       }
     },
@@ -95,12 +96,12 @@
       age: function (newAge) {
         this.setIsUnderage()
       },
-      zipCode: function (newZip) {
+      stateChosen: function (newZip) {
         this.setIsPlaceAnswered()
       },
       selectedOptionForPhone: function (newOption) {
         this.setHasChosenOption()
-        this.setIsEligible()
+        this.sethasCompletedForm()
       }
     },
     methods: {
@@ -110,7 +111,7 @@
         }
       , 200),
       clicked () {
-        this.isNotEligible = (this.age < 18) || (this.isResident) || (this.selectedOptionForPhone !== 'comfortable using my phone')
+        this.isNotEligible = (this.age < 18) || (!this.isResident) || (this.selectedOptionForPhone !== 'comfortable using my phone')
         if (!this.isNotEligible) {
           this.requirements.hasCompletedEligibility = true
           this.requirements.isOnConsent = true
@@ -131,21 +132,15 @@
           } else {
             this.isUnderage = this.age < 1
           }
-          if (!this.isUnderage) {
-            this.scrollPage('#placeField')
-          } else {
-            this.scrollPage('#ageError')
-          }
+          this.scrollPage('#placeField')
         }, 500
       ),
       setIsPlaceAnswered: _.debounce(
         function () {
-          this.isResident = (this.stateChosen !== '' && this.stateChosen !== 'Outside the US')
-          if (this.isResident) {
-            this.scrollPage('#comfortable')
-          } else {
-            this.scrollPage('#zipError')
-          }
+          console.log(this.stateChosen)
+          this.isResident = (this.stateChosen !== '' && this.stateChosen !== 'I don\'t live in the US')
+          console.log(this.isResident)
+          this.scrollPage('#comfortable')
         }, 500
       ),
       setHasChosenOption: _.debounce(
@@ -153,10 +148,10 @@
           this.hasChosenOption = (this.selectedOptionForPhone !== '')
         }, 500
       ),
-      setIsEligible: _.debounce(
+      sethasCompletedForm: _.debounce(
         function () {
-          this.isEligible = (!this.isUnderage && this.isResident && this.hasChosenOption)
-          if (this.isEligible) {
+          this.hasCompletedForm = (!this.isUnderage && this.stateChosen !== '' && this.hasChosenOption)
+          if (this.hasCompletedForm) {
             this.scrollPage('#submit')
           }
         }, 500
@@ -172,6 +167,7 @@
 
   div.menu__content {
     z-index: 1000 !important;
+    min-width: 290px !important;
   }
 
   button:disabled {
@@ -181,6 +177,10 @@
   .dim {
       opacity: 0.5    
   }
+
+  label {
+    color: #3a539b !important;
+   }
 
   @media(max-width: 992px) {
     .ml-6-restricted {

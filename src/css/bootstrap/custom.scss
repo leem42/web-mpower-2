@@ -236,7 +236,7 @@ div.customCheck>div.input-group__details {
 }
 
 .defaultBlue {
-    color: #3a539b;
+    color: #3a539b !important;
 }
 
 .text--normal {
@@ -343,8 +343,8 @@ div.noLabel {
 
 
 label {
-  color: black !important;
-  font-size: $font-size-base * 0.85 !important;
+  @extend .defaultBlue;
+  font-size: $font-size-base * 0.75 !important;
 }
 
 
@@ -653,6 +653,13 @@ div[role=radio].wrapLabel > label {
 
 .lower {
   text-transform: none;
+}
+
+.input-group__selections__comma {
+  @extend .defaultBlue;
+}
+.application--light .input-group input, .application--light .input-group textarea {
+  @extend .defaultBlue;
 }
 
 nav.onboarding {

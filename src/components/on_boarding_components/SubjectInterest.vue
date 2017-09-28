@@ -100,19 +100,20 @@
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 stencilBorderTop stencilBorder pt-3 pb-3  col-sm-7 col-md-6 col-lg-5 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 stencilBorderTop stencilBorder pt-3 pb-3  col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6   stencilBorder pt-3 pb-3 col-sm-6 col-md-5  col-lg-4  customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6   stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-4 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-md-5  col-lg-4 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
+      </div>
       </div>
       <div class="row">
-        <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6  stencilBorderTop stencilBorder pt-3 pb-3 col-sm-3 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6  stencilBorderTop stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
       </div>
     </span>
   
@@ -181,13 +182,13 @@
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="ml-6 col-sm-6 col-md-6  col-lg-4 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="stencilBorderTop stencilBorder pt-3 pb-3 ml-6 col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on my progress" v-model="selectedChoice[11]" class="ml-6 col-sm-7 col-md-6 col-lg-5 mb-4 mb-sm-0 customCheck darkPurple--text wrapLabel"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on my progress" v-model="selectedChoice[11]" class="stencilBorder pt-3 pb-3 ml-6  col-sm-6 col-lg-4 col-xl-3 mb-4 mb-sm-0 customCheck darkPurple--text wrapLabel"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="ml-6 col-sm-6 col-md-5  col-lg-4 customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="stencilBorder pt-3 pb-3 ml-6  col-sm-6 col-lg-4 col-xl-3 customCheck darkPurple--text"></v-checkbox>
       </div>
   
     </span>
