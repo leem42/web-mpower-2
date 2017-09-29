@@ -9,14 +9,14 @@
         </div>
 
         <div class="row">
-            <p class="ml-6 pl-2 lead"> Will my name be stored with my study data? </p>
+            <p class="ml-6 pl-2 default"> Will my name be stored with my study data? </p>
         </div>
         
         <div class="row ml-6">
-             <v-radio-group v-model="choice" class="col-12">
+             <v-radio-group v-model="questionResults.questionTwo" class="col-12">
                 <div class="row"> 
-                    <v-radio class="col-12 lightGrayText  mb-4 pr-0" value="1" label="Yes"> </v-radio>
-                    <v-radio class="col-12 lightGrayText default pr-0" value="2"  label="No"> </v-radio>
+                    <v-radio class="col-12  mb-4 pr-0" value="true" label="Yes"> </v-radio>
+                    <v-radio class="col-12 default pr-0" value="false"  label="No"> </v-radio>
                 </div>
              </v-radio-group> 
         </div>
@@ -29,10 +29,12 @@
 </template>
 
 <script>
+    import { questionResults } from '../../../requirements/questionResults'
+
     export default {
       data () {
         return {
-          choice: ''
+          questionResults: questionResults
         }
       }
     }

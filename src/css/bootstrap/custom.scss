@@ -134,6 +134,8 @@ nav.web {
     background-color: #3a539b !important;
 }
 
+
+
 .lightGrayText {
     color: #4a4a4a !important;
 }
@@ -165,8 +167,13 @@ nav.web {
   color: rgba(58, 83, 155, 0.87) !important;
 }
 
-.radio.lightGrayText > label {
+.radio.lightGrayText {
   @extend .lightGrayText;
+}
+
+
+.material-icons.icon.icon--radio {
+  color: #1bb191 !important;
 }
 
 div.radio {
@@ -396,7 +403,11 @@ p {
   }
 
   div.btn__content {
-    font-size: $font-size-base * 0.40 !important;
+    font-size: $font-size-base * 0.50 !important;
+  }
+
+  .bigButton > div.btn__content {
+    font-size: $font-size-base * 0.70 !important;
   }
 
   .mediumLarge > div.btn__content {

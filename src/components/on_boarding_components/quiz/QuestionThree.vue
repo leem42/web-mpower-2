@@ -9,16 +9,16 @@
         </div>
 
         <div class="row">
-            <p class="ml-6 pl-2 lead"> If I decide to share my data with qualified 
+            <p class="ml-6 pl-2 default"> If I decide to share my data with qualified 
                 researchers and then I change my mind, can my data be deleted from their studies?
                  </p>
         </div>
         
         <div class="row ml-6">
-             <v-radio-group v-model="choice" class="col-12">
+             <v-radio-group v-model="questionResults.questionThree" class="col-12">
                 <div class="row"> 
-                    <v-radio class="lightGrayText col-12 mb-4 pr-0" label="Yes" value="1">  </v-radio>
-                    <v-radio class=" default lightGrayText col-12  pr-0" label="No" value="2"> </v-radio>
+                    <v-radio class=" col-12 mb-4 pr-0" label="Yes" value="true">  </v-radio>
+                    <v-radio class=" default  col-12  pr-0" label="No" value="false"> </v-radio>
                 </div>
              </v-radio-group> 
         </div>
@@ -31,10 +31,12 @@
 </template>
 
 <script>
+    import { questionResults } from '../../../requirements/questionResults'
+
     export default {
       data () {
         return {
-          choice: ''
+          questionResults: questionResults
         }
       }
     }

@@ -230,7 +230,7 @@ export default {
     },
     scrollPage: _.debounce(
       function (arg1) {
-        this.$scrollTo(arg1, 1500, { easing: 'linear', offset: -90 }).offset().top
+        this.$scrollTo(arg1, 1500, { easing: 'linear', offset: -90 })
       }
     , 200),
     handleEdit: function (index) {
