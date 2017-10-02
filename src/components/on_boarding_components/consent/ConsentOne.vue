@@ -4,11 +4,10 @@
         <br>
         <br>
         <div class="row">
-            <iframe ref="frame" src="http://localhost:8080/#/NullPage/ConsentDoc" height="500px" class="col-md-5 mask">
+            <iframe ref="frame" src="http://localhost:8080/#/NullPage/ConsentDoc" height="500px" class="col-md-5 ml-sm-4 mask">
             </iframe>
 
-
-            <div class="col-md-7">
+            <div class="col-md-6 mr-5 ">
               <div class="row">
 
                 <div class="mx-auto pt-3 pt-sm-0 col-3 col-lg-2 mr-lg-2 ml-lg-2 customHeight">
@@ -26,20 +25,20 @@
               </div>
               <div class="row">
                 <ul class="ml-md-5 mr-md-5 medium-small lightGrayText">
-                  <li class="mt-lg-3 mb-lg-5">
+                  <li class="mt-lg-4">
                     We will ask you to complete a daily survey, which you can take whenever you’d like.
                   </li>
                   
-                  <li class="mt-lg-3 mb-lg-5">
+                  <li class="mt-lg-4">
                     The survey only has two questions and shouldn’t take you more than 2 minutes to complete. 
                   </li>
                   
-                  <li class="mt-lg-3 mb-lg-5">
+                  <li class="mt-lg-4">
                     Once a week, we will ask you to do a 20-minute challenge and a survey with about 15 questions. 
                   </li>
                   <a href="" class="defaultBlue font-weight-bold "><u> Learn More </u></a>
-                  <v-btn :to="{name: 'ConsentTwo'}" flat :ripple="false" class="navButton medium white--text ml-5 mr-0 text-capitalize">  Next </v-btn>
                 </ul>
+                  <v-btn :to="{name: 'ConsentTwo'}" flat :ripple="false" class="navButton col-4  ml-4 ml-sm-5 mr-sm-5 medium white--text text-capitalize">  Next </v-btn>
               </div>
             </div>    
 
