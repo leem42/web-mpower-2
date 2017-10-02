@@ -16,13 +16,27 @@ import OverviewEligibility from '@/components/on_boarding_components/OverviewEli
 import Eligibility from '@/components/on_boarding_components/Eligibility.vue'
 import Congratulations from '@/components/on_boarding_components/Congratulations.vue'
 import Ineligible from '@/components/on_boarding_components/Ineligible.vue'
+
 import QuestionOne from '@/components/on_boarding_components/quiz/QuestionOne.vue'
 import QuestionTwo from '@/components/on_boarding_components/quiz/QuestionTwo.vue'
 import QuestionThree from '@/components/on_boarding_components/quiz/QuestionThree.vue'
 import QuestionFour from '@/components/on_boarding_components/quiz/QuestionFour.vue'
 import QuestionFive from '@/components/on_boarding_components/quiz/QuestionFive.vue'
+
 import ConsentOne from '@/components/on_boarding_components/consent/ConsentOne.vue'
 import ConsentTwo from '@/components/on_boarding_components/consent/ConsentTwo.vue'
+import ConsentThree from '@/components/on_boarding_components/consent/ConsentThree.vue'
+import ConsentFour from '@/components/on_boarding_components/consent/ConsentFour.vue'
+import ConsentFive from '@/components/on_boarding_components/consent/ConsentFive.vue'
+import ConsentSix from '@/components/on_boarding_components/consent/ConsentSix.vue'
+import ConsentSeven from '@/components/on_boarding_components/consent/ConsentSeven.vue'
+import ConsentEight from '@/components/on_boarding_components/consent/ConsentEight.vue'
+import ConsentNine from '@/components/on_boarding_components/consent/ConsentNine.vue'
+import ConsentTen from '@/components/on_boarding_components/consent/ConsentTen.vue'
+import ConsentEleven from '@/components/on_boarding_components/consent/ConsentEleven.vue'
+import ConsentTwelve from '@/components/on_boarding_components/consent/ConsentTwelve.vue'
+import ConsentThirteen from '@/components/on_boarding_components/consent/ConsentThirteen.vue'
+
 import ConsentDoc from '@/components/on_boarding_components/consent/ConsentDoc.vue'
 import Registration from '@/components/on_boarding_components/Registration'
 import NullPage from '@/components/NullPage'
@@ -175,6 +189,61 @@ export default new Router({
               path: 'ConsentTwo',
               name: 'ConsentTwo',
               component: ConsentTwo
+            },
+            {
+              path: 'ConsentThree',
+              name: 'ConsentThree',
+              component: ConsentThree
+            },
+            {
+              path: 'ConsentFour',
+              name: 'ConsentFour',
+              component: ConsentFour
+            },
+            {
+              path: 'ConsentFive',
+              name: 'ConsentFive',
+              component: ConsentFive
+            },
+            {
+              path: 'ConsentSix',
+              name: 'ConsentSix',
+              component: ConsentSix
+            },
+            {
+              path: 'ConsentSeven',
+              name: 'ConsentSeven',
+              component: ConsentSeven
+            },
+            {
+              path: 'ConsentEight',
+              name: 'ConsentEight',
+              component: ConsentEight
+            },
+            {
+              path: 'ConsentNine',
+              name: 'ConsentNine',
+              component: ConsentNine
+            },
+            {
+              path: 'ConsentTen',
+              name: 'ConsentTen',
+              component: ConsentTen
+            },
+            {
+              path: 'ConsentEleven',
+              name: 'ConsentEleven',
+              component: ConsentEleven
+            },
+            {
+              path: 'ConsentTwelve',
+              name: 'ConsentTwelve',
+              component: ConsentTwelve
+            },
+            {
+              path: 'ConsentThirteen',
+              name: 'ConsentThirteen',
+              component: ConsentThirteen
             }
           ]
         }

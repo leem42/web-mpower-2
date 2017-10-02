@@ -36,7 +36,7 @@
         </div>
       </div>
     </nav>
-    <router-view class="router container-fluid"></router-view>
+    <router-view class="whiteBackground router container-fluid"></router-view>
     <!--- TODO: must update to make sure application is only single page -->
     <!--<v-bottom-nav value="true" class="hideOnSmall darkBlue customAlign">
       <img class="logo" src="./images/mpower-logo.png"> </img>

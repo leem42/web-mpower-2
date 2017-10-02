@@ -61,6 +61,12 @@ nav.web {
         height: 60px;
     }
 }
+.whiteBackground {
+  background-color: white !important; 
+}
+.routerBtn > div.btn__content::before {
+  background-color: white !important;
+}
 
 .zeroOpacity > div.btn__content::before {
     opacity: 0 !important;
