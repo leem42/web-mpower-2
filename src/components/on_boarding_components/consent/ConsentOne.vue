@@ -38,7 +38,7 @@
                     Once a week, we will ask you to do a 20-minute challenge and a survey with about 15 questions. 
                   </li>
                   <a href="" class="defaultBlue font-weight-bold "><u> Learn More </u></a>
-                  <v-btn flat :ripple="false" class="controller medium white--text ml-5 mr-0 text-capitalize">  Next </v-btn>
+                  <v-btn :to="{name: 'ConsentTwo'}" flat :ripple="false" class="navButton medium white--text ml-5 mr-0 text-capitalize">  Next </v-btn>
                 </ul>
               </div>
             </div>    

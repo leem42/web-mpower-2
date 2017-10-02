@@ -70,6 +70,8 @@
           return 'Eligibility'
         } else if (route.indexOf('Question') !== -1) {
           return 'Test your knowledge'
+        } else if (route.indexOf('Consent') !== -1) {
+          return 'Consent'
         }
       }
     }

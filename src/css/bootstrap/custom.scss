@@ -16,6 +16,9 @@ $font-weight-normal: bold;
 $lead-font-size:   $font-size-base;
 $lead-font-weight: 600;
 
+.smallText {
+  font-size: $font-size-base * 0.5;
+}
 .center {
   text-align: center !important;
 }
@@ -100,6 +103,9 @@ nav.web {
   font-size: $font-size-base * 0.4;
 }
 @media(max-width: 766px) {
+    .smallText {
+      font-size: $font-size-base * 0.4;
+    }
 
       div.wrapLabel > label {
       min-height: 60px !important;
@@ -215,6 +221,14 @@ div.customCheck {
   height: 70px;
   border-radius: 10px;
   width: 200px;
+  background-color: #3a539b !important;
+}
+
+.navButton {
+  z-index: 2001 !important;
+  height: 50px;
+  border-radius: 10px;
+  width: 150px;
   background-color: #3a539b !important;
 }
 
@@ -501,6 +515,11 @@ input#placeField {
     width: 100px;
   }
 
+  .navButton {
+    height: 22px;
+    width: 50px;
+  }
+
   #question {
     display: block;
     margin-left: 100px !important;
@@ -542,6 +561,8 @@ input#placeField {
   .input-group__selections__comma {
     font-size: $font-size-base * 0.5 !important;
   }
+
+
 
   p {
     color: #31117D;
