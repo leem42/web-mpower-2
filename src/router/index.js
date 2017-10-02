@@ -21,6 +21,9 @@ import QuestionTwo from '@/components/on_boarding_components/quiz/QuestionTwo.vu
 import QuestionThree from '@/components/on_boarding_components/quiz/QuestionThree.vue'
 import QuestionFour from '@/components/on_boarding_components/quiz/QuestionFour.vue'
 import QuestionFive from '@/components/on_boarding_components/quiz/QuestionFive.vue'
+import ConsentOne from '@/components/on_boarding_components/consent/ConsentOne.vue'
+import ConsentTwo from '@/components/on_boarding_components/consent/ConsentTwo.vue'
+import ConsentDoc from '@/components/on_boarding_components/consent/ConsentDoc.vue'
 import Registration from '@/components/on_boarding_components/Registration'
 import NullPage from '@/components/NullPage'
 
@@ -57,6 +60,11 @@ export default new Router({
       component: NullPage,
       beforeEnter: requireAuth,
       children: [
+        {
+          path: 'ConsentDoc',
+          name: 'ConsentDoc',
+          component: ConsentDoc
+        },
         {
           path: 'Website',
           component: Website,
@@ -157,6 +165,16 @@ export default new Router({
               path: 'QuestionFive',
               name: 'QuestionFive',
               component: QuestionFive
+            },
+            {
+              path: 'ConsentOne',
+              name: 'ConsentOne',
+              component: ConsentOne
+            },
+            {
+              path: 'ConsentTwo',
+              name: 'ConsentTwo',
+              component: ConsentTwo
             }
           ]
         }

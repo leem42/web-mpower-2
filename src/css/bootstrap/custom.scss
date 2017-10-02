@@ -134,6 +134,15 @@ nav.web {
     background-color: #3a539b !important;
 }
 
+.medium > div.btn__content {
+  @extend .medium;
+}
+
+button.medium {
+  // margin-left: 500px;
+  // right: 200px;
+  // bottom: 100px; 
+}
 
 
 .lightGrayText {
@@ -257,6 +266,11 @@ div.customCheck>div.input-group__details {
   margin-right: 2%;
   margin-top: 8px;
 }
+
+.highlighter {
+    background-color: yellow;
+}
+
 
 .darkBlue {
   background-color: #5c6c88 !important;
@@ -403,7 +417,7 @@ p {
   }
 
   div.btn__content {
-    font-size: $font-size-base * 0.50 !important;
+    font-size: $font-size-base * 0.40 !important;
   }
 
   .bigButton > div.btn__content {

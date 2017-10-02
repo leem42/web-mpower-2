@@ -85,7 +85,7 @@
         </div>
 
         <div class="row customRow mb-4 ml-1 mr-1">
-            <div v-on:click="requirements.isOnConsent = false, requirements.hasCompletedConsent = true, requirements.isOnQuiz = true" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnConsent, completedrequirements: requirements.hasCompletedConsent}">
+            <div v-on:click="$router.push({name: 'ConsentOne'})" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnConsent, completedrequirements: requirements.hasCompletedConsent}">
                 <div class="row">
                     <div class="col-1 verticalCenter  ml-md-3 pl-0 pl-sm-auto mr-5">
                         <img  src="../../images/consent-icon.png"> </img>
