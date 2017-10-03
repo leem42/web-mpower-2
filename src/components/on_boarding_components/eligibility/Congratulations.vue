@@ -16,7 +16,7 @@
     <div class="row">
 
       <div class=" text-center col-12">
-        <img src="../../assets/check.png" class="img-fluid"  alt="image of a check marked circle">
+        <img src="../../../assets/check.png" class="img-fluid"  alt="image of a check marked circle">
       </div>
 
       <div class="col-12 text-center">

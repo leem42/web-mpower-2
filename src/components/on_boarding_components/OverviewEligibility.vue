@@ -191,13 +191,8 @@ export default {
           count = count + JSON.parse(this.questionResults[key])
         }
       }
-      console.log(count)
       return count
     }
-  },
-  mounted: function () {
-    console.log('mounted! ')
-    console.log(this.hasPassed)
   }
 }
 </script>

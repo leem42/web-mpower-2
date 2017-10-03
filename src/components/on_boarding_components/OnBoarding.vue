@@ -24,24 +24,33 @@
             <img v-if="!requirements.hasCompletedEligibility" src="../../images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
             <img v-if="requirements.hasCompletedEligibility" src="../../images/check-completed.png" class="img-fluid check" alt="image of a check marked circle"></img>
 
-            <img v-if="requirements.hasCompletedEligibility" src="../../images/step-7-consent-icon.png" ></img>
             <v-icon v-if="!requirements.hasCompletedEligibility" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-
-            <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-            <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-            <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-
             <v-icon v-if="!requirements.hasCompletedEligibility"medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+            <img v-if="requirements.isOnConsent" src="../../images/step-7-consent-icon.png" ></img>
+            <img v-if="requirements.hasCompletedConsent" src="../../images/check-completed.png" ></img>
 
-            <v-icon medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <v-icon medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <v-icon medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+
+            <v-icon v-if="!requirements.hasCompletedConsent" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
+            <v-icon v-if="!requirements.hasCompletedConsent"medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+            <img v-if="requirements.isOnQuiz" src="../../images/quiz-onboarding-icon.png" ></img>
+            <img v-if="requirements.hasCompletedQuiz" src="../../images/check-completed.png" ></img>
+
+            <v-icon v-if="!requirements.hasCompletedQuiz" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
+            <v-icon v-if="!requirements.hasCompletedQuiz" medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+            <img v-if="requirements.isOnSign" src="../../images/sign-header-icon.png" ></img>
+            <img v-if="requirements.hasCompletedSign" src="../../images/check-completed.png" ></img>
+
+            <v-icon v-if="!requirements.hasCompletedRegistration" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
+            <v-icon v-if="!requirements.hasCompletedRegistration" medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+            <img v-if="requirements.isOnRegistration" src="../../images/quiz-onboarding-icon.png" ></img>
+            <img v-if="requirements.hasCompletedRegistration" src="../../images/check-completed.png" ></img>
+
           </div>
   
         </div>
       </div>
     </nav>
-    <router-view class="whiteBackground router container-fluid"></router-view>
+    <router-view class="whiteBackground router container-fluid" v-bind:class="{blueBackground: getHeader() === 'Sign'}"></router-view>
     <!--- TODO: must update to make sure application is only single page -->
     <!--<v-bottom-nav value="true" class="hideOnSmall darkBlue customAlign">
       <img class="logo" src="./images/mpower-logo.png"> </img>
@@ -82,6 +91,8 @@
           return 'Test your knowledge'
         } else if (route.indexOf('Consent') !== -1) {
           return 'Consent'
+        } else if (route.indexOf('Sign' !== -1)) {
+          return 'Sign'
         }
       }
     }

@@ -59,7 +59,7 @@
 
 <script>
   import {Focus} from '@/directives/focus.js'
-  import {requirements} from '../../requirements/requirements'
+  import {requirements} from '../../../requirements/requirements'
   import _ from 'lodash'
   export default {
     data () {

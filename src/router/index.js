@@ -10,12 +10,12 @@ import Contact from '@/components/web_components/Contact.vue'
 import FAQ from '@/components/web_components/FAQ.vue'
 
 import OnBoarding from '@/components/on_boarding_components/OnBoarding.vue'
-import WhyInterested from '@/components/on_boarding_components/WhyInterested.vue'
-import SubjectInterest from '@/components/on_boarding_components/SubjectInterest.vue'
+import WhyInterested from '@/components/on_boarding_components/eligibility/WhyInterested.vue'
+import SubjectInterest from '@/components/on_boarding_components/eligibility/SubjectInterest.vue'
 import OverviewEligibility from '@/components/on_boarding_components/OverviewEligibility.vue'
-import Eligibility from '@/components/on_boarding_components/Eligibility.vue'
-import Congratulations from '@/components/on_boarding_components/Congratulations.vue'
-import Ineligible from '@/components/on_boarding_components/Ineligible.vue'
+import Eligibility from '@/components/on_boarding_components/eligibility/Eligibility.vue'
+import Congratulations from '@/components/on_boarding_components/eligibility/Congratulations.vue'
+import Ineligible from '@/components/on_boarding_components/eligibility/Ineligible.vue'
 
 import QuestionOne from '@/components/on_boarding_components/quiz/QuestionOne.vue'
 import QuestionTwo from '@/components/on_boarding_components/quiz/QuestionTwo.vue'
@@ -37,8 +37,10 @@ import ConsentEleven from '@/components/on_boarding_components/consent/ConsentEl
 import ConsentTwelve from '@/components/on_boarding_components/consent/ConsentTwelve.vue'
 import ConsentThirteen from '@/components/on_boarding_components/consent/ConsentThirteen.vue'
 
+import Sign from '@/components/on_boarding_components/sign/Sign.vue'
+
 import ConsentDoc from '@/components/on_boarding_components/consent/ConsentDoc.vue'
-import Registration from '@/components/on_boarding_components/Registration'
+import Registration from '@/components/on_boarding_components/registration/Registration'
 import NullPage from '@/components/NullPage'
 
 import auth from '../auth/auth'
@@ -244,6 +246,11 @@ export default new Router({
               path: 'ConsentThirteen',
               name: 'ConsentThirteen',
               component: ConsentThirteen
+            },
+            {
+              path: 'Sign',
+              name: 'Sign',
+              component: Sign
             }
           ]
         }
