@@ -28,7 +28,7 @@
         </template>
         <template v-else-if="requirements.isOnQuiz && !requirements.hasCompletedQuiz">
             <div class="row">
-                <p class="mx-auto white--text"> Quiz </p>
+                <p class="mx-auto white--text"> Thanks for walking through Consent! </p>
             </div>
             <div class="row text-center mb-2">
                 <p class="col-md-8 mx-auto  medium white--text">
@@ -37,7 +37,7 @@
         </template>
         <template v-else-if="requirements.isOnSign && !requirements.hasCompletedSign && hasPassed">
             <div class="row">
-                <p class="mx-auto white--text"> Sign </p>
+                <p class="mx-auto white--text"> Great Job! </p>
             </div>
             <div class="row text-center mb-2">
                 <p class="col-md-8 mx-auto  medium white--text">
@@ -178,8 +178,26 @@ export default {
       questionResults: questionResults
     }
   },
+  computed: {
+    hasPassed: function () {
+      return this.reduce(this.questionResults) === 5
+    }
+  },
+  methods: {
+    reduce: function () {
+      var count = 0
+      for (var key in this.questionResults) {
+        if (this.questionResults.hasOwnProperty(key)) {
+          count = count + JSON.parse(this.questionResults[key])
+        }
+      }
+      console.log(count)
+      return count
+    }
+  },
   mounted: function () {
-    console.log(requirements.hasCompletedConsent)
+    console.log('mounted! ')
+    console.log(this.hasPassed)
   }
 }
 </script>

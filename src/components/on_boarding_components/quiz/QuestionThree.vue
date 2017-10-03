@@ -10,7 +10,7 @@
 
         <div class="row">
             <p class="ml-6 pl-2 default"> If I decide to share my data with qualified 
-                researchers and then I change my mind, can my data be deleted from their studies?
+                researchers and then I change my mind, can my data be deleted from their studies?
                  </p>
         </div>
         

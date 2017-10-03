@@ -15,8 +15,8 @@
         <div class="row ml-6">
              <v-radio-group v-model="questionResults.questionTwo" class="col-12">
                 <div class="row"> 
-                    <v-radio class="col-12  mb-4 pr-0" value="true" label="Yes"> </v-radio>
-                    <v-radio class="col-12 default pr-0" value="false"  label="No"> </v-radio>
+                    <v-radio class="col-12  mb-4 pr-0" value="false" label="Yes"> </v-radio>
+                    <v-radio class="col-12 default pr-0" value="true"  label="No"> </v-radio>
                 </div>
              </v-radio-group> 
         </div>
