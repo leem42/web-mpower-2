@@ -40,8 +40,8 @@
             <img v-if="requirements.isOnSign" src="../../images/sign-header-icon.png" ></img>
             <img v-if="requirements.hasCompletedSign" src="../../images/check-completed.png" ></img>
 
-            <v-icon v-if="!requirements.hasCompletedRegistration" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-            <v-icon v-if="!requirements.hasCompletedRegistration" medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+            <v-icon v-if="!requirements.hasCompletedSign" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
+            <v-icon v-if="!requirements.hasCompletedSign" medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
             <img v-if="requirements.isOnRegistration" src="../../images/quiz-onboarding-icon.png" ></img>
             <img v-if="requirements.hasCompletedRegistration" src="../../images/check-completed.png" ></img>
 

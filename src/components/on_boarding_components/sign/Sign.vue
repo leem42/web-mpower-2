@@ -17,19 +17,26 @@
                </p>
             </div>
         </div>
+        <br>
         <div class="row">
-            <v-flex class="col-md-3">
-                <v-text-field class="white--text" name="input-1" placeholder="Please type your full name here" type="text" pattern="\d*" auto-grow v-model="name">
+            <v-flex class="col-md-6 mx-auto">
+                <v-text-field class="white--text" placeholder="Please type your full name here" name="input-1" type="text" pattern="\d*" auto-grow v-model="name">
                 </v-text-field>
             </v-flex>
         </div>
         <div class="row">
             <div class="text-center medium col">
-               <p class=" white--text">
-                  buttons
-               </p>
+                <v-btn flat class="large white--text font-weight-bold"> <u> Disagree  </u> </v-btn>
+                <v-btn v-on:click="[requirements.isOnSign = false, requirements.hasCompletedSign = true, requirements.isOnRegistration = true, $router.push({name: 'OverviewEligibility'})]"class="large defaultBlue font-weight-bold"> Accept </v-btn>
             </div>
         </div>
+  
+        <div class="row whiteBackground">
+            <iframe ref="frame" src="http://localhost:8080/#/NullPage/ConsentDoc" height="500px" class="col-12 mask">
+            </iframe>
+        </div>
+
+
     </v-app>
 </template>
 
@@ -40,7 +47,7 @@ export default {
   data () {
     return {
       requirements: requirements,
-      name: name
+      name: ''
     }
   }
 }
@@ -50,4 +57,13 @@ export default {
     .blueBackground {
         background-image: linear-gradient(71deg, #473b7b, #3584a7 76%, #30d2be);
     }
+
+    input {
+        color: white !important;
+    }
+
+     label, .input-group__selections__comma, .application--light .input-group input, .application--light .input-group textarea {
+        color:white !important;
+    }
+
 </style>

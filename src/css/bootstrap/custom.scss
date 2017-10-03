@@ -471,6 +471,10 @@ input#placeField {
   font-size: $font-size-base * 0.7 !important;
 }
 
+.white--text input::placeholder  {
+  color: white !important;
+  @extend .medium;
+}
 
 @media(max-width: 767px) {
   #nextBtn > button.btn > .btn__content {

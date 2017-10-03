@@ -135,7 +135,7 @@
                         </p>
                     </div>
                     <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
-                        <v-icon large v-bind:class="{greenText: requirements.hasCompletedSign}" class="lock">{{requirements.hasCompletedSign ? '': 'fa-lock'  }}</v-icon>
+                        <v-icon large v-bind:class="{greenText: requirements.hasCompletedSign}" class="lock">{{requirements.hasCompletedQuiz ? '': 'fa-lock'  }}</v-icon>
                     </div>
                 </div>
             </div>
