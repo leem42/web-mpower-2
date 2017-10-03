@@ -19,7 +19,7 @@
                   STEP 8
                   <div class="row">
                     <div class="col-12 default font-weight-bold">
-                      Time commitment
+                      Potential Benefits
                     </div>
                   </div>
                 </div>
@@ -27,17 +27,12 @@
               <div class="row">
                 <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
 
-                
                     <li class="mt-lg-1 mb-lg-3">
-                        This study will take about 5 minutes per day and about 20 minutes per week.
+                        Your participation could help researchers understand chronic anemia better. 
                     </li>
 
                     <li class="mt-lg-1 mb-lg-3">
-                        The time you spend on the app may count against your mobile data plan.
-                    </li>
-
-                    <li class="mt-lg-1">
-                        You can set up the app to use Wi-Fi connections to avoid using your mobile data.
+                         You may or may not benefit from this research study.
                     </li>
 
                   <a href="" class="defaultBlue font-weight-bold "><u> Learn More </u></a>

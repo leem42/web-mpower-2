@@ -12,14 +12,14 @@
               <div class="row">
             
                 <div class="mx-auto pt-3 pt-sm-0 col-3 col-lg-2 mr-lg-2 ml-lg-2 customHeight">
-                  <img class="img-fluid " src="../../../images/step-6-consent-icon.png">
+                  <img class="img-fluid " src="../../../images/step-11-consent-icon.png">
                 </div>
           
                 <div class="col-9 col-lg-9 x-tiny mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
                   STEP 11
                   <div class="row">
                     <div class="col-12 default font-weight-bold">
-                      Time commitment
+                      Follow Up
                     </div>
                   </div>
                 </div>
@@ -27,17 +27,12 @@
               <div class="row">
                 <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
 
-                
                     <li class="mt-lg-1 mb-lg-3">
-                        This study will take about 5 minutes per day and about 20 minutes per week.
+                        We might want to reach out to you
                     </li>
 
                     <li class="mt-lg-1 mb-lg-3">
-                        The time you spend on the app may count against your mobile data plan.
-                    </li>
-
-                    <li class="mt-lg-1">
-                        You can set up the app to use Wi-Fi connections to avoid using your mobile data.
+                        You can opt out of these follow up notifications at any time.
                     </li>
 
                   <a href="" class="defaultBlue font-weight-bold "><u> Learn More </u></a>

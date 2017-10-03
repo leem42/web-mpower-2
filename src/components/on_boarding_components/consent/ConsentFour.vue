@@ -32,6 +32,10 @@
                   </li>
                   
                   <li class="mt-lg-1 mb-lg-3">
+                   Your study data will be encrypted on your phone. 
+                  </li>
+                  
+                  <li class="mt-lg-1 mb-lg-3">
                     We will replace your name with a random code. 
                   </li>
                   
