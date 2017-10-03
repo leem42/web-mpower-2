@@ -85,7 +85,7 @@
         </div>
 
         <div class="row customRow mb-4 ml-1 mr-1">
-            <div v-on:click="$router.push({name: 'ConsentOne'})" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnConsent, completedrequirements: requirements.hasCompletedConsent}">
+            <div v-on:click="requirements.hasCompletedEligibility ? $router.push({name: 'ConsentOne'}) : null" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnConsent, completedrequirements: requirements.hasCompletedConsent}">
                 <div class="row">
                     <div class="col-1 verticalCenter  ml-md-3 pl-0 pl-sm-auto mr-5">
                         <img  src="../../images/consent-icon.png"> </img>
@@ -104,7 +104,7 @@
         </div>
 
         <div class="row customRow mb-4 ml-1 mr-1">
-            <div v-on:click="$router.push({name: 'QuestionOne'})" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnQuiz, completedrequirements: requirements.hasCompletedQuiz}">
+            <div v-on:click="requirements.hasCompletedConsent ? $router.push({name: 'QuestionOne'}) : null" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnQuiz, completedrequirements: requirements.hasCompletedQuiz}">
                 <div class="row">
                     <div class="col-1 verticalCenter ml-md-3 mr-5 pl-0 pl-sm-auto">
                         <img  src="../../images/quiz-onboarding-icon.png" class="checkOnOverview"> </img>
@@ -123,7 +123,7 @@
         </div>
 
         <div class="row customRow mb-4 ml-1 mr-1">
-            <div class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnSign, completedrequirements: requirements.hasCompletedSign}">
+            <div v-on:click="requirements.hasCompletedQuiz ? $router.push({name: 'Sign'}) : null" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnSign, completedrequirements: requirements.hasCompletedSign}">
                 <div class="row">
                     <div class="col-1 verticalCenter ml-md-3 mr-5 pl-0 pl-sm-auto">
                         <img  src="../../images/sign-consent-icon.png" class="checkOnOverview"> </img>
@@ -142,7 +142,7 @@
         </div>
 
         <div class="row customRow mb-4 ml-1 mr-1">
-            <div  v-on:click="$router.push({name: 'Registration'})" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnRegistration, completedrequirements: requirements.hasCompletedRegistration}">
+            <div  v-on:click="requirements.hasCompletedSign ? $router.push({name: 'Registration'}) : null" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnRegistration, completedrequirements: requirements.hasCompletedRegistration}">
                 <div class="row">
                     <div class="col-1 verticalCenter ml-md-3 mr-5 pl-0 pl-sm-auto">
                         <img  src="../../images/number-icon.png" class="checkOnOverview"> </img>
@@ -178,15 +178,8 @@ export default {
       questionResults: questionResults
     }
   },
-  computed: {
-    hasPassed: function () {
-      for (var key in questionResults) {
-        console.log(JSON.parse(questionResults[key]))
-      }
-    }
-  },
   mounted: function () {
-    console.log(this.hasPassed)
+    console.log(requirements.hasCompletedConsent)
   }
 }
 </script>

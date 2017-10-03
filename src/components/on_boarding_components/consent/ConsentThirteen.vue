@@ -38,7 +38,7 @@
                   <a href="" class="defaultBlue font-weight-bold "><u> Learn More </u></a>
                 </ul>
                   <v-btn :to="{name: 'ConsentTwelve'}" flat :ripple="false" class="navButton col-4  ml-4 ml-sm-5 mr-sm-5 medium white--text text-capitalize">  Back </v-btn>
-                  <v-btn :to="{name: 'ConsentOverlay'}" flat :ripple="false" class="navButton col-4 medium white--text text-capitalize">  Next </v-btn>
+                  <v-btn v-on:click="[requirements.hasCompletedConsent = true , $router.push({name: 'OverviewEligibility'})]" flat :ripple="false" class="navButton col-4 medium white--text text-capitalize">  Next </v-btn>
               </div>
             </div>    
 
@@ -57,13 +57,15 @@
 
 <script>
 import {highlightTracker} from '../../../requirements/highlightTracker'
+import {requirements} from '../../../requirements/requirements'
 
 export default {
   data () {
     return {
       pageURL: '',
       isFocused: true,
-      highlightTracker: highlightTracker
+      highlightTracker: highlightTracker,
+      requirements: requirements
     }
   },
   mounted: function () {

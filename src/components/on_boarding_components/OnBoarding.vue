@@ -21,13 +21,18 @@
           </div>
 
           <div class="col-sm-8 text-center text-sm-right">
-            <img src="../../images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
-            <!--<img src="./images/survey.svg" ></img>-->
+            <img v-if="!requirements.hasCompletedEligibility" src="../../images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
+            <img v-if="requirements.hasCompletedEligibility" src="../../images/check-completed.png" class="img-fluid check" alt="image of a check marked circle"></img>
+
+            <img v-if="requirements.hasCompletedEligibility" src="../../images/step-7-consent-icon.png" ></img>
+            <v-icon v-if="!requirements.hasCompletedEligibility" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
+
             <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
             <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
             <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-            <v-icon large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-            <v-icon medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+
+            <v-icon v-if="!requirements.hasCompletedEligibility"medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
+
             <v-icon medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
             <v-icon medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
             <v-icon medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
@@ -56,14 +61,19 @@
 </style>
 
 <script>
+  import {requirements} from '../../requirements/requirements'
+
   export default {
     // Here we get the correct placement text when switching between pages
+    data () {
+      return {
+        requirements: requirements
+      }
+    },
     methods: {
       getHeader () {
         var path = '/NullPage/OnBoarding/'
         var route = this.$router.currentRoute.fullPath
-        console.log(path)
-        console.log(route)
         if (route === (path + 'OverviewEligibility')) {
           return 'Overview'
         } else if (route === (path + 'Eligibility') || route === (path + 'SubjectInterest')) {
