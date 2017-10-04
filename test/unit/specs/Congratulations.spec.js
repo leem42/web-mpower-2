@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Congratulations from '@/components/on_boarding_components/Congratulations'
+import Congratulations from '@/components/on_boarding_components/eligibility/Congratulations'
 
 describe('Congratulations.vue', () => {
   it('should render correct contents', () => {
