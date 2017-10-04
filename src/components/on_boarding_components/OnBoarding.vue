@@ -81,17 +81,16 @@
     },
     methods: {
       getHeader () {
-        var path = '/NullPage/OnBoarding/'
         var route = this.$router.currentRoute.fullPath
-        if (route === (path + 'OverviewEligibility')) {
+        if (route.indexOf('OverviewEligibility') !== -1) {
           return 'Overview'
-        } else if (route === (path + 'Eligibility') || route === (path + 'SubjectInterest')) {
+        } else if (route.indexOf('Eligibility') !== -1 || route.indexOf('SubjectInterest') !== -1) {
           return 'Eligibility'
         } else if (route.indexOf('Question') !== -1) {
           return 'Test your knowledge'
         } else if (route.indexOf('Consent') !== -1) {
           return 'Consent'
-        } else if (route.indexOf('Sign' !== -1)) {
+        } else if (route.indexOf('Sign') !== -1) {
           return 'Sign'
         }
       }
