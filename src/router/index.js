@@ -37,6 +37,8 @@ import ConsentEleven from '@/components/on_boarding_components/consent/ConsentEl
 import ConsentTwelve from '@/components/on_boarding_components/consent/ConsentTwelve.vue'
 import ConsentThirteen from '@/components/on_boarding_components/consent/ConsentThirteen.vue'
 
+import ConsentDocText from '@/components/on_boarding_components/consent/ConsentDocText.vue'
+
 import Sign from '@/components/on_boarding_components/sign/Sign.vue'
 
 import ConsentDoc from '@/components/on_boarding_components/consent/ConsentDoc.vue'
@@ -77,9 +79,9 @@ export default new Router({
       beforeEnter: requireAuth,
       children: [
         {
-          path: 'ConsentDoc',
-          name: 'ConsentDoc',
-          component: ConsentDoc
+          path: 'ConsentDocText',
+          component: ConsentDocText,
+          name: 'ConsentDocText'
         },
         {
           path: 'Website',
@@ -183,69 +185,76 @@ export default new Router({
               component: QuestionFive
             },
             {
-              path: 'ConsentOne',
-              name: 'ConsentOne',
-              component: ConsentOne
-            },
-            {
-              path: 'ConsentTwo',
-              name: 'ConsentTwo',
-              component: ConsentTwo
-            },
-            {
-              path: 'ConsentThree',
-              name: 'ConsentThree',
-              component: ConsentThree
-            },
-            {
-              path: 'ConsentFour',
-              name: 'ConsentFour',
-              component: ConsentFour
-            },
-            {
-              path: 'ConsentFive',
-              name: 'ConsentFive',
-              component: ConsentFive
-            },
-            {
-              path: 'ConsentSix',
-              name: 'ConsentSix',
-              component: ConsentSix
-            },
-            {
-              path: 'ConsentSeven',
-              name: 'ConsentSeven',
-              component: ConsentSeven
-            },
-            {
-              path: 'ConsentEight',
-              name: 'ConsentEight',
-              component: ConsentEight
-            },
-            {
-              path: 'ConsentNine',
-              name: 'ConsentNine',
-              component: ConsentNine
-            },
-            {
-              path: 'ConsentTen',
-              name: 'ConsentTen',
-              component: ConsentTen
-            },
-            {
-              path: 'ConsentEleven',
-              name: 'ConsentEleven',
-              component: ConsentEleven
-            },
-            {
-              path: 'ConsentTwelve',
-              name: 'ConsentTwelve',
-              component: ConsentTwelve
-            },
-            {
-              path: 'ConsentThirteen',
-              name: 'ConsentThirteen',
-              component: ConsentThirteen
+              path: 'ConsentDoc',
+              name: 'ConsentDoc',
+              component: ConsentDoc,
+              children: [
+                {
+                  path: 'ConsentOne',
+                  name: 'ConsentOne',
+                  component: ConsentOne
+                },
+                {
+                  path: 'ConsentTwo',
+                  name: 'ConsentTwo',
+                  component: ConsentTwo
+                },
+                {
+                  path: 'ConsentThree',
+                  name: 'ConsentThree',
+                  component: ConsentThree
+                },
+                {
+                  path: 'ConsentFour',
+                  name: 'ConsentFour',
+                  component: ConsentFour
+                },
+                {
+                  path: 'ConsentFive',
+                  name: 'ConsentFive',
+                  component: ConsentFive
+                },
+                {
+                  path: 'ConsentSix',
+                  name: 'ConsentSix',
+                  component: ConsentSix
+                },
+                {
+                  path: 'ConsentSeven',
+                  name: 'ConsentSeven',
+                  component: ConsentSeven
+                },
+                {
+                  path: 'ConsentEight',
+                  name: 'ConsentEight',
+                  component: ConsentEight
+                },
+                {
+                  path: 'ConsentNine',
+                  name: 'ConsentNine',
+                  component: ConsentNine
+                },
+                {
+                  path: 'ConsentTen',
+                  name: 'ConsentTen',
+                  component: ConsentTen
+                },
+                {
+                  path: 'ConsentEleven',
+                  name: 'ConsentEleven',
+                  component: ConsentEleven
+                },
+                {
+                  path: 'ConsentTwelve',
+                  name: 'ConsentTwelve',
+                  component: ConsentTwelve
+                },
+                {
+                  path: 'ConsentThirteen',
+                  name: 'ConsentThirteen',
+                  component: ConsentThirteen
+                }
+              ]
             },
             {
               path: 'Sign',
