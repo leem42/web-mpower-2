@@ -13,12 +13,17 @@
         </div>
         
         <div class="row ml-6">
-             <v-radio-group v-model="questionResults.questionFive" class="col-12">
+
+             <v-radio-group v-model="questionResults.questionFive">
+              <v-radio label="Option 1" value="radio-1" ></v-radio>
+              <v-radio label="Option 2" value="radio-2"></v-radio>
+            </v-radio-group>
+             <!-- <v-radio-group v-model="questionResults.questionFive" class="col-12" column>
                 <div class="row"> 
                     <v-radio class=" mb-4 col-12 pr-0" label="Yes" value="true" >  </v-radio>
                     <v-radio class=" col-12 pr-0" label="No" value="false"> </v-radio>
                 </div>
-             </v-radio-group> 
+             </v-radio-group>  -->
         </div>
 
         <div class="row">

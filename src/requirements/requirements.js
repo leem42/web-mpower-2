@@ -4,8 +4,8 @@ export {
 
 let requirements = {
   isOnEligibility: true,
-  hasCompletedEligibility: false,
-  isOnConsent: false,
+  hasCompletedEligibility: true,
+  isOnConsent: true,
   hasCompletedConsent: false,
   isOnQuiz: false,
   hasCompletedQuiz: false,

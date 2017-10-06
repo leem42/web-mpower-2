@@ -3,7 +3,7 @@
   
     <!--<v-icon dark class="intercom d-print-md-none" medium >fa-comment</v-icon>
       <v-icon dark class="intercom hideOnSmall" x-large>fa-comment</v-icon>-->
-    <v-btn class="darkPurple text-lowercase helpButton hideOnSmall"> Have a question for us? </v-btn>
+    <!-- <v-btn class="darkPurple text-lowercase helpButton hideOnSmall"> Have a question for us? </v-btn> -->
   
     <nav class="onboarding navbar navbar-fixed-top navbar-light pt-0 pb-0">
       <div class="container-fluid" style="display: block;">
@@ -26,24 +26,30 @@
 
             <v-icon v-if="!requirements.hasCompletedEligibility" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
             <v-icon v-if="!requirements.hasCompletedEligibility"medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <img v-if="requirements.isOnConsent" src="../../images/step-7-consent-icon.png" ></img>
-            <img v-if="requirements.hasCompletedConsent" src="../../images/check-completed.png" ></img>
+            <img class="extraSpacing" v-if="requirements.isOnConsent" src="../../images/step-7-consent-icon.png" ></img>
+            <img  class="extraSpacing" v-if="requirements.hasCompletedConsent" src="../../images/check-completed.png" ></img>
 
 
             <v-icon v-if="!requirements.hasCompletedConsent" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
             <v-icon v-if="!requirements.hasCompletedConsent"medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <img v-if="requirements.isOnQuiz" src="../../images/quiz-onboarding-icon.png" ></img>
-            <img v-if="requirements.hasCompletedQuiz" src="../../images/check-completed.png" ></img>
+            <img  class="extraSpacing" v-if="requirements.isOnQuiz" src="../../images/quiz-onboarding-icon.png" ></img>
+            <img  class="extraSpacing" v-if="requirements.hasCompletedQuiz" src="../../images/check-completed.png" ></img>
 
             <v-icon v-if="!requirements.hasCompletedQuiz" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
             <v-icon v-if="!requirements.hasCompletedQuiz" medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <img v-if="requirements.isOnSign" src="../../images/sign-header-icon.png" ></img>
-            <img v-if="requirements.hasCompletedSign" src="../../images/check-completed.png" ></img>
+            <img  class="extraSpacing" v-if="requirements.isOnSign" src="../../images/sign-header-icon.png" ></img>
+            <img  class="extraSpacing" v-if="requirements.hasCompletedSign" src="../../images/check-completed.png" ></img>
 
             <v-icon v-if="!requirements.hasCompletedSign" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
             <v-icon v-if="!requirements.hasCompletedSign" medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <img v-if="requirements.isOnRegistration" src="../../images/quiz-onboarding-icon.png" ></img>
-            <img v-if="requirements.hasCompletedRegistration" src="../../images/check-completed.png" ></img>
+            <img  class="extraSpacing" v-if="requirements.isOnRegistration" src="../../images/quiz-onboarding-icon.png" ></img>
+            <img  class="extraSpacing" v-if="requirements.hasCompletedRegistration" src="../../images/check-completed.png" ></img>
+
+            <!-- <div class="seperator"> | </div> -->
+            <img class="d-none d-md-inline-block helpOval" src="../../images/need-help-button.png" ></img>
+            <!-- <div large class="d-none d-md-inline-block  helpOval"> Need Help? </div> -->
+  
+
 
           </div>
   
@@ -51,6 +57,7 @@
       </div>
     </nav>
     <router-view class="whiteBackground router container-fluid" v-bind:class="{blueBackground: getHeader() === 'Sign'}"></router-view>
+    
     <!--- TODO: must update to make sure application is only single page -->
     <!--<v-bottom-nav value="true" class="hideOnSmall darkBlue customAlign">
       <img class="logo" src="./images/mpower-logo.png"> </img>
@@ -67,6 +74,31 @@
 <style lang="scss">
 @import '../../css/bootstrap/bootstrap';
 @import '../../css/bootstrap/custom';
+
+.seperator {
+  width: 2px;
+  height: 86px;
+  background-color: #e1f2df;
+}
+.helpOval {
+  height: 56px;
+  border-radius: 28px !important;
+  width: 120px !important;  
+  margin-left: 15px !important;
+}
+
+.extraSpacing {
+  margin-left: 25px !important;
+}
+
+  @media(max-width: 766px) { 
+    .extraSpacing {
+      margin-left: 6% !important;
+    }
+  }
+
+
+
 </style>
 
 <script>
