@@ -136,23 +136,23 @@
   
       <v-radio-group v-model="radioChoice" v-if="!thirdEdit">
         <div class="row mb-3">
-          <v-flex class="col-sm-2 ml-6 ">
-            <v-radio v-on:keyup.enter="handleRadio(0)" class=" francisco" label="Daily" value="Daily"></v-radio>
+          <v-flex class="col-sm-3 ml-6 ">
+            <v-radio v-on:keyup.enter="handleRadio(0)" class=" francisco stencilBorderTop stencilBorder pt-2 pb-2" label="Daily" value="Daily"></v-radio>
           </v-flex>
         </div>
         <div class="row mb-3 mt-2">
           <v-flex class="col-sm-3 ml-6">
-            <v-radio v-on:keyup.enter="handleRadio(1)" class=" francisco" value="Weekly" label="Weekly"></v-radio>
+            <v-radio v-on:keyup.enter="handleRadio(1)" class=" francisco stencilBorder pt-2 pb-2" value="Weekly" label="Weekly"></v-radio>
           </v-flex>
         </div>
         <div class="row mb-3 mt-2">
           <v-flex class="col-sm-3 ml-6">
-            <v-radio v-on:keyup.enter="handleRadio(2)" class=" francisco" value="Biweekly" label="Biweekly"></v-radio>
+            <v-radio v-on:keyup.enter="handleRadio(2)" class=" francisco stencilBorder pt-2 pb-2" value="Biweekly" label="Biweekly"></v-radio>
           </v-flex>
         </div>
         <div class="row mb-3 mt-2">
           <v-flex class="col-sm-3 ml-6">
-            <v-radio v-on:keyup.enter="handleRadio(3)" class=" francisco" value="Monthly" label="Monthly"></v-radio>
+            <v-radio v-on:keyup.enter="handleRadio(3)" class=" francisco stencilBorder pt-2 pb-2" value="Monthly" label="Monthly"></v-radio>
           </v-flex>
         </div>
       </v-radio-group>
@@ -327,7 +327,11 @@ export default {
     flex-direction: column;
   }
 
-// Align tabbing over to use background color
+  // Align tabbing over to use background color
+  div[role=checkbox].input-group--tab-focused >  div.input-group__input {
+    background-color: rgba(59,74,99,0.1) !important;
+  }
+  
   div[role=checkbox].input-group--tab-focused >  div.input-group__input {
     background-color: rgba(59,74,99,0.1) !important;
   }
@@ -342,25 +346,11 @@ export default {
   div.btn__content:hover {
     background-color: rgba(59,74,99,0.1) !important;
   }
+
+
   .inheritHeight {
     min-height: 50px;
     height: inherit !important;
-  }
-
-  .stencilBorderTop {
-    border-top: solid;
-    border-width: 1px;
-    border-color: rgba(0,0,0,0.1);
-  }
-  .stencilBorder {
-    border-bottom: solid;
-    border-width: 1px;
-    border-color: rgba(0,0,0,0.1);
-  }
-  .stencilBorderBottom {
-    border-bottom: solid;
-    border-width: 1px;
-    border-color: rgba(0,0,0,0.1);
   }
 
   i.icon {

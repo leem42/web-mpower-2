@@ -14,20 +14,16 @@
         
         <div class="row ml-6">
 
-             <v-radio-group v-model="questionResults.questionFive">
-              <v-radio label="Option 1" value="radio-1" ></v-radio>
-              <v-radio label="Option 2" value="radio-2"></v-radio>
-            </v-radio-group>
-             <!-- <v-radio-group v-model="questionResults.questionFive" class="col-12" column>
+              <v-radio-group v-model="questionResults.questionFive" class="col-12" column>
                 <div class="row"> 
-                    <v-radio class=" mb-4 col-12 pr-0" label="Yes" value="true" >  </v-radio>
-                    <v-radio class=" col-12 pr-0" label="No" value="false"> </v-radio>
+                    <v-radio class=" col-10  stencilBorder stencilBorderTop pt-3 mt-0 pb-3 wrapLabel lightGrayText pr-0" label="Yes" value="true" >  </v-radio>
+                    <v-radio class=" col-10  stencilBorder pt-3 mt-0 pb-3 wrapLabel lightGrayText pr-0" label="No" value="false"> </v-radio>
                 </div>
-             </v-radio-group>  -->
+             </v-radio-group>  
         </div>
 
         <div class="row">
-            <v-btn v-on:click="requirements.isOnSign = true, requirements.isOnQuiz = false, requirements.hasCompletedQuiz = true, $router.push({name: 'OverviewEligibility'})"  class="col-auto mx-auto ext-sm-auto text-center bigButton text-capitalize navyBlue large white--text"> Next </v-btn>
+            <v-btn v-on:click="transition()" class="col-auto mx-auto ext-sm-auto text-center bigButton text-capitalize navyBlue large white--text"> Next </v-btn>
         </div>
  
     </v-app>
@@ -41,7 +37,23 @@
       data () {
         return {
           questionResults: questionResults,
-          requirements: requirements
+          requirements: requirements,
+          passed: ''
+        }
+      },
+      methods: {
+        transition: function () {
+          var passed = JSON.parse(this.questionResults.questionOne) && JSON.parse(this.questionResults.questionTwo) && JSON.parse(this.questionResults.questionThree) &&
+            JSON.parse(this.questionResults.questionFour) && JSON.parse(this.questionResults.questionFive)
+          console.log(passed)
+          if (!passed) {
+            this.$router.push({ name: 'RetakeQuiz' })
+          } else {
+            this.requirements.isOnSign = true
+            this.requirements.isOnQuiz = false
+            this.requirements.hasCompletedQuiz = true
+            this.$router.push({ name: 'OverviewEligibility' })
+          }
         }
       }
     }

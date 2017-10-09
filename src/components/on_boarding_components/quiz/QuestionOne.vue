@@ -15,8 +15,8 @@
         <div class="row ml-6 mt-4">
              <v-radio-group v-model="questionResults.questionOne" class="col-12">
                 <div class="row"> 
-                    <v-radio class="col-12 wrapLabel lightGrayText mb-5 pr-0" value=true label="Understand the fluctuations of Parkinson’s disease symptoms">  </v-radio>
-                    <v-radio class="col-12 wrapLabel lightGrayText pr-0" value=false label="Give medical advice and diagnose people with Parkinson’s disease">  </v-radio>
+                    <v-radio class="col-10  stencilBorder stencilBorderTop pt-3 mt-0 pb-3 wrapLabel lightGrayText pr-0" value=true label="Understand the fluctuations of Parkinson’s disease symptoms">  </v-radio>
+                    <v-radio class="col-10  stencilBorder pt-3 mt-0 pb-3 wrapLabel lightGrayText pr-0" value=false label="Give medical advice and diagnose people with Parkinson’s disease">  </v-radio>
                 </div>
              </v-radio-group> 
         </div>
@@ -39,10 +39,3 @@
       }
     }
 </script>
-
-<style>
-
-    
-
-
-</style>

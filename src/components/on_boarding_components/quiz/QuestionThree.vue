@@ -17,8 +17,8 @@
         <div class="row ml-6">
              <v-radio-group v-model="questionResults.questionThree" class="col-12">
                 <div class="row"> 
-                    <v-radio class=" col-12 mb-4 pr-0" label="Yes" value="true">  </v-radio>
-                    <v-radio class=" default  col-12  pr-0" label="No" value="false"> </v-radio>
+                    <v-radio class=" col-10  stencilBorder stencilBorderTop pt-3 mt-0 pb-3 wrapLabel lightGrayText pr-0" label="Yes" value="true">  </v-radio>
+                    <v-radio class=" col-10  stencilBorder  pt-3 mt-0 pb-3 wrapLabel lightGrayText pr-0" label="No" value="false"> </v-radio>
                 </div>
              </v-radio-group> 
         </div>

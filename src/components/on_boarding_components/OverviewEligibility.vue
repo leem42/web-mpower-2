@@ -44,28 +44,7 @@
                     You’ve passed the quiz, now let’s review the consent document that you looked at one more time before we can register you for the study.                </p>
             </div>
         </template>
-        <template v-else>
-            <div class="row">
-                <p class="mx-auto white--text"> Try the quiz again </p>
-            </div>
-            <div class="row text-center mb-2">
-                <p class="col-md-8 mx-auto  medium white--text">
-                    The following questions were answered incorrectly:
-                </p>
-                <p class="col-md-8 mx-auto  medium white--text">
-                    {{JSON.parse(questionResults.questionOne) ? '': '#1,'}}
-                    {{JSON.parse(questionResults.questionTwo) ? '': '#2,'}}
-                    {{JSON.parse(questionResults.questionThree) ? '': '#3,'}}
-                    {{JSON.parse(questionResults.questionFour) ? '': '#4,'}}
-                    {{JSON.parse(questionResults.questionFive) ? '': '#5'}}
-                </p>
-                <p class="col-md-8 mx-auto  medium white--text">
-                    Please review the consent document or try the quiz again. You can contact us at ___ for better assistance in case we haven't 
-                    made a question clear.
-                </p>
-
-            </div>
-        </template>
+       
 
         <div class="row customRow mb-4 ml-1 mr-1 ml-1 mr-1">
             <div v-on:click="$router.push({name: 'WhyInterested'})" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnEligibility && !requirements.hasCompletedEligibility,

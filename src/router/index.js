@@ -22,6 +22,7 @@ import QuestionTwo from '@/components/on_boarding_components/quiz/QuestionTwo.vu
 import QuestionThree from '@/components/on_boarding_components/quiz/QuestionThree.vue'
 import QuestionFour from '@/components/on_boarding_components/quiz/QuestionFour.vue'
 import QuestionFive from '@/components/on_boarding_components/quiz/QuestionFive.vue'
+import RetakeQuiz from '@/components/on_boarding_components/quiz/RetakeQuiz.vue'
 
 import ConsentOne from '@/components/on_boarding_components/consent/ConsentOne.vue'
 import ConsentTwo from '@/components/on_boarding_components/consent/ConsentTwo.vue'
@@ -183,6 +184,11 @@ export default new Router({
               path: 'QuestionFive',
               name: 'QuestionFive',
               component: QuestionFive
+            },
+            {
+              path: 'RetakeQuiz',
+              name: 'RetakeQuiz',
+              component: RetakeQuiz
             },
             {
               path: 'ConsentDoc',

@@ -56,7 +56,7 @@
         </div>
       </div>
     </nav>
-    <router-view class="whiteBackground router container-fluid" v-bind:class="{blueBackground: getHeader() === 'Sign'}"></router-view>
+    <router-view class="whiteBackground router container-fluid" v-bind:class="{fadeBackground: getHeader() === 'Sign' || isOnRetake()}"></router-view>
     
     <!--- TODO: must update to make sure application is only single page -->
     <!--<v-bottom-nav value="true" class="hideOnSmall darkBlue customAlign">
@@ -118,12 +118,18 @@
           return 'Overview'
         } else if (route.indexOf('Eligibility') !== -1 || route.indexOf('SubjectInterest') !== -1) {
           return 'Eligibility'
-        } else if (route.indexOf('Question') !== -1) {
+        } else if (route.indexOf('Question') !== -1 || route.indexOf('RetakeQuiz') !== -1) {
           return 'Test your knowledge'
         } else if (route.indexOf('Consent') !== -1) {
           return 'Consent'
         } else if (route.indexOf('Sign') !== -1) {
           return 'Sign'
+        }
+      },
+      isOnRetake () {
+        var route = this.$router.currentRoute.fullPath
+        if (route.indexOf('RetakeQuiz') !== -1) {
+          return true
         }
       }
     }

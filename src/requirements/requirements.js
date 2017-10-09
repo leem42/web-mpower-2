@@ -3,11 +3,11 @@ export {
 }
 
 let requirements = {
-  isOnEligibility: true,
+  isOnEligibility: false,
   hasCompletedEligibility: true,
-  isOnConsent: true,
-  hasCompletedConsent: false,
-  isOnQuiz: false,
+  isOnConsent: false,
+  hasCompletedConsent: true,
+  isOnQuiz: true,
   hasCompletedQuiz: false,
   isOnSign: false,
   hasCompletedSign: false,

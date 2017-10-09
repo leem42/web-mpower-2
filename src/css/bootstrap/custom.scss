@@ -16,9 +16,7 @@ $font-weight-normal: bold;
 $lead-font-size:   $font-size-base;
 $lead-font-weight: 600;
 
-.smallText {
-  font-size: $font-size-base * 0.5;
-}
+
 .center {
   text-align: center !important;
 }
@@ -80,6 +78,7 @@ nav.web {
   font-size: $font-size-base * 0.6 !important;
   // color: #4a4a4a !important;
 }
+
 
 .largeTitle {
   font-size: $font-size-base;
@@ -165,6 +164,8 @@ button.medium {
 .mediumLarge {
   font-size: $font-size-base * 0.6 !important;
 }
+
+
 
   .mediumGray {
     background-color: #dadfe1 !important;
@@ -409,6 +410,9 @@ p {
 
 
 @media(min-width: 767px) {
+  .smallText {
+  font-size: $font-size-base * 0.5 !important;
+}
 
   button.clickableLink > div.btn__content {
     padding: 0px !important;
@@ -812,6 +816,26 @@ footer {
 
 .long {
   width: 295px;
+}
+
+  div[role=radio].input-group:hover {
+    background-color: rgba(59,74,99,0.1) !important;
+  }
+
+.stencilBorderTop {
+  border-top: solid;
+  border-width: 1px;
+  border-color: rgba(0,0,0,0.1);
+}
+.stencilBorder {
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgba(0,0,0,0.1);
+}
+.stencilBorderBottom {
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgba(0,0,0,0.1);
 }
 
 .x-long {
