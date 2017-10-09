@@ -29,14 +29,20 @@
           <div class="col-12 text-center stencilBorder  black--text"> 
             <div class="row">
               <div class="col-1 mr-2 verticalCenter">
-                <img src="../../../images/check-mark.png"> </img>
+                <img v-if="!JSON.parse(questionResults.questionOne)" src="../../../images/wrong-icon.png"> </img>
+                <img v-else src="../../../images/check-mark.png"> </img>
               </div>
               <div class="col-10">
-                <div class="row lightLead smallText mt-1">
+                <div class="row lightLead smallText mt-1" v-bind:class="!JSON.parse(questionResults.questionOne) ? 'red--text': 'lightLead' ">
                   QUESTION 1
                 </div>
-                <div class="row default medium-small">
-                  What is the purpose of this study?
+                <div class="row">
+                  <div class="col-12 medium-small text-left pl-0" v-bind:class="!JSON.parse(questionResults.questionOne) ? 'red--text': 'default' ">
+                    What is the purpose of this study?
+                  </div>
+                  <div v-if="!JSON.parse(questionResults.questionOne)" class="col-4 ml-auto smallText">
+                    <a href="#"> <u> (Review Section) </u> </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -45,14 +51,20 @@
           <div class="col-12 text-center stencilBorder  black--text"> 
             <div class="row">
               <div class="col-1 mr-2 verticalCenter">
-                <img src="../../../images/check-mark.png"> </img>
+                <img v-if="!JSON.parse(questionResults.questionTwo)" src="../../../images/wrong-icon.png"> </img>
+                <img v-else src="../../../images/check-mark.png"> </img>
               </div>
               <div class="col-10">
-                <div class="row lightLead smallText">
+                <div class="row smallText" v-bind:class="!JSON.parse(questionResults.questionTwo) ? 'red--text': 'lightLead' ">
                   QUESTION 2
                 </div>
-                <div class="row default medium-small">
-                  Will my name be stored with my study data?
+                <div class="row">
+                  <div class="col-12 medium-small text-left pl-0"  v-bind:class="!JSON.parse(questionResults.questionTwo) ? 'red--text': 'default' ">
+                    Will my name be stored with my study data?
+                  </div>
+                  <div v-if="!JSON.parse(questionResults.questionTwo)" class="col-4 ml-auto smallText">
+                    <a href="#"> <u> (Review Section) </u> </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -61,14 +73,20 @@
           <div class="col-12 text-center stencilBorder  black--text"> 
             <div class="row">
               <div class="col-1 mr-2 verticalCenter">
-                <img src="../../../images/check-mark.png"> </img>
+                <img v-if="!JSON.parse(questionResults.questionThree)" src="../../../images/wrong-icon.png"> </img>
+                <img v-else src="../../../images/check-mark.png"> </img>
               </div>
               <div class="col-10">
-                <div class="row lightLead smallText">
+                <div class="row lightLead smallText" v-bind:class="!JSON.parse(questionResults.questionThree) ? 'red--text': 'lightLead'">
                   QUESTION 3
                 </div>
-                <div class="row default medium-small text-left">
-                  If I decide to share my data with qualified researchers and then I change my mind, can my data be deleted from their studies?
+                <div class="row">
+                  <div class="col-12 smallText text-left pl-0" v-bind:class="!JSON.parse(questionResults.questionThree) ? 'red--text': 'default'">
+                    If I decide to share my data with qualified researchers and then I change my mind, can my data be deleted from their studies?
+                  </div>
+                  <div v-if="!JSON.parse(questionResults.questionThree)" class="col-4 ml-auto smallText">
+                    <a href="#"> <u> (Review Section) </u> </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -77,14 +95,20 @@
           <div class="col-12 text-center stencilBorder  black--text"> 
             <div class="row">
               <div class="col-1 mr-2 verticalCenter">
-                <img src="../../../images/check-mark.png"> </img>
+                <img v-if="!JSON.parse(questionResults.questionFour)" src="../../../images/wrong-icon.png"> </img>
+                <img v-else src="../../../images/check-mark.png"> </img>
               </div>
               <div class="col-10">
-                <div class="row lightLead smallText">
+                <div class="row lightLead smallText" v-bind:class="!JSON.parse(questionResults.questionFour) ? 'red--text': 'lightLead'">
                   QUESTION 4
                 </div>
-                <div class="row default medium-small">
-                  The survey questions may be stressful for some people
+                <div class="row">
+                  <div class="col-12 medium-small text-left pl-0" v-bind:class="!JSON.parse(questionResults.questionFour) ? 'red--text': 'default'">
+                    The survey questions may be stressful for some people
+                  </div>
+                  <div v-if="!JSON.parse(questionResults.questionFour)" class="col-4 ml-auto smallText">
+                    <a href="#"> <u> (Review Section) </u> </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -93,14 +117,20 @@
           <div class="col-12 text-center stencilBorder  black--text"> 
             <div class="row">
               <div class="col-1 mr-2 verticalCenter">
-                <img src="../../../images/check-mark.png"> </img>
+                <img v-if="!JSON.parse(questionResults.questionFive)" src="../../../images/wrong-icon.png"> </img>
+                <img v-else src="../../../images/check-mark.png"> </img>
               </div>
               <div class="col-10">
-                <div class="row lightLead smallText">
+                <div class="row lightLead smallText" v-bind:class="!JSON.parse(questionResults.questionFive) ? 'red--text': 'lightLead' ">
                   QUESTION 5
                 </div>
-                <div class="row default medium-small">
-                  I can pause / resume participating at any time
+                <div class="row">
+                  <div class="col-12 medium-small text-left pl-0"  v-bind:class="!JSON.parse(questionResults.questionFive) ? 'red--text': 'default' ">
+                    I can pause / resume participating at any time
+                  </div>
+                  <div v-if="!JSON.parse(questionResults.questionFive)" class="col-4 ml-auto smallText">
+                    <a href="#"> <u> (Review Section) </u> </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -112,9 +142,15 @@
 
 
     </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="row white anchorBottom" style="height: inherit;">
+        <v-btn v-on:click="$router.push({name: 'QuestionOne'}) " class="navyBlue medium text--lower large white--text mx-auto col-md-3 text--normal" > Retake Quiz </v-btn>
+    </div>
     
-    <br>
-    <br>
 
   </v-app>
 

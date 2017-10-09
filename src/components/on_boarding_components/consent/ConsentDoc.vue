@@ -120,7 +120,7 @@ export default {
 
 
   .anchorBottom {
-    position: fixed;
+    position: fixed !important;
     bottom: 0px;
     width: 100%;
     height: 10px;
