@@ -18,21 +18,25 @@
         </div>
 
         
-      <div class="row anchorBottom">
-        <div class="customProgress">
-        </div>
+        <div class="row anchorBottom">
 
-        <div class="mx-auto marginTop50 ">
-          <v-btn class="navyBlue largeButton white--text" v-on:click="navigate(0)" > Back
-          </v-btn>
-        </div>
-        <div class="mx-auto marginTop50">
-          <v-btn class="navyBlue largeButton white--text" v-on:click="navigate(1)" > Next
-          </v-btn>
-        </div>
+          <div class="col-md-8">
+            <div class="row">
+              <p class="col-11  tiny mt-2  lightLead"> Step {{' ' + stepNumber}} </p>
+              <v-progress-linear fill="" class="col-11  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
+            </div>
+          </div>
 
+            <div class="mx-auto marginTop50 ">
+              <v-btn class="navyBlue largeButton white--text" v-on:click="navigate(0)"> Back
+              </v-btn>
+            </div>
+            <div class="mx-auto marginTop50">
+              <v-btn class="navyBlue largeButton white--text" v-on:click="navigate(1)"> Next
+              </v-btn>
+            </div>
 
-      </div>
+          </div>
 
 
     </v-app>
@@ -65,7 +69,10 @@ export default {
         'OverviewEligibility'
       ],
       indexInStack: 1,
-      requirements: requirements
+      requirements: requirements,
+      multiple13: 100.0 / 13,
+      progress: 100.0 / 13,
+      stepNumber: 1
     }
   },
   mounted: function () {
@@ -76,8 +83,12 @@ export default {
       var frame = ''
       if (index === 0) {
         this.indexInStack = this.indexInStack - 1
+        this.progress = this.progress - this.multiple13
+        this.stepNumber -= 1
       } else {
+        this.progress = this.progress + this.multiple13
         this.indexInStack = this.indexInStack + 1
+        this.stepNumber += 1
       }
       if (this.indexInStack === 13) {
         this.requirements.isOnConsent = false
@@ -92,6 +103,19 @@ export default {
 </script>
 
 <style lang="scss">
+
+  .centerAlign {
+    margin: auto;
+    margin-left: 10px;
+    padding-left: 0px;
+    border-radius: 8px;
+    background-color: #eeeeee;
+  }
+
+  .leftAuto {
+    margin-left: 10px !important;
+    padding-left: 0px;
+  }
   
 
 
