@@ -1,8 +1,5 @@
 <template>
   <v-app>
-    <br>
-    <br>
-    <br>
     <div class="row">
       <p class="mx-auto text-center white--text navyBlue "> Service Calls </p>
     </div>

@@ -45,6 +45,8 @@ import Sign from '@/components/on_boarding_components/sign/Sign.vue'
 
 import ConsentDoc from '@/components/on_boarding_components/consent/ConsentDoc.vue'
 import Registration from '@/components/on_boarding_components/registration/Registration'
+import RegistrationMobile from '@/components/on_boarding_components/registration/RegistrationMobile'
+import RegistrationLinkSent from '@/components/on_boarding_components/registration/RegistrationLinkSent'
 import NullPage from '@/components/NullPage'
 
 import auth from '../auth/auth'
@@ -150,11 +152,6 @@ export default new Router({
               path: 'Ineligible',
               name: 'Ineligible',
               component: Ineligible
-            },
-            {
-              path: 'Registration',
-              name: 'Registration',
-              component: Registration
             },
             {
               path: 'WhyInterested',
@@ -274,6 +271,21 @@ export default new Router({
               path: 'Sign',
               name: 'Sign',
               component: Sign
+            },
+            {
+              path: 'Registration',
+              name: 'Registration',
+              component: Registration
+            },
+            {
+              path: 'RegistrationMobile',
+              name: 'RegistrationMobile',
+              component: RegistrationMobile
+            },
+            {
+              path: 'RegistrationLinkSent',
+              name: 'RegistrationLinkSent',
+              component: RegistrationLinkSent
             }
           ]
         }

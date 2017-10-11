@@ -473,14 +473,24 @@ p {
 }
 
 input#testing,
-input#placeField {
+input#placeField, input#phoneNumber {
   font-size: $font-size-base * 0.7 !important;
+  @extend .defaultBlue;
 }
 
 .white--text input::placeholder  {
   color: white !important;
   @extend .medium;
 }
+
+.default input::placeholder  {
+  color: #3a539b !important;
+  @extend .medium;
+}
+
+
+
+
 
 @media(max-width: 767px) {
 
@@ -719,7 +729,8 @@ div[role=radio].wrapLabel > label {
 .input-group__selections__comma {
   @extend .defaultBlue;
 }
-.application--light .input-group input, .application--light .input-group textarea {
+
+label .application--light .input-group input, .application--light .input-group textarea {
   @extend .defaultBlue;
 }
 

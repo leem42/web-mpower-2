@@ -8,23 +8,14 @@
       <div class="indicatorEmpty offset four"> </div>
       <div class="indicatorEmpty offset five"> </div>
     </div>
-    <br>
-    <br>
   
     <div class="row" id="nextBtn">
       <v-btn flat :ripple="false" class="controller white--text mx-auto text-capitalize" @click.native="handleController()"> {{thirdClick ? "Submit": "Next"}} </v-btn>
     </div>
-  
-    <!--<div class="row" id="backBtn">
-        <v-btn class="controller white--text text-capitalize mx-auto" @click.native="handleController()"> Back </v-btn>
-      </div>-->
-  
-    <!-- Section 1.
-  
-        I'm interest in joining because
-  
+      <!-- Section 1.
+        I'm interest in joining because  
       -->
-      <br>
+
     <div class="row">
       <p class="lead col-sm-8 mediumTitle ml-6 pt-5 pt-md-0"> Why are you interested in joining mPower?
       </p>

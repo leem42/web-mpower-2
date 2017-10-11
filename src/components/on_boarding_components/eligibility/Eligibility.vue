@@ -11,9 +11,6 @@
         <div class="indicatorEmpty offset five"> </div>
       </span>
     </div>
-    <br>
-    <br class="visible-md-up">
-    <br class="visible-md-up">
 
     <div class="row mt-3">
       <p id="greatFit" class="lead col-sm-8 ml-6 mx-auto "> Let's see if you're eligible for the mPower study </p>

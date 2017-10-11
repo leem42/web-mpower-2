@@ -8,10 +8,10 @@ let requirements = {
   hasCompletedEligibility: true,
   isOnConsent: false,
   hasCompletedConsent: true,
-  isOnQuiz: true,
-  hasCompletedQuiz: false,
+  isOnQuiz: false,
+  hasCompletedQuiz: true,
   isOnSign: false,
-  hasCompletedSign: false,
-  isOnRegistration: false,
+  hasCompletedSign: true,
+  isOnRegistration: true,
   hasCompletedRegistration: false
 }

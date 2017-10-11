@@ -9,10 +9,6 @@
             <div class="indicatorFilled offset five"> </div>
         </div>
         <br>
-        <br>
-        <br>
-    
-        <br>
     
         <div class="row">
             <div class="col-sm-8 mx-auto">

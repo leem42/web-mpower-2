@@ -1,8 +1,5 @@
 <template>
     <v-app>
-        <br>
-        <br>
-        <br>
         <div class="row" style="height: 500px;" >
 
             <!--<router-view id="docText" name="ConsentDocText" class="router docText container-fluid">  </router-view>-->
@@ -17,7 +14,38 @@
             
         </div>
 
+        <div class="row anchorBottom customRowHeight">
         
+        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+            <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)"> < </v-btn>
+        </div>
+
+        <div class="marginTop50 col-2 hideOnSmall ml-0 mr-0">
+            <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(0)"> Back
+            </v-btn>
+        </div>
+
+        <div class="col-6 col-md-8 mt-md-3">
+            <div clas="row text-center">
+                <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Question {{' ' + indexInStack }} </p>
+                <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
+            </div>
+        </div>
+        
+        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+            <v-btn class="navyBlue white--text  medium" v-on:click="navigate(1)"> > </v-btn>
+        </div>
+
+        
+        <div class="marginTop50 col-2 hideOnSmall">
+            <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(1)"> Next
+            </v-btn>
+        </div>
+
+
+    </div>
+
+<!--
         <div class="row anchorBottom">
 
           <div class="col-md-8">
@@ -36,7 +64,7 @@
               </v-btn>
             </div>
 
-          </div>
+          </div>-->
 
 
     </v-app>

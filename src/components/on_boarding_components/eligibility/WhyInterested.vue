@@ -1,10 +1,5 @@
 <template>
     <v-app>
-
-
-        <br>
-        <br>
-        <br>
         <br>
         <br>
         <div class="row midPage">

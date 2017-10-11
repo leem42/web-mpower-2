@@ -1,8 +1,5 @@
 <template>
     <v-app class="fadeBackground ">
-        <br>
-        <br>
-        <br>
 
         <template v-if="requirements.isOnEligibility && !this.requirements.hasCompletedEligibility">
             <div class="row">
@@ -121,7 +118,7 @@
         </div>
 
         <div class="row customRow mb-4 ml-1 mr-1">
-            <div  v-on:click="requirements.hasCompletedSign ? $router.push({name: 'Registration'}) : null" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnRegistration, completedrequirements: requirements.hasCompletedRegistration}">
+            <div  v-on:click="requirements.hasCompletedSign ? $router.push({name: 'RegistrationMobile'}) : null" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnRegistration, completedrequirements: requirements.hasCompletedRegistration}">
                 <div class="row">
                     <div class="col-1 verticalCenter ml-md-3 mr-5 pl-0 pl-sm-auto">
                         <img  src="../../images/number-icon.png" class="checkOnOverview"> </img>
@@ -133,7 +130,7 @@
                         </p>
                     </div>
                     <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
-                        <v-icon large v-bind:class="{greenText: requirements.hasCompletedRegistration}" class="lock">{{requirements.hasCompletedRegistration ? '': 'fa-lock'  }}</v-icon>
+                        <v-icon large v-bind:class="{greenText: requirements.hasCompletedRegistration}" class="lock">{{requirements.hasCompletedSign ? '': 'fa-lock'  }}</v-icon>
                     </div>
                 </div>
             </div>

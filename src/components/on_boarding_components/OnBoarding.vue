@@ -43,7 +43,7 @@
 
             <v-icon v-if="!requirements.hasCompletedSign" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
             <v-icon v-if="!requirements.hasCompletedSign" medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <img  class="extraSpacing" v-if="requirements.isOnRegistration" src="../../images/quiz-onboarding-icon.png" ></img>
+            <img  class="extraSpacing" v-if="requirements.isOnRegistration" src="../../images/number-icon.png" ></img>
             <img  class="extraSpacing" v-if="requirements.hasCompletedRegistration" src="../../images/check-completed.png" ></img>
 
             <!-- <div class="seperator"> | </div> -->
@@ -58,7 +58,7 @@
         </div>
       </div>
     </nav>
-    <router-view class="whiteBackground router container-fluid" v-bind:class="{fadeBackground: getHeader() === 'Sign' || isOnRetake()}"></router-view>
+    <router-view class="whiteBackground mt-custom router container-fluid" v-bind:class="{fadeBackground: getHeader() === 'Sign' || getHeader() === 'Welcome' || isOnRetake()}"></router-view>
     
     <!--- TODO: must update to make sure application is only single page -->
     <!--<v-bottom-nav value="true" class="hideOnSmall darkBlue customAlign">
@@ -83,6 +83,9 @@
   background-color: #e1f2df;
 }
 
+.mt-custom {
+  padding-top: 120px;
+}
 .helpOval {
   height: 56px;
   border-radius: 28px !important;
@@ -127,6 +130,8 @@
           return 'Consent'
         } else if (route.indexOf('Sign') !== -1) {
           return 'Sign'
+        } else if (route.indexOf('RegistrationLinkSent') !== -1) {
+          return 'Welcome'
         }
       },
       isOnRetake () {
