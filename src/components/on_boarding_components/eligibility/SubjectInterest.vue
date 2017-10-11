@@ -9,17 +9,55 @@
       <div class="indicatorEmpty offset five"> </div>
     </div>
   
-    <div class="row" id="nextBtn">
+    <!--<div class="row" id="nextBtn">
       <v-btn flat :ripple="false" class="controller white--text mx-auto text-capitalize" @click.native="handleController()"> {{thirdClick ? "Submit": "Next"}} </v-btn>
+    </div>-->
+
+    <div class="row anchorBottom customRowHeight">
+        
+        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+            <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)"> < </v-btn>
+        </div>
+
+        <div class="marginTop50 col-2 hideOnSmall ml-0 mr-0">
+            <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(0)"> Back
+            </v-btn>
+        </div>
+
+        <div class="col-6 col-md-8 mt-md-3">
+            <div clas="row text-center">
+                <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Step {{' ' + indexInStack }} </p>
+                <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
+            </div>
+        </div>
+        
+        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+            <v-btn class="navyBlue white--text  medium" v-on:click="handleController()"> > </v-btn>
+        </div>
+
+        
+        <div class="marginTop50 col-2 hideOnSmall">
+            <v-btn class="navyBlue largeButton medium ml-0  white--text" v-on:click="handleController()"> {{indexInStack === 5? 'Submit': 'Next'}}
+            </v-btn>
+        </div>
+
+
     </div>
+
+
+
       <!-- Section 1.
         I'm interest in joining because  
       -->
-
+      <div class="row">
+        <p class="lead font-weight-bold col-sm-8 largeTitle ml-6 pt-5 pt-md-0"> Why are you interested in joining mPower?
+        </p>
+        <p class="dark-lead col-sm-6 medium-small  ml-6 pt-5 pt-md-0">
+          Understanding what interests you and what you are willing to do helps us shape an experience that aligns with your expectations.
+        </p>
+    </div>
     <div class="row">
-      <p class="lead col-sm-8 mediumTitle ml-6 pt-5 pt-md-0"> Why are you interested in joining mPower?
-      </p>
-      <span id="interest" class="francisco lato mediumLarge lead pt-sm-0 col-sm-8 ml-6 mb-4"> I'm interested in joining mPower because I
+      <span id="interest" class="francisco lato mediumLarge default pt-sm-0 col-sm-6 ml-6 mb-4"> I'm interested in joining mPower because I
   
         <span v-if="firstEdit" class="ml-0 p-0">
           <v-btn flat :ripple="false" v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink pl-0 middle francisco"> Want to help myself         
@@ -42,7 +80,7 @@
       </span>
     </div>
   
-    <span v-if="!firstEdit">
+    <span v-if="!firstEdit" class="ml-3">
       <div class="row">
         <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 pt-3 pb-3  stencilBorderTop stencilBorder col-sm-7 col-md-6  col-lg-4  customCheck "></v-checkbox>
       </div>
@@ -68,7 +106,7 @@
       -->
     <span id="willing" v-if="firstClick">
       <div class="row">
-        <span class="francisco col-md-8 ml-6 mediumTitle mb-4 text-left lead"> I would be willing to try
+        <span class="francisco col-md-6  ml-6 mediumTitle mb-4 text-left lead"> I would be willing to try
           <span v-if="secondEdit" class="p-0">
             
             <v-btn flat :ripple="false" v-if="selectedChoice[5]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> finger tapping activity
@@ -90,22 +128,22 @@
         </span>
       </div>
   
-      <div class="row">
-        <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 stencilBorderTop stencilBorder pt-3 pb-3  col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
-      </div>
-      <div class="row">
-        <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6   stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
-      </div>
-      <div class="row">
-        <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
-      </div>
-      <div class="row">
-        <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
-      </div>
-      </div>
-      <div class="row">
-        <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6  stencilBorderTop stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
-      </div>
+        <div class="row">
+          <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 stencilBorderTop stencilBorder pt-3 pb-3  col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
+        </div>
+        <div class="row">
+          <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6   stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
+        </div>
+        <div class="row">
+          <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
+        </div>
+        <div class="row">
+          <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
+        </div>
+        </div>
+        <div class="row">
+          <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6  stencilBorderTop stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
+        </div>
     </span>
   
     <!-- Section 3.
@@ -156,7 +194,7 @@
       -->
     <span id="request" v-if="thirdClick">
       <div class="row">
-        <p class="francisco ml-6 col-sm-8 mediumTitle lead"> I would like to recieve
+        <p class="francisco ml-6 col-sm-6 mediumTitle lead"> I would like to recieve
           <span v-if="fourthEdit">
             <v-btn flat :ripple="false" v-if="selectedChoice[10]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the study
             </v-btn>
@@ -212,7 +250,10 @@ export default {
       secondEdit: false,
       thirdEdit: false,
       fourthEdit: false,
-      radioTexts: ['Daily', 'Weekly', 'Biweekly', 'Monthly']
+      radioTexts: ['Daily', 'Weekly', 'Biweekly', 'Monthly'],
+      indexInStack: 1,
+      multiple5: 100.0 / 5,
+      progress: 100.0 / 5
     }
   },
   methods: {
@@ -243,21 +284,29 @@ export default {
         this.firstClick = true
         this.firstEdit = true
         this.first = true
+        this.progress += this.multiple5
+        this.indexInStack += 1
         this.scrollPage('#willing')
       } else if (!this.secondClick) {
         this.secondClick = true
         this.second = true
         this.secondEdit = true
+        this.progress += this.multiple5
+        this.indexInStack += 1
         this.scrollPage('#basis')
       } else if (!this.thirdClick) {
         this.thirdClick = true
         this.third = true
         this.thirdEdit = true
+        this.progress += this.multiple5
+        this.indexInStack += 1
         this.scrollPage('#request')
       } else if (!this.fourthClick) {
         this.fourthClick = true
         this.fourth = true
         this.fourthEdit = true
+        this.progress += this.multiple5
+        this.indexInStack += 1
       } else {
         this.$router.push('Eligibility')
       }

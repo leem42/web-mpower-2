@@ -27,7 +27,7 @@
 
         <div class="col-6 col-md-8 mt-md-3">
             <div clas="row text-center">
-                <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Question {{' ' + indexInStack }} </p>
+                <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Step {{' ' + indexInStack }} </p>
                 <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
             </div>
         </div>
