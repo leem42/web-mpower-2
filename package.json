@@ -14,8 +14,11 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "ajv": "^5.2.3",
     "axios": "^0.16.2",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-lodash": "^2.4.5",
+    "eslint-plugin-node": "^5.2.0",
     "fast-deep-equal": "^1.0.0",
     "has-flag": "^2.0.0",
     "json-schema-traverse": "^0.3.1",
@@ -23,6 +26,7 @@
     "lodash": "^4.17.4",
     "make-dir": "^1.0.0",
     "npmlog": "^4.1.2",
+    "sinon": "^2.4.1",
     "vue": "^2.4.4",
     "vue-axios": "^2.0.2",
     "vue-lodash": "^1.0.4",

@@ -9,18 +9,19 @@
       <div class="container-fluid" style="display: block;">
         <div class="row">
   
-          <div class="col-6 pl-1 mx-auto text-center text-sm-left col-sm-4">
-            <span class="lead light mediumTitle centerVertical   white--text" v-bind:class="{medium: $router.currentRoute.fullPath.includes('Question')}">
+          <div class="col-6 pl-1 mx-auto text-center text-sm-left col-sm-2">
+            <span class="lead light tiny centerVertical   white--text" v-bind:class="{medium: $router.currentRoute.fullPath.includes('Question')}">
                {{getHeader()}}
            </span>
             <span v-if="$router.currentRoute.fullPath === '/NullPage/OnBoarding/WhyInterested'" class="lead light mediumTitle  white--text"> Eligibility
             </span>
           </div>
+
           <div class="text-center d-sm-none col-6">
             <span id="help" class="d-sm-none white--text lead headerText light tiny"> Need Help? </span>
           </div>
 
-          <div class="col-sm-8 text-center text-sm-right">
+          <div class="col-sm-10 text-center text-sm-right">
             <img v-if="!requirements.hasCompletedEligibility" src="../../images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
             <img v-if="requirements.hasCompletedEligibility" src="../../images/check-completed.png" class="img-fluid check" alt="image of a check marked circle"></img>
 
@@ -47,6 +48,7 @@
 
             <!-- <div class="seperator"> | </div> -->
             <img class="d-none d-md-inline-block helpOval" src="../../images/need-help-button.png" ></img>
+            <img class="d-none d-sm-inline-block d-md-none helpOval" src="../../images/need-help-button.png" ></img>
             <!-- <div large class="d-none d-md-inline-block  helpOval"> Need Help? </div> -->
   
 
@@ -80,6 +82,7 @@
   height: 86px;
   background-color: #e1f2df;
 }
+
 .helpOval {
   height: 56px;
   border-radius: 28px !important;

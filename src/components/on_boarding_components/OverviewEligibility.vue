@@ -27,7 +27,7 @@
             </div>
         </template>
         <template v-else-if="requirements.isOnQuiz && !requirements.hasCompletedQuiz">
-            <div class="row">
+            <div class="row text-center mb-2">
                 <p class="mx-auto white--text"> Thanks for walking through Consent! </p>
             </div>
             <div class="row text-center mb-2">
@@ -36,7 +36,7 @@
             </div>
         </template>
         <template v-else-if="requirements.isOnSign && !requirements.hasCompletedSign && hasPassed">
-            <div class="row">
+            <div class="row text-center">
                 <p class="mx-auto white--text"> Great Job! </p>
             </div>
             <div class="row text-center mb-2">

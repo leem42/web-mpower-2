@@ -23,7 +23,7 @@
           <div class="col-md-8">
             <div class="row">
               <p class="col-11  tiny mt-2  lightLead"> Step {{' ' + stepNumber}} </p>
-              <v-progress-linear fill="" class="col-11  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
+              <v-progress-linear fill="" class="col-11  mb-2 centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
             </div>
           </div>
 
@@ -101,97 +101,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-
-  .centerAlign {
-    margin: auto;
-    margin-left: 10px;
-    padding-left: 0px;
-    border-radius: 8px;
-    background-color: #eeeeee;
-  }
-
-  .leftAuto {
-    margin-left: 10px !important;
-    padding-left: 0px;
-  }
-  
-
-
-  .anchorBottom {
-    position: fixed !important;
-    bottom: 0px;
-    width: 100%;
-    height: 10px;
-    height: 108px;
-    background-color: #fafafa;
-    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.12);
-  }
-
-  @mixin length($percent) {
-    width:$percent†
-  }
-  .customProgress {
-    margin-left: 10px;
-    margin-top: 50px;
-    border-radius: 8px;  
-    background-color: #68c060;
-    width: 60%;
-    height: 10px;
-
-  }
-
-  .fillParent {
-    width: inherit;
-    height: inherit;
-  }
-   
-   @media(max-width: 766px) { 
-      .customHeightFrame {
-        height: 200px !important;
-      }
-      .mask {
-        border: solid 4px rgba(108, 122, 137, 0.3);
-      }
-
-   
-      .customProgress {
-        margin-left: 15px;
-        margin-right: 15px;
-        margin-top: 20px;
-        border-radius: 8px;
-        background-color: #68c060;
-        width: 100%;
-        height: 10px;
-      }
-
-
-      .marginTop50 > button {
-        height: 40px;
-        width: 80px;
-        border-radius: 16px;
-      }
-   }
-   @media(min-width: 766px) { 
-   
-      .marginTop50>button {
-        height: 70px;
-        width: 150px;
-        border-radius: 16px;
-        margin-top: 20px;
-      }
-
-      .mask {
-        border: solid 10px rgba(108, 122, 137, 0.3);
-      }
-      .customHeightFrame {
-        height: 500px !important;
-      }
-   }
-
-   .document {
-     height: 500px;
-    }
-
-</style>

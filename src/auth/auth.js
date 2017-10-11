@@ -1,5 +1,5 @@
 /* globals localStorage */
-
+/* eslint-disable */
 export default {
   login (email, pass, cb) {
     cb = arguments[arguments.length - 1]
@@ -49,3 +49,4 @@ function pretendRequest (email, pass, cb) {
     }
   }, 0)
 }
+/* eslint-enable */

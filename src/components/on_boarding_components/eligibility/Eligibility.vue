@@ -109,7 +109,7 @@
         function (arg1) {
           this.$scrollTo(arg1, 750, { easing: 'linear' })
         }
-      , 200),
+        , 200),
       clicked () {
         this.isNotEligible = (this.age < 18) || (!this.isResident) || (this.selectedOptionForPhone !== 'comfortable using my phone')
         if (!this.isNotEligible) {

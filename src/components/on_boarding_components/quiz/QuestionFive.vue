@@ -1,9 +1,5 @@
 <template>
     <v-app>
-        <br>
-        <br>
-        <br>
-        <br>
         <div class="row">
             <p class="ml-6 pl-2 lightLead tiny text-uppercase"> Question 5 </p>
         </div>
@@ -22,10 +18,6 @@
              </v-radio-group>  
         </div>
 
-        <div class="row">
-            <v-btn v-on:click="transition()" class="col-auto mx-auto ext-sm-auto text-center bigButton text-capitalize navyBlue large white--text"> Next </v-btn>
-        </div>
- 
     </v-app>
 </template>
 

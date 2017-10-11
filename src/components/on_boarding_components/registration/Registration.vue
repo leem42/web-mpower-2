@@ -1,5 +1,5 @@
 <template>
-  <v-app >
+  <v-app>
     <br>
     <br>
     <br>
@@ -8,103 +8,63 @@
     </div>
 
     <div class="row">
-      <v-btn v-on:click="signIn()" class="text-center white--text navyBlue ml-6"> Sign In </v-btn>
+      <v-btn v-on:click="signIn ()" class="text-center white--text navyBlue ml-6"> Sign In </v-btn>
       <div class="col-12"></div>
       <div class="col-3 ml-6">
-        <v-text-field
-          name="input-3-3"
-          label="email"
-          v-model="email"
-          class="input-group--focused"
-          single-line>
+        <v-text-field name="input-3-3" label="email" v-model="email" class="input-group--focused" single-line>
         </v-text-field>
-        </div>
+      </div>
       <div class="col-12"></div>
       <div class="col-3 ml-6">
-        <v-text-field
-          name="input-3-3"
-          label="password"
-          v-model="password"
-          class="input-group--focused"
-          single-line>
+        <v-text-field name="input-3-3" label="password" v-model="password" class="input-group--focused" single-line>
         </v-text-field>
-        </div>
+      </div>
       <div class="col-12"></div>
       <div class="col-3 ml-6">
-        <v-text-field
-          name="input-3-3"
-          label="study"
-          v-model="study"
-          class="input-group--focused"
-          single-line>
+        <v-text-field name="input-3-3" label="study" v-model="study" class="input-group--focused" single-line>
         </v-text-field>
-        </div>
+      </div>
       <div class="col-12"></div>
       <div class="col-3 ml-6">
-        <v-text-field
-          name="input-3-3"
-          label="type"
-          v-model="type"
-          class="input-group--focused"
-          single-line>
+        <v-text-field name="input-3-3" label="type" v-model="type" class="input-group--focused" single-line>
         </v-text-field>
-        </div>
+      </div>
     </div>
     <br>
     <br>
     <div class="row">
-      <v-btn v-on:click="signOut()" class="text-center white--text navyBlue ml-6"> Sign Out </v-btn>
+      <v-btn v-on:click="signOut ()" class="text-center white--text navyBlue ml-6"> Sign Out </v-btn>
     </div>
 
     <br>
     <br>
 
     <div class="row">
-      <v-btn v-on:click="signUp()" class="text-center white--text navyBlue ml-6"> Sign Up </v-btn>
+      <v-btn v-on:click="signUp ()" class="text-center white--text navyBlue ml-6"> Sign Up </v-btn>
       <div class="col-12"></div>
       <div class="col-3 ml-6">
-        <v-text-field
-          name="input-3-3"
-          label="study"
-          v-model="signUpStudy"
-          class="input-group--focused"
-          single-line>
+        <v-text-field name="input-3-3" label="study" v-model="signUpStudy" class="input-group--focused" single-line>
         </v-text-field>
-        </div>
+      </div>
       <div class="col-12"></div>
       <div class="col-3 ml-6">
-        <v-text-field
-          name="input-3-3"
-          label="email"
-          v-model="signUpEmail"
-          class="input-group--focused"
-          single-line>
+        <v-text-field name="input-3-3" label="email" v-model="signUpEmail" class="input-group--focused" single-line>
         </v-text-field>
-        </div>
+      </div>
       <div class="col-12"></div>
       <div class="col-3 ml-6">
-        <v-text-field
-          name="input-3-3"
-          label="password"
-          v-model="signUpPassword"
-          class="input-group--focused"
-          single-line>
+        <v-text-field name="input-3-3" label="password" v-model="signUpPassword" class="input-group--focused" single-line>
         </v-text-field>
-        </div>
+      </div>
       <div class="col-12"></div>
       <div class="col-3 ml-6">
-        <v-text-field
-          name="input-3-3"
-          label="signUpType"
-          v-model="signUpType"
-          class="input-group--focused"
-          single-line>
+        <v-text-field name="input-3-3" label="signUpType" v-model="signUpType" class="input-group--focused" single-line>
         </v-text-field>
-        </div>
+      </div>
     </div>
 
     <div class="row">
-      <v-btn v-on:click="getSelf()" class="text-center white--text navyBlue ml-6"> getSelf </v-btn>
+      <v-btn v-on:click="getSelf ()" class="text-center white--text navyBlue ml-6"> getSelf </v-btn>
     </div>
 
   </v-app>
@@ -136,27 +96,27 @@ export default {
     signIn () {
       this.axios.post('https://webservices.sagebridge.org/v3/auth/signIn',
         {
-            /* eslint-disable */
-            email: this.email,
-            password: this.password,
-            study: this.study,
-            type: this.type
-            /* eslint-enable */
+          /* eslint-disable */
+          email: this.email,
+          password: this.password,
+          study: this.study,
+          type: this.type
+          /* eslint-enable */
         }
       )
-      .then((response) => {
-        console.log(response.data)
-      })
-      .catch(error => {
-        console.log('eror being made')
-        this.loginInfo = JSON.parse(JSON.stringify(error)).response.data
-        console.log('')
-        console.log(this.loginInfo)
-        console.log('')
-        var sessionToken = this.loginInfo.sessionToken
-        this.userId = this.loginInfo.id
-        this.HTTP = this.createBaseHTTP(sessionToken)
-      })
+        .then((response) => {
+          console.log(response.data)
+        })
+        .catch(error => {
+          console.log('eror being made')
+          this.loginInfo = JSON.parse(JSON.stringify(error)).response.data
+          console.log('')
+          console.log(this.loginInfo)
+          console.log('')
+          var sessionToken = this.loginInfo.sessionToken
+          this.userId = this.loginInfo.id
+          this.HTTP = this.createBaseHTTP(sessionToken)
+        })
     },
     createBaseHTTP (sessionToken) {
       return this.axios.create({
@@ -183,26 +143,26 @@ export default {
     signUp () {
       this.axios.post('https://webservices.sagebridge.org/v3/auth/signUp',
         {
-            /* eslint-disable */
-            email: this.signUpEmail,
-            password: this.signUpPassword,
-            study: this.signUpStudy
-            /* eslint-enable */
+          /* eslint-disable */
+          email: this.signUpEmail,
+          password: this.signUpPassword,
+          study: this.signUpStudy
+          /* eslint-enable */
         }
       )
-      .then((response) => {
-        console.log(response.data)
-      })
-      .catch(error => {
-        console.log('eror being made signing in')
-        this.loginInfo = JSON.parse(JSON.stringify(error)).response.data
-        console.log('')
-        console.log(this.loginInfo)
-        console.log('')
-        var sessionToken = this.loginInfo.sessionToken
-        this.userId = this.loginInfo.id
-        this.HTTP = this.createBaseHTTP(sessionToken)
-      })
+        .then((response) => {
+          console.log(response.data)
+        })
+        .catch(error => {
+          console.log('eror being made signing in')
+          this.loginInfo = JSON.parse(JSON.stringify(error)).response.data
+          console.log('')
+          console.log(this.loginInfo)
+          console.log('')
+          var sessionToken = this.loginInfo.sessionToken
+          this.userId = this.loginInfo.id
+          this.HTTP = this.createBaseHTTP(sessionToken)
+        })
     }
   },
   created () {

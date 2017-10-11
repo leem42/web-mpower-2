@@ -232,7 +232,7 @@ export default {
       function (arg1) {
         this.$scrollTo(arg1, 1500, { easing: 'linear', offset: -90 })
       }
-    , 200),
+      , 200),
     handleEdit: function (index) {
       if (index === 0) {
         this.firstEdit = !this.firstEdit

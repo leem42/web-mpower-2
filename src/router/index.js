@@ -22,6 +22,7 @@ import QuestionTwo from '@/components/on_boarding_components/quiz/QuestionTwo.vu
 import QuestionThree from '@/components/on_boarding_components/quiz/QuestionThree.vue'
 import QuestionFour from '@/components/on_boarding_components/quiz/QuestionFour.vue'
 import QuestionFive from '@/components/on_boarding_components/quiz/QuestionFive.vue'
+import QuestionView from '@/components/on_boarding_components/quiz/QuestionView.vue'
 import RetakeQuiz from '@/components/on_boarding_components/quiz/RetakeQuiz.vue'
 
 import ConsentOne from '@/components/on_boarding_components/consent/ConsentOne.vue'
@@ -161,29 +162,36 @@ export default new Router({
               component: WhyInterested
             },
             {
-              path: 'QuestionOne',
-              name: 'QuestionOne',
-              component: QuestionOne
-            },
-            {
-              path: 'QuestionTwo',
-              name: 'QuestionTwo',
-              component: QuestionTwo
-            },
-            {
-              path: 'QuestionThree',
-              name: 'QuestionThree',
-              component: QuestionThree
-            },
-            {
-              path: 'QuestionFour',
-              name: 'QuestionFour',
-              component: QuestionFour
-            },
-            {
-              path: 'QuestionFive',
-              name: 'QuestionFive',
-              component: QuestionFive
+              path: 'QuestionView',
+              name: 'QuestionView',
+              component: QuestionView,
+              children: [
+                {
+                  path: 'QuestionOne',
+                  name: 'QuestionOne',
+                  component: QuestionOne
+                },
+                {
+                  path: 'QuestionTwo',
+                  name: 'QuestionTwo',
+                  component: QuestionTwo
+                },
+                {
+                  path: 'QuestionThree',
+                  name: 'QuestionThree',
+                  component: QuestionThree
+                },
+                {
+                  path: 'QuestionFour',
+                  name: 'QuestionFour',
+                  component: QuestionFour
+                },
+                {
+                  path: 'QuestionFive',
+                  name: 'QuestionFive',
+                  component: QuestionFive
+                }
+              ]
             },
             {
               path: 'RetakeQuiz',
