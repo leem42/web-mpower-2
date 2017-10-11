@@ -4,10 +4,10 @@
     <p v-if="!loggedIn">You are logged {{ loggedIn ? 'in' : 'out' }}</p>
     <form @submit.prevent="login" v-if="!loggedIn">
       <label>
-        <input v-model="email" placeholder="email">
+        <input class="loginText" v-model="email" placeholder="email">
       </label>
       <label>
-        <input v-model="password" placeholder="password">
+        <input class="loginText" v-model="password" placeholder="password">
       </label>
       <br>
       <!--<label>
@@ -112,3 +112,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  input.loginText {
+    color: blue;
+  }
+</style>
