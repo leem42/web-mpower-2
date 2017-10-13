@@ -198,7 +198,10 @@ export default new Router({
             {
               path: 'ConsentDoc',
               name: 'ConsentDoc',
-              component: ConsentDoc,
+              components: {
+                default: ConsentDoc,
+                d: ConsentDocText
+              },
               children: [
                 {
                   path: 'ConsentOne',

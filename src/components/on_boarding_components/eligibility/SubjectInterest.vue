@@ -52,10 +52,11 @@
       <div class="row">
         <p class="lead font-weight-bold col-sm-8 largeTitle ml-6 pt-5 pt-md-0"> Why are you interested in joining mPower?
         </p>
-        <p class="dark-lead col-sm-6 medium-small  ml-6 pt-5 pt-md-0">
+        <p class="lightGrayText col-sm-6 medium-small  ml-6 pt-5 pt-md-0">
           Understanding what interests you and what you are willing to do helps us shape an experience that aligns with your expectations.
         </p>
     </div>
+    <br>
     <div class="row">
       <span id="interest" class="francisco lato mediumLarge default pt-sm-0 col-sm-6 ml-6 mb-4"> I'm interested in joining mPower because I
   

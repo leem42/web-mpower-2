@@ -1,18 +1,21 @@
 <template>
-    <v-app>
+    <v-app v-bind:class="showOverlay ? 'shadowBackground' : ''">
+
+
         <div class="row" style="height: 500px;" >
 
             <!--<router-view id="docText" name="ConsentDocText" class="router docText container-fluid">  </router-view>-->
-            <div class="customHeightFrame col-md-5 ml-sm-4">
+            <div class="customHeightFrame col-md-5 ml-sm-4" v-bind:class="showOverlay ? 'col-md-11' : ''">
               <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
               </iframe>
             </div>
 
-            <div class="col-md-6 mr-5 ">
-                <router-view class="whiteBackground router container-fluid">  </router-view>
+            <div  class="col-md-6 mr-5 mt-2" style="height: 400px;" v-if="!showOverlay">
+                <router-view  class="whiteBackground consentView router container-fluid">  </router-view>
             </div>    
             
         </div>
+
 
         <div class="row anchorBottom customRowHeight">
         
@@ -79,12 +82,14 @@ export default {
       multiple13: 100.0 / 13,
       progress: 100.0 / 13,
       stepNumber: 1,
-      iframe: ''
+      iframe: '',
+      showOverlay: false
     }
   },
   mounted: function () {
     this.highlightTracker.sectionOne = true
     this.iframe = document.getElementById('iFrame').contentWindow
+    console.log('calling frame')
     this.callFrame('message')
   },
   methods: {
@@ -110,7 +115,33 @@ export default {
     },
     callFrame (message) {
       this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
+    },
+    recieveMessage: function (event) {
+      if (event.source.location.href !== 'http://localhost:8080/#/NullPage/ConsentDocText') {
+        return ''
+      } else {
+        /* eslint-disable */
+        this.showOverlay = !this.showOverlay
+        /* eslint-enable */
+      }
     }
+  },
+  created: function () {
+    window.addEventListener('message', this.recieveMessage, false)
   }
 }
 </script>
+
+
+<style>
+
+
+  div#app.consentView {
+    min-height: 0px;
+    height: 500px;
+  }
+
+  .shadowBackground {
+    background-color: rgba(74, 74, 74, 0.9) !important;
+  }
+</style>
