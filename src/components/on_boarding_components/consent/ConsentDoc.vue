@@ -45,28 +45,6 @@
 
     </div>
 
-<!--
-        <div class="row anchorBottom">
-
-          <div class="col-md-8">
-            <div class="row">
-              <p class="col-11  tiny mt-2  lightLead"> Step {{' ' + stepNumber}} </p>
-              <v-progress-linear fill="" class="col-11  mb-2 centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
-            </div>
-          </div>
-
-            <div class="mx-auto marginTop50 ">
-              <v-btn class="navyBlue largeButton white--text" v-on:click="navigate(0)"> Back
-              </v-btn>
-            </div>
-            <div class="mx-auto marginTop50">
-              <v-btn class="navyBlue largeButton white--text" v-on:click="navigate(1)"> Next
-              </v-btn>
-            </div>
-
-          </div>-->
-
-
     </v-app>
 </template>
 
@@ -100,11 +78,14 @@ export default {
       requirements: requirements,
       multiple13: 100.0 / 13,
       progress: 100.0 / 13,
-      stepNumber: 1
+      stepNumber: 1,
+      iframe: ''
     }
   },
   mounted: function () {
     this.highlightTracker.sectionOne = true
+    this.iframe = document.getElementById('iFrame').contentWindow
+    this.callFrame('message')
   },
   methods: {
     navigate (index) {
@@ -124,7 +105,11 @@ export default {
         this.requirements.isOnQuiz = true
       }
       frame = this.callStack[this.indexInStack]
+      this.callFrame(this.indexInStack)
       this.$router.push({name: frame})
+    },
+    callFrame (message) {
+      this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
     }
   }
 }

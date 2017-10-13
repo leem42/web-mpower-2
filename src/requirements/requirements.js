@@ -4,14 +4,14 @@ export {
 }
 
 let requirements = {
-  isOnEligibility: false,
-  hasCompletedEligibility: true,
+  isOnEligibility: true,
+  hasCompletedEligibility: false,
   isOnConsent: false,
-  hasCompletedConsent: true,
+  hasCompletedConsent: false,
   isOnQuiz: false,
-  hasCompletedQuiz: true,
+  hasCompletedQuiz: false,
   isOnSign: false,
-  hasCompletedSign: true,
-  isOnRegistration: true,
+  hasCompletedSign: false,
+  isOnRegistration: false,
   hasCompletedRegistration: false
 }
