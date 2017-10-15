@@ -3,7 +3,7 @@
 
     <div class="row">
 
-      <div class="mx-auto pt-3 pt-sm-0 col-3 col-lg-2 mr-lg-2 ml-lg-2 customHeight">
+      <div class="mx-auto pt-3 pt-sm-0 col-3 col-lg-2 mr-lg-2 ml-lg-2">
         <img class="img-fluid " src="../../../images/step-1-consent-icon.png">
       </div>
 

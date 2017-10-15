@@ -46,7 +46,8 @@
             <img  class="extraSpacing" v-if="requirements.isOnRegistration" src="../../images/number-icon.png" ></img>
             <img  class="extraSpacing" v-if="requirements.hasCompletedRegistration" src="../../images/check-completed.png" ></img>
 
-            <!-- <div class="seperator"> | </div> -->
+             <span class="d-none d-lg-inline-block hideOnSmall" style="font-size: 40px;"> | </span>
+
             <img class="d-none d-md-inline-block helpOval" src="../../images/need-help-button.png" ></img>
             <img class="d-none d-sm-inline-block d-md-none helpOval" src="../../images/need-help-button.png" ></img>
             <!-- <div large class="d-none d-md-inline-block  helpOval"> Need Help? </div> -->

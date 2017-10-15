@@ -1,5 +1,7 @@
 <template>
     <v-app >
+    
+
         <div id="A1" v-bind:class="highlightTracker.one ? 'highlighter': ''">
             Latin Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         </div>
@@ -47,7 +49,14 @@
         <div id="A13" v-bind:class="highlightTracker.thirteen ? 'highlighter': ''">
         <br> Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
         </div>
-        <router-view class="whiteBackground router container-fluid">  </router-view>
+
+        <div class="attachButton">
+          <v-btn v-on:click="overlay()" color="blue" class="white--text largeButton medium inheritPosition"> 
+           {{showOverlay? 'Close' : 'Expand'}}
+        </v-btn>
+        </div>
+
+        <!--<router-view class="whiteBackground router container-fluid">  </router-view>-->
 
     </v-app>
 </template>
@@ -61,7 +70,10 @@ export default {
   data () {
     return {
       highlightTracker: highlightTracker,
-      requirements: requirements
+      requirements: requirements,
+      showOverlay: false,
+      eventSource: '',
+      eventOrigin: ''
     }
   },
   computed: {
@@ -82,20 +94,24 @@ export default {
         return ''
       } else {
         /* eslint-disable */
-        console.log(this.highlightTracker)
+        console.log('was called')
         var keyCurrent = this.keys[event.data - 1]
         var keyBehind = this.keys[event.data - 2]
         this.highlightTracker[keyCurrent] = true
         this.highlightTracker[keyBehind] = false
-        console.log(keyBehind)
+        this.indexInWindow = event.data - 2
+        this.eventOrigin = event.origin
+        this.eventSource = event.source
         this.scrollPage(event.data)
         /* eslint-enable */
       }
+    },
+    overlay () {
+      this.showOverlay = !this.showOverlay
+      this.eventSource.postMessage('switch overlay', this.eventOrigin)
     }
   },
   created: function () {
-    this.highlightTracker.one = true
-    console.log(this.highlightTracker)
     window.addEventListener('message', this.recieveMessage, false)
   }
 }
@@ -103,10 +119,23 @@ export default {
 
 <style>
 .highlighter {
-    background-color: yellow;
+  background-color: rgba(255, 218, 138, 0.7);
+
 }
 
 .normal {
   background-color: white !important;
 }
+
+.inheritPosition {
+  position: inherit;
+}
+
+.attachButton {
+  z-index: 99999;
+  position: fixed !important;
+  bottom: 40px !important;
+  right: 100px;
+}
+
 </style>

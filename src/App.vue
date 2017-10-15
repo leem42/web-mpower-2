@@ -3,13 +3,23 @@
 
     <p v-if="!loggedIn">You are logged {{ loggedIn ? 'in' : 'out' }}</p>
     <form @submit.prevent="login" v-if="!loggedIn">
-      <label>
-        <input class="loginText" v-model="email" placeholder="email">
+      <v-flex class="col-12">
+          <v-text-field name="input-1" label="enter email" placeholder=" email" id="testing" type="text"  auto-grow  v-model="email">
+          </v-text-field>
+        </v-flex>
+        
+      <v-flex class="col-12">
+          <v-text-field name="input-1" label="enter password" placeholder="password" id="testing" type="text"  auto-grow  v-model="password">
+          </v-text-field>
+        </v-flex>
+
+      <!--<label>
+        <input id="email" v-model="email" placeholder="email">
+      </label>-->
+      <!--<label>
+        <input id="password" v-model="password" placeholder="password">
       </label>
-      <label>
-        <input class="loginText" v-model="password" placeholder="password">
-      </label>
-      <br>
+      <br>-->
       <!--<label>
           <input v-model="study" placeholder="study">
         </label>
@@ -114,7 +124,10 @@ export default {
 </script>
 
 <style scoped>
-  input.loginText {
+  
+  label > input#email, label >  input#password {
     color: blue;
   }
+
+
 </style>
