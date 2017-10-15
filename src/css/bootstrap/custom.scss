@@ -282,6 +282,10 @@ div.customCheck>div.input-group__details {
   text-transform: none;
 }
 
+.application--light .input-group input, .application--light .input-group textarea, .input-group__selections__comma, input, label {
+  color: #3a539b !important;
+}
+
 .logo {
   height: 40px;
   width: 42px;

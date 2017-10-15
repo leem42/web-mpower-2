@@ -82,8 +82,10 @@
               this.requirements.isOnQuiz = false
               this.requirements.hasCompletedQuiz = true
               this.requirements.isOnSign = true
+              this.$router.push({ name: 'OverviewEligibility' })
             }
-          } else if (this.indexInStack > 6) {
+          }
+          if (this.indexInStack >= 6) {
             this.requirements.isOnQuiz = false
             this.requirements.hasCompletedQuiz = true
             this.requirements.isOnSign = true

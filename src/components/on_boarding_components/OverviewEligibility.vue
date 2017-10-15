@@ -56,6 +56,9 @@
                             <p class="tiny default" v-bind:class="{whiteText: requirements.hasCompletedEligibility }"> 2 minutes </p>
                         </p>
                     </div>
+                    <div class="col-2 verticalCenter">
+                        <p v-if="!requirements.hasCompletedEligibility" class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,8 +75,11 @@
                             <p class="tiny default" v-bind:class="{whiteText: requirements.hasCompletedConsent }"> 5 minutes </p> 
                         </p>
                     </div>
-                    <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
+                    <div v-if="!requirements.isOnConsent" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedConsent}" class="lock">{{requirements.hasCompletedEligibility ? '': 'fa-lock'  }}</v-icon>
+                    </div>                          
+                    <div v-if="requirements.isOnConsent" class="col-2 verticalCenter">
+                        <p  class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
                     </div>
                 </div>
             </div>
@@ -91,8 +97,11 @@
                             <p class="tiny default" v-bind:class="{whiteText: requirements.hasCompletedQuiz }"> 5 minutes </p>
                         </p>
                     </div>
-                    <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
+                    <div v-if="!requirements.isOnQuiz" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedQuiz}" class="lock">{{requirements.hasCompletedConsent ? '': 'fa-lock'  }}</v-icon>
+                    </div>
+                    <div v-if="requirements.isOnQuiz" class="col-2 verticalCenter">
+                        <p  class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
                     </div>
                 </div>
             </div>
@@ -110,8 +119,11 @@
                             <p class="tiny default" v-bind:class="{whiteText: requirements.hasCompletedSign }"> 2 minutes </p>
                         </p>
                     </div>
-                    <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
+                    <div v-if="!requirements.isOnSign" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedSign}" class="lock">{{requirements.hasCompletedQuiz ? '': 'fa-lock'  }}</v-icon>
+                    </div>
+                    <div v-if="requirements.isOnSign" class="col-2 verticalCenter">
+                        <p  class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
                     </div>
                 </div>
             </div>
@@ -129,8 +141,11 @@
                             <p class="tiny default" v-bind:class="{whiteText: requirements.hasCompletedRegistration }"> 2 minutes </p>
                         </p>
                     </div>
-                    <div class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
+                    <div v-if="!requirements.isOnRegistration" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedRegistration}" class="lock">{{requirements.hasCompletedSign ? '': 'fa-lock'  }}</v-icon>
+                    </div>
+                     <div v-if="requirements.isOnRegistration" class="col-2 verticalCenter">
+                        <p  class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
                     </div>
                 </div>
             </div>
@@ -192,6 +207,10 @@ export default {
         background-color: rgba(255,255,255,0.7)
     }
 
+    .rect:hover {
+        cursor: pointer !important; 
+    }
+
     .lock {
         width: 23px;
         height: 35px;
@@ -219,5 +238,6 @@ export default {
     p.default.completedrequirements {
         color: white !important;
     }
+
 
 </style>
