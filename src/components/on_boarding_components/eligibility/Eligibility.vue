@@ -15,11 +15,11 @@
     <div class="row anchorBottom customRowHeight">
         
         <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
-            <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)"> < </v-btn>
+            <v-btn class="navyBlue white--text medium"> < </v-btn>
         </div>
 
         <div class="marginTop50 col-2 hideOnSmall ml-0 mr-0">
-            <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(0)"> Back
+            <v-btn class="navyBlue largeButton medium white--text"> Back
             </v-btn>
         </div>
 
