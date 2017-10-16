@@ -1,7 +1,7 @@
 <template>
   <v-app class="page-overview">
 
-    <div class="row progressBar">
+    <!-- <div class="row progressBar">
       <span v-if="true">
         <div class="indicatorFilled offset"> </div>
         <div class="indicatorFilled offset one"> </div>
@@ -10,6 +10,37 @@
         <div class="indicatorEmpty offset four" v-bind:class="{indicatorFilled: hasCompletedForm}"> </div>
         <div class="indicatorEmpty offset five"> </div>
       </span>
+    </div> -->
+
+    <div class="row anchorBottom customRowHeight">
+        
+        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+            <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)"> < </v-btn>
+        </div>
+
+        <div class="marginTop50 col-2 hideOnSmall ml-0 mr-0">
+            <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(0)"> Back
+            </v-btn>
+        </div>
+
+        <div class="col-6 col-md-8 mt-md-3">
+            <div clas="row text-center">
+                <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Step {{' ' + (clicks + 1) + ' of 3' }} </p>
+                <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
+            </div>
+        </div>
+        
+        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+            <v-btn class="navyBlue white--text  medium" v-on:click="handleController()"> > </v-btn>
+        </div>
+
+        
+        <div class="marginTop50 col-2 hideOnSmall">
+            <v-btn class="navyBlue largeButton medium ml-0  white--text" v-on:click="handleController()"> {{clicks >= 2? 'Submit': 'Next'}}
+            </v-btn>
+        </div>
+
+
     </div>
 
     <div class="row mt-3">
@@ -21,13 +52,13 @@
         <div class="row">
           <p class="lead col-auto mx-auto mx-md-0"> I am </p>
           <v-flex class="col-md-3">
-            <v-text-field suffix="years old" name="input-1" label="enter age" placeholder="45" id="testing" type="number" pattern="\d*" auto-grow :rules="[() => !!age || (age < 100) || 'Age must be less than 120']" v-model.number="age">
+            <v-text-field suffix="years old" name="input-1" label="enter age" placeholder="45" id="testing" type="number" pattern="\d*" auto-grow v-model.number="age">
             </v-text-field>
           </v-flex>
 
           <p class="lead col-auto mx-auto mx-md-0" v-if="isUnderage !== null"> I live in </p>
           <v-flex class="col-12 mb-3 col-md-4" v-if="isUnderage !== null && !isUnderage">
-            <v-select class="eligibility" v-bind:items="states" hide-details auto single-line pattern="\d*" name="input-1" label="select where" id="placeField" v-model="stateChosen"></v-select>
+            <v-select class="eligibility" v-bind:items="states" auto hide-details auto single-line pattern="\d*" name="input-1" label="select where" id="placeField" v-model="stateChosen"></v-select>
           </v-flex>
           
           <!--<v-flex class="col-12 col-md-8 col-lg-4" v-if="isUnderage !== null && !isUnderage">
@@ -39,15 +70,15 @@
       </div>
     </div>
 
-    <div id="option" class="row mt-2 text-center text-sm-auto" v-if="stateChosen !== ''">
+    <div id="option" class="row mt-2 text-center text-sm-auto" v-if="clicks >= 2">
       <p class="lead col-12 col-md-auto ml-6">
         and I feel </p>
       <v-select single-line id="comfortable" class="col-md-5 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
       </v-select>
       <!--<p class="lead col-12 text-center col-sm-auto"> using my phone </p>-->
-      <div class="col-12 text-center " v-if="hasCompletedForm">
+      <!-- <div class="col-12 text-center " v-if="hasCompletedForm">
         <v-btn light v-on:click="clicked" v-bind:class="{dim: !hasCompletedForm}" v-focus="hasCompletedForm" id="submit" class="large"> Submit </v-btn>
-      </div>
+      </div> -->
     </div>
 
     <br>
@@ -86,19 +117,9 @@
           'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
         ],
         stateChosen: '',
-        requirements: requirements
-      }
-    },
-    watch: {
-      age: function (newAge) {
-        this.setIsUnderage()
-      },
-      stateChosen: function (newZip) {
-        this.setIsPlaceAnswered()
-      },
-      selectedOptionForPhone: function (newOption) {
-        this.setHasChosenOption()
-        this.sethasCompletedForm()
+        requirements: requirements,
+        clicks: 0,
+        progress: (100.0 / 3)
       }
     },
     methods: {
@@ -107,6 +128,19 @@
           this.$scrollTo(arg1, 750, { easing: 'linear' })
         }
         , 200),
+      handleController () {
+        if (this.clicks === 0) {
+          this.setIsUnderage()
+        } else if (this.clicks === 1) {
+          this.setIsPlaceAnswered()
+        } else if (this.clicks === 2) {
+          this.setHasChosenOption()
+          this.sethasCompletedForm()
+          this.clicked()
+        }
+        this.clicks = this.clicks + 1
+        this.progress = this.progress + (100.0 / 3)
+      },
       clicked () {
         this.isNotEligible = (this.age < 18) || (!this.isResident) || (this.selectedOptionForPhone !== 'comfortable using my phone')
         if (!this.isNotEligible) {

@@ -34,11 +34,6 @@
         </a>
       </ul>
     </div>
-
-
-
-
-
     
     </v-app>
 </template>

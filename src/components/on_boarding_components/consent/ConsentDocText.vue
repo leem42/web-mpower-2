@@ -72,8 +72,7 @@ export default {
       highlightTracker: highlightTracker,
       requirements: requirements,
       showOverlay: false,
-      eventSource: '',
-      eventOrigin: ''
+      parent: ''
     }
   },
   computed: {
@@ -85,7 +84,6 @@ export default {
     scrollPage: _.debounce(
       function (arg1) {
         arg1 = '#A' + arg1
-        console.log(arg1)
         this.$scrollTo(arg1, 1500, { easing: 'linear', offset: -90 })
       }
       , 200),
@@ -94,24 +92,34 @@ export default {
         return ''
       } else {
         /* eslint-disable */
-        console.log('was called')
-        var keyCurrent = this.keys[event.data - 1]
-        var keyBehind = this.keys[event.data - 2]
-        this.highlightTracker[keyCurrent] = true
-        this.highlightTracker[keyBehind] = false
-        this.indexInWindow = event.data - 2
-        this.eventOrigin = event.origin
-        this.eventSource = event.source
-        this.scrollPage(event.data)
+        var index = event.data.indexInStack
+        var forward = event.data.forward
+
+        var keyCurrent = this.keys[index - 1]
+        var keyBehind = this.keys[index - 2]
+
+        if (forward) {
+          var keyCurrent = this.keys[index - 1]
+          var keyBehind = this.keys[index - 2]
+          this.highlightTracker[keyCurrent] = true
+          this.highlightTracker[keyBehind] = false
+        } else {
+          var keyCurrent = this.keys[index]
+          var keyBehind = this.keys[index - 1]
+          this.highlightTracker[keyCurrent] = false
+          this.highlightTracker[keyBehind] = true
+        }
+        this.scrollPage(index)
         /* eslint-enable */
       }
     },
     overlay () {
       this.showOverlay = !this.showOverlay
-      this.eventSource.postMessage('switch overlay', this.eventOrigin)
+      this.parent.postMessage('switch overlay', 'http://localhost:8080')
     }
   },
   created: function () {
+    this.parent = window.parent
     window.addEventListener('message', this.recieveMessage, false)
   }
 }

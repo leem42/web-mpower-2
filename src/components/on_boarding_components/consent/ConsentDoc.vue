@@ -89,8 +89,6 @@ export default {
   mounted: function () {
     this.highlightTracker.sectionOne = true
     this.iframe = document.getElementById('iFrame').contentWindow
-    console.log('calling frame')
-    this.callFrame('message')
   },
   methods: {
     navigate (index) {
@@ -110,7 +108,13 @@ export default {
         this.requirements.isOnQuiz = true
       }
       frame = this.callStack[this.indexInStack]
-      this.callFrame(this.indexInStack)
+      var message = {indexInStack: this.indexInStack}
+      if (index === 0) {
+        message['forward'] = false
+      } else {
+        message['forward'] = true
+      }
+      this.callFrame(message)
       this.$router.push({name: frame})
     },
     callFrame (message) {
