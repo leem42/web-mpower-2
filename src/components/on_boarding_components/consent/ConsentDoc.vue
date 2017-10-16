@@ -5,7 +5,7 @@
         <div class="row" style="height: 500px;" >
 
             <!--<router-view id="docText" name="ConsentDocText" class="router docText container-fluid">  </router-view>-->
-            <div class="customHeightFrame col-md-5 ml-sm-4" v-bind:class="showOverlay ? 'col-md-11' : ''">
+            <div class="customHeightFrame mt-0 col-md-5 ml-sm-4" v-bind:class="showOverlay ? 'col-md-11' : ''">
               <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
               </iframe>
             </div>

@@ -50,13 +50,12 @@
         I'm interest in joining because  
       -->
       <div class="row">
-        <p class="lead font-weight-bold col-sm-8 largeTitle ml-6 pt-5 pt-md-0"> Why are you interested in joining mPower?
+        <p class="lead font-weight-bold col-sm-8 largeTitle ml-6 pt-0 pt-md-0"> Why are you interested in joining mPower?
         </p>
-        <p class="lightGrayText col-sm-6 medium-small  ml-6 pt-5 pt-md-0">
+        <p class="lightGrayText col-sm-6 tiny  ml-6 pt-0 pt-md-0 mb-3">
           Understanding what interests you and what you are willing to do helps us shape an experience that aligns with your expectations.
         </p>
     </div>
-    <br>
     <div class="row">
       <span id="interest" class="francisco lato mediumLarge default pt-sm-0 col-sm-6 ml-6 mb-4"> I'm interested in joining mPower because I
   
@@ -83,19 +82,19 @@
   
     <span v-if="!firstEdit" class="ml-3">
       <div class="row">
-        <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 pt-3 pb-3  stencilBorderTop stencilBorder col-sm-7 col-md-6  col-lg-4  customCheck "></v-checkbox>
+        <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 pt-3 pb-3  stencilBorderTop stencilBorder col-sm-7 col-md-6  col-lg-5  customCheck "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 pt-3 pb-3   stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-4 customCheck wrapLabel"></v-checkbox>
+        <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 pt-3 pb-5 pb-sm-3  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-5 customCheck wrapLabel"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="ml-6 pt-sm-3 pt-0 pb-3  stencilBorder col-sm-7 col-md-6 col-lg-4 customCheck "></v-checkbox>
+        <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="ml-6 pt-sm-3 pt-0 pb-3  stencilBorder col-sm-7 col-md-6 col-lg-5 customCheck "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="am curious" v-model="selectedChoice[3]" class="ml-6 pt-3 pb-3  stencilBorder col-sm-7 col-md-6 customCheck col-lg-4 "></v-checkbox>
+        <v-checkbox label="am curious" v-model="selectedChoice[3]" class="ml-6 pt-3 pb-3  stencilBorder col-sm-7 col-md-6 customCheck col-lg-5 "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="another reason" v-model="selectedChoice[4]" class="ml-6 pt-3 pb-3  stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-4"></v-checkbox>
+        <v-checkbox label="another reason" v-model="selectedChoice[4]" class="ml-6 pt-3 pb-3  stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-5"></v-checkbox>
       </div>
     </span>
   
@@ -211,13 +210,13 @@
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="stencilBorderTop stencilBorder pt-3 pb-3 ml-6 col-sm-6 col-lg-4  customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="stencilBorderTop stencilBorder pt-3 pb-3 ml-6 col-sm-6 col-lg-5  customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" id="updates" label="Updates on my progress" v-model="selectedChoice[11]" class="stencilBorder pt-3 pb-3 ml-6  col-sm-6 col-lg-4 mb-sm-0 customCheck darkPurple--text wrapLabel"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" id="updates" label="Updates on my progress" v-model="selectedChoice[11]" class="stencilBorder pt-3 pb-5 pb-sm-3 ml-6  col-sm-6 col-lg-5 mb-sm-0 customCheck darkPurple--text wrapLabel"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="stencilBorder pt-3 pb-3 ml-6  col-sm-6 col-lg-4  customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="stencilBorder pt-3 pb-3 ml-6  col-sm-6 col-lg-5  customCheck darkPurple--text"></v-checkbox>
       </div>
   
     </span>

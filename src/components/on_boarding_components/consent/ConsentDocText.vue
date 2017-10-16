@@ -78,6 +78,12 @@ export default {
   computed: {
     keys: function () {
       return Object.keys(this.highlightTracker)
+    },
+    parentURL: function () {
+      var url = (window.location !== window.parent.location)
+            ? document.referrer
+            : document.location.href
+      return url
     }
   },
   methods: {
@@ -115,7 +121,7 @@ export default {
     },
     overlay () {
       this.showOverlay = !this.showOverlay
-      this.parent.postMessage('switch overlay', 'http://localhost:8080')
+      this.parent.postMessage('switch overlay', this.parentURL)
     }
   },
   created: function () {

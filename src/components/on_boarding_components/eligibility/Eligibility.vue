@@ -61,11 +61,6 @@
             <v-select class="eligibility" v-bind:items="states" hide-details auto single-line pattern="\d*" name="input-1" label="select where" id="placeField" v-model="stateChosen"></v-select>
           </v-flex>
           
-          <!--<v-flex class="col-12 col-md-8 col-lg-4" v-if="isUnderage !== null && !isUnderage">
-            <v-text-field label="ZIP/Postal Code" required :rules="[() => (zipCode === 0) || ( zipCode > 9999 && zipCode < 100000) || 'Zip must be 5 digits']" v-model.number="zipCode" ref="zipCode" placeholder="79938" pattern="\d*" id="placeField" name="input-1" type="number">
-            </v-text-field>
-          </v-flex>-->
-
         </div>
       </div>
     </div>
@@ -75,13 +70,14 @@
         and I feel </p>
       <v-select single-line id="comfortable" class="col-md-5 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
       </v-select>
-      <!--<p class="lead col-12 text-center col-sm-auto"> using my phone </p>-->
-      <!-- <div class="col-12 text-center " v-if="hasCompletedForm">
-        <v-btn light v-on:click="clicked" v-bind:class="{dim: !hasCompletedForm}" v-focus="hasCompletedForm" id="submit" class="large"> Submit </v-btn>
-      </div> -->
     </div>
 
-    <br>
+    <!--For extra padding-->
+    <div class="row customRowHeight" style="height: 300px;">
+
+    </div>
+
+
   </v-app>
 </template>
 
@@ -125,7 +121,7 @@
     methods: {
       scrollPage: _.debounce(
         function (arg1) {
-          this.$scrollTo(arg1, 750, { easing: 'linear' })
+          this.$scrollTo(arg1, 750, {easing: 'linear', offset: 0})
         }
         , 200),
       handleController () {

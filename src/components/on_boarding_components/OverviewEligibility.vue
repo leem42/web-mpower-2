@@ -47,17 +47,17 @@
             <div v-on:click="$router.push({name: 'WhyInterested'})" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnEligibility && !requirements.hasCompletedEligibility,
             completedrequirements: requirements.hasCompletedEligibility }">
                 <div class="row">
-                    <div class="col-1 verticalCenter ml-md-3 mr-5 ">
+                    <div class="col-1 verticalCenter ml-md-3 mr-5 pl-0 ">
                         <img  src="../../images/eligibility-icon.png" class="checkOnOverview"> </img>
                     </div>
-                    <div class="col-md-8 col-7 mb-0 pr-0 mt-3">
+                    <div class="col-md-8 col-7 mb-0 pr-0 ml-2 mt-3">
                         <p class="medium default mb-0" v-bind:class="{whiteText: requirements.hasCompletedEligibility }"><strong>  Eligibility </strong>
                             <p class="pb-0 mb-0 medium-small lightGrayText" v-bind:class="{whiteText: requirements.hasCompletedEligibility }"> Let’s see if you are eligible for the Parkinsons Disease study. </p>
                             <p class="tiny default" v-bind:class="{whiteText: requirements.hasCompletedEligibility }"> 2 minutes </p>
                         </p>
                     </div>
-                    <div class="col-2 verticalCenter">
-                        <p v-if="!requirements.hasCompletedEligibility" class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
+                    <div class="col-1 col-xl-2 pl-0 pl-1 verticalCenter">
+                        <p v-if="!requirements .hasCompletedEligibility" class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                     <div v-if="!requirements.isOnConsent" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedConsent}" class="lock">{{requirements.hasCompletedEligibility ? '': 'fa-lock'  }}</v-icon>
                     </div>                          
-                    <div v-if="requirements.isOnConsent" class="col-2 verticalCenter">
+                    <div v-if="requirements.isOnConsent" class="col-1 col-xl-2 pl-0 verticalCenter">
                         <p  class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
                     </div>
                 </div>
@@ -100,8 +100,8 @@
                     <div v-if="!requirements.isOnQuiz" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedQuiz}" class="lock">{{requirements.hasCompletedConsent ? '': 'fa-lock'  }}</v-icon>
                     </div>
-                    <div v-if="requirements.isOnQuiz" class="col-2 verticalCenter">
-                        <p  class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
+                    <div v-if="requirements.isOnQuiz" class="col-1 col-xl-2 pl-0  verticalCenter">
+                        <p  class="font-weight-bold m-0 lead tiny mx-auto">  Start </p>
                     </div>
                 </div>
             </div>
@@ -122,8 +122,8 @@
                     <div v-if="!requirements.isOnSign" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedSign}" class="lock">{{requirements.hasCompletedQuiz ? '': 'fa-lock'  }}</v-icon>
                     </div>
-                    <div v-if="requirements.isOnSign" class="col-2 verticalCenter">
-                        <p  class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
+                    <div v-if="requirements.isOnSign" class="col-1 col-xl-2 pl-0  verticalCenter">
+                        <p  class="font-weight-bold m-0 lead tiny mx-auto">  Start </p>
                     </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@
                     <div v-if="!requirements.isOnRegistration" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedRegistration}" class="lock">{{requirements.hasCompletedSign ? '': 'fa-lock'  }}</v-icon>
                     </div>
-                     <div v-if="requirements.isOnRegistration" class="col-2 verticalCenter">
+                     <div v-if="requirements.isOnRegistration" class="col-1 col-xl-2 pl-0  verticalCenter">
                         <p  class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
                     </div>
                 </div>
