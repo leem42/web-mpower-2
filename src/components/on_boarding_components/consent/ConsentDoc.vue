@@ -118,10 +118,10 @@ export default {
       this.$router.push({name: frame})
     },
     callFrame (message) {
-      this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
+      this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText')
     },
     recieveMessage: function (event) {
-      if (event.source.location.href !== 'http://localhost:8080/#/NullPage/ConsentDocText') {
+      if (event.source.location.href !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText') {
         return ''
       } else {
         /* eslint-disable */

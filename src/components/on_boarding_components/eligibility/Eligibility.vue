@@ -121,7 +121,7 @@
     methods: {
       scrollPage: _.debounce(
         function (arg1) {
-          this.$scrollTo(arg1, 750, {easing: 'linear', offset: 0})
+          this.$scrollTo(arg1, 750, {easing: 'linear', offset: -90})
         }
         , 200),
       handleController () {

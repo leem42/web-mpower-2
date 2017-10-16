@@ -94,7 +94,7 @@ export default {
       }
       , 200),
     recieveMessage: function (event) {
-      if (event.source.location.href.substring(0, 55) !== 'http://localhost:8080/#/NullPage/OnBoarding/ConsentDoc/') {
+      if (event.source.location.href.substring(0, 55) !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/OnBoarding/ConsentDoc/') {
         return ''
       } else {
         /* eslint-disable */
