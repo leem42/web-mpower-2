@@ -58,7 +58,7 @@
 
           <p class="lead col-auto mx-auto mx-md-0" v-if="isUnderage !== null"> I live in </p>
           <v-flex class="col-12 mb-3 col-md-4" v-if="isUnderage !== null && !isUnderage">
-            <v-select class="eligibility" v-bind:items="states" auto hide-details auto single-line pattern="\d*" name="input-1" label="select where" id="placeField" v-model="stateChosen"></v-select>
+            <v-select class="eligibility" v-bind:items="states" hide-details auto single-line pattern="\d*" name="input-1" label="select where" id="placeField" v-model="stateChosen"></v-select>
           </v-flex>
           
           <!--<v-flex class="col-12 col-md-8 col-lg-4" v-if="isUnderage !== null && !isUnderage">
