@@ -475,7 +475,7 @@ p {
   }
 }
 
-div#testing,
+input#testing,
 div#placeField, div#phoneNumber {
   font-size: $font-size-base * 0.7 !important;
   @extend .defaultBlue;
