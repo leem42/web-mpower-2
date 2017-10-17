@@ -919,7 +919,10 @@ select {
  @media(max-width: 766px) { 
    
     .customHeightFrame {
+      // position: fixed;      
       height: 200px !important;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
     }
 
     .customRowHeight {

@@ -3,13 +3,13 @@
 
     <div class="row">
 
-      <div class="mx-auto pt-3 pt-sm-0 col-3 col-lg-2 mr-lg-2 ml-lg-2">
+      <div class="mx-auto p-0 pt-sm-0 col-2 col-lg-2 mr-lg-2 ml-lg-2">
         <img class="img-fluid " src="../../../images/step-1-consent-icon.png">
       </div>
 
       <div class="col-9 col-lg-9 x-tiny mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
         <div class="row">
-          <div class="col-12 default font-weight-bold">
+          <div class="col-12 mt-0 default text-center text-sm-left font-weight-bold">
             Activities & Surveys
           </div>
         </div>

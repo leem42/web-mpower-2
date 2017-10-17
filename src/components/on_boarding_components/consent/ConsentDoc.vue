@@ -5,12 +5,14 @@
         <div class="row" style="height: 500px;" >
 
             <!--<router-view id="docText" name="ConsentDocText" class="router docText container-fluid">  </router-view>-->
-            <div class="customHeightFrame mt-0 col-md-5 ml-sm-4" v-bind:class="showOverlay ? 'col-md-11' : ''">
+            <div class="customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4" v-bind:class="showOverlay ? 'col-md-11' : ''">
               <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText" class="fillParent  mask">
               </iframe>
+              <!-- <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
+              </iframe> -->
             </div>
 
-            <div  class="col-md-6 mr-5 mt-2" style="height: 400px;" v-if="!showOverlay">
+            <div  class="col-md-6 mx-auto mr-md-5 mt-2" style="height: 400px;" v-if="!showOverlay">
                 <router-view  class="whiteBackground consentView router container-fluid">  </router-view>
             </div>    
             
@@ -119,9 +121,11 @@ export default {
     },
     callFrame (message) {
       this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText')
+      // this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
     },
     recieveMessage: function (event) {
       if (event.source.location.href !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText') {
+      // if (event.source.location.href !== 'http://localhost:8080/#/NullPage/ConsentDocText') {
         return ''
       } else {
         /* eslint-disable */

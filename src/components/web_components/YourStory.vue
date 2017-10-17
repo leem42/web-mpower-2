@@ -4,7 +4,7 @@
         <br>
         <br>
         <div class="text-center">
-            <p class="darkPurpleText largeTitle"> Your Story -</p>
+            <p class="darkPurpleText largeTitle"> Your Story </p>
         </div>
     
         <div class="row">

@@ -59,7 +59,8 @@
         </div>
       </div>
     </nav>
-    <router-view class="whiteBackground mt-custom router container-fluid" v-bind:class="{fadeBackground: getHeader() === 'Sign' || getHeader() === 'Welcome' || isOnRetake()}"></router-view>
+    <router-view class="whiteBackground mt-custom router container-fluid" v-bind:class="{fadeBackground: getHeader() === 'Sign' || getHeader() === 'Welcome' || isOnRetake(),
+                                                                                        'mt-consent': getHeader() === 'Consent'}"></router-view>
     
     <!--- TODO: must update to make sure application is only single page -->
     <!--<v-bottom-nav value="true" class="hideOnSmall darkBlue customAlign">
@@ -87,6 +88,7 @@
 .mt-custom {
   padding-top: 120px;
 }
+
 .helpOval {
   height: 56px;
   border-radius: 28px !important;
@@ -99,6 +101,10 @@
 }
 
   @media(max-width: 766px) { 
+    .mt-consent {
+      padding-top: 90px;
+    }
+
     .extraSpacing {
       margin-left: 6% !important;
     }
