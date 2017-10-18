@@ -1,17 +1,5 @@
 <template>
   <v-app>
-    <!-- <div class="row progressBar">
-      <div class="indicatorEmpty offset"> </div>
-      <div class="indicatorEmpty offset one"> </div>
-      <div class="indicatorEmpty offset two"> </div>
-      <div class="indicatorEmpty offset three"> </div>
-      <div class="indicatorEmpty offset four"> </div>
-      <div class="indicatorEmpty offset five"> </div>
-    </div>
-   -->
-    <!--<div class="row" id="nextBtn">
-      <v-btn flat :ripple="false" class="controller white--text mx-auto text-capitalize" @click.native="handleController()"> {{thirdClick ? "Submit": "Next"}} </v-btn>
-    </div>-->
 
     <div class="row anchorBottom customRowHeight">
         

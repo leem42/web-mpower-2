@@ -1,56 +1,56 @@
 <template>
-    <v-app v-bind:class="showOverlay ? 'shadowBackground' : ''">
+  <v-app v-bind:class="showOverlay ? 'shadowBackground' : ''">
+
+    <div class="row" style="height: 500px;">
+
+      <div class="topLevel" v-bind:class="showOverlay ? 'popOutDimensions fixPosition': 'customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4'">
+        <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText"
+        v-bind:class="showOverlay ? '': 'fillParent  mask'">
+        </iframe>
+        <!-- <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" v-bind:class="showOverlay ? '': 'fillParent  mask'">
+        </iframe> -->
+      </div>
 
 
-        <div class="row" style="height: 500px;" >
-
-            <!--<router-view id="docText" name="ConsentDocText" class="router docText container-fluid">  </router-view>-->
-            <div class="customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4" v-bind:class="showOverlay ? 'col-md-11' : ''">
-              <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText" class="fillParent  mask">
-              </iframe>
-              <!-- <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
-              </iframe> -->
-            </div>
-
-            <div  class="col-md-6 mx-auto mr-md-5 mt-2" style="height: 400px;" v-if="!showOverlay">
-                <router-view  class="whiteBackground consentView router container-fluid">  </router-view>
-            </div>    
-            
-        </div>
-
-
-        <div class="row anchorBottom customRowHeight">
-        
-        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
-            <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)"> < </v-btn>
-        </div>
-
-        <div class="marginTop50 col-2 hideOnSmall ml-0 mr-0">
-            <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(0)"> Back
-            </v-btn>
-        </div>
-
-        <div class="col-6 col-md-8 mt-md-3">
-            <div clas="row text-center">
-                <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Step {{' ' + indexInStack }} </p>
-                <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
-            </div>
-        </div>
-        
-        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
-            <v-btn class="navyBlue white--text  medium" v-on:click="navigate(1)"> > </v-btn>
-        </div>
-
-        
-        <div class="marginTop50 col-2 hideOnSmall">
-            <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(1)"> Next
-            </v-btn>
-        </div>
-
+      <div class="col-md-6 mx-auto mr-md-5 mt-2" style="height: 400px;" >
+        <router-view  v-bind:class="showOverlay ? 'inheritBackground' : ''" class="whiteBackground consentView router container-fluid"> </router-view>
+      </div>
 
     </div>
 
-    </v-app>
+
+
+    <div class="row anchorBottom customRowHeight" v-bind:class="showOverlay ? 'midOpacity' : ''">
+
+      <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+        <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)">
+          < </v-btn>
+      </div>
+
+      <div class="marginTop50 col-2 hideOnSmall ml-0 mr-0">
+        <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(0)"> Back
+        </v-btn>
+      </div>
+
+      <div class="col-6 col-md-8 mt-md-3">
+        <div clas="row text-center">
+          <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Step {{' ' + indexInStack }} </p>
+          <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
+        </div>
+      </div>
+
+      <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+        <v-btn class="navyBlue white--text  medium" v-on:click="navigate(1)"> > </v-btn>
+      </div>
+
+      <div class="marginTop50 col-2 hideOnSmall">
+        <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(1)"> Next
+        </v-btn>
+      </div>
+
+    </div>
+
+  </v-app>
 </template>
 
 
@@ -142,7 +142,24 @@ export default {
 
 
 <style>
+  .midOpacity {
+    opacity: 0.5;
+  }
+  .show {
+    opacity: 1;
+  }
 
+  .hide {
+    opacity: 0;
+    z-index: 0 !important;
+  }
+
+  .fixPosition {
+    position: fixed;
+  }
+  .topLevel {
+    z-index: 1000;
+  }
 
   div#app.consentView {
     min-height: 0px;
@@ -151,5 +168,9 @@ export default {
 
   .shadowBackground {
     background-color: rgba(74, 74, 74, 0.9) !important;
+  }
+
+  .inheritBackground {
+    background-color: inherit !important;
   }
 </style>

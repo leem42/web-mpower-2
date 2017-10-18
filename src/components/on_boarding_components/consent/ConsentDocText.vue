@@ -1,5 +1,5 @@
 <template>
-    <v-app >
+    <v-app class="white" >
     
 
         <div id="A1" v-bind:class="highlightTracker.one ? 'highlighter': ''">
@@ -51,12 +51,11 @@
         </div>
 
         <div class="attachButton">
-          <v-btn v-on:click="overlay()" color="blue" class="white--text largeButton medium inheritPosition"> 
-           {{showOverlay? 'Close' : 'Expand'}}
+          <v-btn flat v-on:click="overlay()" color="white" class=" largeButton medium inheritPosition"> 
+           <v-icon  class="defaultBlue" x-large> {{showOverlay? 'fa-close' : 'fa-expand'}} </v-icon>
         </v-btn>
         </div>
 
-        <!--<router-view class="whiteBackground router container-fluid">  </router-view>-->
 
     </v-app>
 </template>
@@ -146,10 +145,14 @@ export default {
   position: inherit;
 }
 
+.defaultBlue {
+    color: #3a539b !important;
+}
+
 .attachButton {
   z-index: 99999;
   position: fixed !important;
-  bottom: 40px !important;
+  bottom: 75px !important;
   right: 100px;
 }
 
