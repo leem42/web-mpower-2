@@ -1,17 +1,6 @@
 <template>
   <v-app class="page-overview">
 
-    <!-- <div class="row progressBar">
-      <span v-if="true">
-        <div class="indicatorFilled offset"> </div>
-        <div class="indicatorFilled offset one"> </div>
-        <div class="indicatorEmpty offset two" v-bind:class="{indicatorFilled: isUnderage !== null && !isUnderage}"> </div>
-        <div class="indicatorEmpty offset three" v-bind:class="{indicatorFilled: isResident}"> </div>
-        <div class="indicatorEmpty offset four" v-bind:class="{indicatorFilled: hasCompletedForm}"> </div>
-        <div class="indicatorEmpty offset five"> </div>
-      </span>
-    </div> -->
-
     <div class="row anchorBottom customRowHeight">
         
         <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
@@ -44,11 +33,13 @@
     </div>
 
     <div class="row mt-3">
-      <p id="greatFit" class="lead col-sm-8 ml-6 mx-auto "> Let's see if you're eligible for the mPower study </p>
-      <p class="lead tiny light col-sm-8 mx-auto  ml-6"> We just need a few pieces of information to make sure you would be a good fit for the study </p>
+      <p id="greatFit" class="lead font-weight-bold  col-md-10 col-lg-8 mx-auto text-left "> Let's see if you're eligible for the mPower study </p>
+    </div>
+    <div class="row mt-3">
+      <p class="lead tiny light  col-md-10 col-lg-8 mx-auto text-left"> We just need a few pieces of information to make sure you would be a good fit for the study </p>
     </div>
     <div class="row">
-      <div class="ml-6 col-12">
+      <div class=" col-md-10 col-lg-8 mx-auto text-left">
         <div class="row">
           <p class="lead col-auto mx-auto mx-md-0"> I am </p>
           <v-flex class="col-md-3">
@@ -56,8 +47,8 @@
             </v-text-field>
           </v-flex>
 
-          <p class="lead col-auto mx-auto mx-md-0" v-if="isUnderage !== null"> I live in </p>
-          <v-flex class="col-12 mb-3 col-md-4" v-if="isUnderage !== null && !isUnderage">
+          <p class="lead col-auto mx-auto mx-md-0" v-if="isUnderage !== null" > I live in </p>
+          <v-flex class="col-12 mb-3 col-md-4" v-if="isUnderage !== null">
             <v-select class="eligibility" v-bind:items="states" hide-details auto single-line pattern="\d*" name="input-1" label="select where" id="placeField" v-model="stateChosen"></v-select>
           </v-flex>
           
@@ -65,11 +56,15 @@
       </div>
     </div>
 
-    <div id="option" class="row mt-2 text-center text-sm-auto" v-if="clicks >= 2">
-      <p class="lead col-12 col-md-auto ml-6">
-        and I feel </p>
-      <v-select single-line id="comfortable" class="col-md-5 col-12" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
-      </v-select>
+    <div id="option" class="row mt-2" v-if="clicks >= 2">
+      <div class=" col-md-10 col-lg-8 mx-auto text-center text-md-left">
+        <div class="row">
+          <p class="lead col-12 col-md-auto">
+            and I feel </p>
+          <v-select single-line id="comfortable" class="ml-md-0 col-12 col-md-8 mx-auto" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
+          </v-select>
+        </div>
+      </div>
     </div>
 
     <!--For extra padding-->

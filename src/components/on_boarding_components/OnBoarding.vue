@@ -1,10 +1,6 @@
 <template>
   <v-app>
   
-    <!--<v-icon dark class="intercom d-print-md-none" medium >fa-comment</v-icon>
-      <v-icon dark class="intercom hideOnSmall" x-large>fa-comment</v-icon>-->
-    <!-- <v-btn class="darkPurple text-lowercase helpButton hideOnSmall"> Have a question for us? </v-btn> -->
-  
     <nav class="onboarding navbar navbar-fixed-top navbar-light pt-0 pb-0">
       <div class="container-fluid" style="display: block;">
         <div class="row">
@@ -13,8 +9,7 @@
             <span class="lead light tiny centerVertical   white--text" v-bind:class="{medium: $router.currentRoute.fullPath.includes('Question')}">
                {{getHeader()}}
            </span>
-            <span v-if="$router.currentRoute.fullPath === '/NullPage/OnBoarding/WhyInterested'" class="lead light mediumTitle  white--text"> Eligibility
-            </span>
+           
           </div>
 
           <div class="text-center d-sm-none col-6">
@@ -59,7 +54,7 @@
         </div>
       </div>
     </nav>
-    <router-view class="whiteBackground mt-custom router container-fluid" v-bind:class="{fadeBackground: getHeader() === 'Sign' || getHeader() === 'Welcome' || isOnRetake(),
+    <router-view class="whiteBackground medium mt-custom router container-fluid" v-bind:class="{fadeBackground: getHeader() === 'Sign' || getHeader() === 'Welcome' || isOnRetake(),
                                                                                         'mt-consent': getHeader() === 'Consent'}"></router-view>
     
     <!--- TODO: must update to make sure application is only single page -->
@@ -129,7 +124,7 @@
         var route = this.$router.currentRoute.fullPath
         if (route.indexOf('OverviewEligibility') !== -1) {
           return 'Overview'
-        } else if (route.indexOf('Eligibility') !== -1 || route.indexOf('SubjectInterest') !== -1) {
+        } else if (route.indexOf('Eligibility') !== -1 || route.indexOf('SubjectInterest') !== -1 || route.indexOf('WhyInterested') !== -1) {
           return 'Eligibility'
         } else if (route.indexOf('Question') !== -1 || route.indexOf('RetakeQuiz') !== -1) {
           return 'Test your knowledge'

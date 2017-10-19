@@ -4,7 +4,7 @@
     <div class="row anchorBottom customRowHeight">
         
         <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
-            <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)"> < </v-btn>
+            <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)"> Back </v-btn>
         </div>
 
         <div class="marginTop50 col-2 hideOnSmall ml-0 mr-0">
@@ -20,7 +20,7 @@
         </div>
         
         <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
-            <v-btn class="navyBlue white--text  medium" v-on:click="handleController()"> > </v-btn>
+            <v-btn class="navyBlue white--text  medium" v-on:click="handleController()"> Next </v-btn>
         </div>
 
         
@@ -37,15 +37,19 @@
       <!-- Section 1.
         I'm interest in joining because  
       -->
-      <div class="row">
-        <p class="lead font-weight-bold col-sm-8 largeTitle ml-6 pt-0 pt-md-0"> Why are you interested in joining mPower?
-        </p>
-        <p class="lightGrayText col-sm-6 tiny  ml-6 pt-0 pt-md-0 mb-3">
-          Understanding what interests you and what you are willing to do helps us shape an experience that aligns with your expectations.
-        </p>
+     
+    <div class="row">
+      <p class="lead d-none d-md-inline-block font-weight-bold col-sm-6 col-lg-6 largeTitle mx-auto text-left pt-0 pt-md-0"> Why are you interested in joining mPower?
+      </p>
     </div>
     <div class="row">
-      <span id="interest" class="francisco lato mediumLarge default pt-sm-0 col-sm-6 ml-6 mb-4"> I'm interested in joining mPower because I
+      <p class="lightGrayText d-none d-md-inline-block col-sm-6 col-lg-6 tiny   mx-auto text-left pt-0 pt-md-0 mb-3">
+        Understanding what interests you and what you are willing to do helps us shape an experience that aligns with your expectations.
+      </p>
+    </div>
+
+    <div class="row">
+      <span id="interest" class="francisco lato mediumLarge default pt-sm-0 col-md-6 col-sm-7 col-lg-6 text-left mx-auto mb-4"> I'm interested in joining mPower because I
   
         <span v-if="firstEdit" class="ml-0 p-0">
           <v-btn flat :ripple="false" v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink pl-0 middle francisco"> Want to help myself         
@@ -68,23 +72,23 @@
       </span>
     </div>
   
-    <span v-if="!firstEdit" class="ml-3">
+    <template v-if="!firstEdit">
       <div class="row">
-        <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="ml-6 pt-3 pb-3  stencilBorderTop stencilBorder col-sm-7 col-md-6  col-lg-5  customCheck "></v-checkbox>
+        <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="mx-auto text-left pt-3 pb-3  stencilBorderTop stencilBorder col-sm-7 col-md-6 col-lg-6 customCheck "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="ml-6 pt-3 pb-5 pb-sm-3  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-5 customCheck wrapLabel"></v-checkbox>
+        <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="mx-auto text-left pt-3 pb-3 pb-sm-3  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-6 customCheck wrapLabel"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="ml-6 pt-sm-3 pt-0 pb-3  stencilBorder col-sm-7 col-md-6 col-lg-5 customCheck "></v-checkbox>
+        <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="mx-auto text-left pt-sm-3 pt-0 pb-3  stencilBorder col-sm-7 col-md-6 col-lg-6 customCheck "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="am curious" v-model="selectedChoice[3]" class="ml-6 pt-3 pb-3  stencilBorder col-sm-7 col-md-6 customCheck col-lg-5 "></v-checkbox>
+        <v-checkbox label="am curious" v-model="selectedChoice[3]" class="mx-auto text-left pt-3 pb-3  stencilBorder col-sm-7 col-md-6 customCheck col-lg-6 "></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox label="another reason" v-model="selectedChoice[4]" class="ml-6 pt-3 pb-3  stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-5"></v-checkbox>
+        <v-checkbox label="another reason" v-model="selectedChoice[4]" class="mx-auto text-left pt-3 pb-3  stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-6"></v-checkbox>
       </div>
-    </span>
+    </template>
   
     
     <!-- Section 2.
@@ -94,7 +98,7 @@
       -->
     <span id="willing" v-if="firstClick">
       <div class="row">
-        <span class="francisco col-md-6  ml-6 mediumTitle mb-4 text-left lead"> I would be willing to try
+        <span class="mx-auto text-left col-sm-7 col-md-6 col-lg-6 francisco mediumTitle mb-4 text-left lead"> I would be willing to try
           <span v-if="secondEdit" class="p-0">
             
             <v-btn flat :ripple="false" v-if="selectedChoice[5]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> finger tapping activity
@@ -117,20 +121,20 @@
       </div>
   
         <div class="row">
-          <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="ml-6 stencilBorderTop stencilBorder pt-3 pb-3  col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
+          <v-checkbox v-if="!secondEdit" label="finger tapping activity" v-model="selectedChoice[5]" class="stencilBorderTop stencilBorder pt-3 pb-3  col-sm-7 col-md-6 text-left mx-auto col-lg-6 customCheck darkPurple--text"></v-checkbox>
         </div>
         <div class="row">
-          <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="ml-6   stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
+          <v-checkbox v-if="!secondEdit" label="hand tremor activity" v-model="selectedChoice[6]" class="  stencilBorder pt-3 pb-3 col-sm-7 col-md-6 text-left mx-auto col-lg-6 customCheck darkPurple--text"></v-checkbox>
         </div>
         <div class="row">
-          <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
+          <v-checkbox v-if="!secondEdit" label="balance activity" v-model="selectedChoice[7]" class=" stencilBorder pt-3 pb-3 col-sm-7 col-md-6 text-left mx-auto col-lg-6 customCheck darkPurple--text"></v-checkbox>
         </div>
         <div class="row">
-          <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class="ml-6  stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
+          <v-checkbox v-if="!secondEdit" label="brain teaser activity" v-model="selectedChoice[8]" class=" stencilBorder pt-3 pb-3 col-sm-7 col-md-6 text-left mx-auto col-lg-6 customCheck darkPurple--text"></v-checkbox>
         </div>
         </div>
         <div class="row">
-          <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class="ml-6  stencilBorderTop stencilBorder pt-3 pb-3 col-sm-6 col-lg-4 customCheck darkPurple--text"></v-checkbox>
+          <v-checkbox v-if="!secondEdit" label="surveys" v-model="selectedChoice[9]" class=" stencilBorderTop stencilBorder pt-3 pb-3 col-sm-7 col-md-6 text-left mx-auto col-lg-6 customCheck darkPurple--text"></v-checkbox>
         </div>
     </span>
   
@@ -141,7 +145,7 @@
       -->
     <span id="basis" v-if="secondClick">
       <div class="row">
-        <p class="francisco col-md-8 ml-6 mediumTitle text-left lead"> on a {{(thirdClick || third)? "": "_____"}}
+        <p class="francisco col-sm-7 col-md-6 col-lg-6 mediumTitle mx-auto text-left lead"> on a {{(thirdClick || third)? "": "_____"}}
           <span class="p-0" v-if="thirdEdit">
             <v-btn v-on:click="handleEdit(2)" flat class=" text-capitalize pl-0 clickableLink francisco"> {{radioChoice}}
             </v-btn>
@@ -153,22 +157,22 @@
   
       <v-radio-group v-model="radioChoice" v-if="!thirdEdit">
         <div class="row mb-3">
-          <v-flex class="col-sm-3 ml-6 ">
+          <v-flex class="col-sm-7 col-md-6 col-lg-6 mx-auto text-left ">
             <v-radio v-on:keyup.enter="handleRadio(0)" class=" francisco stencilBorderTop stencilBorder pt-2 pb-2" label="Daily" value="Daily"></v-radio>
           </v-flex>
         </div>
         <div class="row mb-3 mt-2">
-          <v-flex class="col-sm-3 ml-6">
+          <v-flex class="col-sm-7 col-md-6 col-lg-6 mx-auto text-left">
             <v-radio v-on:keyup.enter="handleRadio(1)" class=" francisco stencilBorder pt-2 pb-2" value="Weekly" label="Weekly"></v-radio>
           </v-flex>
         </div>
         <div class="row mb-3 mt-2">
-          <v-flex class="col-sm-3 ml-6">
+          <v-flex class="col-sm-7 col-md-6 col-lg-6 mx-auto text-left">
             <v-radio v-on:keyup.enter="handleRadio(2)" class=" francisco stencilBorder pt-2 pb-2" value="Biweekly" label="Biweekly"></v-radio>
           </v-flex>
         </div>
         <div class="row mb-3 mt-2">
-          <v-flex class="col-sm-3 ml-6">
+          <v-flex class="col-sm-7 col-md-6 col-lg-6 mx-auto text-left">
             <v-radio v-on:keyup.enter="handleRadio(3)" class=" francisco stencilBorder pt-2 pb-2" value="Monthly" label="Monthly"></v-radio>
           </v-flex>
         </div>
@@ -182,7 +186,7 @@
       -->
     <span id="request" v-if="thirdClick">
       <div class="row">
-        <p class="francisco ml-6 col-sm-6 mediumTitle lead"> I would like to recieve
+        <p class="francisco col-sm-7 col-md-6 col-lg-6 mx-auto text-left mediumTitle lead"> I would like to recieve
           <span v-if="fourthEdit">
             <v-btn flat :ripple="false" v-if="selectedChoice[10]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the study
             </v-btn>
@@ -198,13 +202,13 @@
       </div>
   
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="stencilBorderTop stencilBorder pt-3 pb-3 ml-6 col-sm-6 col-lg-5  customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the study" v-model="selectedChoice[10]" class="stencilBorderTop stencilBorder pt-3 pb-3 col-sm-7 col-md-6 col-lg-6 mx-auto text-left  customCheck darkPurple--text"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" id="updates" label="Updates on my progress" v-model="selectedChoice[11]" class="stencilBorder pt-3 pb-5 pb-sm-3 ml-6  col-sm-6 col-lg-5 mb-sm-0 customCheck darkPurple--text wrapLabel"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" id="updates" label="Updates on my progress" v-model="selectedChoice[11]" class="stencilBorder pt-3 pb-5 pb-sm-3 col-sm-7 col-md-6 col-lg-6 mx-auto text-left mb-sm-0 customCheck darkPurple--text wrapLabel"></v-checkbox>
       </div>
       <div class="row">
-        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="stencilBorder pt-3 pb-3 ml-6  col-sm-6 col-lg-5  customCheck darkPurple--text"></v-checkbox>
+        <v-checkbox v-if="!fourthEdit" label="Updates on the app" v-model="selectedChoice[12]" class="stencilBorder pt-3 pb-3 col-sm-7 col-md-6 col-lg-6 mx-auto text-left  customCheck darkPurple--text"></v-checkbox>
       </div>
   
     </span>

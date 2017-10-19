@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <v-flex class="col-md-6 mx-auto">
-                <v-text-field class="white--text" placeholder="Please type your full name here" name="input-1" type="text" pattern="\d*" auto-grow v-model="name">
+                <v-text-field class="white--text" placeholder="Please type your full name here" name="input-1" type="text" auto-grow v-model="name">
                 </v-text-field>
             </v-flex>
         </div>
