@@ -20,12 +20,16 @@
         </div>
         
         <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
-            <v-btn class="navyBlue white--text  medium" v-on:click="handleController()"> > </v-btn>
+            <v-btn
+            v-bind:class="currentStageHasValues() ? '':'lowOpacity'"
+             class="navyBlue white--text  medium" v-on:click="handleController()"> Next </v-btn>
         </div>
 
         
         <div class="marginTop50 col-2 hideOnSmall">
-            <v-btn class="navyBlue largeButton medium ml-0  white--text" v-on:click="handleController()"> {{clicks >= 2? 'Submit': 'Next'}}
+            <v-btn
+            v-bind:class="currentStageHasValues() ? '':'lowOpacity'"
+             class="navyBlue largeButton medium ml-0  white--text" v-on:click="handleController()"> {{clicks >= 2? 'Submit': 'Next'}}
             </v-btn>
         </div>
 
@@ -120,6 +124,9 @@
         }
         , 200),
       handleController () {
+        if (!this.currentStageHasValues()) {
+          return
+        }
         if (this.clicks === 0) {
           this.setIsUnderage()
         } else if (this.clicks === 1) {
@@ -145,6 +152,17 @@
             isNotComfortable: (this.selectedOptionForPhone !== 'comfortable using my phone')
           }
           this.$router.push('Ineligible') // TODO: Flip to the top of the next page
+        }
+      },
+      currentStageHasValues () {
+        if (this.isUnderage === null) {
+          return this.age !== ''
+        } else if (this.isResident === null) {
+          return this.stateChosen !== ''
+        } else if (!this.hasChosenOption) {
+          return this.selectedOptionForPhone !== null
+        } else {
+          return true
         }
       },
       setIsUnderage: _.debounce(

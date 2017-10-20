@@ -15,17 +15,22 @@
         <div class="col-6 col-md-8 mt-md-3">
             <div clas="row text-center">
                 <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Step {{' ' + indexInStack }} </p>
+
                 <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
             </div>
         </div>
         
         <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
-            <v-btn class="navyBlue white--text  medium" v-on:click="handleController()"> Next </v-btn>
+            <v-btn
+            v-bind:class="currentStageHasValues() ? '':'lowOpacity'"
+            class="navyBlue white--text  medium" v-on:click="handleController()"> Next </v-btn>
         </div>
 
         
         <div class="marginTop50 col-2 hideOnSmall">
-            <v-btn class="navyBlue largeButton medium ml-0  white--text" v-on:click="handleController()"> {{indexInStack === 5? 'Submit': 'Next'}}
+            <v-btn
+              v-bind:class="currentStageHasValues() ? '':'lowOpacity'"
+             class="navyBlue largeButton medium ml-0  white--text" v-on:click="handleController()"> {{indexInStack === 5? 'Submit': 'Next'}}
             </v-btn>
         </div>
 
@@ -40,11 +45,6 @@
      
     <div class="row">
       <p class="lead d-none d-md-inline-block font-weight-bold col-sm-6 col-lg-6 largeTitle mx-auto text-left pt-0 pt-md-0"> Why are you interested in joining mPower?
-      </p>
-    </div>
-    <div class="row">
-      <p class="lightGrayText d-none d-md-inline-block col-sm-6 col-lg-6 tiny   mx-auto text-left pt-0 pt-md-0 mb-3">
-        Understanding what interests you and what you are willing to do helps us shape an experience that aligns with your expectations.
       </p>
     </div>
 
@@ -245,7 +245,8 @@ export default {
       radioTexts: ['Daily', 'Weekly', 'Biweekly', 'Monthly'],
       indexInStack: 1,
       multiple5: 100.0 / 5,
-      progress: 100.0 / 5
+      progress: 100.0 / 5,
+      alert: true
     }
   },
   methods: {
@@ -272,6 +273,9 @@ export default {
       this.selectedChoice[index] = !this.selectedChoice[index]
     },
     handleController: function () {
+      if (!this.currentStageHasValues()) {
+        return
+      }
       if (!this.firstClick) {
         this.firstClick = true
         this.firstEdit = true
@@ -303,7 +307,28 @@ export default {
         this.$router.push('Eligibility')
       }
     },
+    currentStageHasValues () {
+      if (!this.firstClick) {
+        return this.hasAnsweredAny(0, 5)
+      } else if (!this.secondClick) {
+        return this.hasAnsweredAny(5, 10)
+      } else if (!this.thirdClick) {
+        return this.radioChoice !== ''
+      } else if (!this.fourthClick) {
+        return this.hasAnsweredAny(10, 14)
+      } else {
+        return true
+      }
+    },
     containsValue: function (start, stop) {
+      for (var i = start; i < stop; i++) {
+        if (this.selectedChoice[i]) {
+          return true
+        }
+      }
+      return false
+    },
+    hasAnsweredAny: function (start, stop) {
       for (var i = start; i < stop; i++) {
         if (this.selectedChoice[i]) {
           return true

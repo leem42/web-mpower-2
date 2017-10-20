@@ -24,12 +24,16 @@
         </div>
         
         <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
-            <v-btn class="navyBlue white--text  medium" v-on:click="navigate(1)"> > </v-btn>
+            <v-btn class="navyBlue white--text  medium"
+             v-bind:class="currentStageHasValues() ? '':'lowOpacity'"
+            v-on:click="navigate(1)"> Next </v-btn>
         </div>
 
         
         <div class="marginTop50 col-2 hideOnSmall">
-            <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(1)"> Next
+            <v-btn class="navyBlue largeButton medium white--text" 
+             v-bind:class="currentStageHasValues() ? '':'lowOpacity'"
+             v-on:click="navigate(1)"> Next
             </v-btn>
         </div>
 
@@ -63,8 +67,16 @@
           progress: 100.0 / 5
         }
       },
+      computed: {
+        keys: function () {
+          return Object.keys(questionResults)
+        }
+      },
       methods: {
         navigate (index) {
+          if (!this.currentStageHasValues()) {
+            return
+          }
           var frame = ''
           if (index === 0) {
             this.indexInStack = this.indexInStack - 1
@@ -94,6 +106,9 @@
             frame = this.callStack[this.indexInStack]
             this.$router.push({ name: frame })
           }
+        },
+        currentStageHasValues () {
+          return this.questionResults[this.keys[this.indexInStack - 1]] !== null
         }
       }
     }

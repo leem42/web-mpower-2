@@ -103,11 +103,13 @@ nav.web {
   font-size: $font-size-base * 0.7 !important;
 }
 
+button.lowOpacity {
+  opacity: 0.25 !important;
+}
 #notAdvice {
   font-size: $font-size-base * 0.4;
 }
-@media(max-width: 766px) {
- 
+@media(max-width: 766px) { 
 
     .smallText {
       font-size: $font-size-base * 0.4;
@@ -256,6 +258,9 @@ div.customCheck>div.input-group__details {
   display: none; // padding-top: 25px;
 }
 
+.fixedPosition {
+  position: fixed;
+}
 
 .helpButton {
   bottom: 0px;
@@ -265,10 +270,19 @@ div.customCheck>div.input-group__details {
   height: 50px;
 }
 
+.topLevel {
+  z-index: 1000;
+}
+
+
 .material-icons {
     font-size: $font-size-base * 1.2;
   }
 
+.alert > div > .material-icons {
+    font-size: $font-size-base * 0.7;
+    margin-right: 02px;
+  }
 .customAlign {
   justify-content: inherit;
 }
@@ -504,7 +518,9 @@ div.input-group__selections__comma {
 
 
 @media(max-width: 767px) {
-
+  .aboveNav {
+    bottom: 80px;
+  }
   #nextBtn > button.btn > .btn__content {
     font-size: $font-size-base * 0.5 !important;
   }
@@ -677,6 +693,11 @@ div.input-group__selections__comma {
   z-index: 1000;
 }
 
+.eightPercentOpacity {
+  opacity: 0.8;
+}
+
+
 div[role=radio] > label {
   padding-left: 20px;
   padding-top: 2px;
@@ -826,6 +847,13 @@ select {
   border-radius: 100px !important;
   text-align: center !important;
   box-shadow: none; // font-family: "San Francisco Text" !important;
+}
+
+.center {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .lead {
@@ -982,6 +1010,13 @@ select {
 
  
  @media(min-width: 766px) { 
+   .alertWidth {
+      width: 30%;
+  }
+
+    .aboveNav {
+        bottom: 115px;
+    }
 
  
     .marginTop50>button {
