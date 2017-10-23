@@ -177,9 +177,7 @@
       ),
       setIsPlaceAnswered: _.debounce(
         function () {
-          console.log(this.stateChosen)
           this.isResident = (this.stateChosen !== '' && this.stateChosen !== 'I don\'t live in the US')
-          console.log(this.isResident)
           this.scrollPage('#comfortable')
         }, 500
       ),

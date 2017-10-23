@@ -14,7 +14,7 @@
 
         <div class="col-6 col-md-8 mt-md-3">
             <div clas="row text-center">
-                <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Step {{' ' + indexInStack }} </p>
+                <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Step {{indexInStack === 5? "4": indexInStack}} of 4 </p>
 
                 <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
             </div>
@@ -70,7 +70,7 @@
           <v-btn flat :ripple="false" v-if="selectedChoice[5]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> none of the above
           </v-btn>
         </span>
-        <v-btn v-if="controller[0].click" flat class="francisco clickableLink white--text text-capitalize pl-0" @click.native="handleEdit(0)"> {{controller[0].edit ? "(Add More)": "Resubmit"}} </v-btn>
+        <!--<v-btn v-if="controller[0].submit" flat class="francisco clickableLink white--text text-capitalize pl-0" @click.native="handleEdit(0)"> {{controller[0].edit ? "(Add More)": "Resubmit"}} </v-btn>-->
       </span>
     </div>
   
@@ -124,7 +124,7 @@
             <v-btn flat :ripple="false" v-if="selectedChoice[11]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> none of the above
             </v-btn>
           </span>
-          <v-btn v-if="controller[1].click" flat class="clickableLink pl-0 text-capitalize" v-on:click="handleEdit(1)"> {{controller[1].edit ? "(Add Choices)": "Resubmit"}} </v-btn>
+          <!--<v-btn v-if="controller[1].click" flat class="clickableLink pl-0 text-capitalize" v-on:click="handleEdit(1)"> {{controller[1].edit ? "(Add Choices)": "Resubmit"}} </v-btn>-->
         </span>
       </div>
 
@@ -165,7 +165,7 @@
             </v-btn>
           </span>
           basis
-          <v-btn v-if="controller[2].click" flat class=" white--text text-capitalize pl-0 clickableLink" v-on:click="handleEdit(2)"> {{controller[2].edit ? "(Edit Choice)": "Resubmit"}} </v-btn>
+          <!--<v-btn v-if="controller[2].click" flat class=" white--text text-capitalize pl-0 clickableLink" v-on:click="handleEdit(2)"> {{controller[2].edit ? "(Edit Choice)": "Resubmit"}} </v-btn>-->
         </p>
       </div>
   
@@ -219,7 +219,7 @@
             <v-btn flat :ripple="false" v-if="selectedChoice[15]" v-on:click="handleEdit(4)" class=" text-capitalize clickableLink pl-0 francisco"> None of the above
             </v-btn>
           </span>
-          <v-btn v-if="controller[3].click" flat class="white--text text-capitalize clickableLink pl-0" v-on:click="handleEdit(3)"> {{controller[3].edit ? "(Add Choices)": "Resubmit"}} </v-btn>
+          <!--<v-btn v-if="controller[3].click" flat class="white--text text-capitalize clickableLink pl-0" v-on:click="handleEdit(3)"> {{controller[3].edit ? "(Add Choices)": "Resubmit"}} </v-btn>-->
         </p>
       </div>
   
@@ -260,15 +260,15 @@ export default {
       selectedChoice: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
       controllerLevel: 0,
       controller: {
-        0: {click: false, edit: false, page: '#willing'},
-        1: {click: false, edit: false, page: '#basis'},
-        2: {click: false, edit: false, page: '#request'},
-        3: {click: false, edit: false, page: '#willing'}
+        0: {click: false, submit: false, edit: false, page: '#interest'},
+        1: {click: false, submit: false, edit: false, page: '#willing'},
+        2: {click: false, submit: false, edit: false, page: '#basis'},
+        3: {click: false, submit: false, edit: false, page: '#request'}
       },
       radioTexts: ['Daily', 'Weekly', 'Biweekly', 'Monthly', 'None of the above'],
       indexInStack: 1,
-      multiple5: 100.0 / 5,
-      progress: 100.0 / 5,
+      multiple5: 100.0 / 4,
+      progress: 100.0 / 4,
       alert: true
     }
   },
@@ -285,13 +285,37 @@ export default {
       this.controller[index].edit = !this.controller[index].edit
     },
     handleClickBack () {
-      console.log('back')
+      // must set behind open and current closed
+      // if its prior to submitting then we set current and back, otherwise just the front
+      let lastChoice = (this.controllerLevel === 4)
+      let page = ''
+      if (this.controllerLevel !== 4) {
+        levelObj = this.controller[this.controllerLevel - 1]
+        levelObj.click = false
+        levelObj.edit = false
+        page = levelObj.page
+      } else {
+        this.controllerLevel -= 1
+        page = this.controller[this.controllerLevel].page
+      }
+
+      let levelObj = this.controller[this.controllerLevel]
+      levelObj.click = false
+      levelObj.edit = false
+      this.progress -= this.multiple5
+      this.indexInStack -= 1
+
+      if (!lastChoice) {
+        this.controllerLevel -= 1
+      }
+      if (this.controllerLevel !== 4) {
+        this.scrollPage(page)
+      }
     },
     handleController: function () {
       if (!this.currentStageHasValues()) {
         return
       }
-      console.log(this.controllerLevel)
       if (this.controllerLevel === 4) {
         this.$router.push('Eligibility')
       } else {
