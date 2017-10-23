@@ -5,10 +5,10 @@
       <div class="container-fluid" style="display: block;">
         <div class="row">
   
-          <div class="col-6 pl-1 mx-auto text-center text-sm-left col-sm-2">
-            <span class="lead light tiny centerVertical   white--text" v-bind:class="{medium: $router.currentRoute.fullPath.includes('Question')}">
+          <div class="col-6 pl-1 mx-auto tiny text-center text-sm-left col-sm-2">
                {{getHeader()}}
-           </span>
+            <!--<span class="lead light tiny centerVertical   white--text" v-bind:class="{medium: $router.currentRoute.fullPath.includes('Question')}">
+           </span>-->
            
           </div>
 
