@@ -4,11 +4,11 @@
     <div class="row anchorBottom customRowHeight">
         
         <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
-            <v-btn class="navyBlue white--text medium"> < </v-btn>
+            <v-btn v-if="clicks > 0" class="navyBlue white--text medium"> Back </v-btn>
         </div>
 
         <div class="marginTop50 col-2 hideOnSmall ml-0 mr-0">
-            <v-btn class="navyBlue largeButton medium white--text"> Back
+            <v-btn v-if="clicks > 0" class="navyBlue largeButton medium white--text"> Back
             </v-btn>
         </div>
 
@@ -88,7 +88,6 @@
     data () {
       return {
         age: '',
-        zipCode: '',
         selectedOptionForPhone: null,
         isUnderage: null,
         isResident: null,

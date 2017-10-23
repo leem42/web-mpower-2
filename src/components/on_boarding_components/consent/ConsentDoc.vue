@@ -3,7 +3,7 @@
 
     <div class="row" style="height: 500px;">
 
-      <div class="topLevel" v-bind:class="showOverlay ? 'popOutDimensions fixPosition': 'customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4'">
+      <div v-bind:class="showOverlay ? 'popOutDimensions fixPosition': 'customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4'">
         <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText"
         v-bind:class="showOverlay ? '': 'fillParent  mask'">
         </iframe>

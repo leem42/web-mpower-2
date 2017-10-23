@@ -260,7 +260,7 @@ export default {
       selectedChoice: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
       controllerLevel: 0,
       controller: {
-        0: {click: false, submit: false, edit: false, page: '#interest'},
+        0: {click: false, submit: false, edit: false, page: '#interest'}, // TODO: Remove submit field if its extraneous
         1: {click: false, submit: false, edit: false, page: '#willing'},
         2: {click: false, submit: false, edit: false, page: '#basis'},
         3: {click: false, submit: false, edit: false, page: '#request'}
