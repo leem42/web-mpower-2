@@ -3,7 +3,7 @@
 
     <div class="row" style="height: 500px;">
 
-      <div v-bind:class="showOverlay ? 'popOutDimensions fixPosition': 'customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4'">
+      <div v-bind:class="showOverlay ? 'topLevel popOutDimensions fixPosition': 'customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4'">
         <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText"
         v-bind:class="showOverlay ? '': 'fillParent  mask'">
         </iframe>
@@ -24,7 +24,7 @@
 
       <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
         <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)">
-          < </v-btn>
+          Back </v-btn>
       </div>
 
       <div class="marginTop50 col-2 hideOnSmall ml-0 mr-0">
@@ -40,7 +40,7 @@
       </div>
 
       <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
-        <v-btn class="navyBlue white--text  medium" v-on:click="navigate(1)"> > </v-btn>
+        <v-btn class="navyBlue white--text  medium" v-on:click="navigate(1)"> Next </v-btn>
       </div>
 
       <div class="marginTop50 col-2 hideOnSmall">

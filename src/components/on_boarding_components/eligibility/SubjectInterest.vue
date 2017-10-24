@@ -278,7 +278,7 @@ export default {
     },
     scrollPage: _.debounce(
       function (arg1) {
-        this.$scrollTo(arg1, 1500, { easing: 'linear', offset: -90 })
+        this.$scrollTo(arg1, 1000, { easing: 'linear', offset: -90 })
       }
       , 200),
     handleEdit: function (index) {
@@ -289,6 +289,7 @@ export default {
       // if its prior to submitting then we set current and back, otherwise just the front
       let lastChoice = (this.controllerLevel === 4)
       let page = ''
+      let levelObj
       if (this.controllerLevel !== 4) {
         levelObj = this.controller[this.controllerLevel - 1]
         levelObj.click = false
@@ -299,7 +300,7 @@ export default {
         page = this.controller[this.controllerLevel].page
       }
 
-      let levelObj = this.controller[this.controllerLevel]
+      levelObj = this.controller[this.controllerLevel]
       levelObj.click = false
       levelObj.edit = false
       this.progress -= this.multiple5
@@ -325,7 +326,7 @@ export default {
         this.progress += this.multiple5
         this.indexInStack += 1
         this.controllerLevel += 1
-
+        levelObj = this.controller[this.controllerLevel]
         if (this.controllerLevel !== 4) {
           this.scrollPage(levelObj.page)
         }
