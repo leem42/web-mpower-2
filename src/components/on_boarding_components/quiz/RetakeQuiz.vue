@@ -41,7 +41,7 @@
                     What is the purpose of this study?
                   </div>
                   <div v-if="!JSON.parse(questionResults.questionOne)" class="col-8 col-sm-4 ml-auto tiny">
-                    <a href="#"> <u> (Review Section) </u> </a>
+                    <router-link :to="{name: 'ConsentTwo'}"> (Review Section) </router-link>
                   </div>
                 </div>
               </div>
@@ -63,7 +63,7 @@
                     Will my name be stored with my study data?
                   </div>
                   <div v-if="!JSON.parse(questionResults.questionTwo)" class="col-8 col-sm-4 ml-auto tiny">
-                    <a href="#"> <u> (Review Section) </u> </a>
+                    <router-link :to="{name: 'ConsentThree'}"> (Review Section) </router-link>
                   </div>
                 </div>
               </div>
@@ -85,7 +85,7 @@
                     If I decide to share my data with qualified researchers and then I change my mind, can my data be deleted from their studies?
                   </div>
                   <div v-if="!JSON.parse(questionResults.questionThree)" class="col-8 col-sm-4 ml-auto tiny ">
-                    <a href="#"> <u> (Review Section) </u> </a>
+                      <router-link :to="{name: 'ConsentThirteen'}"> (Review Section) </router-link>
                   </div>
                 </div>
               </div>
@@ -107,7 +107,7 @@
                     The survey questions may be stressful for some people
                   </div>
                   <div v-if="!JSON.parse(questionResults.questionFour)" class="col-8 col-sm-4 ml-auto tiny ">
-                    <a href="#"> <u> (Review Section) </u> </a>
+                      <router-link :to="{name: 'ConsentThirteen'}"> (Review Section) </router-link>
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@
                     I can pause / resume participating at any time
                   </div>
                   <div v-if="!JSON.parse(questionResults.questionFive)" class="col-8 col-sm-4 ml-auto tiny ">
-                    <a href="#"> <u> (Review Section) </u> </a>
+                      <router-link :to="{name: 'ConsentThirteen'}"> (Review Section) </router-link>
                   </div>
                 </div>
               </div>

@@ -86,9 +86,8 @@
             this.indexInStack = this.indexInStack + 1
           }
           if (this.indexInStack === 6) {
-            var passedTest = JSON.parse(this.questionResults.questionOne) && JSON.parse(this.questionResults.questionTwo) && JSON.parse(this.questionResults.questionThree) && JSON.parse(this.questionResults.questionFour) &&
-            JSON.parse(this.questionResults.questionFive)
-            if (!passedTest) {
+            let failedTest = Object.values(this.questionResults).includes('false')
+            if (failedTest) {
               this.$router.push({ name: 'RetakeQuiz' })
             } else {
               this.requirements.isOnQuiz = false
@@ -96,8 +95,7 @@
               this.requirements.isOnSign = true
               this.$router.push({ name: 'OverviewEligibility' })
             }
-          }
-          if (this.indexInStack >= 6) {
+          } else if (this.indexInStack >= 6) {
             this.requirements.isOnQuiz = false
             this.requirements.hasCompletedQuiz = true
             this.requirements.isOnSign = true
