@@ -10,38 +10,39 @@ $font-size-base: 1rem * 2.5; // Assumes the browser default, typically `16px`
 $font-size-lg:   1.25rem * 1.5;
 $font-size-sm:   .875rem * 1.5;
 $font-size-xs:   .75rem * 1.5;
-
 $font-weight-normal: bold;
-
 $lead-font-size:   $font-size-base;
 $lead-font-weight: 600;
 
-
-.center {
-  text-align: center !important;
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
 
-.sorryRect {
-  // border-radius: 5px !important;
-  background-color: #3A539B !important;
-  height: 50px;
-  width: 200px;
-  color: white !important;
-  font-family: "San Francisco Text";
-  font-weight: bold;
+.francisco {
+  font-family: 'San Francisco';
 }
 
-.orangeText {
-  color: #F2806F;
-  font-family: 'Roboto' !important;
+label {
+  @extend .defaultBlue;
+  font-size: $font-size-base * 0.75 !important;
 }
 
+p {
+  font-family: 'Roboto','sans-serif' !important;
+}
+
+input {
+  font-size: $font-size-base * 0.85 !important;
+  margin-bottom: 3px !important;
+}
 
 .fadeBackground {
-    background-image: -webkit-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
-    background-image: -moz-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
-    background-image: -o-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
-    background-image: linear-gradient(54deg, #473b7b, #3584a7 76%, #30d2be);
+  background-image: -webkit-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
+  background-image: -moz-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
+  background-image: -o-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
+  background-image: linear-gradient(54deg, #473b7b, #3584a7 76%, #30d2be);
 }
     
 nav.web {
@@ -50,14 +51,15 @@ nav.web {
   width: 100%;
   height: 80px;
   box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
-    &.fixed-bottom {
-        background-image: -webkit-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
-        background-image: -moz-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
-        background-image: -o-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
-        background-image: linear-gradient(87deg, #473b7b, #3584a7 76%, #30d2be);      color: white;
-        height: 60px;
-    }
+  &.fixed-bottom {
+    background-image: -webkit-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
+    background-image: -moz-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
+    background-image: -o-linear-gradient(357deg, #473b7b, #3584a7 76%, #30d2be);
+    background-image: linear-gradient(87deg, #473b7b, #3584a7 76%, #30d2be);      color: white;
+    height: 60px;
+  }
 }
+
 .whiteBackground {
   background-color: white !important; 
 }
@@ -75,9 +77,7 @@ nav.web {
 
 .medium-small {
   font-size: $font-size-base * 0.6 !important;
-  // color: #4a4a4a !important;
 }
-
 
 .largeTitle {
   font-size: $font-size-base;
@@ -106,23 +106,126 @@ nav.web {
 button.lowOpacity {
   opacity: 0.25 !important;
 }
-#notAdvice {
-  font-size: $font-size-base * 0.4;
-}
-@media(max-width: 766px) { 
 
-    .smallText {
-      font-size: $font-size-base * 0.4;
-    }
+@include media-breakpoint-down(sm) { 
+  .aboveNav {
+    bottom: 80px;
+  }
+  #nextBtn > button.btn > .btn__content {
+    font-size: $font-size-base * 0.5 !important;
+  }
 
-      div.wrapLabel > label {
-      min-height: 60px !important;
-      white-space: normal;
-    }
+  #notAdvice {
+    font-size: $font-size-base * 0.3 !important;
+  }
 
-    button.clickableLink > div.btn__content {
-        font-size: $font-size-base * 0.60 !important;
-    }
+  div.btn__content {
+    font-size: $font-size-base * 0.28 !important;
+  }
+
+  .tiny {
+    font-size: $font-size-base * 0.45 !important;
+  }
+
+  .mediumLarge > div.btn__content {
+  font-size: $font-size-base * 0.45 !important;
+  }
+
+  div.customCheck>label, div.radio > label {
+    font-size: $font-size-base * 0.6 !important;
+  }
+
+  #nextBtn {
+    right: 18px;
+    left: auto;
+    bottom: 0px !important;
+  }
+  
+  #backBtn {
+    left: 18px;
+    display: block !important;
+    position: fixed;
+    bottom: 0px;
+  }
+
+  .controller {
+    height: 44px;
+    width: 100px;
+  }
+
+  .navButton {
+    height: 22px;
+    width: 50px;
+  }
+
+  #question {
+    display: block;
+    margin-left: 100px !important;
+  }
+
+  .subText {
+    font-size: $font-size-base * 0.45 !important;
+  }
+
+  input#testing,
+  input#placeField {
+    // padding-bottom: 10px;
+    text-align: center !important;
+  }
+
+  .list__tile__title {
+    font-size: $font-size-base * .5 !important;
+  }
+
+  input#comfortable {
+    text-align: center !important;
+  }
+  .input-group__selections__comma {
+    font-size: $font-size-base * 0.5 !important;
+  }
+
+  p {
+    color: #31117D;
+    font-size: $font-size-base * 0.6 !important;
+  }  
+
+  .bigButton > div.btn__content {
+    font-size: $font-size-base * 0.7 !important;
+  }
+
+  span.chip,
+  div {
+    font-size: $font-size-base * 0.60 !important;
+  }
+
+  nav * img {
+    height: 30px !important;
+    width: 30px !important;
+  }
+
+  .border {
+    padding-top: 3px;
+    padding-right: 13px;
+    height: 30px !important;
+    width: 30px !important;
+  }
+
+  div.hideOnSmall {
+    display: none !important;
+  }
+
+  .smallText {
+    font-size: $font-size-base * 0.4;
+  }
+
+  div.wrapLabel > label {
+    min-height: 60px !important;
+    white-space: normal;
+  }
+
+  button.clickableLink > div.btn__content {
+      font-size: $font-size-base * 0.60 !important;
+  }
 
   .medium-small {
     font-size: $font-size-base * 0.35 !important;
@@ -136,47 +239,175 @@ button.lowOpacity {
   .mediumTitle {
     font-size: $font-size-base * 0.7 !important;
   }
+
   .medium {
     font-size: $font-size-base * 0.4 !important;
   }
+
+  // Styling on consent doc //
+  .customHeightFrame {      
+    height: 200px !important;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+    
+  .popOutDimensions {
+    margin-top: 5%;
+    height: 70% !important;
+    width: 100% !important;
+    overflow-y: scroll;
+    & > iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .customRowHeight {
+    height: 60px;
+  }
+
+  .mask {
+    border: solid 4px rgba(108, 122, 137, 0.3);    
+  }
+ 
+  .customProgress {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #68c060;
+    width: 100%;
+    height: 10px;
+  }
+
+  .marginTop50 > button {
+    min-width: 0px !important;
+    margin: auto;
+    margin-top: 5px;
+    padding: 1px;
+    min-height: 50px;
+    min-width: 55px;
+    width: 50px  !important;
+    border-radius: 10px;
+  }
+  // Styling on consent doc //
 }
+
+@include media-breakpoint-up(sm) {
+  div.hideOnLarge {
+     display: none !important;
+   }
+
+  .smallText {
+    font-size: $font-size-base * 0.5 !important;
+  }
+
+  button.clickableLink > div.btn__content {
+    padding: 0px !important;
+    font-size: $font-size-base * 0.70 !important;
+  }
+  
+  #nextBtn > button.btn > .btn__content {
+    font-size: $font-size-base * 0.6 !important;
+  }
+
+  .subText {
+    font-size: $font-size-base * 0.65 !important;
+  }
+
+  p {
+    color: #31117D;
+    font-size: $font-size-base !important;
+  }
+  .tiny {
+    font-size: $font-size-base * 0.6 !important;
+  }
+
+  span.chip,
+  div {
+    font-size: $font-size-base * 0.80 !important;
+  }
+
+  div.btn__content {
+    font-size: $font-size-base * 0.40 !important;
+  }
+
+  .bigButton > div.btn__content {
+    font-size: $font-size-base * 0.70 !important;
+  }
+
+  .mediumLarge > div.btn__content {
+    font-size: $font-size-base * 0.60 !important;
+  }
+
+  .ml-6 {
+    margin-left: 16.66% !important;
+  }
+
+ .alertWidth {
+    width: 30%;
+  }
+
+  .aboveNav {
+    bottom: 115px;
+  }
+
+  .marginTop50>button {
+    height: 70px;
+    width: inherit;
+    border-radius: 16px;
+    margin-top: 20px;
+  }
+
+  .mask {
+    border: solid 10px rgba(108, 122, 137, 0.3);
+  }
+
+  .customHeightFrame {
+    height: 450px !important;
+  }
+
+  .popOutDimensions {
+    height: 65%;
+    width: 70%;
+    margin-left: 15%;
+    text-align: center;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    & > iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+} 
+
 .default {
   color: #3b4a63;
 }
 
 .navyBlue {
-    background-color: #3a539b !important;
+  background-color: #3a539b !important;
 }
 
 .medium > div.btn__content {
   @extend .medium;
 }
 
-button.medium {
-  // margin-left: 500px;
-  // right: 200px;
-  // bottom: 100px; 
-}
-
-
 .lightGrayText {
-    color: #4a4a4a;
+  color: #4a4a4a;
 }
-
 
 .mediumLarge {
   font-size: $font-size-base * 0.6 !important;
 }
 
+.mediumGray {
+  background-color: #dadfe1 !important;
+}
 
-
-  .mediumGray {
-    background-color: #dadfe1 !important;
-  }
-
-  .sectionTwo {
-      background-color: rgba(238, 238, 238, 0.5);
-  }
+.sectionTwo {
+  background-color: rgba(238, 238, 238, 0.5);
+}
 
 .clickableLink {
   text-decoration: underline;
@@ -196,7 +427,6 @@ button.medium {
   @extend .lightGrayText;
 }
 
-
 .material-icons.icon.icon--radio {
   color: #1bb191 !important;
 }
@@ -204,7 +434,6 @@ button.medium {
 div.radio {
   padding: 2px;
 }
-
 
 #nextBtn {
   bottom: 50px !important;
@@ -218,8 +447,7 @@ div.radio {
 }
 
 div.customCheck {
-   color: #1bb191;
-  // color: #31117D !important;
+  color: #1bb191;
 }
 
 .customCheck > label{
@@ -241,7 +469,6 @@ div.customCheck {
   width: 150px;
   background-color: #3a539b !important;
 }
-
 
 div.customCheck>label {
   font-size: $font-size-base * 0.7 !important;
@@ -274,21 +501,21 @@ div.customCheck>div.input-group__details {
   z-index: 1000;
 }
 
-
 .material-icons {
-    font-size: $font-size-base * 1.2;
-  }
+  font-size: $font-size-base * 1.2;
+}
 
 .alert > div > .material-icons {
-    font-size: $font-size-base * 0.7;
-    margin-right: 02px;
-  }
+  font-size: $font-size-base * 0.7;
+  margin-right: 02px;
+}
+
 .customAlign {
   justify-content: inherit;
 }
 
 .defaultBlue {
-    color: #3a539b !important;
+  color: #3a539b !important;
 }
 
 .text--normal {
@@ -311,22 +538,8 @@ div.customCheck>div.input-group__details {
   background-color: rgba(255, 218, 138, 0.3);
 }
 
-
 .darkBlue {
   background-color: #5c6c88 !important;
-}
-
-.intercom {
-  position: fixed;
-  bottom: 40px !important;
-  right: 10px !important;
-  background-color: #3DBFA3;
-  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.12), 0 6px 6px 0 rgba(0, 0, 0, 0.24);
-  border-radius: 50px;
-  height: 80px;
-  z-index: 10000 !important;
-  width: 80px;
-  display: flex !important;
 }
 
 i.custom-purple {
@@ -339,16 +552,6 @@ i.custom-purple {
 
 .lato {
   font-family: 'Lato', sans-serif !important;
-}
-
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 400;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-}
-
-.francisco {
-  font-family: 'San Francisco';
 }
 
 div.btn__content {
@@ -369,7 +572,6 @@ div.btn__content {
   &#help {
     font-size: $font-size-base * 0.5 !important;
   }
-
 }
 
 .border {
@@ -396,23 +598,9 @@ div.noLabel {
 }
 
 .bigButton {
-    width: 280px;
-    height: 70px;
-    border-radius: 12px;
-
-}
-
-
-label {
-  @extend .defaultBlue;
-  font-size: $font-size-base * 0.75 !important;
-}
-
-
-
-input {
-  font-size: $font-size-base * 0.85 !important;
-  margin-bottom: 3px !important;
+  width: 280px;
+  height: 70px;
+  border-radius: 12px;
 }
 
 div.input-group__hint {
@@ -423,75 +611,11 @@ div.input-group__hint {
   display: inline-block;
 }
 
-p {
-  font-family: 'Roboto','sans-serif' !important;
-}
-
-
-@media(min-width: 767px) {
-  .smallText {
-  font-size: $font-size-base * 0.5 !important;
-}
-
-  button.clickableLink > div.btn__content {
-    padding: 0px !important;
-    font-size: $font-size-base * 0.70 !important;
-  }
-  
-  
-  #nextBtn > button.btn > .btn__content {
-    font-size: $font-size-base * 0.6 !important;
-  }
-
-  .subText {
-    font-size: $font-size-base * 0.65 !important;
-  }
-  p {
-    color: #31117D;
-    font-size: $font-size-base !important;
-  }
-  .tiny {
-    font-size: $font-size-base * 0.6 !important;
-  }
-
-  span.chip,
-  div {
-    font-size: $font-size-base * 0.80 !important;
-  }
-
-  div.btn__content {
-    font-size: $font-size-base * 0.40 !important;
-  }
-
-  .bigButton > div.btn__content {
-    font-size: $font-size-base * 0.70 !important;
-  }
-
-  .mediumLarge > div.btn__content {
-    font-size: $font-size-base * 0.60 !important;
-  }
-
-  .ml-6 {
-    margin-left: 16.66% !important;
-  }
-} 
 .customCenterAlign {
   display: flex;
   justify-content:center;
   align-content:center;
   flex-direction:column; 
-}
-// For button elements that need specific spacing
-@media(min-width: 767px) and (max-width: 1023px) {
-  .ml-6-restricted {
-    margin-left: 16.66% !important;
-  }
-}
-
-@media(min-width: 769px) and (max-width: 1339px) {
-  .ml-6-restricted-x {
-    margin-left: 16.66% !important;
-  }
 }
 
 input#testing,
@@ -518,190 +642,19 @@ div.input-group__selections__comma {
   @extend .medium;
 }
 
-
-
-
-
-@media(max-width: 767px) {
-  .aboveNav {
-    bottom: 80px;
-  }
-  #nextBtn > button.btn > .btn__content {
-    font-size: $font-size-base * 0.5 !important;
-  }
-
-  #notAdvice {
-    font-size: $font-size-base * 0.3 !important;
-  }
-
-  div.btn__content {
-    font-size: $font-size-base * 0.28 !important;
-  }
-
-  .tiny {
-    font-size: $font-size-base * 0.45 !important;
-  }
-  .indicatorEmpty {
-    top: 89px !important;
-    height: 4px !important;
-  }
-
-  .mediumLarge > div.btn__content {
-  font-size: $font-size-base * 0.45 !important;
-  }
-
-  .progressBar {
-    height: 4px !important;
-  }
-
-  div.customCheck>label, div.radio > label {
-    font-size: $font-size-base * 0.6 !important;
-  }
-
-  #nextBtn {
-    right: 18px;
-    left: auto;
-    bottom: 0px !important;
-  }
-  #backBtn {
-    left: 18px;
-    display: block !important;
-    position: fixed;
-    bottom: 0px;
-  }
-  .controller {
-    height: 44px;
-    width: 100px;
-  }
-
-  .navButton {
-    height: 22px;
-    width: 50px;
-  }
-
-  #question {
-    display: block;
-    margin-left: 100px !important;
-  }
-
-  .intercom {
-    height: 50px;
-    width: 50px;
-  }
-
-
-
 .centerVertical {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-  
-  .subText {
-    font-size: $font-size-base * 0.45 !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
-
-  input#testing,
-  input#placeField {
-    // padding-bottom: 10px;
-    text-align: center !important;
-  }
-
-  .list__tile__title {
-    font-size: $font-size-base * .5 !important;
-  }
-
-  input#comfortable {
-    text-align: center !important;
-  }
-  .input-group__selections__comma {
-    font-size: $font-size-base * 0.5 !important;
-  }
-
-
-
-  p {
-    color: #31117D;
-    font-size: $font-size-base * 0.6 !important;
-  }
-  
-
-  .bigButton > div.btn__content {
-    font-size: $font-size-base * 0.7 !important;
-  }
-
-  span.chip,
-  div {
-    font-size: $font-size-base * 0.60 !important;
-  }
-
-  nav * img {
-    height: 30px !important;
-    width: 30px !important;
-  }
-
-  .border {
-    padding-top: 3px;
-    padding-right: 13px;
-    height: 30px !important;
-    width: 30px !important;
-  }
-}
-
-.progressBar {
-  position: fixed;
-  background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);
-  box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
-  top: 89px;
-  width: 100% !important;
-  height: 10px ;
-  z-index: 1000;
-}
-
-.offset {
-  opacity: 1 !important;
-  &.one {
-    margin-left: 16.74%;
-  }
-
-  &.two {
-    margin-left: 33.48%;
-  }
-
-  &.three {
-    margin-left: 50.22%;
-  }
-
-  &.four {
-    margin-left: 66.96%;
-  }
-
-  &.five {
-    margin-left: 83.7%;
-  }
-}
 
 .dark-lead {
   color: #4A4A4A !important;
 }
 
-.indicatorEmpty {
-  position: fixed;
-  top: 89px;
-  width: 16.55%;
-  height: 10px;
-  color: transparent;
-  opacity: 0.2;
-  float: left;
-  background-color: rgba(238, 238, 238, 0.7);
-  z-index: 1000;
-}
-
 .eightPercentOpacity {
   opacity: 0.8;
 }
-
 
 div[role=radio] > label {
   padding-left: 20px;
@@ -714,12 +667,6 @@ div[role=radio].wrapLabel > label {
   white-space: normal;
   min-height: 180px !important;
   min-width: 90% !important;
-}
-
-.indicatorFilled {
-  @extend .indicatorEmpty;
-  background-color: #68BF60 !important;
-  opacity: 1 !important;
 }
 
 #submit {
@@ -753,7 +700,6 @@ div[role=radio].wrapLabel > label {
   background-color: #F1F0F5 !important;
 }
 
-
 .darkPurple {
   color: white !important;
   background-color: #473B7B !important;
@@ -772,13 +718,11 @@ label .application--light .input-group input, .application--light .input-group t
 }
 
 nav.onboarding {
-
   color: white !important;
   background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);
   box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
   height: 90px; // below is used for aligning the element in the middle vertically
   justify-content: center;
-
   top: 0px;
   position: fixed !important;
   z-index: 1000 !important;
@@ -832,13 +776,6 @@ select {
   display: inline !important;
 }
 
-.phoneInput {
-  @media(max-width: 767px) {
-    max-width: 80%;
-    margin-left: 10%;
-  }
-}
-
 .footer {
   display: none;
 }
@@ -874,9 +811,9 @@ select {
   width: 295px;
 }
 
-  div[role=radio].input-group:hover {
-    background-color: rgba(59,74,99,0.1) !important;
-  }
+div[role=radio].input-group:hover {
+  background-color: rgba(59,74,99,0.1) !important;
+}
 
 .stencilBorderTop {
   border-top: solid;
@@ -919,8 +856,6 @@ select {
   padding-left: 0px;
 }
 
-
-
 .anchorBottom {
   position: fixed !important;
   bottom: 0px;
@@ -939,128 +874,22 @@ select {
   background-color: #68c060;
   width: 60%;
   height: 10px;
-
 }
 
 .fillParent {
   width: inherit;
   height: inherit;
 }
+
 .fillParentRouter {
-  width: inherit;
-  height: inherit;
+  @extend .fillParent;
   min-height: 300px;
-}
- 
- 
-
- @media(max-width: 766px) { 
-   
-    .customHeightFrame {
-      // position: fixed;      
-      height: 200px !important;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-    }
-    .popOutDimensions {
-      margin-top: 5%;
-      height: 70% !important;
-      width: 100% !important;
-      overflow-y: scroll;
-      // -webkit-overflow-scrolling: touch;
-      & > iframe {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    .customRowHeight {
-      height: 60px;
-    }
-    .mask {
-      border: solid 4px rgba(108, 122, 137, 0.3);
-      
-    }
-
- 
-    .customProgress {
-      margin-left: 15px;
-      margin-right: 15px;
-      margin-top: 20px;
-      border-radius: 8px;
-      background-color: #68c060;
-      width: 100%;
-      height: 10px;
-    }
-
-
-    .marginTop50 > button {
-      min-width: 0px !important;
-      margin: auto;
-      margin-top: 5px;
-      padding: 1px;
-      min-height: 50px;
-      min-width: 55px;
-      width: 50px  !important;
-      border-radius: 10px;
-    }
- }
+} 
 
  button.largeTitle > div.btn__content {
    font-size: $font-size-base !important;
  }
- @media(min-width: 767px) {
-   div.hideOnLarge {
-     display: none !important;
-   }
-
+ 
+.document {
+  height: 500px;
 }
- 
- @media(max-width: 766px) {
-   div.hideOnSmall {
-     display: none !important;
-   }
-}
-
- 
- @media(min-width: 766px) { 
-   .alertWidth {
-      width: 30%;
-  }
-
-    .aboveNav {
-        bottom: 115px;
-    }
-
- 
-    .marginTop50>button {
-      height: 70px;
-      width: inherit;
-      border-radius: 16px;
-      margin-top: 20px;
-    }
-
-    .mask {
-      border: solid 10px rgba(108, 122, 137, 0.3);
-    }
-    .customHeightFrame {
-      height: 450px !important;
-    }
-
-    .popOutDimensions {
-      height: 65%;
-      width: 70%;
-      margin-left: 15%;
-      text-align: center;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-      & > iframe {
-        width: 100%;
-        height: 100%;
-      }
-    }
- }
-
- .document {
-   height: 500px;
-  }

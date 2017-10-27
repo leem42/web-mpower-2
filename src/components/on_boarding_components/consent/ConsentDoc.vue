@@ -7,7 +7,7 @@
         <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText"
         v-bind:class="showOverlay ? '': 'fillParent  mask'">
         </iframe>
-        <!-- <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" v-bind:class="showOverlay ? '': 'fillParent  mask'">
+         <!--<iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" v-bind:class="showOverlay ? '': 'fillParent  mask'">
         </iframe> -->
       </div>
 
@@ -144,13 +144,12 @@ export default {
     },
     callFrame (message) {
       this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText')
-      // console.log('posting message')
       // this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
     },
     recieveMessage: function (event) {
       if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
-        return ''
       // if (event.origin !== 'http://localhost:8080') {
+        return ''
       } else {
         /* eslint-disable */
         console.log(event)

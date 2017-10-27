@@ -102,11 +102,7 @@ export default {
 .text-left-force > div{
   justify-content: left !important;
 }
-.centerVertical {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
+
 .scaledJoinButton {
   width: 2em;
   height: 2em;
@@ -117,7 +113,6 @@ export default {
 }
 
 .routerBtn:hover {
-  // opacity: 0.7;
   border-bottom: solid;
   border-bottom-color: #ffda8a;
   font-weight: bold;
