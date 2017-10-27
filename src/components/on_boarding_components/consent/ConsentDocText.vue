@@ -1,7 +1,7 @@
 <template>
     <v-app class="white" >
     
-
+      
         <div id="A1" v-bind:class="highlightTracker.one ? 'highlighter': ''">
             Latin Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         </div>
@@ -50,7 +50,7 @@
         <br> Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
         </div>
 
-        <div class="attachButton">
+        <div class="attachButton hideOnSmall">
           <v-btn flat v-on:click="overlay()" color="white" class=" largeButton medium inheritPosition"> 
            <v-icon  class="defaultBlue" x-large> {{showOverlay? 'fa-close' : 'fa-expand'}} </v-icon>
         </v-btn>
@@ -70,8 +70,7 @@ export default {
     return {
       highlightTracker: highlightTracker,
       requirements: requirements,
-      showOverlay: false,
-      parent: ''
+      showOverlay: false
     }
   },
   computed: {
@@ -89,43 +88,47 @@ export default {
     scrollPage: _.debounce(
       function (arg1) {
         arg1 = '#A' + arg1
-        this.$scrollTo(arg1, 1500, { easing: 'linear', offset: -90 })
+        this.$scrollTo(arg1, 1000, { easing: 'linear', offset: 0 })
       }
       , 200),
     recieveMessage: function (event) {
-      if (event.source.location.href.substring(0, 55) !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/OnBoarding/ConsentDoc/') {
-      // if (event.source.location.href.substring(0, 55) !== 'http://localhost:8080/#/NullPage/OnBoarding/ConsentDoc/') {
+      if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
+      // if (event.origin !== 'http://localhost:8080') {
         return ''
       } else {
         /* eslint-disable */
-        var index = event.data.indexInStack
-        var forward = event.data.forward
+        if(event.data === "") {
+          return
+        }
+        let index = event.data.indexInStack
+        let forward = event.data.forward
 
-        var keyCurrent = this.keys[index - 1]
-        var keyBehind = this.keys[index - 2]
+        let keyCurrent = this.keys[index - 1]
+        let keyBehind = this.keys[index - 2]
 
         if (forward) {
-          var keyCurrent = this.keys[index - 1]
-          var keyBehind = this.keys[index - 2]
+          keyCurrent = this.keys[index - 1]
+          keyBehind = this.keys[index - 2]
           this.highlightTracker[keyCurrent] = true
           this.highlightTracker[keyBehind] = false
         } else {
-          var keyCurrent = this.keys[index]
-          var keyBehind = this.keys[index - 1]
+          keyCurrent = this.keys[index]
+          keyBehind = this.keys[index - 1]
           this.highlightTracker[keyCurrent] = false
           this.highlightTracker[keyBehind] = true
         }
+        // window.scroll(0,1000)
+        // window.location.hash =  '#/NullPage/ConsentDocText#A4'
         this.scrollPage(index)
         /* eslint-enable */
       }
     },
     overlay () {
       this.showOverlay = !this.showOverlay
-      this.parent.postMessage('switch overlay', this.parentURL)
+      window.parent.postMessage('switch overlay', this.parentURL)
     }
   },
   created: function () {
-    this.parent = window.parent
     window.addEventListener('message', this.recieveMessage, false)
   }
 }
@@ -153,7 +156,7 @@ export default {
   z-index: 99999;
   position: fixed !important;
   bottom: 75px !important;
-  right: 100px;
+  right: 100px !important;
 }
 
 </style>

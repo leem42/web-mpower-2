@@ -56,7 +56,7 @@ Vue.use(Router)
 const scrollBehavior = (to, from, savedPosition) => {
   const position = {}
   position.x = 0
-  position.y = 0
+  position.y = 500
   console.log('scrolling')
   return { position }
 }

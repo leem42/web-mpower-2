@@ -475,7 +475,12 @@ p {
     margin-left: 16.66% !important;
   }
 } 
-
+.customCenterAlign {
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column; 
+}
 // For button elements that need specific spacing
 @media(min-width: 767px) and (max-width: 1023px) {
   .ml-6-restricted {
@@ -941,6 +946,11 @@ select {
   width: inherit;
   height: inherit;
 }
+.fillParentRouter {
+  width: inherit;
+  height: inherit;
+  min-height: 300px;
+}
  
  
 
@@ -950,7 +960,7 @@ select {
       // position: fixed;      
       height: 200px !important;
       overflow-y: scroll;
-      // -webkit-overflow-scrolling: touch;
+      -webkit-overflow-scrolling: touch;
     }
     .popOutDimensions {
       margin-top: 5%;

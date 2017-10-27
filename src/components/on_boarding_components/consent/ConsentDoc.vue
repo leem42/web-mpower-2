@@ -1,7 +1,7 @@
 <template>
   <v-app v-bind:class="showOverlay ? 'shadowBackground' : ''">
 
-    <div class="row" style="height: 500px;">
+    <div class="row" style="height: 300px;">
 
       <div v-bind:class="showOverlay ? 'topLevel popOutDimensions fixPosition': 'customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4'">
         <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText"
@@ -12,8 +12,8 @@
       </div>
 
 
-      <div class="col-md-6 mx-auto mr-md-5 mt-2" style="height: 400px;" >
-        <router-view  v-bind:class="showOverlay ? 'inheritBackground' : ''" class="whiteBackground consentView router container-fluid"> </router-view>
+      <div class="col-md-6 responseRouterHeight mx-auto mr-md-5 mt-2" >
+        <router-view  v-bind:class="showOverlay ? 'inheritBackground' : ''" class="whiteBackground fillParentRouter consentView router container-fluid"> </router-view>
       </div>
 
     </div>
@@ -144,14 +144,19 @@ export default {
     },
     callFrame (message) {
       this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText')
+      // console.log('posting message')
       // this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
     },
     recieveMessage: function (event) {
-      if (event.source.location.href !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText') {
-      // if (event.source.location.href !== 'http://localhost:8080/#/NullPage/ConsentDocText') {
+      if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
         return ''
+      // if (event.origin !== 'http://localhost:8080') {
       } else {
         /* eslint-disable */
+        console.log(event)
+        if (event.data !== 'switch overlay') {
+          return
+        }
         this.showOverlay = !this.showOverlay
         /* eslint-enable */
       }
@@ -184,10 +189,6 @@ export default {
     z-index: 1000;
   }
 
-  div#app.consentView {
-    min-height: 0px;
-    height: 500px;
-  }
 
   .shadowBackground {
     background-color: rgba(74, 74, 74, 0.9) !important;
