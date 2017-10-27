@@ -60,6 +60,10 @@ nav.web {
   }
 }
 
+.routerWebMargin {
+  padding-top: 100px;
+}
+
 .whiteBackground {
   background-color: white !important; 
 }
@@ -291,9 +295,19 @@ button.lowOpacity {
     border-radius: 10px;
   }
   // Styling on consent doc //
+
+  .anchorBottom {
+    height: 60px;
+  }
+
 }
 
 @include media-breakpoint-up(sm) {
+
+  .anchorBottom {
+    height: 108px;
+  }
+
   div.hideOnLarge {
      display: none !important;
    }
@@ -325,7 +339,7 @@ button.lowOpacity {
 
   span.chip,
   div {
-    font-size: $font-size-base * 0.80 !important;
+    font-size: $font-size-base * 0.40 !important;
   }
 
   div.btn__content {
@@ -860,8 +874,6 @@ div[role=radio].input-group:hover {
   position: fixed !important;
   bottom: 0px;
   width: 100%;
-  height: 10px;
-  height: 108px;
   background-color: #fafafa;
   z-index: 10000;
   box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.12);

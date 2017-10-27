@@ -41,7 +41,7 @@
       </div>
     </nav>
   
-    <router-view class="whiteBackground router container-fluid"></router-view>
+    <router-view class="whiteBackground router routerWebMargin container-fluid"></router-view>
 
     <nav class="web navbar fixed-bottom">
       <div class="row" style="height: inherit; width: 100%;"  >

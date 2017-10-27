@@ -1,8 +1,5 @@
 <template>
     <v-app class="white">
-        <br>
-        <br>
-        <br>
         <p class="text-center largeTitle"> About the study </p>
         <div class="row">
             <div class="mx-auto col-sm-8">
@@ -29,7 +26,7 @@
 
         <div class="row sectionTwo">
 
-            <div class="col-lg-3 mx-auto col-4 mr-2 mx-lg-print">
+            <div class="col-lg-3 mx-auto col-4 mr-2 mt-md-5 pt-md-5 mx-lg-print">
 
                 <div class="row ml-sm-5">
                     <div class="col yellowTop yellowBottom">
@@ -58,12 +55,12 @@
 
             </div>
 
-            <div class="ml-lg-0 mr-0 col-6 pr-lg-0 col-lg-auto mx-auto">
+            <div class="ml-lg-0 mr-0 col-6 pr-lg-0 col-lg-auto mx-auto  p-md-5">
                 <img class="img-fluid scaledPhone" src="../../images/dark-blue-smartphone.png"> </img>
             </div>
 
-            <div class="col-lg-4 ml-lg-0 mx-auto">
-                <p class="darkPurpleText largeTitle text-center font-weight-bold"> Eligibility & Consent </p>
+            <div class="col-lg-4 ml-lg-0  mt-md-5 pt-md-5 mx-auto">
+                <p class="darkPurpleText lato largeTitle "> Eligibility & Consent </p>
                 <p class="medium default">
                     Once you have received confirmation of your eligibility, we will ask you to do
                     an informed consent process. It takes about 20 minutes. We will also ask you to do

@@ -1,8 +1,6 @@
 <template>
     <v-app class="page-overview">
-        <br>
-        <br>
-        <br>
+        
         <div class="text-center">
             <p class="darkPurpleText largeTitle"> Your Story </p>
         </div>
