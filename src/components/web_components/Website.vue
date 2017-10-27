@@ -89,7 +89,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../css/bootstrap/bootstrap';
 @import '../../css/bootstrap/custom';
 
 .minWidthReset {
