@@ -256,11 +256,13 @@
 import { Focus } from '@/directives/focus.js'
 import _ from 'lodash'
 import CheckboxSmooth from '@/custom_components/checkbox/CheckboxSmooth.vue'
+import {requirements} from '../../../requirements/requirements'
 
 export default {
   name: 'subjectInterest',
   data () {
     return {
+      requirements: requirements,
       radioChoice: '',
       selectedChoice: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
       controllerLevel: 0,
@@ -323,7 +325,8 @@ export default {
         return
       }
       if (this.controllerLevel === 4) {
-        this.$router.push('Eligibility')
+        this.requirements.hasCompletedEligibility = true
+        this.$router.push('OverviewEligibility')
       } else {
         let levelObj = this.controller[this.controllerLevel]
         levelObj.click = true

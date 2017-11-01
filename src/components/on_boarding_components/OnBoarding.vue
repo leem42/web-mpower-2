@@ -5,48 +5,34 @@
       <div class="container-fluid" style="display: block;">
         <div class="row">
   
-          <div class="col-6 pl-1 mx-auto medium customCenterAlign text-sm-left col-sm-2">
-               {{getHeader()}}
-            <!--<span class="lead light tiny centerVertical   white--text" v-bind:class="{medium: $router.currentRoute.fullPath.includes('Question')}">
-           </span>-->
-           
+          <div class="col-1 p-0 customCenterAlign handCursor" v-on:click="$router.push({name: 'OverviewEligibility'})"> 
+            <img src="../../images/back-to-home-arrow.png" class="img-fluid backToHome pl-1 pr-1" alt="arrow leading back to home page"></img>
           </div>
 
-          <div class="text-center d-sm-none col-6">
-            <span id="help" class="d-sm-none white--text lead headerText light tiny"> Need Help? </span>
+        
+          <div class="col-6 pl-1 mx-auto mediumLarge text-center text-md-auto customCenterAlign text-sm-left col-sm-1">
+              {{getHeader()}} 
+          </div>
+
+          <div class="text-center d-sm-none col-3">
+            <span id="help" class="d-sm-none white--text  lead headerText light tiny"> Need Help? </span>
           </div>
 
           <div class="col-sm-10 text-center text-sm-right">
-            <img v-if="!requirements.hasCompletedEligibility" src="../../images/check.png" class="img-fluid check" alt="image of a check marked circle"></img>
-            <img v-if="requirements.hasCompletedEligibility" src="../../images/check-completed.png" class="img-fluid check" alt="image of a check marked circle"></img>
+            <img src="../../images/check.png" class="img-fluid  d-none d-sm-inline-block check" alt="image of a check marked circle"></img>
 
-            <v-icon v-if="!requirements.hasCompletedEligibility" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-            <v-icon v-if="!requirements.hasCompletedEligibility"medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <img class="extraSpacing" v-if="requirements.isOnConsent" src="../../images/step-7-consent-icon.png" ></img>
-            <img  class="extraSpacing" v-if="requirements.hasCompletedConsent" src="../../images/check-completed.png" ></img>
+            <img class="extraSpacing d-none d-sm-inline-block" v-bind:class="{'midOpacity':!requirements.hasCompletedEligibility}" src="../../images/step-7-consent-icon.png" ></img>
 
+            <img  class="extraSpacing d-none d-sm-inline-block" v-bind:class="{'midOpacity':!requirements.hasCompletedConsent}" src="../../images/quiz-onboarding-icon.png" ></img>
 
-            <v-icon v-if="!requirements.hasCompletedConsent" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-            <v-icon v-if="!requirements.hasCompletedConsent"medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <img  class="extraSpacing" v-if="requirements.isOnQuiz" src="../../images/quiz-onboarding-icon.png" ></img>
-            <img  class="extraSpacing" v-if="requirements.hasCompletedQuiz" src="../../images/check-completed.png" ></img>
+            <img  class="extraSpacing d-none d-sm-inline-block" v-bind:class="{'midOpacity':!requirements.hasCompletedQuiz}" src="../../images/sign-header-icon.png" ></img>
 
-            <v-icon v-if="!requirements.hasCompletedQuiz" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-            <v-icon v-if="!requirements.hasCompletedQuiz" medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <img  class="extraSpacing" v-if="requirements.isOnSign" src="../../images/sign-header-icon.png" ></img>
-            <img  class="extraSpacing" v-if="requirements.hasCompletedSign" src="../../images/check-completed.png" ></img>
+            <img  class="extraSpacing d-none d-sm-inline-block" v-bind:class="{'midOpacity':!requirements.hasCompletedSign}" src="../../images/number-icon.png" ></img>
 
-            <v-icon v-if="!requirements.hasCompletedSign" large class="d-none d-md-inline-block mediumGray grey--text lighten-1 border">fa-lock</v-icon>
-            <v-icon v-if="!requirements.hasCompletedSign" medium class="d-md-none d-inline-block mediumGray grey--text lighten-1 border small">fa-lock</v-icon>
-            <img  class="extraSpacing" v-if="requirements.isOnRegistration" src="../../images/number-icon.png" ></img>
-            <img  class="extraSpacing" v-if="requirements.hasCompletedRegistration" src="../../images/check-completed.png" ></img>
-
-             <span class="d-none d-lg-inline-block hideOnSmall" style="font-size: 40px;"> | </span>
+            <span class="d-none d-lg-inline-block hideOnSmall" style="font-size: 40px;"> | </span>
 
             <img class="d-none d-md-inline-block helpOval" src="../../images/need-help-button.png" ></img>
             <img class="d-none d-sm-inline-block d-md-none helpOval" src="../../images/need-help-button.png" ></img>
-            <!-- <div large class="d-none d-md-inline-block  helpOval"> Need Help? </div> -->
-  
 
 
           </div>
@@ -73,6 +59,10 @@
 <style lang="scss">
 @import '../../css/bootstrap/bootstrap';
 @import '../../css/bootstrap/custom';
+
+.midOpacity {
+  opacity: 0.5 !important;
+}
 
 .seperator {
   width: 2px;

@@ -6,7 +6,7 @@
         </div>
 
         <div class="row">
-            <p class="ml-6 pl-2 default"> What is the purpse of this study? </p>
+            <p class="ml-6 pl-2 default"> What is the purpose of this study? </p>
         </div>
         
         <div class="row ml-6 mt-4">

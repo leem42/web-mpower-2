@@ -44,7 +44,7 @@
        
 
         <div class="row customRow mb-4 ml-1 mr-1 ml-1 mr-1">
-            <div v-on:click="$router.push({name: 'WhyInterested'})" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnEligibility && !requirements.hasCompletedEligibility,
+            <div v-on:click="$router.push({name: 'SinglePageEligibility'})" class="mx-auto rect smooth col-md-8" v-bind:class="{current_Requirements: requirements.isOnEligibility && !requirements.hasCompletedEligibility,
             completedrequirements: requirements.hasCompletedEligibility }">
                 <div class="row">
                     <div class="col-1 verticalCenter ml-md-3 mr-5 pl-0 ">

@@ -33,6 +33,10 @@ p {
   font-family: 'Roboto','sans-serif' !important;
 }
 
+span#notAdvice {
+    font-size: $font-size-base * 0.4 !important;
+}
+
 input {
   font-size: $font-size-base * 0.85 !important;
   margin-bottom: 3px !important;
@@ -111,7 +115,20 @@ button.lowOpacity {
   opacity: 0.25 !important;
 }
 
+.handCursor {
+  cursor: pointer;
+}
+
+.backToHome {
+  background-color: inherit !important;
+   max-width: 35px; 
+  max-height: 35px; 
+} 
+
 @include media-breakpoint-down(sm) { 
+  nav.onboarding {
+    height: 72px;
+  }
   .aboveNav {
     bottom: 80px;
   }
@@ -138,6 +155,7 @@ button.lowOpacity {
   div.customCheck>label, div.radio > label {
     font-size: $font-size-base * 0.6 !important;
   }
+  
 
   #nextBtn {
     right: 18px;
@@ -336,6 +354,10 @@ input.showSelectedRadio[type=radio]:checked +  label span {
 }
 
 @include media-breakpoint-up(sm) {
+  nav.onboarding {
+    height: 90px;
+  }
+
 
   .anchorBottom {
     height: 108px;
@@ -372,7 +394,7 @@ input.showSelectedRadio[type=radio]:checked +  label span {
 
   span.chip,
   div {
-    font-size: $font-size-base * 0.40 !important;
+    font-size: $font-size-base * 0.70 !important;
   }
 
   div.btn__content {
@@ -768,7 +790,7 @@ nav.onboarding {
   color: white !important;
   background: linear-gradient(47.41deg, #473B7B 0%, #3584A7 76.33%, #30D2BE 100%);
   box-shadow: 0 2px 3px 0 rgba(141, 141, 141, 0.5);
-  height: 90px; // below is used for aligning the element in the middle vertically
+  // height: 72px; // below is used for aligning the element in the middle vertically
   justify-content: center;
   top: 0px;
   position: fixed !important;
