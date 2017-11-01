@@ -75,6 +75,9 @@
     </div>
   
     <template v-if="!controller[0].edit">
+      <!-- <div class="row">
+        <checkbox-smooth label="I want to help myself" class="mx-auto text-left pt-3 pb-3 pb-sm-3  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8"  v-model="selectedChoice[0]"></checkbox-smooth>         
+      </div> -->
       <div class="row">
         <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="mx-auto text-left pt-3 pb-3  stencilBorderTop stencilBorder col-sm-7 col-md-6 col-lg-8 customCheck "></v-checkbox>
       </div>
@@ -252,6 +255,8 @@
 <script>
 import { Focus } from '@/directives/focus.js'
 import _ from 'lodash'
+import CheckboxSmooth from '@/custom_components/checkbox/CheckboxSmooth.vue'
+
 export default {
   name: 'subjectInterest',
   data () {
@@ -376,6 +381,9 @@ export default {
   },
   directives: {
     Focus
+  },
+  components: {
+    'checkbox-smooth': CheckboxSmooth
   }
 }
 </script>

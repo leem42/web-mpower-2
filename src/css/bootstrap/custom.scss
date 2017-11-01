@@ -302,6 +302,39 @@ button.lowOpacity {
 
 }
 
+
+input.showSelectedCheckbox[type=checkbox] {
+  display:none;
+}
+    
+input.showSelectedCheckbox[type=checkbox] +  label span {
+  display:inline-block;
+  background:url("../../images/dropdown-checkbox-blank.png") no-repeat;
+  height: 41px;
+  width: 41px;
+}
+    
+input.showSelectedCheckbox[type=checkbox]:checked +  label span {
+  display:inline-block;
+  background:url("../../images/dropdown-checkbox-filled.png") no-repeat;
+  height: 41px;
+  width: 41px;
+}
+
+input.showSelectedRadio[type=radio] +  label span {
+  display:inline-block;
+  background:url("../../images/radio-button.png") no-repeat;
+  height: 41px;
+  width: 41px;
+}
+    
+input.showSelectedRadio[type=radio]:checked +  label span {
+  display:inline-block;
+  background:url("../../images/selected-radio-button.png") no-repeat;
+  height: 41px;
+  width: 41px;
+}
+
 @include media-breakpoint-up(sm) {
 
   .anchorBottom {
