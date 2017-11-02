@@ -102,7 +102,7 @@
             <v-btn flat :ripple="false" v-if="selectedChoice[5]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> not interested
             </v-btn>
           </span>
-          <!--<v-btn v-if="controller[0].submit" flat class="francisco clickableLink white--text text-capitalize pl-0" @click.native="handleEdit(0)"> {{controller[0].edit ? "(Add More)": "Resubmit"}} </v-btn>-->
+          <v-btn v-if="!controller[0].edit && controller[0].submit" flat class="francisco clickableLink white--text text-capitalize pl-0" @click.native="handleEdit(0)"> {{controller[0].edit ? "(Add More)": "Resubmit"}} </v-btn>
         </span>
       </div>
     
@@ -159,7 +159,7 @@
               <v-btn flat :ripple="false" v-if="selectedChoice[11]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> none of the above
               </v-btn>
             </span>
-            <!--<v-btn v-if="controller[1].click" flat class="clickableLink pl-0 text-capitalize" v-on:click="handleEdit(1)"> {{controller[1].edit ? "(Add Choices)": "Resubmit"}} </v-btn>-->
+            <v-btn v-if="!controller[1].edit && controller[1].submit" flat class="clickableLink pl-0 text-capitalize" v-on:click="handleEdit(1)"> {{controller[1].edit ? "(Add Choices)": "Resubmit"}} </v-btn>
           </span>
         </div>
 
@@ -200,7 +200,7 @@
               </v-btn>
             </span>
             basis
-            <!--<v-btn v-if="controller[2].click" flat class=" white--text text-capitalize pl-0 clickableLink" v-on:click="handleEdit(2)"> {{controller[2].edit ? "(Edit Choice)": "Resubmit"}} </v-btn>-->
+            <v-btn v-if="!controller[2].edit && controller[2].submit" flat class=" white--text text-capitalize pl-0 clickableLink" v-on:click="handleEdit(2)"> {{controller[2].edit ? "(Edit Choice)": "Resubmit"}} </v-btn>
           </p>
         </div>
     
@@ -254,7 +254,7 @@
               <v-btn flat :ripple="false" v-if="selectedChoice[15]" v-on:click="handleEdit(4)" class=" text-capitalize clickableLink pl-0 francisco"> None of the above
               </v-btn>
             </span>
-            <!--<v-btn v-if="controller[3].click" flat class="white--text text-capitalize clickableLink pl-0" v-on:click="handleEdit(3)"> {{controller[3].edit ? "(Add Choices)": "Resubmit"}} </v-btn>-->
+            <v-btn v-if="!controller[3].edit && controller[3].submit" flat class="white--text text-capitalize clickableLink pl-0" v-on:click="handleEdit(3)"> {{controller[3].edit ? "(Add Choices)": "Resubmit"}} </v-btn>
           </p>
         </div>
     
@@ -386,6 +386,7 @@
           let levelObj = this.controller[this.controllerLevel]
           levelObj.click = true
           levelObj.edit = true
+          levelObj.submit = true
           this.indexInVowSection += 1
           this.controllerLevel += 1
           this.progress += this.progressStep
@@ -514,6 +515,9 @@
       },
       handleRadio (index) {
         this.radioChoice = this.radioTexts[index]
+      },
+      handleEdit: function (index) {
+        this.controller[index].edit = !this.controller[index].edit
       }
     },
     directives: {
