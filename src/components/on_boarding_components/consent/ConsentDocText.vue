@@ -1,31 +1,13 @@
 <template>
     <v-app class="white" >
 
-      APPROVED AS MODIFIED May19, 2016 WIRB®
 
-      STUDY INFORMATION AND CONSENT TO RESEARCH
-              
-      TITLE:
-      mPower
-      (Mobile Parkinson Observatory for Worldwide, Evidenced-based Research)
-      PROTOCOL NO.:
-
-      201410711
-      WIRB® Protocol #20141369
-      SPONSOR:
-      Sage Bionetworks
-      INVESTIGATOR:
-      Lara Mangravite, PhD
-      1100 Fairview Avenue North Seattle, Washington 98109-4433 United States
-      STUDY-RELATED PHONE NUMBER(S):
-      +1 206-667-2129 or toll-free at 844-822-4708
-
-      <div id="A1" v-bind:class="highlightTracker.one ? 'highlighter': ''">
+      <!-- <div id="A1" v-bind:class="highlightTracker.one ? 'highlighter': ''"> -->
                 
       SUMMARY					
       You are invited to participate in a research study to understand variations in symptoms of Parkinson’s disease (PD). If you are over 18 years old, you can join the study. We are looking for volunteers with PD and volunteers who do not have PD. Your participation in this study is entirely voluntary.
       The purpose of this form is to help you decide if you want to join this research study. Please read the information carefully. Participating in a research study is not the same as receiving medical care. The decision to join or not join the research study will not affect your medical benefits.
-      </div>
+      <!-- </div> -->
                 
       To join this research study you must give your informed consent. Giving your informed consent means that you understand what the study is about and want to participate. If you decide to participate, you can withdraw your consent and leave the study at any time.
                 
@@ -33,9 +15,11 @@
                 
       PURPOSE OF THE STUDY
                 
+      <div id="A1" v-bind:class="highlightTracker.one ? 'highlighter': ''">
       People with PD have different symptoms. These symptoms can change day-to-day and over time. This makes it hard to maintain quality of life and manage treatment. We would like to understand the reasons for these differences in symptoms of PD. The results of this study may help researchers develop new ways to manage PD symptoms.
                 
       This study uses an app to measure the symptoms of PD. If you participate in this study, we’ll ask you to complete surveys and perform brief activities while holding your phone. These activities use your phone’s built-in sensors to measure health symptoms. You can choose to connect the app to your fitness tracker (like the Apple Watch, FitBit, or Jawbone) if you wear one.
+      </div>
                 
       How long will I be in the research study?					
       This phase of the study will last about one year. You can keep the app on your phone for as long as you choose. You can use it to track your symptoms and review your data.
@@ -51,7 +35,9 @@
       After you register, we will ask you to answer survey questions on the app and to do simple activities while holding your phone. We might also send you notifications through the app. Your answers to the survey questions and the measurements from your activities are your study data.
                 
       Here is more detail about what you will be asked to do:
-                
+
+      <div id="A2" v-bind:class="highlightTracker.two ? 'highlighter': ''">
+                 
       Register to the study: Follow the prompts on the app to register. First you will see an overview of the study and read about the risks and benefits of participating. You will confirm your decision to participate and sign this form directly on your phone. Then you will create your account. We will ask you to enter your name, email address, and other general information about yourself. You can cancel the registration process at any time.
       Health Surveys: We will ask you questions about your health and your medical history. We will ask if you have PD and if you take certain medications. Because the purpose of this study is to look for patterns over time, occasionally we will ask you to review and update your answers. We will also ask questions about your mood or how well you slept.
       Activities: We will ask you to do simple activities while holding your phone. For example:
@@ -59,34 +45,54 @@
       Walk and/or stand still with your phone in your pocket. This is to measure your gait and balance. Tap your fingers on your phone’s screen. This is to measure your speed and coordination.
       Play a short game. In this game, flowers light up in pattern. We ask you to tap the flowers in the same pattern. This is to test your short-term memory.
       Hold your phone. This is to measure tremor.
+      </div>
+
       You can choose to connect the app to your fitness tracker (like the Apple Watch, FitBit, or Jawbone) if you wear one. This is to measure how active you are.
                 
+      <div id="A6" v-bind:class="highlightTracker.six ? 'highlighter': ''">
       This study should take you about 20 minutes each day. You can participate any time during the day. If you would like a daily reminder, you can turn on notifications in the app to remind you to complete the activities and surveys.
-                
+        </div>
+
+      <div id="A7" v-bind:class="highlightTracker.seven ? 'highlighter': ''">
       You can participate in all or only parts of the study. Completing the activities daily is very valuable for our study, but if you can’t, once a week still helps!
-                
+      </div>
+
+
+      <div id="A12" v-bind:class="highlightTracker.seven ? 'highlighter': ''">
       You can pause or quit the study at any time. Pausing the study means your data is not sent to the study for a period of time. If you pause, you can rejoin the study at any time without re-enrolling. Quitting the study means that you leave the study. No more data is collected from the app. You would need to re-enroll to start participating again.
-                
+      </div>
+      <div id="A11" v-bind:class="highlightTracker.eleven ? 'highlighter': ''">
       Occasionally we may re-contact you to ask for your feedback about using the app and about the kind of questions included in the study.
-                
+      </div>
+
+
+      <div id="A9" v-bind:class="highlightTracker.nine ? 'highlighter': ''">
       RISKS, DISCOMFORTS, AND INCONVENIENCES
                 
       There are possible risks, discomforts, and inconveniences with any research study. They deserve careful thought.
-                
+      </div>
+
+      <div id="A10" v-bind:class="highlightTracker.ten ? 'highlighter': ''">
       This is not a medical treatment study. We do not expect medical side effects from participating in this study.
       Be safe – do not participate while driving. Wait until you are in a safe place to perform study-related activities!
+      </div>
+
+      <div id="A3" v-bind:class="highlightTracker.ten ? 'highlighter': ''">
       Participating in this study may generate a wide range of emotions. It could affect your mood. Some questions in the surveys may be mildly stressful for some people.
       Other people may glimpse the study notifications and/or reminders on your phone and realize you are enrolled in this study. This can make some people feel self-conscious.
       Data collected in this study will count against your phone’s data plan. You can configure the app to only use WiFi to limit the impact data collection has on your data plan.
       We take great care to protect your privacy. However, if there is a data breach it may be possible to identify you. This risk is low but it is not zero.
       Participation may involve risks that we don’t know about yet. We will tell you if we learn anything that might change your decision to be in this study.
-                
+      </div>
+
+      <div id="A8" v-bind:class="highlightTracker.eight ? 'highlighter': ''">
+      
       POTENTIAL BENEFITS				
       The main goal of this study is increasing understanding of the symptoms of PD. We will be looking for health patterns across large groups, not individual health trends.
-                
       You may or may not directly benefit from volunteering for this research study.
                 
       You will be able to view and download your study data. You can share your data with your doctor or anyone you choose.
+      </div>                
                 
       The mPower app is not a personal diagnosis or treatment tool.
                 
@@ -141,7 +147,7 @@
       If you were interested in joining another study, we would ask you to complete a new consent. The new consent will be like this one. It will explain the risks and benefits of the new study.
                 
       PRIVACY, CONFIDENTIALITY, AND DATA PROTECTION
-                
+      <div id="A4" v-bind:class="highlightTracker.four ? 'highlighter': ''">      
       Your privacy is important to us. We will make every effort to protect your privacy. Except as required by law , you will not be identified by name or by any other direct personal identifier. However, if there is a data breach it may be possible to identify you. This risk is low but it is not zero.
                 
       Data de-identification
@@ -153,14 +159,16 @@
       Instead of using your name, we will use a code to label your study data. The code is random. It is not based on any of your identifiable information. Information about the code will be stored in a separate database on a secure server. Only key people from our study team will be able to link your identity to your study data.
                 
       We will combine your coded study data with the coded study data of other volunteers. We will store this combined coded study data in the United States on the Synapse data analysis platform. Synapse is run by Sage Bionetworks (non-profit).
-                
+      </div>
+
       We will NOT access other apps on your phone. We will NOT access your contacts, photos, texts, email, or browsing history. We will never sell, rent, or lease your contact information.
-                
+              
       Where will my data be stored?
                 
       Your study data will be encrypted on your phone. Your coded study data will be sent from your phone to the study team automatically. We store your coded study data in a way that keeps your information as safe as possible. We use a hosted computing environment, also known as a “cloud server,” to store it. This cloud server is based in the United States.
                 
       We follow the most current data protection standards. We take the security of your coded study data very seriously. For more information about data storage, see the Synapse Governance Overview.
+      <div id="A5" v-bind:class="highlightTracker.five ? 'highlighter': ''">      
               
       How is my coded study data used in research?
                     
@@ -176,7 +184,7 @@
       Third, research using the shared coded study data may lead to patentable discoveries or commercial product(s). You will not profit from these discoveries or products. For example, you will not be paid for being in the study and/or sharing your data.
                 
       Think carefully about sharing your coded study data for other research. Make the choice that feels right for you.
-                
+        </div>
       How is location data used?
                 
       Some study activities use your phone’s GPS. We use the GPS to calculate how far you travel. For this reason, when you register, you will be asked for permission to access your GPS. We do NOT use the GPS to find out your location.

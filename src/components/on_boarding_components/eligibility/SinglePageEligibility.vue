@@ -12,15 +12,15 @@
         
         <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
             <v-btn
-            v-bind:class="hasFilledPartOneRequirements? '':'lowOpacity'"
-             class="navyBlue white--text  medium" v-on:click="handleController()"> Next </v-btn>
+            v-bind:class="currentVowSectionHasValues() ? '':'lowOpacity'"
+             class="navyBlue white--text  medium" v-on:click="handleController()"> {{indexInVowSection === 5? 'Submit': 'Next'}} </v-btn>
         </div>
 
         
         <div class="marginTop50 col-2 hideOnSmall">
             <v-btn
-            v-bind:class="hasFilledPartOneRequirements? '':'lowOpacity'"
-             class="navyBlue largeButton medium ml-0  white--text" v-on:click="handleController()"> Next
+            v-bind:class="currentVowSectionHasValues() ? '':'lowOpacity'"
+             class="navyBlue largeButton medium ml-0  white--text" v-on:click="handleController()"> {{indexInVowSection === 5? 'Submit': 'Next'}}
             </v-btn>
         </div>
 
@@ -397,7 +397,9 @@
         }
       },
       currentVowSectionHasValues () {
-        if (this.controllerLevel === 0) {
+        if (this.hasFilledPartOneRequirements && !this.hasCompletedPartOne) {
+          return true
+        } else if (this.controllerLevel === 0) {
           return this.hasAnsweredAny(0, 6)
         } else if (this.controllerLevel === 1) {
           return this.hasAnsweredAny(6, 12)
