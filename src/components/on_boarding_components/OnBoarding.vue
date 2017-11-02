@@ -10,8 +10,9 @@
           </div>
 
         
-          <div class="col-6 pl-1 mx-auto mediumLarge text-center text-md-auto customCenterAlign text-sm-left col-sm-1">
-              {{getHeader()}} 
+          <div class="col-6 pl-1 mx-auto  text-center text-md-auto customCenterAlign text-sm-left col-sm-1">
+              <h2 v-if="getHeader() !== 'Test your knowledge'"> {{getHeader()}}  </h2>
+              <h4 v-else> {{getHeader()}} </h4>
           </div>
 
           <div class="text-center d-sm-none col-3">
