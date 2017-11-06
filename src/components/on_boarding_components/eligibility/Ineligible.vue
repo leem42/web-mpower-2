@@ -14,11 +14,15 @@
             <div class="col-sm-8 mx-auto">
                 <p class="white--text text-center"> Sorry, you are not eligible</p>
                 <p class="white--text text-center tiny">
-                    You must 
+                        {{ sectionOne ? 'You must':'' }}
                         {{isUnderage ? "be at least 18" + getProperCharacter(0): "" }} 
                         {{isNotComfortable ? "have an iPhone 5 or higher"
                         + getProperCharacter(1): "" }} 
                         {{isNotFromUS ? "live in the United States.": "" }} 
+                        {{ sectionTwo ? 'Your answers indicated that you are not intersted in joining the mPower study.' : ''}}
+                        {{ sectionThree ? 'Your answers indicated that you are not intersted in performing any of the activities\
+                        required for the mPower study. Please note that praticipants can perform the activities as time permits and any\
+                        number of activities.' : ''}}
                 </p>
                     
     
@@ -65,14 +69,29 @@
         isUnderage: null,
         isNotFromUS: null,
         isNotComfortable: null,
-        personStates: []
+        personStates: [],
+        notInterestedFromStart: null,
+        notInterestedAny: null
       }
     },
     mounted: function () {
       this.isUnderage = this.$router.data.isUnderage
       this.isNotFromUS = this.$router.data.isNotFromUS
       this.isNotComfortable = this.$router.data.isNotComfortable
+      this.notInterestedFromStart = this.$router.data.notInterestedFromStart
+      this.notInterestedAny = this.$router.data.notInterestedAny
       this.personStates = [this.isUnderage, this.isNotComfortable, this.isNotFromUS]
+    },
+    computed: {
+      sectionOne: function () {
+        return this.isUnderage || this.isNotComfortable || this.isNotFromUS
+      },
+      sectionTwo: function () {
+        return this.notInterestedFromStart
+      },
+      sectionThree: function () {
+        return this.notInterestedAny
+      }
     },
     methods: {
       getProperCharacter: function (index) {

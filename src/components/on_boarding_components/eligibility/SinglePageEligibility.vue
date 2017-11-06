@@ -3,24 +3,27 @@
 
     <div class="row text-center anchorBottom customRowHeight">
 
-        <div class="col-6 col-md-8 mt-md-3 mx-auto">
+        <div class="col-6 col-md-10 mt-md-3 mx-auto">
             <div clas="row text-center">
-                <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Step {{' ' + (progressIndex + 1) + ' of 7' }} </p>
+                <p class="col-11  mx-auto text-left tiny mt-md-2  mb-0 lightLead"> 
+                   {{ getProgress()}}
+                </p>
                 <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
             </div>
         </div>
         
         <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
             <v-btn
-            v-bind:class="currentVowSectionHasValues() ? '':'lowOpacity'"
-             class="navyBlue white--text  medium" v-on:click="handleController()"> {{indexInVowSection === 5? 'Submit': 'Next'}} </v-btn>
+            v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small',''] : 'medium' ]"
+             class="navyBlue white--text" v-on:click="handleController()"> {{indexInVowSection === 5? 'Review Responses': 'Next'}} </v-btn>
         </div>
 
         
         <div class="marginTop50 col-2 hideOnSmall">
             <v-btn
-            v-bind:class="currentVowSectionHasValues() ? '':'lowOpacity'"
-             class="navyBlue largeButton medium ml-0  white--text" v-on:click="handleController()"> {{indexInVowSection === 5? 'Submit': 'Next'}}
+
+            v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small','font-weight-bold'] : 'medium' ]"
+             class="navyBlue largeButton small ml-0  white--text" v-on:click="handleController()"> {{indexInVowSection === 5? 'Review Responses': 'Next'}}
             </v-btn>
         </div>
 
@@ -54,9 +57,9 @@
     <div id="option" class="row mt-2" v-if="isResident !== null">
       <div class=" col-md-10 col-lg-8 mx-auto text-center text-md-left">
         <div class="row">
-          <p class="lead col-12 col-md-auto">
+          <p class="lead col-12 col-md-auto text-left">
             and I feel </p>
-          <v-select single-line id="comfortable" class="ml-md-0 col-12 col-md-8 mx-auto" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
+          <v-select single-line id="comfortable" class="ml-md-0 col-12 col-md-6 mx-auto" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
           </v-select>
         </div>
       </div>
@@ -227,7 +230,7 @@
           </div>
           <div class="row mb-3 mt-2">
             <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left">
-              <v-radio v-on:keyup.enter="handleRadio(4)" class=" francisco stencilBorder pt-2 pb-2" value="None of the above" label="None of the above"></v-radio>
+              <v-radio v-on:keyup.enter="handleRadio(4)" class=" francisco stencilBorder pt-2 pb-2" value="Never" label="Never"></v-radio>
             </v-flex>
           </div>
         </v-radio-group>
@@ -251,7 +254,7 @@
               <v-btn flat :ripple="false" v-if="selectedChoice[14]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the app
               </v-btn>
               {{ getPlacementText(14,16)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[15]" v-on:click="handleEdit(4)" class=" text-capitalize clickableLink pl-0 francisco"> None of the above
+              <v-btn flat :ripple="false" v-if="selectedChoice[15]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> None of the above
               </v-btn>
             </span>
             <v-btn v-if="!controller[3].edit && controller[3].submit" flat class="white--text text-capitalize clickableLink pl-0" v-on:click="handleEdit(3)"> {{controller[3].edit ? "(Add Choices)": "Resubmit"}} </v-btn>
@@ -323,7 +326,7 @@
         progressIndex: 0,
         hasAnswered: [false, false, false],
         radioChoice: '',
-        selectedChoice: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
+        selectedChoice: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
         controllerLevel: 0,
         controller: {
           0: {click: false, submit: false, edit: false, page: '#interest'}, // TODO: Remove submit field if its extraneous
@@ -331,7 +334,7 @@
           2: {click: false, submit: false, edit: false, page: '#basis'},
           3: {click: false, submit: false, edit: false, page: '#request'}
         },
-        radioTexts: ['Daily', 'Weekly', 'Biweekly', 'Monthly', 'None of the above'],
+        radioTexts: ['Daily', 'Weekly', 'Biweekly', 'Monthly', 'Never'],
         indexInVowSection: 1,
         alert: true
       }
@@ -356,6 +359,13 @@
       },
       hasFilledPartThreeRequirements: function () {
         return false
+      },
+      notInterestedFromStart: function () {
+        return this.selectedChoice[5]
+      },
+      notInterestedAny: function () {
+        // TODO: Get details on the desired functionality for this function
+        return this.selectedChoice[11] && this.radioChoice === 'Never'
       }
     },
     methods: {
@@ -377,11 +387,15 @@
         if (!this.currentVowSectionHasValues()) {
           return
         }
-        if (this.controllerLevel === 4) {
+        if (this.controllerLevel === 4 && this.notInterestedAny) {
+          this.updateRouterState()
+        } else if (this.controllerLevel === 4) {
           this.requirements.isOnElgibility = false
           this.requirements.hasCompletedEligibility = true
           this.requirements.isOnConsent = true
           this.$router.push('OverviewEligibility')
+        } else if (this.controllerLevel === 0 && this.notInterestedFromStart) {
+          this.updateRouterState()
         } else {
           let levelObj = this.controller[this.controllerLevel]
           levelObj.click = true
@@ -396,6 +410,16 @@
             this.scrollPage(levelObj.page)
           }
         }
+      },
+      updateRouterState () {
+        this.$router.data = {
+          notInterestedFromStart: this.notInterestedFromStart,
+          notInterestedAny: this.notInterestedAny,
+          isUnderage: this.age < 18,
+          isNotFromUS: !this.isResident,
+          isNotComfortable: (this.selectedOptionForPhone !== 'comfortable using my phone')
+        }
+        this.$router.push('Ineligible')
       },
       currentVowSectionHasValues () {
         if (this.hasFilledPartOneRequirements && !this.hasCompletedPartOne) {
@@ -415,20 +439,11 @@
       handleEligibility () {
         this.isNotEligible = (this.age < 18) || (!this.isResident) || (this.selectedOptionForPhone !== 'comfortable using my phone')
         if (this.isNotEligible) {
-          this.$router.data = {
-            isUnderage: this.age < 18,
-            isNotFromUS: this.isResident,
-            isNotComfortable: (this.selectedOptionForPhone !== 'comfortable using my phone')
-          }
-          this.$router.push('Ineligible') // TODO: Flip to the top of the next page
+          this.updateRouterState()
         } else {
           this.scrollPage('#understandInterest')
           this.partOneIsEligible = true
         }
-        // TODO
-        // this.partOne = true
-        // this.requirements.isOnConsent = true
-        // this.$router.push('SubjectInterest') // TODO: Flip to the top of the next page
       },
       getCurrentStage () {
         // we look to see thtat
@@ -450,6 +465,13 @@
           this.hasAnswered[index] = true
           this.progressIndex += 1
           this.progress += this.progressStep
+        }
+      },
+      getProgress () {
+        if (this.progressIndex + 1 === 7) {
+          return 'ELIGBILITY DONE'
+        } else {
+          return 'STEP ' + (this.progressIndex + 1) + ' OF 7'
         }
       },
       setIsUnderage: _.debounce(
