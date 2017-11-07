@@ -3,19 +3,19 @@
 
     <div class="row text-center anchorBottom customRowHeight">
 
-        <div class="col-6 col-md-10 mt-md-3 mx-auto">
+        <div class="col-8 customCenterAlign col-md-10 mx-auto">
             <div clas="row text-center">
-                <p class="col-11  mx-auto text-left tiny mt-md-2  mb-0 lightLead"> 
+                <p class="col-11  mx-auto text-left tiny  mb-0 lightLead"> 
                    {{ getProgress()}}
                 </p>
                 <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
             </div>
         </div>
         
-        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+        <div class="col-4 p-0 marginTop50 hideOnLarge text-center">
             <v-btn
             v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small',''] : 'medium' ]"
-             class="navyBlue white--text" v-on:click="handleController()"> {{indexInVowSection === 5? 'Review Responses': 'Next'}} </v-btn>
+             class="navyBlue white--text" v-on:click="handleController()"> {{indexInVowSection === 5? 'Review': 'Next'}} </v-btn>
         </div>
 
         
@@ -57,7 +57,7 @@
     <div id="option" class="row mt-2" v-if="isResident !== null">
       <div class=" col-md-10 col-lg-8 mx-auto text-center text-md-left">
         <div class="row">
-          <p class="lead col-12 col-md-auto text-left">
+          <p class="lead col-12 col-md-auto text-center text-md-left">
             and I feel </p>
           <v-select single-line id="comfortable" class="ml-md-0 col-12 col-md-6 mx-auto" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
           </v-select>
@@ -144,7 +144,7 @@
           <span class="mx-auto text-left col-sm-7 col-md-6 col-lg-8 francisco mediumTitle mb-4 text-left lead"> I would be willing to try
             <span v-if="controller[1].edit" class="p-0">
               
-              <v-btn flat :ripple="false" v-if="selectedChoice[6]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> finger tapping activity
+              <v-btn flat :ripple="false" v-if="selectedChoice[6]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> finger tapping
               </v-btn>
               {{ getPlacementText(6,12)}}
               <v-btn flat :ripple="false" v-if="selectedChoice[7]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> hand tremor activity
@@ -168,7 +168,7 @@
 
         <template v-if="!controller[1].edit">
             <div class="row">
-              <v-checkbox label="finger tapping activity" v-model="selectedChoice[6]" class="stencilBorderTop stencilBorder pt-3 pb-3  col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></v-checkbox>
+              <v-checkbox label="finger tapping" v-model="selectedChoice[6]" class="stencilBorderTop stencilBorder pt-3 pb-3  col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></v-checkbox>
             </div>
             <div class="row">
               <v-checkbox label="hand tremor activity" v-model="selectedChoice[7]" class="  stencilBorder pt-3 pb-3 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></v-checkbox>
@@ -263,7 +263,7 @@
     
         <template v-if="!controller[3].edit">
           <div class="row">
-            <v-checkbox label="Updates on the study" v-model="selectedChoice[12]" class="stencilBorderTop stencilBorder pt-3 pb-3 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></v-checkbox>
+            <v-checkbox label="Updates on the study" v-model="selectedChoice[12]" class="stencilBorderTop stencilBorder pt-3 pb-5 pb-sm-3 col-sm-7 col-md-6 col-lg-8 mx-auto text-left wrapLabel  customCheck darkPurple--text"></v-checkbox>
           </div>
           <div class="row">
             <v-checkbox id="updates" label="Updates on my progress" v-model="selectedChoice[13]" class="stencilBorder pt-3 pb-5 pb-sm-3 col-sm-7 col-md-6 col-lg-8 mx-auto text-left mb-sm-0 customCheck darkPurple--text wrapLabel"></v-checkbox>

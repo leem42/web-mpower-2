@@ -5,16 +5,19 @@
 
       <div class='customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4'>
         <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText"
-        v-bind:class="showOverlay ? '': 'fillParent  mask'">
+        class='fillParent  mask'>
         </iframe>
          <!-- <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
         </iframe> -->
       </div>
 
-       <v-dialog v-if="showOverlay"  class="col-10" width="90%" v-model="showOverlay" scrollable>
+       <v-dialog v-if="showOverlay" max-width="90%" v-model="showOverlay" scrollable>
         <v-card height="400px ">
-            <iframe id="overlayFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class='fillParent'>
-            </iframe> 
+            <iframe id="overlayFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText"
+            class='fillParent'>
+            </iframe>
+            <!-- <iframe id="overlayFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class='fillParent'>
+            </iframe>  -->
         </v-card>
        </v-dialog>
 
@@ -40,9 +43,9 @@
           </v-btn>
         </div>
 
-        <div class="col-6 col-md-8 mt-md-3">
+        <div class="customCenterAlign col-6 col-md-8">
           <div clas="row text-center">
-            <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Step {{' ' + indexInStack }} </p>
+            <p class="col-11  mx-auto text-center tiny  mb-0 lightLead"> Step {{' ' + indexInStack }} </p>
             <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
           </div>
         </div>

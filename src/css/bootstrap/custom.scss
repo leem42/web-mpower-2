@@ -232,6 +232,10 @@ button.lowOpacity {
     width: 30px !important;
   }
 
+  div.hideOnSmall {
+    display: none !important;
+  }
+
   .smallText {
     font-size: $font-size-base * 0.4;
   }
@@ -243,6 +247,7 @@ button.lowOpacity {
 
   button.clickableLink > div.btn__content {
       font-size: $font-size-base * 0.60 !important;
+      padding: 0px;
   }
 
   .medium-small {
@@ -305,7 +310,7 @@ button.lowOpacity {
     padding: 1px;
     min-height: 50px;
     min-width: 55px;
-    width: 50px  !important;
+    width: 70px  !important;
     border-radius: 10px;
   }
   // Styling on consent doc //
