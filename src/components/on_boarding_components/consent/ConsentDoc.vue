@@ -1,26 +1,33 @@
 <template>
-  <v-app v-bind:class="showOverlay ? 'shadowBackground' : ''">
+  <v-app>
 
     <div class="row" style="height: 300px;">
 
-      <div v-bind:class="showOverlay ? 'topLevel popOutDimensions fixPosition': 'customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4'">
+      <div class='customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4'>
         <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText"
         v-bind:class="showOverlay ? '': 'fillParent  mask'">
         </iframe>
-         <!-- <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" v-bind:class="showOverlay ? '': 'fillParent  mask'">
+         <!-- <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
         </iframe> -->
       </div>
 
+       <v-dialog v-if="showOverlay"  class="col-10" width="90%" v-model="showOverlay" scrollable>
+        <v-card height="400px ">
+            <iframe id="overlayFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class='fillParent'>
+            </iframe> 
+        </v-card>
+       </v-dialog>
+
 
       <div class="col-md-6 responseRouterHeight mx-auto mr-md-5 mt-2" >
-        <router-view  v-bind:class="showOverlay ? 'inheritBackground' : ''" class="whiteBackground fillParentRouter consentView router container-fluid"> </router-view>
+        <router-view class="whiteBackground fillParentRouter consentView router container-fluid"> </router-view>
       </div>
 
     </div>
 
 
 
-    <div class="row anchorBottom customRowHeight" v-bind:class="showOverlay ? 'midOpacity' : ''">
+    <div class="row anchorBottom customRowHeight">
 
       <template v-if="!isReviewingQuestion">
         <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
@@ -110,7 +117,6 @@ export default {
     }
   },
   mounted: function () {
-    this.highlightTracker.sectionOne = true
     this.iframe = document.getElementById('iFrame').contentWindow
     // if they have wrong questions we don't show nav and let user pop out of screen
     this.isReviewingQuestion = Object.values(this.questionResults).includes('false')
@@ -152,7 +158,6 @@ export default {
         return ''
       } else {
         /* eslint-disable */
-        console.log(event)
         if (event.data !== 'switch overlay') {
           return
         }

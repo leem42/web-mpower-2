@@ -58,7 +58,7 @@
       </div>
 
 
-      <div id="A12" v-bind:class="highlightTracker.seven ? 'highlighter': ''">
+      <div id="A12" v-bind:class="highlightTracker.twelve ? 'highlighter': ''">
       You can pause or quit the study at any time. Pausing the study means your data is not sent to the study for a period of time. If you pause, you can rejoin the study at any time without re-enrolling. Quitting the study means that you leave the study. No more data is collected from the app. You would need to re-enroll to start participating again.
       </div>
       <div id="A11" v-bind:class="highlightTracker.eleven ? 'highlighter': ''">
@@ -77,7 +77,7 @@
       Be safe – do not participate while driving. Wait until you are in a safe place to perform study-related activities!
       </div>
 
-      <div id="A3" v-bind:class="highlightTracker.ten ? 'highlighter': ''">
+      <div id="A3" v-bind:class="highlightTracker.three ? 'highlighter': ''">
       Participating in this study may generate a wide range of emotions. It could affect your mood. Some questions in the surveys may be mildly stressful for some people.
       Other people may glimpse the study notifications and/or reminders on your phone and realize you are enrolled in this study. This can make some people feel self-conscious.
       Data collected in this study will count against your phone’s data plan. You can configure the app to only use WiFi to limit the impact data collection has on your data plan.
@@ -281,7 +281,7 @@
       Sponsors and Partners Only__
       Sharing Option
 
-        <div class="attachButton hideOnSmall">
+        <div v-if="!isModalFrame" class="attachButton hideOnSmall">
           <v-btn flat v-on:click="overlay()" color="white" class=" largeButton medium inheritPosition"> 
            <v-icon  class="defaultBlue" x-large> {{showOverlay? 'fa-close' : 'fa-expand'}} </v-icon>
         </v-btn>
@@ -295,13 +295,14 @@
 import _ from 'lodash'
 import {highlightTracker} from '../../../requirements/highlightTracker'
 import {requirements} from '../../../requirements/requirements'
-
+import Vue from 'vue'
 export default {
   data () {
     return {
       highlightTracker: highlightTracker,
       requirements: requirements,
-      showOverlay: false
+      showOverlay: false,
+      isModalFrame: false
     }
   },
   computed: {
@@ -317,9 +318,9 @@ export default {
   },
   methods: {
     scrollPage: _.debounce(
-      function (arg1) {
+      function (arg1, speed) {
         arg1 = '#A' + arg1
-        this.$scrollTo(arg1, 1000, { easing: 'linear', offset: 0 })
+        this.$scrollTo(arg1, speed, { easing: 'linear', offset: 0 })
       }
       , 200),
     recieveMessage: function (event) {
@@ -338,17 +339,17 @@ export default {
         let keyBehind = this.keys[index - 2]
 
         if (forward) {
-          keyCurrent = this.keys[index - 1]
-          keyBehind = this.keys[index - 2]
-          this.highlightTracker[keyCurrent] = true
-          this.highlightTracker[keyBehind] = false
+          Vue.set(this.highlightTracker,keyCurrent,true)
+          Vue.set(this.highlightTracker,keyBehind,true)
+          // Vue.set(this.highlightTracker,keyCurrent, true)
+          // Vue.set(this.highlightTracker,keyBehind, false)
         } else {
           keyCurrent = this.keys[index]
           keyBehind = this.keys[index - 1]
-          this.highlightTracker[keyCurrent] = false
-          this.highlightTracker[keyBehind] = true
+          Vue.set(this.highlightTracker,keyCurrent, true)
+          Vue.set(this.highlightTracker,keyBehind, false)
         }
-        this.scrollPage(index)
+        this.scrollPage(index,1000)
         /* eslint-enable */
       }
     },
@@ -358,7 +359,16 @@ export default {
     }
   },
   created: function () {
-    window.addEventListener('message', this.recieveMessage, false)
+    this.isModalFrame = window.frameElement.id === 'overlayFrame'
+    if (!this.isModalFrame) {
+      window.addEventListener('message', this.recieveMessage, false)
+    }
+  },
+  mounted: function () {
+    if (this.isModalFrame) {
+      console.log(this.highlightTracker)
+      this.scrollPage(3, 0)
+    }
   }
 }
 </script>
