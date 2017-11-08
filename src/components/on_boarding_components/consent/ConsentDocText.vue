@@ -277,7 +277,7 @@
       Sponsors and Partners Only__
       Sharing Option
 
-      <div v-if="!isModalFrame" class="attachButton d-none d-md-inline-block">
+      <div v-if="!isModalFrame" class="attachButton">
         <v-btn flat v-on:click="overlay()" color="white" class=" largeButton medium inheritPosition"> 
           <v-icon  class="defaultBlue" x-large> fa-expand </v-icon>
       </v-btn>
