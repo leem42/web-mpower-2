@@ -1,13 +1,9 @@
 <template>
     <v-app class="white" >
-
-
-      <!-- <div id="A1" v-bind:class="highlightTracker.one ? 'highlighter': ''"> -->
                 
       SUMMARY					
       You are invited to participate in a research study to understand variations in symptoms of Parkinson’s disease (PD). If you are over 18 years old, you can join the study. We are looking for volunteers with PD and volunteers who do not have PD. Your participation in this study is entirely voluntary.
       The purpose of this form is to help you decide if you want to join this research study. Please read the information carefully. Participating in a research study is not the same as receiving medical care. The decision to join or not join the research study will not affect your medical benefits.
-      <!-- </div> -->
                 
       To join this research study you must give your informed consent. Giving your informed consent means that you understand what the study is about and want to participate. If you decide to participate, you can withdraw your consent and leave the study at any time.
                 
@@ -281,11 +277,11 @@
       Sponsors and Partners Only__
       Sharing Option
 
-        <div v-if="!isModalFrame" class="attachButton d-none d-md-inline-block">
-          <v-btn flat v-on:click="overlay()" color="white" class=" largeButton medium inheritPosition"> 
-           <v-icon  class="defaultBlue" x-large> {{showOverlay? 'fa-close' : 'fa-expand'}} </v-icon>
-        </v-btn>
-        </div>
+      <div v-if="!isModalFrame" class="attachButton d-none d-md-inline-block">
+        <v-btn flat v-on:click="overlay()" color="white" class=" largeButton medium inheritPosition"> 
+          <v-icon  class="defaultBlue" x-large> fa-expand </v-icon>
+      </v-btn>
+      </div>
 
 
     </v-app>
@@ -339,14 +335,12 @@ export default {
 
         if (forward) {
           this.$set(this.highlightTracker,keyCurrent,true)
-          this.$set(this.highlightTracker,keyBehind,true)
-          // this.$set(this.highlightTracker,keyCurrent, true)
-          // this.$set(this.highlightTracker,keyBehind, false)
+          this.$set(this.highlightTracker,keyBehind,false)
         } else {
           keyCurrent = this.keys[index]
           keyBehind = this.keys[index - 1]
-          this.$set(this.highlightTracker,keyCurrent, true)
-          this.$set(this.highlightTracker,keyBehind, false)
+          this.$set(this.highlightTracker,keyCurrent, false)
+          this.$set(this.highlightTracker,keyBehind, true)
         }
         this.scrollPage(index,1000)
         /* eslint-enable */
@@ -365,8 +359,29 @@ export default {
   },
   mounted: function () {
     if (this.isModalFrame) {
-      console.log(this.highlightTracker)
-      this.scrollPage(3, 0)
+      let wordsToNums = [
+        'one',
+        'two',
+        'three',
+        'four',
+        'five',
+        'six',
+        'seven',
+        'eight',
+        'nine',
+        'ten',
+        'eleven',
+        'twelve',
+        'thirteen'
+      ]
+
+      let href = window.parent.location.href
+      href = href.split('Consent')
+      let key = href[href.length - 1].toLowerCase()
+      let index = wordsToNums.indexOf(key) + 1
+      this.highlightTracker[index] = true
+      this.$set(this.highlightTracker, key, true)
+      this.$scrollTo('#A' + index, 0, { easing: 'linear', offset: 0 })
     }
   }
 }

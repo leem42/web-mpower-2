@@ -31,7 +31,7 @@
     </div>
 
     <div class="row mt-3">
-      <p id="greatFit" class="lead font-weight-bold  text-center col-md-10 col-lg-8 mx-auto  "> Let's find out if you're eligible </p>
+      <p id="greatFit" class="lead font-weight-bold  text-center col-md-10 col-lg-8 mx-auto lato "> Let's find out if you're eligible </p>
     </div>
     <div class="row mt-3">
 
@@ -39,13 +39,13 @@
     <div class="row mt-sm-4">
       <div class=" col-md-10 col-lg-8 mx-auto text-center">
         <div class="row">
-          <p class="lead col-auto mx-auto mx-md-0"> I am </p>
+          <p class="lead col-auto mx-auto medium customCenterAlign pb-0 lato mx-md-0"> I am </p>
           <v-flex class="col-md-3">
             <v-text-field suffix="years old" name="input-1" placeholder="45" id="testing" type="number" pattern="\d*" auto-grow v-model.number="age">
             </v-text-field>
           </v-flex>
 
-          <p class="lead col-auto mx-auto mx-md-0" v-if="isUnderage !== null" > I live in </p>
+          <p class="lead col-auto mx-auto medium customCenterAlign lato mx-md-0" v-if="isUnderage !== null" > I live in </p>
           <v-flex class="col-12 mb-3 col-md-4" v-if="isUnderage !== null">
             <v-select class="eligibility" v-bind:items="states" hide-details auto single-line pattern="\d*" name="input-1" label="select where" id="placeField" v-model="stateChosen"></v-select>
           </v-flex>
@@ -57,7 +57,7 @@
     <div id="option" class="row mt-2" v-if="isResident !== null">
       <div class=" col-md-10 col-lg-8 mx-auto text-center text-md-left">
         <div class="row">
-          <p class="lead col-12 col-md-auto text-center text-md-left">
+          <p class="lead col-12 medium customCenterAlign col-md-auto lato text-center text-md-left">
             and I feel </p>
           <v-select single-line id="comfortable" class="ml-md-0 col-12 col-md-6 mx-auto" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
           </v-select>
