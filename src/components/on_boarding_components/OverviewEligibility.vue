@@ -3,13 +3,12 @@
 
         <template v-if="requirements.isOnEligibility && !this.requirements.hasCompletedEligibility">
             <div class="row">
-                <p class="mx-auto white--text"> Hello, </p>
+                <p class="mx-auto font-weight-bold white--text"> Welcome to mPower! </p>
             </div>
             <div class="row text-center mb-2">
-                <p class="col-md-8 mx-auto  medium white--text">
-                    In the study we will measure quality of life by looking at health and well-being. 
-                    We will ask you to answer a short survey once a day.
-                    Once a week there will be a longer survey and a few quick activities.
+                <p class="col-md-8 mx-auto  medium white--text">                  
+                        mPower is a study to track the symptoms of Parkinson’s Disease over time. 
+                        Here you can learn about the study and decide if you want to join! Let’s get started.
                 </p>
             </div>
         </template>

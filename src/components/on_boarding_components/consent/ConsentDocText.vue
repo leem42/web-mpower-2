@@ -281,7 +281,7 @@
       Sponsors and Partners Only__
       Sharing Option
 
-        <div v-if="!isModalFrame" class="attachButton hideOnSmall">
+        <div v-if="!isModalFrame" class="attachButton d-none d-md-inline-block">
           <v-btn flat v-on:click="overlay()" color="white" class=" largeButton medium inheritPosition"> 
            <v-icon  class="defaultBlue" x-large> {{showOverlay? 'fa-close' : 'fa-expand'}} </v-icon>
         </v-btn>
@@ -295,7 +295,6 @@
 import _ from 'lodash'
 import {highlightTracker} from '../../../requirements/highlightTracker'
 import {requirements} from '../../../requirements/requirements'
-import Vue from 'vue'
 export default {
   data () {
     return {
@@ -339,15 +338,15 @@ export default {
         let keyBehind = this.keys[index - 2]
 
         if (forward) {
-          Vue.set(this.highlightTracker,keyCurrent,true)
-          Vue.set(this.highlightTracker,keyBehind,true)
-          // Vue.set(this.highlightTracker,keyCurrent, true)
-          // Vue.set(this.highlightTracker,keyBehind, false)
+          this.$set(this.highlightTracker,keyCurrent,true)
+          this.$set(this.highlightTracker,keyBehind,true)
+          // this.$set(this.highlightTracker,keyCurrent, true)
+          // this.$set(this.highlightTracker,keyBehind, false)
         } else {
           keyCurrent = this.keys[index]
           keyBehind = this.keys[index - 1]
-          Vue.set(this.highlightTracker,keyCurrent, true)
-          Vue.set(this.highlightTracker,keyBehind, false)
+          this.$set(this.highlightTracker,keyCurrent, true)
+          this.$set(this.highlightTracker,keyBehind, false)
         }
         this.scrollPage(index,1000)
         /* eslint-enable */

@@ -5,13 +5,13 @@
       <div class="container-fluid" style="display: block;">
         <div class="row">
   
-          <div class="col-1 p-0 customCenterAlign handCursor" v-on:click="$router.push({name: 'OverviewEligibility'})"> 
+          <div v-if="$router.currentRoute.fullPath.indexOf('OverviewEligibility') === -1" class="col-1 p-0 customCenterAlign handCursor" v-on:click="$router.push({name: 'OverviewEligibility'})"> 
             <img src="../../images/back-to-home-arrow.png" class="img-fluid backToHome pl-1 pr-1" alt="arrow leading back to home page"></img>
           </div>
 
         
           <div class="col-6 pl-1 mx-auto  text-center text-md-auto customCenterAlign text-sm-left col-sm-1">
-              <h2 v-if="getHeader() !== 'Test your knowledge'"> {{getHeader()}}  </h2>
+              <h2 class="font-weight-normal" v-if="getHeader() !== 'Test your knowledge'"> {{getHeader()}}  </h2>
               <h4 v-else> {{getHeader()}} </h4>
           </div>
 
@@ -29,6 +29,11 @@
             <img  class="extraSpacing d-none d-sm-inline-block" v-bind:class="{'midOpacity':!requirements.hasCompletedQuiz}" src="../../images/sign-header-icon.png" ></img>
 
             <img  class="extraSpacing d-none d-sm-inline-block" v-bind:class="{'midOpacity':!requirements.hasCompletedSign}" src="../../images/number-icon.png" ></img>
+
+          
+              <!--<svg  width="3" height="51">
+                <rect width="2" height="50" style="fill:white" />
+              </svg>-->
 
             <span class="d-none d-lg-inline-block hideOnSmall" style="font-size: 40px;"> | </span>
 

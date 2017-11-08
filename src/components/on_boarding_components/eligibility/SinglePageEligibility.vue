@@ -110,26 +110,24 @@
       </div>
     
       <template v-if="!controller[0].edit">
-        <!-- <div class="row">
-          <checkbox-smooth label="I want to help myself" class="mx-auto text-left pt-3 pb-3 pb-sm-3  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8"  v-model="selectedChoice[0]"></checkbox-smooth>         
-        </div> -->
+         <div class="row">
+              <checkbox-smooth label="want to help myself" class=" col-sm-7 col-md-6 col-lg-8 mx-auto text-left pt-2 pb-2 stencilBorderTop stencilBorder mb-2 mb-sm-0"  v-model="selectedChoice[0]"></checkbox-smooth>         
+        </div> 
+
         <div class="row">
-          <v-checkbox label="want to help myself" v-model="selectedChoice[0]" class="mx-auto text-left pt-3 pb-3  stencilBorderTop stencilBorder col-sm-7 col-md-6 col-lg-8 customCheck "></v-checkbox>
+          <checkbox-smooth label="want to help a loved one" v-model="selectedChoice[1]" class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></checkbox-smooth>
         </div>
         <div class="row">
-          <v-checkbox label="want to help a loved one" v-model="selectedChoice[1]" class="mx-auto text-left pt-3 pb-5 pb-sm-3  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></v-checkbox>
+          <checkbox-smooth label="want to help others" v-model="selectedChoice[2]" class="mx-auto text-left pt-2 pb-2  stencilBorder col-sm-7 col-md-6 col-lg-8 customCheck "></checkbox-smooth>
         </div>
         <div class="row">
-          <v-checkbox label="want to help others" v-model="selectedChoice[2]" class="mx-auto text-left pt-sm-3 pt-0 pb-3  stencilBorder col-sm-7 col-md-6 col-lg-8 customCheck "></v-checkbox>
+          <checkbox-smooth label="am curious" v-model="selectedChoice[3]" class="mx-auto text-left pt-2 pb-2 stencilBorder col-sm-7 col-md-6 customCheck col-lg-8 "></checkbox-smooth>
         </div>
         <div class="row">
-          <v-checkbox label="am curious" v-model="selectedChoice[3]" class="mx-auto text-left pt-3 pb-3  stencilBorder col-sm-7 col-md-6 customCheck col-lg-8 "></v-checkbox>
+          <checkbox-smooth label="another reason" v-model="selectedChoice[4]" class="mx-auto text-left pt-2 pb-2 stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-8"></checkbox-smooth>
         </div>
         <div class="row">
-          <v-checkbox label="another reason" v-model="selectedChoice[4]" class="mx-auto text-left pt-3 pb-3  stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-8"></v-checkbox>
-        </div>
-        <div class="row">
-          <v-checkbox label="not interested" v-model="selectedChoice[5]" class="mx-auto text-left pt-3 pb-3  stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-8"></v-checkbox>
+          <checkbox-smooth label="not interested" v-model="selectedChoice[5]" class="mx-auto text-left pt-2 pb-2 stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-8"></checkbox-smooth>
         </div>
       </template>
     
@@ -168,23 +166,23 @@
 
         <template v-if="!controller[1].edit">
             <div class="row">
-              <v-checkbox label="finger tapping" v-model="selectedChoice[6]" class="stencilBorderTop stencilBorder pt-3 pb-3  col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></v-checkbox>
+              <checkbox-smooth label="finger tapping" v-model="selectedChoice[6]" class="stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
             <div class="row">
-              <v-checkbox label="hand tremor activity" v-model="selectedChoice[7]" class="  stencilBorder pt-3 pb-3 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></v-checkbox>
+              <checkbox-smooth label="hand tremor activity" v-model="selectedChoice[7]" class="  stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
             <div class="row">
-              <v-checkbox label="balance activity" v-model="selectedChoice[8]" class=" stencilBorder pt-3 pb-3 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></v-checkbox>
+              <checkbox-smooth label="balance activity" v-model="selectedChoice[8]" class=" stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
             <div class="row">
-              <v-checkbox label="brain teaser activity" v-model="selectedChoice[9]" class=" stencilBorder pt-3 pb-3 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></v-checkbox>
+              <checkbox-smooth label="brain teaser activity" v-model="selectedChoice[9]" class=" stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
             </div>
             <div class="row">
-              <v-checkbox label="surveys" v-model="selectedChoice[10]" class=" stencilBorderTop stencilBorder pt-3 pb-3 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></v-checkbox>
+              <checkbox-smooth label="surveys" v-model="selectedChoice[10]" class=" stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
             <div class="row">
-              <v-checkbox label="none of the above" v-model="selectedChoice[11]" class=" stencilBorderTop stencilBorder pt-3 pb-3 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></v-checkbox>
+              <checkbox-smooth label="none of the above" v-model="selectedChoice[11]" class=" stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
         </template>
 
@@ -263,16 +261,16 @@
     
         <template v-if="!controller[3].edit">
           <div class="row">
-            <v-checkbox label="Updates on the study" v-model="selectedChoice[12]" class="stencilBorderTop stencilBorder pt-3 pb-5 pb-sm-3 col-sm-7 col-md-6 col-lg-8 mx-auto text-left wrapLabel  customCheck darkPurple--text"></v-checkbox>
+            <checkbox-smooth label="Updates on the study" v-model="selectedChoice[12]" class="stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left wrapLabel  customCheck darkPurple--text"></checkbox-smooth>
           </div>
           <div class="row">
-            <v-checkbox id="updates" label="Updates on my progress" v-model="selectedChoice[13]" class="stencilBorder pt-3 pb-5 pb-sm-3 col-sm-7 col-md-6 col-lg-8 mx-auto text-left mb-sm-0 customCheck darkPurple--text wrapLabel"></v-checkbox>
+            <checkbox-smooth id="updates" label="Updates on my progress" v-model="selectedChoice[13]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left mb-sm-0 customCheck darkPurple--text wrapLabel"></checkbox-smooth>
           </div>
           <div class="row">
-            <v-checkbox label="Updates on the app" v-model="selectedChoice[14]" class="stencilBorder pt-3 pb-3 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></v-checkbox>
+            <checkbox-smooth label="Updates on the app" v-model="selectedChoice[14]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
           </div>
           <div class="row">
-            <v-checkbox label="none of the above" v-model="selectedChoice[15]" class="stencilBorder pt-3 pb-3 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></v-checkbox>
+            <checkbox-smooth label="none of the above" v-model="selectedChoice[15]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
           </div>
         </template>
     
@@ -435,6 +433,9 @@
         } else {
           return true
         }
+      },
+      setSelection (index) {
+        this.$set(this.selectedChoice, index, !this.selectedChoice[index])
       },
       handleEligibility () {
         this.isNotEligible = (this.age < 18) || (!this.isResident) || (this.selectedOptionForPhone !== 'comfortable using my phone')

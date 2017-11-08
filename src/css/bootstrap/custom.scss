@@ -317,7 +317,7 @@ button.lowOpacity {
 
   .anchorBottom {
     height: 60px;
-  }
+  } 
 
 }
 
@@ -489,8 +489,20 @@ input.showSelectedRadio[type=radio]:checked +  label span {
   margin-right: 0px;
 }
 
+.fullWidth {
+  width: 100%;
+}
+
 .radio > label {
   color: rgba(58, 83, 155, 0.87) !important;
+}
+
+.flexDisplay {
+  display: flex;
+}
+
+.inputColor {
+  color: rgba(58, 83, 155, 0.87);
 }
 
 .radio.lightGrayText {
@@ -884,6 +896,19 @@ select {
 div[role=radio].input-group:hover {
   background-color: rgba(59,74,99,0.1) !important;
 }
+
+label.customCenterAlign:focus {
+  outline: none;
+}
+button.fullWidth:focus {
+  outline: none;
+}
+
+div.flexDisplay:hover {
+  background-color: rgba(59,74,99,0.1) !important;
+}
+
+
 
 .stencilBorderTop {
   border-top: solid;

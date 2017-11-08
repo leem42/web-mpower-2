@@ -1,10 +1,13 @@
  <template>
-    <span>
-        <input :value="val" @change="updateValue" v-model="checked" :id="uniqueID" type="checkbox" class="showSelectedCheckbox"> </input>
-        <label class="pl-2 mb-1 customCenterAlign" tabindex="1" :for="uniqueID">
-            <span> </span> 
-        </label>
-    </span>
+    <div class="flexDisplay handCursor">  
+      <span class="customCenterAlign">
+          <input :value="val" @change="updateValue" v-model="checked" :id="uniqueID" type="checkbox" class="showSelectedCheckbox"> </input>
+          <label class="pl-2 handCursor mb-1 customCenterAlign" tabindex="1" :for="uniqueID">
+              <span> </span> 
+          </label>
+      </span>
+      <button v-on:click="update()" class="text-left ml-2 pt-3 pb-3 pb-sm-3 francisco inputColor fullWidth"> {{label}} </button>
+    </div>
  </template>
 
 <script>
@@ -36,6 +39,10 @@
       },
       methods: {
         updateValue: function (event) {
+          this.$emit('input', this.checkedProxy)
+        },
+        update () {
+          this.checkedProxy = !this.checkedProxy
           this.$emit('input', this.checkedProxy)
         }
       }
