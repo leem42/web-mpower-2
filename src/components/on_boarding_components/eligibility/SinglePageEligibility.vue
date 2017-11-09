@@ -228,7 +228,10 @@
         if (this.isNotEligible) {
           this.updateRouterState()
         } else {
-          this.$router.push({name: 'Vows'})
+          this.requirements.isOnElgibility = false
+          this.requirements.hasCompletedEligibility = true
+          this.requirements.isOnConsent = true
+          this.$router.push({name: 'OverviewEligibility'})
         }
       },
       getCurrentStage () {
