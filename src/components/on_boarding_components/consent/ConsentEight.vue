@@ -18,7 +18,7 @@
         <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
 
             <li class="mt-lg-1 mb-lg-3">
-                Your participation could help researchers understand chronic anemia better. 
+                Your participation could help researchers understand Parkinson’s Disease better.
             </li>
 
             <li class="mt-lg-1 mb-lg-3">

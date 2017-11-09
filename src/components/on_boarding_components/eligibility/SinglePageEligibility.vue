@@ -65,218 +65,7 @@
       </div>
     </div>
 
-    <!--For extra padding-->
-    <template v-if="partOneIsEligible">
-    
-        <!-- Section 1.
-          I'm interest in joining because  
-        -->
-      
-      <div class="row mt-5">
-        <p class="lead font-weight-bold col-sm-6 col-lg-8 largeTitle mx-auto text-center pt-0 pt-md-0"> Why are you interested in joining mPower?
-        </p>
-      </div>
-
-      <div class="row">
-        <p id="understandInterest" class="lead col-md-8 col-lg-8 medium mx-auto text-left pt-0 pt-md-0"> 
-          Understanding what interests you and what you are willing to do helps us shape an experience that aligns with your expectations.
-        </p>
-      </div>
-
-      <div class="row mt-3">
-        <span id="interest" class="francisco lato mediumLarge default pt-sm-0 col-md-6 col-sm-7 col-lg-8 text-left mx-auto mb-4"> I'm interested in joining mPower because I 
-    
-          <span v-if="controller[0].edit" class="ml-0 p-0">
-            <v-btn flat :ripple="false" v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink pl-0 middle francisco"> Want to help myself         
-            </v-btn>
-              {{getPlacementText(0,6)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[1]" @click.native="handleEdit(0)" class=" pb-3 francisco text-capitalize clickableLink pl-0"> Want to help a loved one 
-                {{getPlacementText(1,6)}}
-            </v-btn>
-            <v-btn flat :ripple="false" v-if="selectedChoice[2]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> help others
-            </v-btn>
-            {{getPlacementText(2,6)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[3]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> Am curious
-            </v-btn>
-            {{getPlacementText(3,6)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[4]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> another reason
-            </v-btn>
-            {{ getPlacementText(4,6)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[5]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> not interested
-            </v-btn>
-          </span>
-          <v-btn v-if="!controller[0].edit && controller[0].submit" flat class="francisco clickableLink white--text text-capitalize pl-0" @click.native="handleEdit(0)"> {{controller[0].edit ? "(Add More)": "Resubmit"}} </v-btn>
-        </span>
-      </div>
-    
-      <template v-if="!controller[0].edit">
-         <div class="row">
-              <checkbox-smooth label="want to help myself" class=" col-sm-7 col-md-6 col-lg-8 mx-auto text-left pt-2 pb-2 stencilBorderTop stencilBorder mb-2 mb-sm-0"  v-model="selectedChoice[0]"></checkbox-smooth>         
-        </div> 
-
-        <div class="row">
-          <checkbox-smooth label="want to help a loved one" v-model="selectedChoice[1]" class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></checkbox-smooth>
-        </div>
-        <div class="row">
-          <checkbox-smooth label="want to help others" v-model="selectedChoice[2]" class="mx-auto text-left pt-2 pb-2  stencilBorder col-sm-7 col-md-6 col-lg-8 customCheck "></checkbox-smooth>
-        </div>
-        <div class="row">
-          <checkbox-smooth label="am curious" v-model="selectedChoice[3]" class="mx-auto text-left pt-2 pb-2 stencilBorder col-sm-7 col-md-6 customCheck col-lg-8 "></checkbox-smooth>
-        </div>
-        <div class="row">
-          <checkbox-smooth label="another reason" v-model="selectedChoice[4]" class="mx-auto text-left pt-2 pb-2 stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-8"></checkbox-smooth>
-        </div>
-        <div class="row">
-          <checkbox-smooth label="not interested" v-model="selectedChoice[5]" class="mx-auto text-left pt-2 pb-2 stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-8"></checkbox-smooth>
-        </div>
-      </template>
-    
-      
-      <!-- Section 2.
-    
-        I would be willing to try
-          
-        -->
-      <span id="willing" v-if="controller[0].click">
-        <div class="row">
-          <span class="mx-auto text-left col-sm-7 col-md-6 col-lg-8 francisco mediumTitle mb-4 text-left lead"> I would be willing to try
-            <span v-if="controller[1].edit" class="p-0">
-              
-              <v-btn flat :ripple="false" v-if="selectedChoice[6]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> finger tapping
-              </v-btn>
-              {{ getPlacementText(6,12)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[7]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> hand tremor activity
-              </v-btn>
-              {{ getPlacementText(7,12)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[8]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> balance activity
-              </v-btn>
-              {{ getPlacementText(8,12)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[9]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> brain teaser activity
-              </v-btn>
-              {{ getPlacementText(9,12)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[10]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> surveys
-              </v-btn>
-              {{ getPlacementText(10,12)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[11]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> none of the above
-              </v-btn>
-            </span>
-            <v-btn v-if="!controller[1].edit && controller[1].submit" flat class="clickableLink pl-0 text-capitalize" v-on:click="handleEdit(1)"> {{controller[1].edit ? "(Add Choices)": "Resubmit"}} </v-btn>
-          </span>
-        </div>
-
-        <template v-if="!controller[1].edit">
-            <div class="row">
-              <checkbox-smooth label="finger tapping" v-model="selectedChoice[6]" class="stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
-            </div>
-            <div class="row">
-              <checkbox-smooth label="hand tremor activity" v-model="selectedChoice[7]" class="  stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
-            </div>
-            <div class="row">
-              <checkbox-smooth label="balance activity" v-model="selectedChoice[8]" class=" stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
-            </div>
-            <div class="row">
-              <checkbox-smooth label="brain teaser activity" v-model="selectedChoice[9]" class=" stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
-            </div>
-            </div>
-            <div class="row">
-              <checkbox-smooth label="surveys" v-model="selectedChoice[10]" class=" stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
-            </div>
-            <div class="row">
-              <checkbox-smooth label="none of the above" v-model="selectedChoice[11]" class=" stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
-            </div>
-        </template>
-
-      </span>
-    
-      <!-- Section 3.
-    
-          On a _____ Basis
-    
-        -->
-      <span id="basis" v-if="controller[1].click">
-        <div class="row">
-          <p class="francisco col-sm-7 col-md-6 col-lg-8 mediumTitle mx-auto text-left lead"> on a {{(controller[2].click)? "": "_____"}}
-            <span class="p-0" v-if="controller[2].edit">
-              <v-btn v-on:click="handleEdit(2)" flat class=" text-capitalize pl-0 clickableLink francisco"> {{radioChoice}}
-              </v-btn>
-            </span>
-            basis
-            <v-btn v-if="!controller[2].edit && controller[2].submit" flat class=" white--text text-capitalize pl-0 clickableLink" v-on:click="handleEdit(2)"> {{controller[2].edit ? "(Edit Choice)": "Resubmit"}} </v-btn>
-          </p>
-        </div>
-    
-        <v-radio-group v-model="radioChoice" v-if="!controller[2].edit">
-          <div class="row mb-3">
-            <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left ">
-              <v-radio v-on:keyup.enter="handleRadio(0)" class=" francisco stencilBorderTop stencilBorder pt-2 pb-2" label="Daily" value="Daily"></v-radio>
-            </v-flex>
-          </div>
-          <div class="row mb-3 mt-2">
-            <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left">
-              <v-radio v-on:keyup.enter="handleRadio(1)" class=" francisco stencilBorder pt-2 pb-2" value="Weekly" label="Weekly"></v-radio>
-            </v-flex>
-          </div>
-          <div class="row mb-3 mt-2">
-            <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left">
-              <v-radio v-on:keyup.enter="handleRadio(2)" class=" francisco stencilBorder pt-2 pb-2" value="Biweekly" label="Biweekly"></v-radio>
-            </v-flex>
-          </div>
-          <div class="row mb-3 mt-2">
-            <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left">
-              <v-radio v-on:keyup.enter="handleRadio(3)" class=" francisco stencilBorder pt-2 pb-2" value="Monthly" label="Monthly"></v-radio>
-            </v-flex>
-          </div>
-          <div class="row mb-3 mt-2">
-            <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left">
-              <v-radio v-on:keyup.enter="handleRadio(4)" class=" francisco stencilBorder pt-2 pb-2" value="Never" label="Never"></v-radio>
-            </v-flex>
-          </div>
-        </v-radio-group>
-      </span>
-    
-      <!-- Section 4.
-    
-            What would you like from us
-    
-        -->
-      <span id="request" v-if="controller[2].click">
-        <div class="row">
-          <p class="francisco col-sm-7 col-md-6 col-lg-8 mx-auto text-left mediumTitle lead"> I would like to recieve
-            <span v-if="controller[3].edit">
-              <v-btn flat :ripple="false" v-if="selectedChoice[12]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the study
-              </v-btn>
-              {{ getPlacementText(12,16)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[13]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on my progress
-              </v-btn>
-              {{ getPlacementText(13,16)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[14]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the app
-              </v-btn>
-              {{ getPlacementText(14,16)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[15]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> None of the above
-              </v-btn>
-            </span>
-            <v-btn v-if="!controller[3].edit && controller[3].submit" flat class="white--text text-capitalize clickableLink pl-0" v-on:click="handleEdit(3)"> {{controller[3].edit ? "(Add Choices)": "Resubmit"}} </v-btn>
-          </p>
-        </div>
-    
-        <template v-if="!controller[3].edit">
-          <div class="row">
-            <checkbox-smooth label="Updates on the study" v-model="selectedChoice[12]" class="stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left wrapLabel  customCheck darkPurple--text"></checkbox-smooth>
-          </div>
-          <div class="row">
-            <checkbox-smooth id="updates" label="Updates on my progress" v-model="selectedChoice[13]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left mb-sm-0 customCheck darkPurple--text wrapLabel"></checkbox-smooth>
-          </div>
-          <div class="row">
-            <checkbox-smooth label="Updates on the app" v-model="selectedChoice[14]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
-          </div>
-          <div class="row">
-            <checkbox-smooth label="none of the above" v-model="selectedChoice[15]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
-          </div>
-        </template>
-    
-      </span>
-
-    </template>
+   
     <div class="row" style="height: 400px;" > </div>
   </v-app>
 </template>
@@ -315,8 +104,8 @@
         ],
         stateChosen: '',
         requirements: requirements,
-        progress: (100.0 / 7),
-        progressStep: (100.0 / 7),
+        progress: (100.0 / 3),
+        progressStep: (100.0 / 3),
         hasCompletedPartOne: false,
         partOneIsEligible: false,
         partTwo: false,
@@ -376,9 +165,6 @@
         if (this.getCurrentStage() === 'Part One') {
           // handle first three questions
           this.handleEligibility()
-        } else {
-          // handle remaining questions of vows
-          this.handleVows()
         }
       },
       handleVows () {
@@ -442,8 +228,7 @@
         if (this.isNotEligible) {
           this.updateRouterState()
         } else {
-          this.scrollPage('#understandInterest')
-          this.partOneIsEligible = true
+          this.$router.push({name: 'Vows'})
         }
       },
       getCurrentStage () {
@@ -469,10 +254,10 @@
         }
       },
       getProgress () {
-        if (this.progressIndex + 1 === 7) {
+        if (this.progressIndex + 1 === 3) {
           return 'ELIGBILITY DONE'
         } else {
-          return 'STEP ' + (this.progressIndex + 1) + ' OF 7'
+          return 'STEP ' + (this.progressIndex + 1) + ' OF 3'
         }
       },
       setIsUnderage: _.debounce(

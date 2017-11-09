@@ -17,11 +17,11 @@
       <div class="row">
         <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
             <li class="mt-lg-1 mb-lg-3">
-                Journey PRO is not used for medical care, it is a research study. 
+                mPower is not used for medical care, it is a research study.
             </li>
 
             <li class="mt-lg-1 mb-lg-3">
-                The Journey PRO app is not a diagnosis tool. 
+                The mPower app is not a diagnosis tool.
             </li>
 
             <li class="mt-lg-1">

@@ -19,7 +19,7 @@
         <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
 
           <li class="mt-lg-1 mb-lg-3">
-            You can view your data at any time.
+            Your participation is voluntary.
           </li>
           
           <li class="mt-lg-1 mb-lg-3">

@@ -19,15 +19,14 @@
     <div class="row">
       <ul class="ml-md-5 mr-md-5 medium-small lightGrayText">
         <li>
-          We will ask you to complete a daily survey, which you can take whenever you’d like.
+          We will ask you to do activities on your phone like tapping your fingers or holding your phone steady.
         </li>
 
         <li class="mt-lg-4">
-          The survey only has two questions and shouldn’t take you more than 2 minutes to complete.
-        </li>
+          We will ask you to do the activities a certain number of times. But you can do them as often as you like.        </li>
 
         <li class="mt-lg-4">
-          Once a week, we will ask you to do a 20-minute challenge and a survey with about 15 questions.
+         We will ask you questions about your health and your medical history.
         </li>
         <a href="" class="defaultBlue font-weight-bold ">
           <u> Learn More </u>

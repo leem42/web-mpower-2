@@ -18,16 +18,13 @@
         <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
         
             <li class="mt-lg-1 mb-lg-3">
-                Surveys are an important part of this research study. 
+               We will ask you to update your answers about your health and medical history.
             </li>
 
             <li class="mt-lg-1 mb-lg-3">
-                We will ask you to answer a daily survey which has two questions. 
+                We may ask you other questions about how you use the app.
             </li>
 
-            <li class="mt-lg-1">
-                We will ask you to answer a challenge once a week which has about 15 questions.
-            </li>
 
           <a href="" class="defaultBlue font-weight-bold "><u> Learn More </u></a>
         </ul>

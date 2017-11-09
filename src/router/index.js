@@ -15,6 +15,7 @@ import SubjectInterest from '@/components/on_boarding_components/eligibility/Sub
 import OverviewEligibility from '@/components/on_boarding_components/OverviewEligibility.vue'
 import Eligibility from '@/components/on_boarding_components/eligibility/Eligibility.vue'
 import SinglePageEligibility from '@/components/on_boarding_components/eligibility/SinglePageEligibility.vue'
+import Vows from '@/components/on_boarding_components/eligibility/Vows.vue'
 import Congratulations from '@/components/on_boarding_components/eligibility/Congratulations.vue'
 import Ineligible from '@/components/on_boarding_components/eligibility/Ineligible.vue'
 
@@ -143,6 +144,11 @@ export default new Router({
               path: 'SinglePageEligibility',
               name: 'SinglePageEligibility',
               component: SinglePageEligibility
+            },
+            {
+              path: 'Vows',
+              name: 'Vows',
+              component: Vows
             },
             {
               path: 'OverviewEligibility',

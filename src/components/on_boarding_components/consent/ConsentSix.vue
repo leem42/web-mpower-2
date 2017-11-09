@@ -19,7 +19,7 @@
 
           
               <li class="mt-lg-1 mb-lg-3">
-                  This study will take about 5 minutes per day and about 20 minutes per week.
+                  This study will take about 10 minutes per day. Some days we will ask you for more time than others.
               </li>
 
               <li class="mt-lg-1 mb-lg-3">

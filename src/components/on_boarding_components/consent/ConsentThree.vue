@@ -21,7 +21,7 @@
         </li>
 
         <li class="mt-lg-1 mb-lg-3">
-          We will replace your name with a random code.
+          When you look at your data you may notice patterns.
         </li>
 
         <li class="mt-lg-1">
