@@ -1,5 +1,5 @@
 <template>
-    <v-app class="white" >
+    <v-app class="white">
                 
       SUMMARY					
       You are invited to participate in a research study to understand variations in symptoms of Parkinson’s disease (PD). If you are over 18 years old, you can join the study. We are looking for volunteers with PD and volunteers who do not have PD. Your participation in this study is entirely voluntary.
@@ -404,6 +404,7 @@ export default {
 .defaultBlue {
     color: #3a539b !important;
 }
+
 
 .attachButton {
   z-index: 99999;

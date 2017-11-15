@@ -1,11 +1,11 @@
 <template>
-    <v-app class="page-overview">
+    <v-app class="page-overview d-flex flex-nowrap">
         
-        <div class="text-center">
+        <div class="text-center ">
             <p class="darkPurpleText largeTitle"> Your Story </p>
         </div>
     
-        <div class="row">
+        <div class="row ">
             <p class="medium mx-auto default col-lg-8 "> Living with Parkinson’s disease is an ever-changing story. Parkinson’s disease can bring on symptoms and relapses unexpectedly. Some days are easy, while other days your symptoms may consume your story.
             </p>
         </div>

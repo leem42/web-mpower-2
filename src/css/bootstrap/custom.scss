@@ -14,6 +14,15 @@ $font-weight-normal: bold;
 $lead-font-size:   $font-size-base;
 $lead-font-weight: 600;
 
+
+.application.theme--light {
+  background: white;
+}
+
+.application {
+  display: -webkit-box !important;
+}
+
 @font-face {
   font-family: "San Francisco";
   font-weight: 400;
@@ -43,10 +52,10 @@ input {
 }
 
 .fadeBackground {
-  background-image: -webkit-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
-  background-image: -moz-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
-  background-image: -o-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be);
-  background-image: linear-gradient(54deg, #473b7b, #3584a7 76%, #30d2be);
+  background-image: -webkit-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be) !important;
+  background-image: -moz-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be) !important;
+  background-image: -o-linear-gradient(324deg, #473b7b, #3584a7 76%, #30d2be) !important;
+  background-image: linear-gradient(54deg, #473b7b, #3584a7 76%, #30d2be) !important;
 }
     
 nav.web {
