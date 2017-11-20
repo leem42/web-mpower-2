@@ -1,5 +1,5 @@
 <template>
-    <v-app class="page-overview d-flex flex-nowrap">
+    <v-app class="page-overview">
         
         <div class="text-center ">
             <p class="darkPurpleText largeTitle"> Your Story </p>

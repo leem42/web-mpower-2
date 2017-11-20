@@ -1,7 +1,7 @@
 <template>
     <v-app class="white">
                 
-      SUMMARY					
+      <h2> SUMMARY	</h2>
       You are invited to participate in a research study to understand variations in symptoms of Parkinson’s disease (PD). If you are over 18 years old, you can join the study. We are looking for volunteers with PD and volunteers who do not have PD. Your participation in this study is entirely voluntary.
       The purpose of this form is to help you decide if you want to join this research study. Please read the information carefully. Participating in a research study is not the same as receiving medical care. The decision to join or not join the research study will not affect your medical benefits.
                 
@@ -9,49 +9,53 @@
                 
       You should not join this research study until all of your questions are answered. If you join the study you will be given a copy of this form for your records.
                 
-      PURPOSE OF THE STUDY
+      <h2> PURPOSE OF THE STUDY </h2>
                 
-      <div id="A1" v-bind:class="highlightTracker.one ? 'highlighter': ''">
+      <div id="A2" v-bind:class="highlightTracker.two ? 'highlighter': ''">
       People with PD have different symptoms. These symptoms can change day-to-day and over time. This makes it hard to maintain quality of life and manage treatment. We would like to understand the reasons for these differences in symptoms of PD. The results of this study may help researchers develop new ways to manage PD symptoms.
                 
       This study uses an app to measure the symptoms of PD. If you participate in this study, we’ll ask you to complete surveys and perform brief activities while holding your phone. These activities use your phone’s built-in sensors to measure health symptoms. You can choose to connect the app to your fitness tracker (like the Apple Watch, FitBit, or Jawbone) if you wear one.
       </div>
                 
-      How long will I be in the research study?					
+      <h3> <i> How long will I be in the research study?	</i></h3>
       This phase of the study will last about one year. You can keep the app on your phone for as long as you choose. You can use it to track your symptoms and review your data.
                 
-      How many people will take part in this study?					
+      <h3> <i> How many people will take part in this study? </i></h3>
       We expect 20,000 people to join this study.
                 
-      PROCEDURES
+      <h2> PROCEDURES </h2>
                 
       What will you be asked to do?
       If you decide to join the study, you will need to download the mPower study app on to your phone. The app is free from your phone’s app store. Then, you will need to register for the study.
                 
       After you register, we will ask you to answer survey questions on the app and to do simple activities while holding your phone. We might also send you notifications through the app. Your answers to the survey questions and the measurements from your activities are your study data.
                 
+    <div id="A1" v-bind:class="highlightTracker.one ? 'highlighter': ''">
       Here is more detail about what you will be asked to do:
 
-      <div id="A2" v-bind:class="highlightTracker.two ? 'highlighter': ''">
                  
-      Register to the study: Follow the prompts on the app to register. First you will see an overview of the study and read about the risks and benefits of participating. You will confirm your decision to participate and sign this form directly on your phone. Then you will create your account. We will ask you to enter your name, email address, and other general information about yourself. You can cancel the registration process at any time.
-      Health Surveys: We will ask you questions about your health and your medical history. We will ask if you have PD and if you take certain medications. Because the purpose of this study is to look for patterns over time, occasionally we will ask you to review and update your answers. We will also ask questions about your mood or how well you slept.
-      Activities: We will ask you to do simple activities while holding your phone. For example:
-      Say “aaah” into your phone’s microphone for 10 seconds. This is to measure variation in your voice.
-      Walk and/or stand still with your phone in your pocket. This is to measure your gait and balance. Tap your fingers on your phone’s screen. This is to measure your speed and coordination.
-      Play a short game. In this game, flowers light up in pattern. We ask you to tap the flowers in the same pattern. This is to test your short-term memory.
-      Hold your phone. This is to measure tremor.
+      <h3><i> Register to the study: </i></h3> Follow the prompts on the app to register. First you will see an overview of the study and read about the risks and benefits of participating. You will confirm your decision to participate and sign this form directly on your phone. Then you will create your account. We will ask you to enter your name, email address, and other general information about yourself. You can cancel the registration process at any time.
+      
+      <div id="A7" v-bind:class="highlightTracker.seven ? 'highlighter': ''">
+      <h3><i> Health Surveys: </i></h3>  We will ask you questions about your health and your medical history. We will ask if you have PD and if you take certain medications. Because the purpose of this study is to look for patterns over time, occasionally we will ask you to review and update your answers. We will also ask questions about your mood or how well you slept.
       </div>
 
-      You can choose to connect the app to your fitness tracker (like the Apple Watch, FitBit, or Jawbone) if you wear one. This is to measure how active you are.
+      <h3><i>Activities: </i></h3>  We will ask you to do simple activities while holding your phone. For example:
+      <dl>
+         <li>Say “aaah” into your phone’s microphone for 10 seconds. This is to measure variation in your voice. </li>
+         <li> Walk and/or stand still with your phone in your pocket. This is to measure your gait and balance. Tap your fingers on your phone’s screen. This is to measure your speed and coordination. </li>
+         <li> Play a short game. In this game, flowers light up in pattern. We ask you to tap the flowers in the same pattern. This is to test your short-term memory. </li>
+         <li>Hold your phone. This is to measure tremor. </li>
+          <li>You can choose to connect the app to your fitness tracker (like the Apple Watch, FitBit, or Jawbone) if you wear one. This is to measure how active you are. </li>
+      </dl>
+      </div>
+
                 
       <div id="A6" v-bind:class="highlightTracker.six ? 'highlighter': ''">
       This study should take you about 20 minutes each day. You can participate any time during the day. If you would like a daily reminder, you can turn on notifications in the app to remind you to complete the activities and surveys.
         </div>
 
-      <div id="A7" v-bind:class="highlightTracker.seven ? 'highlighter': ''">
       You can participate in all or only parts of the study. Completing the activities daily is very valuable for our study, but if you can’t, once a week still helps!
-      </div>
 
 
       <div id="A12" v-bind:class="highlightTracker.twelve ? 'highlighter': ''">
@@ -63,7 +67,7 @@
 
 
       <div id="A9" v-bind:class="highlightTracker.nine ? 'highlighter': ''">
-      RISKS, DISCOMFORTS, AND INCONVENIENCES
+      <h2> RISKS, DISCOMFORTS, AND INCONVENIENCES </h2>
                 
       There are possible risks, discomforts, and inconveniences with any research study. They deserve careful thought.
       </div>
@@ -73,35 +77,36 @@
       Be safe – do not participate while driving. Wait until you are in a safe place to perform study-related activities!
       </div>
 
-      <div id="A3" v-bind:class="highlightTracker.three ? 'highlighter': ''">
       Participating in this study may generate a wide range of emotions. It could affect your mood. Some questions in the surveys may be mildly stressful for some people.
       Other people may glimpse the study notifications and/or reminders on your phone and realize you are enrolled in this study. This can make some people feel self-conscious.
       Data collected in this study will count against your phone’s data plan. You can configure the app to only use WiFi to limit the impact data collection has on your data plan.
       We take great care to protect your privacy. However, if there is a data breach it may be possible to identify you. This risk is low but it is not zero.
       Participation may involve risks that we don’t know about yet. We will tell you if we learn anything that might change your decision to be in this study.
-      </div>
 
       <div id="A8" v-bind:class="highlightTracker.eight ? 'highlighter': ''">
       
-      POTENTIAL BENEFITS				
+      <h2> POTENTIAL BENEFITS	</h2>
       The main goal of this study is increasing understanding of the symptoms of PD. We will be looking for health patterns across large groups, not individual health trends.
       You may or may not directly benefit from volunteering for this research study.
                 
+      <div id="A3" v-bind:class="highlightTracker.three ? 'highlighter': ''">
       You will be able to view and download your study data. You can share your data with your doctor or anyone you choose.
+      </div>
+
       </div>                
                 
       The mPower app is not a personal diagnosis or treatment tool.
                 
-      PAYMENT				
+      <h2> PAYMENT	</h2>
       You will not be paid for participating in this study. You will not be paid for sharing your data.
                 
-      COSTS				
+      <h2> COSTS </h2>
       There is no direct cost to participate in this study. There may be an indirect cost to participate. This indirect cost is because data collected in this study will count against your phone’s data plan.
                 
-      ALTERNATIVES				
+      <h2> ALTERNATIVES </h2>
       This is not a medical treatment study. There is no alternative treatment to this study. The only alternative to this study is to not participate.				
                 
-      AUTHORIZATION TO USE AND DISCLOSE INFORMATION FOR RESEARCH PURPOSES					
+      <h2> AUTHORIZATION TO USE AND DISCLOSE INFORMATION FOR RESEARCH PURPOSES	</h2>
       We cannot use your personal information for this research without your written authorization. If you sign this consent form, you will provide this authorization. You will authorize the collection, processing, and transfer of your personal information for the purpose of this study. You do not have to sign this form. But if you do not, you will not be able to participate in this research study.
                 
       What personal information will be used or disclosed?					
@@ -142,7 +147,7 @@
                 
       If you were interested in joining another study, we would ask you to complete a new consent. The new consent will be like this one. It will explain the risks and benefits of the new study.
                 
-      PRIVACY, CONFIDENTIALITY, AND DATA PROTECTION
+      <h2> PRIVACY, CONFIDENTIALITY, AND DATA PROTECTION </h2>
       <div id="A4" v-bind:class="highlightTracker.four ? 'highlighter': ''">      
       Your privacy is important to us. We will make every effort to protect your privacy. Except as required by law , you will not be identified by name or by any other direct personal identifier. However, if there is a data breach it may be possible to identify you. This risk is low but it is not zero.
                 
@@ -195,7 +200,7 @@
                 
       If we list this study, we will not include information that can identify you. We will describe the study in general terms. At most we may include a summary of the results. You can search ClinicalTrials.gov at any time (https://clinicaltrials.gov/).
                 
-      COMPENSATION FOR INJURY
+      <h2> COMPENSATION FOR INJURY </h2>
                 
       THIS STUDY DOES NOT PROVIDE ANY COMPENSATION, HEALTH OR MEDICAL CARE TO PARTICIPANTS.
                   
@@ -203,7 +208,7 @@
                   
       If the cost of caring for your injury is not covered, you may be responsible for those costs. We and the other study sponsors do not usually pay charges that are not covered by insurance. No payment is routinely available from us or the other study sponsors.
                   
-      VOLUNTARY PARTICIPATION AND WITHDRAWAL
+      <h2> VOLUNTARY PARTICIPATION AND WITHDRAWAL </h2>
                   
       Your participation is voluntary. You get to decide if you would like to volunteer.
                   
@@ -222,11 +227,11 @@
                   
       The study team may also withdraw you from the study at any time for any reason. One reason we might withdraw you is if we feel it is in your best interest. Another reason is if you do not consent to continue in the study after being told of changes in the research. We would withdraw you if the study was cancelled.
                   
-      SOURCE OF FUNDING FOR THE STUDY
+      <h2> SOURCE OF FUNDING FOR THE STUDY </h2>
                   
       Sage Bionetworks( http://sagebase.org/) is funding this study. The Robert Wood Johnson Foundation is also helping to fund this study.
                   
-      QUESTIONS
+      <h2> QUESTIONS </h2>
                   
       You should not volunteer for this study until all of your questions are answered.
                   
@@ -245,7 +250,7 @@
                 
       WIRB will not be able to answer some study-specific questions, such as questions about appointment times. However, you may contact WIRB if the research staff cannot be reached or if you wish to talk to someone other than the research staff.
                 
-      CONSENT
+      <h2> CONSENT </h2>
                 
       I have read about this research study (or it has been read to me). All my questions about the study and my part in it have been answered. I understand that my participation in this study is voluntary. I freely consent to be in this research study.
                 
@@ -323,6 +328,7 @@ export default {
       // if (event.origin !== 'http://localhost:8080') {
         return ''
       } else {
+        console.log('reciever called')
         /* eslint-disable */
         if(event.data === "") {
           return
@@ -380,6 +386,7 @@ export default {
       let key = href[href.length - 1].toLowerCase()
       let index = wordsToNums.indexOf(key) + 1
       this.highlightTracker[index] = true
+      console.log('setting ' + index)
       this.$set(this.highlightTracker, key, true)
       this.$scrollTo('#A' + index, 0, { easing: 'linear', offset: 0 })
     }
