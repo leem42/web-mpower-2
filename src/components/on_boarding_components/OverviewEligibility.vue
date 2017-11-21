@@ -1,7 +1,7 @@
 <template>
     <v-app class="fadeBackground ">
 
-        <template v-if="requirements.isOnEligibility && !this.requirements.hasCompletedEligibility">
+        <template v-if="requirements.isOnEligibility && !requirements.hasCompletedEligibility">
             <div class="row">
                 <p class="mx-auto font-weight-bold white--text"> Welcome to mPower! </p>
             </div>

@@ -39,27 +39,28 @@
     <div class="row mt-sm-4">
       <div class=" col-md-10 col-lg-8 mx-auto text-center">
         <div class="row">
-          <p class="lead col-auto mx-auto medium customCenterAlign pb-0 lato mx-md-0"> I am </p>
+          <p class="lead col-auto mx-auto mediumLarge customCenterAlign pb-0 lato mx-md-0"> I am </p>
           <v-flex class="col-md-3">
-            <v-text-field suffix="years old" name="input-1" placeholder="45" id="testing" type="number" pattern="\d*" auto-grow v-model.number="age">
+            <v-text-field suffix="years old" name="input-1" placeholder="45" id="testing"  pattern="\d*" auto-grow v-model.number="personInfo.age">
             </v-text-field>
           </v-flex>
 
-          <p class="lead col-auto mx-auto medium customCenterAlign lato mx-md-0" v-if="isUnderage !== null" > I live in </p>
-          <v-flex class="col-12 mb-3 col-md-4" v-if="isUnderage !== null">
-            <v-select class="eligibility" v-bind:items="states" hide-details auto single-line pattern="\d*" name="input-1" label="select where" id="placeField" v-model="stateChosen"></v-select>
+          <p class="lead col-auto mx-auto mediumLarge customCenterAlign lato mx-md-0" v-if="isUnderage !== null && personInfo.age !== ''" > I live in </p>
+          <v-flex class="col-12 mb-3 col-md-4" v-if="isUnderage !== null && personInfo.age != ''">
+            <v-select autocomplete class="d-none d-sm-inline-block eligibility" v-bind:items="states" hide-details auto single-line  name="input-1" label="select where" id="placeField" v-model="personInfo.stateChosen"></v-select>
+            <v-select class="eligibility d-sm-none" v-bind:items="states" hide-details auto single-line  name="input-1" label="select where" id="placeField" v-model="personInfo.stateChosen"></v-select>
           </v-flex>
           
         </div>
       </div>
     </div>
 
-    <div id="option" class="row mt-2" v-if="isResident !== null">
+    <div id="option" class="row mt-2" v-if="isResident !== null && personInfo.stateChosen !== '' ">
       <div class=" col-md-10 col-lg-8 mx-auto text-center text-md-left">
         <div class="row">
-          <p class="lead col-12 medium customCenterAlign col-md-auto lato text-center text-md-left">
+          <p class="lead col-12 mediumLarge customCenterAlign col-md-auto lato text-center text-md-left">
             and I feel </p>
-          <v-select single-line id="comfortable" class="ml-md-0 col-12 col-md-6 mx-auto" label="Select" v-bind:items="phoneChoices" v-model="selectedOptionForPhone"></v-select>
+          <v-select single-line id="comfortable" class="ml-md-0 col-12 col-md-6 mx-auto" label="Select" v-bind:items="phoneChoices" v-model="personInfo.selectedOptionForPhone"></v-select>
           </v-select>
         </div>
       </div>
@@ -73,14 +74,14 @@
 <script>
   import {Focus} from '@/directives/focus.js'
   import {requirements} from '../../../requirements/requirements'
+  import {personInfo} from '../../../requirements/personInfo'
   import _ from 'lodash'
   import CheckboxSmooth from '@/custom_components/checkbox/CheckboxSmooth.vue'
 
   export default {
     data () {
       return {
-        age: '',
-        selectedOptionForPhone: null,
+        personInfo: personInfo,
         isUnderage: null,
         isResident: null,
         hasChosenOption: false,
@@ -102,7 +103,6 @@
           'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia',
           'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
         ],
-        stateChosen: '',
         requirements: requirements,
         progress: (100.0 / 3),
         progressStep: (100.0 / 3),
@@ -127,19 +127,19 @@
       }
     },
     watch: {
-      age: function () {
+      'personInfo.age': function () {
         this.setIsUnderage()
       },
-      stateChosen: function () {
+      'personInfo.stateChosen': function () {
         this.setIsPlaceAnswered()
       },
-      hasChosenOption: function () {
+      'personInfo.hasChosenOption': function () {
         this.setHasChosenOption()
       }
     },
     computed: {
       hasFilledPartOneRequirements: function () {
-        return this.isUnderage !== null && this.isResident !== null && this.selectedOptionForPhone !== null
+        return this.isUnderage !== null && this.isResident !== null && this.personInfo.selectedOptionForPhone !== null
       },
       hasFilledPartTwoRequirements: function () {
         return false
@@ -199,9 +199,9 @@
         this.$router.data = {
           notInterestedFromStart: this.notInterestedFromStart,
           notInterestedAny: this.notInterestedAny,
-          isUnderage: this.age < 18,
+          isUnderage: this.personInfo.age < 18,
           isNotFromUS: !this.isResident,
-          isNotComfortable: (this.selectedOptionForPhone !== 'comfortable using my phone')
+          isNotComfortable: (this.personInfo.selectedOptionForPhone !== 'comfortable using my phone')
         }
         this.$router.push('Ineligible')
       },
@@ -224,7 +224,7 @@
         this.$set(this.selectedChoice, index, !this.selectedChoice[index])
       },
       handleEligibility () {
-        this.isNotEligible = (this.age < 18) || (!this.isResident) || (this.selectedOptionForPhone !== 'comfortable using my phone')
+        this.isNotEligible = (this.personInfo.age < 18) || (!this.isResident) || (this.personInfo.selectedOptionForPhone !== 'comfortable using my phone')
         if (this.isNotEligible) {
           this.updateRouterState()
         } else {
@@ -260,15 +260,19 @@
         if (this.progressIndex + 1 === 3) {
           return 'ELIGBILITY DONE'
         } else {
+          if (this.progressIndex > 2) {
+            this.progressIndex = 2
+          }
           return 'STEP ' + (this.progressIndex + 1) + ' OF 3'
         }
       },
       setIsUnderage: _.debounce(
         function () {
-          if (this.age === '') {
+          if (this.personInfo.age === '') {
             this.isUnderage = null
+            console.log('setting to null')
           } else {
-            this.isUnderage = this.age < 18
+            this.isUnderage = this.personInfo.age < 18
             this.addProgress(0)
           }
           this.scrollPage('#placeField')
@@ -276,24 +280,30 @@
       ),
       setIsPlaceAnswered: _.debounce(
         function () {
-          if (this.stateChosen !== '') {
+          if (this.personInfo.stateChosen === '') {
+            this.isResident = null
+            console.log('setting to null')
+          } else {
             this.addProgress(1)
+            this.scrollPage('#comfortable')
+            this.isResident = (this.personInfo.stateChosen !== '' && this.personInfo.stateChosen !== 'I don\'t live in the US')
           }
-          this.isResident = (this.stateChosen !== '' && this.stateChosen !== 'I don\'t live in the US')
-          this.scrollPage('#comfortable')
         }, 500
       ),
       setHasChosenOption: _.debounce(
         function () {
-          this.hasChosenOption = (this.selectedOptionForPhone !== '')
-          if (this.stateChosen !== '') {
+          if (personInfo.selectedOptionForPhone === '') {
+            this.hasChosenOption = null
+            console.log('setting to null')
+          } else {
+            this.hasChosenOption = (this.personInfo.selectedOptionForPhone !== '')
             this.addProgress(2)
           }
         }, 500
       ),
       sethasCompletedForm: _.debounce(
         function () {
-          this.hasCompletedForm = (!this.isUnderage && this.stateChosen !== '' && this.hasChosenOption)
+          this.hasCompletedForm = (!this.personInfo.isUnderage && this.personInfo.stateChosen !== '' && this.personInfo.hasChosenOption)
           if (this.hasCompletedForm) {
             this.scrollPage('#submit')
           }
@@ -336,6 +346,11 @@
     },
     components: {
       'checkbox-smooth': CheckboxSmooth
+    },
+    mounted: function () {
+      this.setIsUnderage()
+      this.setIsPlaceAnswered()
+      this.setHasChosenOption()
     }
   }
 </script>

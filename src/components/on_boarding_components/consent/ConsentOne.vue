@@ -17,7 +17,7 @@
     </div>
 
     <div class="row">
-      <ul class="ml-md-5 mr-md-5 medium-small lightGrayText">
+      <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
         <li>
           We will ask you to do activities on your phone like tapping your fingers or holding your phone steady.
         </li>

@@ -136,7 +136,7 @@ export default {
         this.indexInStack = this.indexInStack + 1
         this.stepNumber += 1
       }
-      if (this.indexInStack === 13) {
+      if (this.indexInStack === 14 && !this.requirements.hasCompletedConsent) {
         this.requirements.isOnConsent = false
         this.requirements.hasCompletedConsent = true
         this.requirements.isOnQuiz = true
