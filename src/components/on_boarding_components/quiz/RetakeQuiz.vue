@@ -1,8 +1,5 @@
 <template >
   <v-app>
-    <br>
-    <br>
-    <br>
     <div class="row">
         <img src="../../../images/warning-icon.png" class="mx-auto" alt="image of an exclamation point inside of a yellow triangle symbolizing hazard">  
         </img>

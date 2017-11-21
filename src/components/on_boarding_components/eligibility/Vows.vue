@@ -211,13 +211,13 @@
               <v-btn flat :ripple="false" v-if="selectedChoice[12]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the study
               </v-btn>
               {{ getPlacementText(12,16)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[13]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on my progress
+              <v-btn flat :ripple="false" v-if="selectedChoice[13]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on participation stats
               </v-btn>
               {{ getPlacementText(13,16)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[14]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the app
+              <v-btn flat :ripple="false" v-if="selectedChoice[14]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Data about personal performance
               </v-btn>
               {{ getPlacementText(14,16)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[15]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> None of the above
+              <v-btn flat :ripple="false" v-if="selectedChoice[15]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> No updates or stats
               </v-btn>
             </span>
             <v-btn v-if="!controller[3].edit && controller[3].submit" flat class="white--text text-capitalize clickableLink pl-0" v-on:click="handleEdit(3)"> {{controller[3].edit ? "(Add Choices)": "Resubmit"}} </v-btn>
@@ -229,13 +229,13 @@
             <checkbox-smooth label="Updates on the study" v-model="selectedChoice[12]" class="stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left wrapLabel  customCheck darkPurple--text"></checkbox-smooth>
           </div>
           <div class="row">
-            <checkbox-smooth id="updates" label="Updates on my progress" v-model="selectedChoice[13]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left mb-sm-0 customCheck darkPurple--text wrapLabel"></checkbox-smooth>
+            <checkbox-smooth id="updates" label="Updates on participation stats" v-model="selectedChoice[13]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left mb-sm-0 customCheck darkPurple--text wrapLabel"></checkbox-smooth>
           </div>
           <div class="row">
-            <checkbox-smooth label="Updates on the app" v-model="selectedChoice[14]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
+            <checkbox-smooth label="Data about personal performance" v-model="selectedChoice[14]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
           </div>
           <div class="row">
-            <checkbox-smooth label="none of the above" v-model="selectedChoice[15]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
+            <checkbox-smooth label="No updates or stats" v-model="selectedChoice[15]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
           </div>
         </template>
     

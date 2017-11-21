@@ -348,9 +348,13 @@
       'checkbox-smooth': CheckboxSmooth
     },
     mounted: function () {
-      this.setIsUnderage()
-      this.setIsPlaceAnswered()
-      this.setHasChosenOption()
+      if (this.personInfo.age !== '' && this.personInfo.stateChosen !== '' && this.personInfo.selectedOptionForPhone) {
+        this.isUnderage = false
+        this.isResident = true
+        this.hasChosenOption = true
+        this.progress = 100
+        this.progressIndex = 2
+      }
     }
   }
 </script>
