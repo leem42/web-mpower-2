@@ -16,7 +16,7 @@
                 <p class="white--text text-center tiny">
                         {{ sectionOne ? 'You must':'' }}
                         {{isUnderage ? "be at least 18" + getProperCharacter(0): "" }} 
-                        {{isNotComfortable ? "have an iPhone 5 or higher"
+                        {{isNotComfortable ? "be comfortable using a smartphone to participate"
                         + getProperCharacter(1): "" }} 
                         {{isNotFromUS ? "live in the United States.": "" }} 
                         {{ sectionTwo ? 'Your answers indicated that you are not intersted in joining the mPower study.' : ''}}

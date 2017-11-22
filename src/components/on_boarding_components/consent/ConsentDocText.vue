@@ -338,7 +338,6 @@ export default {
 
         let keyCurrent = this.keys[index - 1]
         let keyBehind = this.keys[index - 2]
-
         if (forward) {
           this.$set(this.highlightTracker,keyCurrent,true)
           this.$set(this.highlightTracker,keyBehind,false)
@@ -348,7 +347,7 @@ export default {
           this.$set(this.highlightTracker,keyCurrent, false)
           this.$set(this.highlightTracker,keyBehind, true)
         }
-        this.scrollPage(index,1000)
+        this.scrollPage(index, 1000)
         /* eslint-enable */
       }
     },
@@ -359,12 +358,12 @@ export default {
   },
   created: function () {
     this.isModalFrame = window.frameElement.id === 'overlayFrame'
-    if (!this.isModalFrame) {
+    if (!this.isModalFrame) { // with modal frame it will always scroll into sight below
       window.addEventListener('message', this.recieveMessage, false)
     }
   },
   mounted: function () {
-    if (this.isModalFrame) {
+    if (this.isModalFrame || this.highlightTracker.one) {
       let wordsToNums = [
         'one',
         'two',
@@ -385,8 +384,7 @@ export default {
       href = href.split('Consent')
       let key = href[href.length - 1].toLowerCase()
       let index = wordsToNums.indexOf(key) + 1
-      this.highlightTracker[index] = true
-      console.log('setting ' + index)
+      this.highlightTracker[key] = true
       this.$set(this.highlightTracker, key, true)
       this.$scrollTo('#A' + index, 0, { easing: 'linear', offset: 0 })
     }

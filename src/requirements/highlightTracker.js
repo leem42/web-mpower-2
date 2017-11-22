@@ -4,7 +4,7 @@ export {
 }
 
 let highlightTracker = {
-  one: false,
+  one: true,
   two: false,
   three: false,
   four: false,

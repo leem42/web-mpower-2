@@ -370,7 +370,7 @@ input.showSelectedRadio[type=radio]:checked +  label span {
 
 
   .anchorBottom {
-    height: 108px;
+    height: 80px;
   }
 
   div.hideOnLarge {
@@ -432,10 +432,10 @@ input.showSelectedRadio[type=radio]:checked +  label span {
   }
 
   .marginTop50>button {
-    height: 70px;
+    height: 50px;
     width: inherit;
+    margin-top: 15px;
     border-radius: 16px;
-    margin-top: 20px;
   }
 
   .mask {

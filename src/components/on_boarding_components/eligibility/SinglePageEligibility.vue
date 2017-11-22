@@ -12,14 +12,14 @@
             </div>
         </div>
         
-        <div class="col-4 p-0 marginTop50 hideOnLarge text-center">
+        <div class="col-4 p-0 marginTop50 d-sm-none text-center">
             <v-btn
             v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small',''] : 'medium' ]"
              class="navyBlue white--text" v-on:click="handleController()"> {{indexInVowSection === 5? 'Review': 'Next'}} </v-btn>
         </div>
 
         
-        <div class="marginTop50 col-2 hideOnSmall">
+        <div class="marginTop50  customCenterAlign col-2 d-none d-sm-inline-block">
             <v-btn
 
             v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small','font-weight-bold'] : 'medium' ]"
@@ -47,8 +47,8 @@
 
           <p class="lead col-auto mx-auto mediumLarge customCenterAlign lato mx-md-0" v-if="isUnderage !== null && personInfo.age !== ''" > I live in </p>
           <v-flex class="col-12 mb-3 col-md-4" v-if="isUnderage !== null && personInfo.age != ''">
-            <v-select autocomplete class="d-none d-sm-inline-block eligibility" v-bind:items="states" hide-details auto single-line  name="input-1" label="select where" id="placeField" v-model="personInfo.stateChosen"></v-select>
-            <v-select class="eligibility d-sm-none" v-bind:items="states" hide-details auto single-line  name="input-1" label="select where" id="placeField" v-model="personInfo.stateChosen"></v-select>
+            <v-select autocomplete class="d-none d-sm-inline-block eligibility" v-bind:items="states" hide-details auto single-line  name="input-1" placeholder="select where" id="placeField" v-model="personInfo.stateChosen"></v-select>
+            <v-select class="eligibility d-sm-none" v-bind:items="states" hide-details auto single-line  name="input-1" placeholder="select where" id="placeField" v-model="personInfo.stateChosen"></v-select>
           </v-flex>
           
         </div>
@@ -60,7 +60,7 @@
         <div class="row">
           <p class="lead col-12 mediumLarge customCenterAlign col-md-auto lato text-center text-md-left">
             and I feel </p>
-          <v-select single-line id="comfortable" class="ml-md-0 col-12 col-md-6 mx-auto" label="Select" v-bind:items="phoneChoices" v-model="personInfo.selectedOptionForPhone"></v-select>
+          <v-select single-line id="comfortable" class="ml-md-0 col-12 col-md-6 mx-auto" placeholder="Select" v-bind:items="phoneChoices" v-model="personInfo.selectedOptionForPhone"></v-select>
           </v-select>
         </div>
       </div>
