@@ -28,7 +28,7 @@
         <li class="mt-lg-4">
          We will ask you questions about your health and your medical history.
         </li>
-        <a v-on:click="showHelperText = true" class="defaultBlue font-weight-bold ">
+        <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
           <u> Learn More </u>
         </a>
 

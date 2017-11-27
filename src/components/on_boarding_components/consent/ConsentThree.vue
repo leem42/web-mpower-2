@@ -14,23 +14,39 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
-        <li class="mt-lg-1 mb-lg-3">
-          You can view your data at any time.
-        </li>
+  <div class="row">
+    <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
+      <li class="mt-lg-1 mb-lg-3">
+        You can view your data at any time.
+      </li>
 
-        <li class="mt-lg-1 mb-lg-3">
-          When you look at your data you may notice patterns.
-        </li>
+      <li class="mt-lg-1 mb-lg-3">
+        When you look at your data you may notice patterns.
+      </li>
 
-        <li class="mt-lg-1">
-          Seeing health patterns can generate a wide range of emotions.
-        </li>
-        <a href="" class="defaultBlue font-weight-bold ">
-          <u> Learn More </u>
-        </a>
-      </ul>
+      <li class="mt-lg-1">
+        Seeing health patterns can generate a wide range of emotions.
+      </li>
+      <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
+        <u> Learn More </u>
+      </a>
+    </ul>
+  </div>
+  <div class="row" v-if="showHelperText">
+    <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+      This is your data. You’ll be able to view your recent data trends on the app dashboard and download your measurements. Seeing your data may change how you feel. You may feel tired, sad, energized, or happy.
     </div>
+  </div>
+
   </v-app>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      showHelperText: false
+    }
+  }
+}
+</script>

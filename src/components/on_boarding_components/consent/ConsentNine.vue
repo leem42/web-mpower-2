@@ -26,8 +26,35 @@
                 There may be other risks to participating that we do not know about yet.
             </li>
 
-          <a href="" class="defaultBlue font-weight-bold "><u> Learn More </u></a>
-        </ul>
-      </div>
+          <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
+          <u> Learn More </u>
+        </a>
+
+      </ul>
+    </div>
+    <div class="row mb-5 pb-5" v-if="showHelperText">
+        <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+          This is not a medical treatment study. We do not expect medical side effects from participating in this study.
+          <br><br>
+          We take great care to protect your privacy. However, if there is a data breach it may be possible to identify you. This risk is low but it is not zero.
+          <br><br>
+          Participating in this study may generate a wide range of emotions. It could affect your mood.
+          <br><br>
+          Be aware that other people may glimpse the study notifications and/or reminders on your phone and realize you are enrolled in this study.
+          <br><br>
+          Participation in this study may involve risks that are not known at this time. You will be told of any new information that might change your decision to be in this study.
+        </div>
+    </div>
+    
     </v-app>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      showHelperText: false
+    }
+  }
+}
+</script>

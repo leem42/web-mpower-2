@@ -29,38 +29,33 @@
               It will be transferred to an analysis platform in the United States. 
 
             </li>
-            <a href="" class="defaultBlue font-weight-bold "><u> Learn More </u></a>
-          </ul>
+              <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
+                <u> Learn More </u>
+              </a>
+            </ul>
+          </div>
+          <div class="row pb-5 mb-5" v-if="showHelperText">
+            <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+              We will process your data electronically.
+              <br><br>
+              We will combine your coded study data with the coded study data of other volunteers.
+              <br><br>
+              We will store this combined coded study data in the United States on the Synapse data analysis platform. Synapse is run by Sage Bionetworks (non-profit).
+              <br><br>              
+              We will analyze the combined coded study data. We will look for patterns. These patterns may help us better understand the symptoms of PD. Also, we will investigate how mobile phones and sensors perform in this type of research. Our goal is to improve the quality of life for people with PD.
+              <br><br>
+              We will not use the coded study data for commercial advertising.
+            </div>
         </div>
-    </v-app>
+  </v-app>
 </template>
 
-
 <script>
-import {highlightTracker} from '../../../requirements/highlightTracker'
-
 export default {
   data () {
     return {
-      pageURL: '',
-      isFocused: true,
-      highlightTracker: highlightTracker
+      showHelperText: false
     }
-  },
-  mounted: function () {
-    this.highlightTracker.sectionOne = true
-    this.pageURL = this.$router.currentRoute.fullPath.replace('ConsentOne', 'ConsentDoc')
   }
 }
 </script>
-
-<style>
-  .mask {
-    border: solid 10px rgba(108, 122, 137, 0.3);
-  }
-
-  .customHieght {
-    height: 200px !important;
-   }
-
-</style>

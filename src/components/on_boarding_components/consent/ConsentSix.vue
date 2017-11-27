@@ -30,9 +30,32 @@
                   You can set up the app to use Wi-Fi connections to avoid using your mobile data.
               </li>
 
-            <a href="" class="defaultBlue font-weight-bold "><u> Learn More </u></a>
-          </ul>
+             <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
+                <u> Learn More </u>
+              </a>
+            </ul>
+          </div>
+          <div class="row pb-5 mb-5" v-if="showHelperText">
+            <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+              Research takes time.
+              <br><br>
+              Before you volunteer, it is important to know how much time is involved.
+              <br><br>
+              Signing up to volunteer takes about 20 minutes. After that, the study takes about 10 minutes per day. Once a month, we ask follow up questions. These take about 5 minutes to complete.
+              <br><br>           
+              You decide when and how much to participate. You can stop and start your participation at any time.
+              Transmitting data collected in this study may count against your mobile data plan. You may configure the application to only use Wi-Fi connections to limit the impact this data collection has on your data plan. 
+            </div>
         </div>
-
-    </v-app>
+  </v-app>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      showHelperText: false
+    }
+  }
+}
+</script>

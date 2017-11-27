@@ -28,11 +28,33 @@
                 <li class="mt-lg-1">
                     You can decide what data you want to share with us.
                 </li>
-                <a href="" class="defaultBlue font-weight-bold ">
-                    <u> Learn More </u>
+                <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
+                 <u> Learn More </u>
                 </a>
             </ul>
         </div>
+         <div class="row" v-if="showHelperText">
+        <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+            Your phone contains many sensors. For example, it has a gyroscope and an accelerometer. 
+            These sensors are also found in fitness trackers like the Apple Watch, Fitbit, and Jawbone Up. 
+            These sensors measure your physical activity.
+            <br><br>
+            With your permission we’d like to add sensor data from your fitness tracker to the study.
+            This is an optional part of the study. You can still participate in the study if you do not allow us to gather data from these sensors.
+            <br><br>
+            We will NOT access other apps on your phone. Also, we will NOT access your contacts, photos, texts, or email.
+        </div>
+    </div>
 
     </v-app>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      showHelperText: false
+    }
+  }
+}
+</script>

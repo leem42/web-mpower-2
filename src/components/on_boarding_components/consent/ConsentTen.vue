@@ -28,8 +28,33 @@
                 We do not give medical advice or treatment recommendations.
             </li>
 
-          <a href="" class="defaultBlue font-weight-bold "><u> Learn More </u></a>
-        </ul>
-      </div>
+          <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
+          <u> Learn More </u>
+        </a>
+
+      </ul>
+    </div>
+    <div class="row" v-if="showHelperText">
+        <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+          mPower is a research study.
+          <br><br>
+          The mPower app is not a diagnostic tool. It shouldn’t be used for medical care, diagnosis, or treatment.
+          <br><br>
+          You should not use mPower in place of seeing a healthcare provider.
+          The sensor data collected through the app are not yet validated as measurements of PD symptoms. We are analyzing this data to see how accurate and reliable it is.
+          If you have questions or concerns related to your health, you should see a healthcare provider. 
+        </div>
+    </div>
+    
     </v-app>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      showHelperText: false
+    }
+  }
+}
+</script>

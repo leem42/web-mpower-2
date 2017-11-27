@@ -26,8 +26,30 @@
             </li>
 
 
-          <a href="" class="defaultBlue font-weight-bold "><u> Learn More </u></a>
-        </ul>
-      </div>
-    </v-app>
+          <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
+                <u> Learn More </u>
+              </a>
+            </ul>
+          </div>
+          <div class="row pb-5 mb-5" v-if="showHelperText">
+            <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+              We will ask you to answer different health surveys. Some of these surveys have been used in other PD research studies. Some of the surveys are new. Some of the questions in the surveys may be mildly stressful for some people.
+              <br><br>
+              Because we are looking for health patterns over time, we will ask you some of the same questions more than one time. This may seem silly, but it is important to our research.
+              <br><br>              
+              So that we have the best chance at making useful discoveries, some questions are mandatory. For example, you have to tell us if you have PD or not. We also must know if you take certain medications. Other questions are optional. You can skip any optional question you do not wish to answer.
+            </div>
+        </div>
+  </v-app>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      showHelperText: false
+    }
+  }
+}
+</script>
+
