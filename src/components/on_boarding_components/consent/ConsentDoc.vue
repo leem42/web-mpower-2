@@ -3,26 +3,26 @@
 
     <div class="row" style="height: 300px;">
 
-      <div class='customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-4'>
-         <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText"
+      <div v-if="showConsentDoc" class='customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-2 mr-md-4 order-2'>
+         <!--<iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText"
         class='fillParent  mask'>
-        </iframe> 
-          <!-- <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
         </iframe> -->
+           <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
+        </iframe> 
       </div>
 
        <v-dialog v-if="showOverlay" max-width="90%" v-model="showOverlay" scrollable>
         <v-card height="400px ">
-            <iframe id="overlayFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText"
+            <!--<iframe id="overlayFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText"
             class='fillParent'>
-            </iframe>
-             <!-- <iframe id="overlayFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class='fillParent'>
-            </iframe>  -->
+            </iframe>-->
+              <iframe id="overlayFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class='fillParent'>
+            </iframe>  
         </v-card>
        </v-dialog>
 
 
-      <div class="col-md-6 responseRouterHeight mx-auto mr-md-5 mt-2" >
+      <div class="col-md-10 responseRouterHeight mt-2 mx-auto" v-bind:class="{'order-1': showConsentDoc }" >
         <router-view class="whiteBackground fillParentRouter consentView router container-fluid"> </router-view>
       </div>
 
@@ -116,11 +116,11 @@ export default {
       stepNumber: 1,
       iframe: '',
       showOverlay: false,
+      showConsentDoc: false,
       isReviewingQuestion: undefined
     }
   },
   mounted: function () {
-    this.iframe = document.getElementById('iFrame').contentWindow
     // if they have wrong questions we don't show nav and let user pop out of screen
     this.isReviewingQuestion = Object.values(this.questionResults).includes('false')
   },
@@ -152,12 +152,16 @@ export default {
       this.$router.push({name: frame})
     },
     callFrame (message) {
-      this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText')
-      // this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
+      // this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText')
+      if (!this.iframe) {
+        this.iframe = document.getElementById('iFrame').contentWindow
+      }
+
+      this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
     },
     recieveMessage: function (event) {
-      if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
-      // if (event.origin !== 'http://localhost:8080') {
+      // if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
+      if (event.origin !== 'http://localhost:8080') {
         return ''
       } else {
         /* eslint-disable */

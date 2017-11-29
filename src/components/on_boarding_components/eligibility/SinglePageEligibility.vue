@@ -158,7 +158,7 @@
     methods: {
       scrollPage: _.debounce(
         function (arg1) {
-          this.$scrollTo(arg1, 750, {easing: 'linear', offset: -150})
+          this.$scrollTo(arg1, 750, {easing: 'linear', offset: -500}) // temporarily disable scrolling
         }
         , 200),
       handleController () {

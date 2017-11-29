@@ -10,7 +10,7 @@
       <div class="col-9 col-lg-9 x-tiny mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
         <div class="row">
           <div class="col-12 mt-0 default text-center text-sm-left font-weight-bold">
-            Activities & Surveys
+            Overview
           </div>
         </div>
       </div>
@@ -19,17 +19,18 @@
     <div class="row">
       <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
         <li>
-          We will ask you to do activities on your phone like tapping your fingers or holding your phone steady.
+          This study is to understand variations in Parkinson’s Disease symptoms.
         </li>
 
         <li class="mt-lg-4">
-          We will ask you to do the activities a certain number of times. But you can do them as often as you like.        </li>
+          You can join if you are over 18 years old, even if you do not have Parkinson’s Disease.
+        </li>
 
         <li class="mt-lg-4">
-         We will ask you questions about your health and your medical history.
+         Participation is voluntary. It will not affect your medical benefits.
         </li>
         <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
-          <u> Learn More </u>
+          <u> See Google Doc with this section </u>
         </a>
 
       </ul>
@@ -55,10 +56,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      showHelperText: false
-    }
-  }
+  props: ['showHelperText']
 }
 </script>
