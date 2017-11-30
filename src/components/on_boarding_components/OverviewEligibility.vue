@@ -183,11 +183,7 @@ export default {
       }
       return count
     }
-  },
-  mounted: function () {
-    console.log('herre I am')
   }
-
 }
 </script>
 

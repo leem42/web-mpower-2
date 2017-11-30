@@ -277,7 +277,7 @@ button.lowOpacity {
   }
 
   .medium {
-    font-size: $font-size-base * 0.4 !important;
+    font-size: $font-size-base * 0.6 !important;
   }
 
   // Styling on consent doc //
@@ -692,19 +692,19 @@ div.noLabel {
   max-width: 45px !important;
 }
 
-.bigButton {
-  width: 280px;
-  height: 70px;
-  border-radius: 12px;
-}
+// .bigButton {
+//   width: 280px;
+//   height: 70px;
+//   border-radius: 12px;
+// }
 
 div.input-group__hint {
   font-size: $font-size-base * 0.45 !important;
 }
 
-.custom-fig {
-  display: inline-block;
-}
+// .custom-fig {
+//   display: inline-block;
+// }
 
 .customCenterAlign {
   display: flex;
@@ -852,20 +852,20 @@ input {
   text-align: center;
 }
 
-circle {
-  fill: lightgray;
-  stroke-width: 5;
-  box-shadow: 10px 10px 10px #888888;
-}
+// circle {
+//   fill: lightgray;
+//   stroke-width: 5;
+//   box-shadow: 10px 10px 10px #888888;
+// }
 
-select {
-  text-align-last: center;
-  padding-right: 29px;
-  direction: ltr;
-  &.customizedSelect {
-    min-height: 75px;
-  }
-}
+// select {
+//   text-align-last: center;
+//   padding-right: 29px;
+//   direction: ltr;
+//   &.customizedSelect {
+//     min-height: 75px;
+//   }
+// }
 
 .custom-input {
   display: inline !important;

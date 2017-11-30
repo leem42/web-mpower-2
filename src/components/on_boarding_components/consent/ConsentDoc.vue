@@ -22,7 +22,7 @@
        </v-dialog>
 
 
-      <div class="col-md-10 responseRouterHeight mt-2 mx-auto" v-bind:class="{'order-1': showConsentDoc }" >
+      <div class="col-md-6 responseRouterHeight mt-2 mx-auto" v-bind:class="{'order-1': showConsentDoc }" >
         <router-view class="whiteBackground fillParentRouter consentView router container-fluid"> </router-view>
       </div>
 

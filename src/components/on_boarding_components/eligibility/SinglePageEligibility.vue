@@ -14,16 +14,16 @@
         
         <div class="col-4 p-0 marginTop50 d-sm-none text-center">
             <v-btn
-            v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small',''] : 'medium' ]"
-             class="navyBlue white--text" v-on:click="handleController()"> {{indexInVowSection === 5? 'Review': 'Next'}} </v-btn>
+            v-bind:class="[hasFilledPartOneRequirements ? '': 'lowOpacity']"
+             class="navyBlue white--text medium" v-on:click="handleController()"> {{indexInVowSection === 3? 'Review': 'Next'}} </v-btn>
         </div>
 
         
         <div class="marginTop50  customCenterAlign col-2 d-none d-sm-inline-block">
             <v-btn
 
-            v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small','font-weight-bold'] : 'medium' ]"
-             class="navyBlue largeButton small ml-0  white--text" v-on:click="handleController()"> {{indexInVowSection === 5? 'Review Responses': 'Next'}}
+            v-bind:class="[hasFilledPartOneRequirements ? '': 'lowOpacity']"
+             class="navyBlue largeButton small ml-0 medium  white--text" v-on:click="handleController()"> {{indexInVowSection === 3? 'Review Responses': 'Next'}}
             </v-btn>
         </div>
 
@@ -39,13 +39,13 @@
     <div class="row mt-sm-4">
       <div class=" col-md-10 col-lg-8 mx-auto text-center">
         <div class="row">
-          <p class="lead col-auto mx-auto mediumLarge customCenterAlign pb-0 lato mx-md-0"> I am </p>
+          <p class="lead col-auto mx-auto medium customCenterAlign pb-0 lato mx-md-0"> I am </p>
           <v-flex class="col-md-3">
             <v-text-field suffix="years old" name="input-1" placeholder="45" id="testing"  pattern="\d*" auto-grow v-model.number="personInfo.age">
             </v-text-field>
           </v-flex>
 
-          <p class="lead col-auto mx-auto mediumLarge customCenterAlign lato mx-md-0" v-if="isUnderage !== null && personInfo.age !== ''" > I live in </p>
+          <p class="lead col-auto mx-auto medium customCenterAlign lato mx-md-0" v-if="isUnderage !== null && personInfo.age !== ''" > I live in </p>
           <v-flex class="col-12 mb-3 col-md-4" v-if="isUnderage !== null && personInfo.age != ''">
             <v-select autocomplete class="d-none d-sm-inline-block eligibility" v-bind:items="states" hide-details auto single-line  name="input-1" placeholder="select where" id="placeField" v-model="personInfo.stateChosen"></v-select>
             <v-select class="eligibility d-sm-none" v-bind:items="states" hide-details auto single-line  name="input-1" placeholder="select where" id="placeField" v-model="personInfo.stateChosen"></v-select>
@@ -58,10 +58,12 @@
     <div id="option" class="row mt-2" v-if="isResident !== null && personInfo.stateChosen !== '' ">
       <div class=" col-md-10 col-lg-8 mx-auto text-center text-md-left">
         <div class="row">
-          <p class="lead col-12 mediumLarge customCenterAlign col-md-auto lato text-center text-md-left">
-            and I feel </p>
-          <v-select single-line id="comfortable" class="ml-md-0 col-12 col-md-6 mx-auto" placeholder="Select" v-bind:items="phoneChoices" v-model="personInfo.selectedOptionForPhone"></v-select>
+          <p class="lead col-12 medium customCenterAlign col-md-auto lato text-center text-md-left">
+            I feel </p>
+          <v-select single-line id="comfortable" class="col-sm-4" placeholder="Select" v-bind:items="phoneChoices" v-model="personInfo.selectedOptionForPhone"></v-select>
           </v-select>
+          <p class="lead medium customCenterAlign col-md-auto lato text-center text-md-left">
+            using my smart phone.</p>
         </div>
       </div>
     </div>
@@ -72,11 +74,9 @@
 </template>
 
 <script>
-  import {Focus} from '@/directives/focus.js'
   import {requirements} from '../../../requirements/requirements'
   import {personInfo} from '../../../requirements/personInfo'
   import _ from 'lodash'
-  import CheckboxSmooth from '@/custom_components/checkbox/CheckboxSmooth.vue'
 
   export default {
     data () {
@@ -84,9 +84,9 @@
         personInfo: personInfo,
         isUnderage: null,
         isResident: null,
-        hasChosenOption: false,
+        hasChosenOption: null,
         hasCompletedForm: false,
-        phoneChoices: ['comfortable using my phone', 'uncomfortable using my phone'],
+        phoneChoices: ['comfortable', 'uncomfortable'],
         states: [
           'I don\'t live in the US', 'Alabama', 'Alaska', 'American Samoa', 'Arizona',
           'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -113,7 +113,6 @@
         progressIndex: 0,
         hasAnswered: [false, false, false],
         radioChoice: '',
-        selectedChoice: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
         controllerLevel: 0,
         controller: {
           0: {click: false, submit: false, edit: false, page: '#interest'}, // TODO: Remove submit field if its extraneous
@@ -121,7 +120,6 @@
           2: {click: false, submit: false, edit: false, page: '#basis'},
           3: {click: false, submit: false, edit: false, page: '#request'}
         },
-        radioTexts: ['Daily', 'Weekly', 'Biweekly', 'Monthly', 'Never'],
         indexInVowSection: 1,
         alert: true
       }
@@ -133,26 +131,13 @@
       'personInfo.stateChosen': function () {
         this.setIsPlaceAnswered()
       },
-      'personInfo.hasChosenOption': function () {
+      'personInfo.selectedOptionForPhone': function () {
         this.setHasChosenOption()
       }
     },
     computed: {
       hasFilledPartOneRequirements: function () {
-        return this.isUnderage !== null && this.isResident !== null && this.personInfo.selectedOptionForPhone !== null
-      },
-      hasFilledPartTwoRequirements: function () {
-        return false
-      },
-      hasFilledPartThreeRequirements: function () {
-        return false
-      },
-      notInterestedFromStart: function () {
-        return this.selectedChoice[5]
-      },
-      notInterestedAny: function () {
-        // TODO: Get details on the desired functionality for this function
-        return this.selectedChoice[11] && this.radioChoice === 'Never'
+        return this.isUnderage !== null && this.isResident !== null && this.hasChosenOption !== null
       }
     },
     methods: {
@@ -162,69 +147,24 @@
         }
         , 200),
       handleController () {
-        if (this.getCurrentStage() === 'Part One') {
-          // handle first three questions
+        if (this.hasFilledPartOneRequirements && !this.hasCompletedPartOne) {
+          this.hasCompletedPartOne = true
           this.handleEligibility()
-        }
-      },
-      handleVows () {
-        if (!this.currentVowSectionHasValues()) {
-          return
-        }
-        if (this.controllerLevel === 4 && this.notInterestedAny) {
-          this.updateRouterState()
-        } else if (this.controllerLevel === 4) {
-          this.requirements.isOnElgibility = false
-          this.requirements.hasCompletedEligibility = true
-          this.requirements.isOnConsent = true
-          this.$router.push('OverviewEligibility')
-        } else if (this.controllerLevel === 0 && this.notInterestedFromStart) {
-          this.updateRouterState()
-        } else {
-          let levelObj = this.controller[this.controllerLevel]
-          levelObj.click = true
-          levelObj.edit = true
-          levelObj.submit = true
-          this.indexInVowSection += 1
-          this.controllerLevel += 1
-          this.progress += this.progressStep
-          this.progressIndex += 1
-          levelObj = this.controller[this.controllerLevel]
-          if (this.controllerLevel !== 4) {
-            this.scrollPage(levelObj.page)
-          }
         }
       },
       updateRouterState () {
         this.$router.data = {
-          notInterestedFromStart: this.notInterestedFromStart,
-          notInterestedAny: this.notInterestedAny,
           isUnderage: this.personInfo.age < 18,
           isNotFromUS: !this.isResident,
-          isNotComfortable: (this.personInfo.selectedOptionForPhone !== 'comfortable using my phone')
+          isNotComfortable: (this.personInfo.selectedOptionForPhone !== 'comfortable')
         }
         this.$router.push('Ineligible')
-      },
-      currentVowSectionHasValues () {
-        if (this.hasFilledPartOneRequirements && !this.hasCompletedPartOne) {
-          return true
-        } else if (this.controllerLevel === 0) {
-          return this.hasAnsweredAny(0, 6)
-        } else if (this.controllerLevel === 1) {
-          return this.hasAnsweredAny(6, 12)
-        } else if (this.controllerLevel === 2) {
-          return this.radioChoice !== ''
-        } else if (this.controllerLevel === 3) {
-          return this.hasAnsweredAny(12, 16)
-        } else {
-          return true
-        }
       },
       setSelection (index) {
         this.$set(this.selectedChoice, index, !this.selectedChoice[index])
       },
       handleEligibility () {
-        this.isNotEligible = (this.personInfo.age < 18) || (!this.isResident) || (this.personInfo.selectedOptionForPhone !== 'comfortable using my phone')
+        this.isNotEligible = (this.personInfo.age < 18) || (!this.isResident) || (this.personInfo.selectedOptionForPhone !== 'comfortable')
         if (this.isNotEligible) {
           this.updateRouterState()
         } else {
@@ -232,21 +172,6 @@
           this.requirements.hasCompletedEligibility = true
           this.requirements.isOnConsent = true
           this.$router.push({name: 'OverviewEligibility'})
-        }
-      },
-      getCurrentStage () {
-        // we look to see thtat
-        if (this.hasFilledPartOneRequirements && !this.hasCompletedPartOne) {
-          this.hasCompletedPartOne = true
-          return 'Part One'
-        } else if (this.hasFilledPartTwoRequirements && !this.hasCompletedPartTwo) {
-          this.partTwo = true
-          return 'Part Two'
-        } else if (this.hasFilledPartThreeRequirements && !this.hasCompletedPartThree) {
-          this.partThree = true
-          return 'Part Three'
-        } else {
-          return 'None'
         }
       },
       addProgress (index) {
@@ -270,7 +195,6 @@
         function () {
           if (this.personInfo.age === '') {
             this.isUnderage = null
-            console.log('setting to null')
           } else {
             this.isUnderage = this.personInfo.age < 18
             this.addProgress(0)
@@ -282,7 +206,6 @@
         function () {
           if (this.personInfo.stateChosen === '') {
             this.isResident = null
-            console.log('setting to null')
           } else {
             this.addProgress(1)
             this.scrollPage('#comfortable')
@@ -294,7 +217,6 @@
         function () {
           if (personInfo.selectedOptionForPhone === '') {
             this.hasChosenOption = null
-            console.log('setting to null')
           } else {
             this.hasChosenOption = (this.personInfo.selectedOptionForPhone !== '')
             this.addProgress(2)
@@ -316,36 +238,7 @@
           }
         }
         return false
-      },
-      getPlacementText: function (start, stop) {
-        // am I open and is there a single space to the right or a multi space
-        if (this.selectedChoice[start]) {
-          var count = 0
-          for (var i = start + 1; i < stop; i++) {
-            if (this.selectedChoice[i]) {
-              count = count + 1
-            }
-          }
-          if (count === 1) {
-            return 'and'
-          } else if (count > 1) {
-            return ','
-          }
-          // else on choice and return nothing
-        }
-      },
-      handleRadio (index) {
-        this.radioChoice = this.radioTexts[index]
-      },
-      handleEdit: function (index) {
-        this.controller[index].edit = !this.controller[index].edit
       }
-    },
-    directives: {
-      Focus
-    },
-    components: {
-      'checkbox-smooth': CheckboxSmooth
     },
     mounted: function () {
       if (this.personInfo.age !== '' && this.personInfo.stateChosen !== '' && this.personInfo.selectedOptionForPhone) {
@@ -372,6 +265,10 @@
   /* Work around for diabled button interfering with when the button gets focused in on*/
   .dim {
       opacity: 0.5    
+  }
+
+  #placeField {
+    color: #3a539b;
   }
 
   label {
