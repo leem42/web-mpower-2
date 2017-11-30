@@ -182,7 +182,7 @@
         }
       },
       getProgress () {
-        if (this.progressIndex + 1 === 3) {
+        if (this.progressIndex + 1 === 3 && this.hasCompletedPartOne) {
           return 'ELIGBILITY DONE'
         } else {
           if (this.progressIndex > 2) {
@@ -268,7 +268,7 @@
   }
 
   #placeField {
-    color: #3a539b;
+    color: #3a539b !important;
   }
 
   label {

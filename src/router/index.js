@@ -11,13 +11,10 @@ import FAQ from '@/components/web_components/FAQ.vue'
 
 import OnBoarding from '@/components/on_boarding_components/OnBoarding.vue'
 import WhyInterested from '@/components/on_boarding_components/eligibility/WhyInterested.vue'
-import SubjectInterest from '@/components/on_boarding_components/eligibility/SubjectInterest.vue'
 import OverviewEligibility from '@/components/on_boarding_components/OverviewEligibility.vue'
-import Eligibility from '@/components/on_boarding_components/eligibility/Eligibility.vue'
 import SinglePageEligibility from '@/components/on_boarding_components/eligibility/SinglePageEligibility.vue'
 import Vows from '@/components/on_boarding_components/eligibility/Vows.vue'
 import Congratulations from '@/components/on_boarding_components/eligibility/Congratulations.vue'
-import Ineligible from '@/components/on_boarding_components/eligibility/Ineligible.vue'
 
 import QuestionOne from '@/components/on_boarding_components/quiz/QuestionOne.vue'
 import QuestionTwo from '@/components/on_boarding_components/quiz/QuestionTwo.vue'
@@ -130,16 +127,6 @@ export default new Router({
           component: OnBoarding,
           children: [
             {
-              path: 'SubjectInterest',
-              name: 'SubjectInterest',
-              component: SubjectInterest
-            },
-            {
-              path: 'Eligibility',
-              name: 'Eligibility',
-              component: Eligibility
-            },
-            {
               path: 'SinglePageEligibility',
               name: 'SinglePageEligibility',
               component: SinglePageEligibility
@@ -158,11 +145,6 @@ export default new Router({
               path: 'Congratulations',
               name: 'Congratulations',
               component: Congratulations
-            },
-            {
-              path: 'Ineligible',
-              name: 'Ineligible',
-              component: Ineligible
             },
             {
               path: 'WhyInterested',
