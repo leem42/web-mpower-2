@@ -1,37 +1,35 @@
 <template>
     <v-app>
 
-    <div class="row">
+    <div class="row m-md-3">
 
-      <div class="mx-auto p-0 pt-sm-0 col-2 col-lg-2 mr-lg-2 ml-lg-2">
+      <div class="mx-auto p-0 pt-sm-0 col-2 mr-md-2 ml-md-2">
         <img class="img-fluid " src="../../../images/step-1-consent-icon.png">
       </div>
 
-      <div class="col-9 col-lg-9 x-tiny mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
+      <div class="col-9 centerVertically x-tiny mt-3 lightLead mr-md-0 ml-md-0 pl-0 pr-0">
         <div class="row">
-          <div class="col-12 mt-0 default text-center text-sm-left font-weight-bold">
+          <div class="col-12 mt-0 default text-left font-weight-bold">
             Overview
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row m-3">
       <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
         <li>
           This study is to understand variations in Parkinson’s Disease symptoms.
         </li>
 
-        <li class="mt-lg-4">
+        <li class="mt-md-4">
           You can join if you are over 18 years old, even if you do not have Parkinson’s Disease.
         </li>
 
-        <li class="mt-lg-4">
+        <li class="mt-md-4">
          Participation is voluntary. It will not affect your medical benefits.
         </li>
-        <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
-          <u> See Google Doc with this section </u>
-        </a>
+      
 
       </ul>
     </div>

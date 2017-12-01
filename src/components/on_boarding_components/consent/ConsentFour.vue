@@ -9,7 +9,7 @@
             <div class="col-9 col-lg-9 x-tiny mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
               <div class="row">
                 <div class="col-12 default font-weight-bold">
-                  Your privacy
+                  Risks
                 </div>
               </div>
             </div>
@@ -19,26 +19,28 @@
             <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
 
               <li class="mt-lg-1 mb-lg-3">
-                We will protect your privacy to the best of our ability.
+                Your study data will be encrypted on your phone, and we will do our best to protect your privacy. But your data could be hacked.
               </li>
 
               <li class="mt-lg-1 mb-lg-3">
-                Your study data will be encrypted on your phone.
+                The time you spend on the app may count against your phone’s data plan. You can set up the app to use Wi-Fi connections to avoid using your mobile data.
               </li>
 
               <li class="mt-lg-1 mb-lg-3">
-                We will replace your name with a random code.
+                The questions we ask you about your health could make you feel uncomfortable.
+              </li>
+
+              <li class="mt-lg-1 mb-lg-3">
+                The things you learn about your health could make you feel uncomfortable.
               </li>
 
               <li class="mt-lg-1">
-                We will store your study data on a secure cloud server. But we cannot promise total privacy.
+              There may be other risks to participating that we do not know about yet.
               </li>
-              <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
-                <u> Learn More </u>
-              </a>
+
             </ul>
           </div>
-      <div class="row pb-5 mb-5" v-if="showHelperText">
+      <!-- <div class="row pb-5 mb-5" v-if="showHelperText">
         <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
           Your privacy is important to us. We will make every effort to protect your privacy.
           <br><br> The data we collect through the app is encrypted on the phone. This means your data is protected. Unauthorized people cannot easily understand your data when it is encrypted.
@@ -48,7 +50,7 @@
           <br><br> If required by law, we may give your contact information and identifiable study data to: · The US Department of Health and Human Services (HHS), the Office for Human Research Protection (OHRP), the Food and Drug Administration (FDA), and other agencies for review of our research procedures · The Institutional Review Board (IRB) so they can monitor the safety, effectiveness, and conduct of our research
           <br><br> Please read our Privacy Policy for more information.
         </div>
-      </div>
+      </div> -->
   </v-app>
 </template>
 

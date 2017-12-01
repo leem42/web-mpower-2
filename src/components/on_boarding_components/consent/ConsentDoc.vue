@@ -1,7 +1,7 @@
 <template>
   <v-app>
 
-    <div class="row" style="height: 300px;">
+    <div class="row" style="height: 400px;">
 
       <div v-if="showConsentDoc" class='customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-2 mr-md-4 order-2'>
          <!--<iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText"
@@ -22,13 +22,17 @@
        </v-dialog>
 
 
-      <div class="col-md-6 responseRouterHeight mt-2 mx-auto" v-bind:class="{'order-1': showConsentDoc }" >
-        <router-view class="whiteBackground fillParentRouter consentView router container-fluid"> </router-view>
+      <div class="col-md-8 col-lg-6  mt-2 mx-auto" v-bind:class="{'order-1': showConsentDoc }" >
+        <router-view style="height: -webkit-fill-available;" class="whiteBackground fillParentRouter consentView router container-fluid"> </router-view>
+        <div class="row mt-md-5 m-md-3">
+            <div class="ml-5 medium-small">  
+              <a v-on:click="showConsentDoc = !showConsentDoc" class="defaultBlue font-weight-bold ">
+                <u> See Consent Document with this section </u>
+              </a>
+            </div>
+        </div>
       </div>
-
     </div>
-
-
 
     <div class="row anchorBottom customRowHeight">
 
@@ -152,12 +156,13 @@ export default {
       this.$router.push({name: frame})
     },
     callFrame (message) {
-      // this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText')
-      if (!this.iframe) {
+      if (!this.iframe && document.getElementById('iFrame')) {
         this.iframe = document.getElementById('iFrame').contentWindow
       }
-
-      this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
+      if (this.isFrame) {
+      // this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText')
+        this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
+      }
     },
     recieveMessage: function (event) {
       // if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {

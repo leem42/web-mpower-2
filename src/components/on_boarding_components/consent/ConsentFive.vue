@@ -9,7 +9,7 @@
           <div class="col-9 col-lg-9 x-tiny mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
             <div class="row">
               <div class="col-12 default font-weight-bold">
-                Data use
+                Potential benefits
               </div>
             </div>
           </div>
@@ -18,17 +18,22 @@
           <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
 
             <li class="mt-lg-1 mb-lg-3">
-              Your coded study data will be used for research.
+              Your participation could help researchers understand Parkinson’s Disease better.
+
             </li>
             
             <li class="mt-lg-1 mb-lg-3">
-              It will be combined with data from other volunteers.
+              You may or may not learn about your health by viewing your data.
+            </li>
+            
+            <li class="mt-lg-1 mb-lg-3">
+             If you want to, you can share this data with your doctors, family members, or others.
             </li>
             
             <li class="mt-lg-1">
-              It will be transferred to an analysis platform in the United States. 
-
+            You will not be paid for participating in this study. There is no compensation for injury.
             </li>
+
               <a v-on:click="showHelperText = !showHelperText" class="defaultBlue font-weight-bold ">
                 <u> Learn More </u>
               </a>
