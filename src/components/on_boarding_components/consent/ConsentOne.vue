@@ -3,7 +3,7 @@
 
     <div class="row m-md-3">
 
-      <div class="mx-auto p-0 pt-sm-0 col-2 mr-md-2 ml-md-2">
+      <div class="mx-auto fitContent p-0 pt-sm-0 col-2 mr-md-2 ml-md-2">
         <img class="img-fluid " src="../../../images/step-1-consent-icon.png">
       </div>
 

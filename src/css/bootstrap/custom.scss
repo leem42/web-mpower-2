@@ -15,6 +15,10 @@ $lead-font-size:   $font-size-base;
 $lead-font-weight: 600;
 
 
+
+.fitContent  {
+  height: fit-content;
+}
 .application.theme--light {
   background: white;
 }
@@ -174,20 +178,6 @@ button.lowOpacity {
     font-size: $font-size-base * 0.6 !important;
   }
   
-
-  #nextBtn {
-    right: 18px;
-    left: auto;
-    bottom: 0px !important;
-  }
-  
-  #backBtn {
-    left: 18px;
-    display: block !important;
-    position: fixed;
-    bottom: 0px;
-  }
-
   .controller {
     height: 44px;
     width: 100px;
@@ -209,7 +199,6 @@ button.lowOpacity {
 
   input#testing,
   input#placeField {
-    // padding-bottom: 10px;
     text-align: center !important;
   }
 
@@ -220,6 +209,7 @@ button.lowOpacity {
   input#comfortable {
     text-align: center !important;
   }
+
   .input-group__selections__comma {
     font-size: $font-size-base * 0.5 !important;
   }
@@ -358,6 +348,10 @@ input.showSelectedCheckbox[type=checkbox]:checked +  label span {
   width: 41px;
 }
 
+input.showSelectedRadio[type=radio] {
+  display:none;
+}
+
 input.showSelectedRadio[type=radio] +  label span {
   display:inline-block;
   background:url("../../images/radio-button.png") no-repeat;
@@ -376,7 +370,6 @@ input.showSelectedRadio[type=radio]:checked +  label span {
   nav.onboarding {
     height: 90px;
   }
-
 
   .anchorBottom {
     height: 80px;
@@ -535,17 +528,6 @@ div.radio {
   padding: 2px;
 }
 
-#nextBtn {
-  bottom: 50px !important;
-  position: fixed;
-  left: 40%;
-  z-index: 10000;
-}
-
-#backBtn {
-  display: none;
-}
-
 div.customCheck {
   color: #1bb191;
 }
@@ -697,19 +679,9 @@ div.noLabel {
   max-width: 45px !important;
 }
 
-// .bigButton {
-//   width: 280px;
-//   height: 70px;
-//   border-radius: 12px;
-// }
-
 div.input-group__hint {
   font-size: $font-size-base * 0.45 !important;
 }
-
-// .custom-fig {
-//   display: inline-block;
-// }
 
 .customCenterAlign {
   display: flex;
@@ -862,20 +834,6 @@ input {
   text-align: center;
 }
 
-// circle {
-//   fill: lightgray;
-//   stroke-width: 5;
-//   box-shadow: 10px 10px 10px #888888;
-// }
-
-// select {
-//   text-align-last: center;
-//   padding-right: 29px;
-//   direction: ltr;
-//   &.customizedSelect {
-//     min-height: 75px;
-//   }
-// }
 
 .custom-input {
   display: inline !important;

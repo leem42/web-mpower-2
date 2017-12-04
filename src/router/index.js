@@ -10,7 +10,6 @@ import Contact from '@/components/web_components/Contact.vue'
 import FAQ from '@/components/web_components/FAQ.vue'
 
 import OnBoarding from '@/components/on_boarding_components/OnBoarding.vue'
-import WhyInterested from '@/components/on_boarding_components/eligibility/WhyInterested.vue'
 import OverviewEligibility from '@/components/on_boarding_components/OverviewEligibility.vue'
 import SinglePageEligibility from '@/components/on_boarding_components/eligibility/SinglePageEligibility.vue'
 import Ineligible from '@/components/on_boarding_components/eligibility/Ineligible.vue'
@@ -151,11 +150,6 @@ export default new Router({
               path: 'Congratulations',
               name: 'Congratulations',
               component: Congratulations
-            },
-            {
-              path: 'WhyInterested',
-              name: 'WhyInterested',
-              component: WhyInterested
             },
             {
               path: 'QuestionView',

@@ -1,8 +1,8 @@
 <template>
     <v-app>
-        <div class="row m-md-1">
+        <div class="row d-flex m-md-1">
 
-            <div class="mx-auto col-3 mr-md-2 ml-md-2">
+            <div class="mx-auto fitContent col-3 mr-md-2 ml-md-2">
                 <img class="img-fluid consentImg " src="../../../images/number-icon.png">
             </div>
 
