@@ -169,7 +169,14 @@
             <v-btn v-if="!controller[2].edit && controller[2].submit" flat class=" white--text text-capitalize pl-0 clickableLink" v-on:click="handleEdit(2)"> {{controller[2].edit ? "(Edit Choice)": "Resubmit"}} </v-btn>
           </p>
         </div>
-    
+
+        
+        <!-- <div class="row">
+          <radio-smooth name="options" label="daily" @change="changeValue" :value="timeChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+          <radio-smooth name="options" label="weekly" @change="changeValue" :value="timeChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+        </div> -->
+
+
         <v-radio-group v-model="radioChoice" v-if="!controller[2].edit">
           <div class="row mb-3">
             <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left ">
@@ -251,10 +258,12 @@
   import {requirements} from '../../../requirements/requirements'
   import _ from 'lodash'
   import CheckboxSmooth from '@/custom_components/checkbox/CheckboxSmooth.vue'
+  import RadioSmooth from '@/custom_components/radiobox/RadioBoxLight.vue'
 
   export default {
     data () {
       return {
+        timeChoice: '',
         age: '',
         selectedOptionForPhone: null,
         isUnderage: null,
@@ -406,6 +415,9 @@
           this.partOneIsEligible = true
         }
       },
+      changeValue: function (newValue) {
+        this.timeChoice = newValue
+      },
       getCurrentStage () {
         // we look to see thtat
         if (this.hasFilledPartOneRequirements && !this.hasCompletedPartOne) {
@@ -507,7 +519,8 @@
       Focus
     },
     components: {
-      'checkbox-smooth': CheckboxSmooth
+      'checkbox-smooth': CheckboxSmooth,
+      'radio-smooth': RadioSmooth
     }
   }
 </script>

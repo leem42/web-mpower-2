@@ -74,7 +74,6 @@ export default new Router({
   // mode: 'history', TODO: Configure history mode
   scrollBehavior: scrollBehavior,
   routes: [
-    // { path: '*', component: NotFoundComponent },
     {
       path: '/NullPage',
       component: NullPage,
