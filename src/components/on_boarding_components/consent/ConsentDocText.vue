@@ -192,8 +192,8 @@ export default {
       }
       , 200),
     recieveMessage: function (event) {
-      // if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
-      if (event.origin !== 'http://localhost:8080') {
+      if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
+      // if (event.origin !== 'http://localhost:8080') {
         return ''
       } else {
         console.log('reciever called')

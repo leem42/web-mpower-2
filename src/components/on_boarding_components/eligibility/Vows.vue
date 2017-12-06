@@ -170,40 +170,14 @@
           </p>
         </div>
 
-        
-        <!-- <div class="row">
-          <radio-smooth name="options" label="daily" @change="changeValue" :value="timeChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
-          <radio-smooth name="options" label="weekly" @change="changeValue" :value="timeChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
-        </div> -->
+         <div class="row" v-if="!controller[2].edit">
+          <radio-smooth name="options" label="Daily" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+          <radio-smooth name="options" label="Weekly" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+          <radio-smooth name="options" label="Biweekly" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+          <radio-smooth name="options" label="Monthly" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+          <radio-smooth name="options" label="Never" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+        </div> 
 
-
-        <v-radio-group v-model="radioChoice" v-if="!controller[2].edit">
-          <div class="row mb-3">
-            <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left ">
-              <v-radio v-on:keyup.enter="handleRadio(0)" class=" francisco stencilBorderTop stencilBorder pt-2 pb-2" label="Daily" value="Daily"></v-radio>
-            </v-flex>
-          </div>
-          <div class="row mb-3 mt-2">
-            <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left">
-              <v-radio v-on:keyup.enter="handleRadio(1)" class=" francisco stencilBorder pt-2 pb-2" value="Weekly" label="Weekly"></v-radio>
-            </v-flex>
-          </div>
-          <div class="row mb-3 mt-2">
-            <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left">
-              <v-radio v-on:keyup.enter="handleRadio(2)" class=" francisco stencilBorder pt-2 pb-2" value="Biweekly" label="Biweekly"></v-radio>
-            </v-flex>
-          </div>
-          <div class="row mb-3 mt-2">
-            <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left">
-              <v-radio v-on:keyup.enter="handleRadio(3)" class=" francisco stencilBorder pt-2 pb-2" value="Monthly" label="Monthly"></v-radio>
-            </v-flex>
-          </div>
-          <div class="row mb-3 mt-2">
-            <v-flex class="col-sm-7 col-md-6 col-lg-8 mx-auto text-left">
-              <v-radio v-on:keyup.enter="handleRadio(4)" class=" francisco stencilBorder pt-2 pb-2" value="Never" label="Never"></v-radio>
-            </v-flex>
-          </div>
-        </v-radio-group>
       </span>
     
       <!-- Section 4.
@@ -265,29 +239,7 @@
       return {
         timeChoice: '',
         age: '',
-        selectedOptionForPhone: null,
-        isUnderage: null,
-        isResident: null,
-        hasChosenOption: false,
         hasCompletedForm: false,
-        phoneChoices: ['comfortable using my phone', 'uncomfortable using my phone'],
-        states: [
-          'I don\'t live in the US', 'Alabama', 'Alaska', 'American Samoa', 'Arizona',
-          'Arkansas', 'California', 'Colorado', 'Connecticut',
-          'Delaware', 'District of Columbia', 'Federated States of Micronesia',
-          'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho',
-          'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
-          'Louisiana', 'Maine', 'Marshall Islands', 'Maryland',
-          'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
-          'Missouri', 'Montana', 'Nebraska', 'Nevada',
-          'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
-          'North Carolina', 'North Dakota', 'Northern Mariana Islands', 'Ohio',
-          'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico',
-          'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
-          'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia',
-          'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-        ],
-        stateChosen: '',
         requirements: requirements,
         progress: (100.0 / 4),
         progressStep: (100.0 / 4),
@@ -306,7 +258,6 @@
           2: {click: false, submit: false, edit: false, page: '#basis'},
           3: {click: false, submit: false, edit: false, page: '#request'}
         },
-        radioTexts: ['Daily', 'Weekly', 'Biweekly', 'Monthly', 'Never'],
         indexInVowSection: 1,
         alert: true
       }
@@ -416,7 +367,7 @@
         }
       },
       changeValue: function (newValue) {
-        this.timeChoice = newValue
+        this.radioChoice = newValue
       },
       getCurrentStage () {
         // we look to see thtat
@@ -447,34 +398,6 @@
           return 'STEP ' + (this.progressIndex + 1) + ' OF 4'
         }
       },
-      setIsUnderage: _.debounce(
-        function () {
-          if (this.age === '') {
-            this.isUnderage = null
-          } else {
-            this.isUnderage = this.age < 18
-            this.addProgress(0)
-          }
-          this.scrollPage('#placeField')
-        }, 500
-      ),
-      setIsPlaceAnswered: _.debounce(
-        function () {
-          if (this.stateChosen !== '') {
-            this.addProgress(1)
-          }
-          this.isResident = (this.stateChosen !== '' && this.stateChosen !== 'I don\'t live in the US')
-          this.scrollPage('#comfortable')
-        }, 500
-      ),
-      setHasChosenOption: _.debounce(
-        function () {
-          this.hasChosenOption = (this.selectedOptionForPhone !== '')
-          if (this.stateChosen !== '') {
-            this.addProgress(2)
-          }
-        }, 500
-      ),
       sethasCompletedForm: _.debounce(
         function () {
           this.hasCompletedForm = (!this.isUnderage && this.stateChosen !== '' && this.hasChosenOption)

@@ -4,20 +4,20 @@
     <div class="row" style="height: 400px;">
 
       <div v-if="showConsentDoc" class='customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-2 mr-md-4 order-2'>
-         <!--<iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText"
+         <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText"
         class='fillParent  mask'>
-        </iframe> -->
-           <iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
         </iframe> 
+           <!--<iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
+        </iframe> -->
       </div>
 
        <v-dialog v-if="showOverlay" max-width="90%" v-model="showOverlay" scrollable>
         <v-card height="400px ">
-            <!--<iframe id="overlayFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText"
+            <iframe id="overlayFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText"
             class='fillParent'>
-            </iframe>-->
-              <iframe id="overlayFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class='fillParent'>
-            </iframe>  
+            </iframe>
+              <!--<iframe id="overlayFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class='fillParent'>
+            </iframe>  -->
         </v-card>
        </v-dialog>
 
@@ -160,13 +160,13 @@ export default {
         this.iframe = document.getElementById('iFrame').contentWindow
       }
       if (this.isFrame) {
-      // this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText')
-        this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
+        this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText')
+        // this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
       }
     },
     recieveMessage: function (event) {
-      // if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
-      if (event.origin !== 'http://localhost:8080') {
+      if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
+      // if (event.origin !== 'http://localhost:8080') {
         return ''
       } else {
         /* eslint-disable */

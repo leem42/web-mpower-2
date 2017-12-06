@@ -4,7 +4,7 @@
           <!-- <input :value="val" @change="updateValue" v-model="checked" :id="uniqueID" type="radio" class="showSelectedRadio"> </input> -->
 
           <input type="radio" :value="label" :name="name" v-model="radioButtonValue" :id="uniqueID" class="showSelectedRadio">
-          <label class="pl-2 handCursor mb-1 customCenterAlign" tabindex="1" :for="uniqueID">
+          <label class="handCursor  customCenterAlign" tabindex="1" :for="uniqueID">
               <span> </span> 
           </label>
       </span>
