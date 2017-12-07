@@ -266,6 +266,10 @@ div {
   font-size: 18px;
 }
 
+p {
+  color: black;
+}
+
 .highlighter {
   background-color: rgba(255, 218, 138, 0.7);
 

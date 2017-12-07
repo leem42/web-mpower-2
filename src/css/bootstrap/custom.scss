@@ -14,8 +14,6 @@ $font-weight-normal: bold;
 $lead-font-size:   $font-size-base;
 $lead-font-weight: 600;
 
-
-
 .fitContent  {
   height: fit-content;
 }
@@ -143,12 +141,9 @@ button.lowOpacity {
 
 .backToHome {
   background-color: inherit !important;
-   max-width: 35px; 
+  max-width: 35px; 
   max-height: 35px; 
 } 
-
-
-
 
 .default {
   color: #3b4a63;
@@ -174,13 +169,13 @@ button.lowOpacity {
   background-color: #dadfe1 !important;
 }
 
-.sectionTwo {
+.grayBackground {
   background-color: rgba(238, 238, 238, 0.5);
 }
 
 .clickableLink {
   text-decoration: underline;
-  color: #3a539b !important;
+  color: #39529B !important;
   font-weight: bold;
   padding-left: 0px;
   padding-right: 0px;
@@ -661,7 +656,7 @@ input.showSelectedCheckbox[type=checkbox] {
   display:none;
 }
     
-    // styling for custom checkboxes and radio boxes //
+    // styling for custom checkboxes and radio boxes-- this took a lot of time to get right.. //
 input.showSelectedCheckbox[type=checkbox] +  label span {
   display:inline-block;
   background:url("../../images/dropdown-checkbox-blank.png") no-repeat;
@@ -695,7 +690,6 @@ input.showSelectedRadio[type=radio]:checked +  label span {
 }
 // end styling
 
-
 // Begin theming for mobile //
 @include media-breakpoint-down(sm) { 
   nav.onboarding {
@@ -703,9 +697,6 @@ input.showSelectedRadio[type=radio]:checked +  label span {
   }
   .aboveNav {
     bottom: 80px;
-  }
-  #nextBtn > button.btn > .btn__content {
-    font-size: $font-size-base * 0.5 !important;
   }
 
   #notAdvice {
@@ -861,7 +852,7 @@ input.showSelectedRadio[type=radio]:checked +  label span {
     height: 10px;
   }
 
-  .marginTop50 > button {
+  .customNavButton > button {
     min-width: 0px !important;
     margin: auto;
     margin-top: 5px;
@@ -903,10 +894,6 @@ input.showSelectedRadio[type=radio]:checked +  label span {
     font-size: $font-size-base * 0.70 !important;
   }
   
-  #nextBtn > button.btn > .btn__content {
-    font-size: $font-size-base * 0.6 !important;
-  }
-
   .subText {
     font-size: $font-size-base * 0.65 !important;
   }
@@ -915,6 +902,7 @@ input.showSelectedRadio[type=radio]:checked +  label span {
     color: #31117D;
     font-size: $font-size-base !important;
   }
+
   .tiny {
     font-size: $font-size-base * 0.6 !important;
   }
@@ -948,7 +936,7 @@ input.showSelectedRadio[type=radio]:checked +  label span {
     bottom: 115px;
   }
 
-  .marginTop50>button {
+  .customNavButton>button {
     height: 50px;
     width: inherit;
     margin-top: 15px;

@@ -16,7 +16,7 @@
             </div>
         </div>
     
-        <div class="row sectionTwo pt-5 pb-5">
+        <div class="row grayBackground pt-5 pb-5">
             <div class="mx-auto text-center col-12 order-1 col-sm-auto order-lg-1 ">
                 <img class="img-fluid helpUnderstand " src="../../images/help-us-understand-image_2x.png"> </img>
             </div>
@@ -36,7 +36,7 @@
                 </p>
             </div>
         </div>
-        <div class="row sectionTwo">
+        <div class="row grayBackground">
             <div class="mx-auto text-center col-4 order-1 col-sm-4 col-lg-auto order-lg-1 ">
                 <img class="pl-lg-5 img-fluid fittedImg" src="../../images/join-the-study-image_2x.png">
             </div>

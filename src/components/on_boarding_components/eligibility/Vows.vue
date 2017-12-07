@@ -12,18 +12,15 @@
             </div>
         </div>
         
-        <div class="col-4 p-0 marginTop50 hideOnLarge text-center">
-            <v-btn
-            v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small',''] : 'medium' ]"
-             class="navyBlue white--text" v-on:click="handleController()"> {{indexInVowSection === 5? 'Review': 'Next'}} </v-btn>
+        <div class="col-4 p-0 customNavButton hideOnLarge text-center">
+            <v-btn v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small',''] : 'medium' ]"
+             class="navyBlue white--text" v-on:click="handleVows()"> {{indexInVowSection === 5? 'Review': 'Next'}} </v-btn>
         </div>
 
         
-        <div class="marginTop50 col-2 hideOnSmall">
-            <v-btn
-
-            v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small','font-weight-bold'] : 'medium' ]"
-             class="navyBlue largeButton small ml-0  white--text" v-on:click="handleController()"> {{indexInVowSection === 5? 'Review Responses': 'Next'}}
+        <div class="customNavButton col-2 hideOnSmall">
+            <v-btn v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small','font-weight-bold'] : 'medium' ]"
+             class="navyBlue largeButton small ml-0  white--text" v-on:click="handleVows()"> {{indexInVowSection === 5? 'Review Responses': 'Next'}}
             </v-btn>
         </div>
 
@@ -238,15 +235,9 @@
     data () {
       return {
         timeChoice: '',
-        age: '',
-        hasCompletedForm: false,
         requirements: requirements,
         progress: (100.0 / 4),
         progressStep: (100.0 / 4),
-        hasCompletedPartOne: false,
-        partOneIsEligible: false,
-        partTwo: false,
-        partThree: false,
         progressIndex: 0,
         hasAnswered: [false, false, false],
         radioChoice: '',
@@ -258,31 +249,10 @@
           2: {click: false, submit: false, edit: false, page: '#basis'},
           3: {click: false, submit: false, edit: false, page: '#request'}
         },
-        indexInVowSection: 1,
-        alert: true
-      }
-    },
-    watch: {
-      age: function () {
-        this.setIsUnderage()
-      },
-      stateChosen: function () {
-        this.setIsPlaceAnswered()
-      },
-      hasChosenOption: function () {
-        this.setHasChosenOption()
+        indexInVowSection: 1
       }
     },
     computed: {
-      hasFilledPartOneRequirements: function () {
-        return this.isUnderage !== null && this.isResident !== null && this.selectedOptionForPhone !== null
-      },
-      hasFilledPartTwoRequirements: function () {
-        return false
-      },
-      hasFilledPartThreeRequirements: function () {
-        return false
-      },
       notInterestedFromStart: function () {
         return this.selectedChoice[5]
       },
@@ -297,10 +267,6 @@
           this.$scrollTo(arg1, 750, {easing: 'linear', offset: -150})
         }
         , 200),
-      handleController () {
-        // handle remaining questions of vows
-        this.handleVows()
-      },
       handleVows () {
         if (!this.currentVowSectionHasValues()) {
           return
@@ -332,17 +298,12 @@
       updateRouterState () {
         this.$router.data = {
           notInterestedFromStart: this.notInterestedFromStart,
-          notInterestedAny: this.notInterestedAny,
-          isUnderage: this.age < 18,
-          isNotFromUS: !this.isResident,
-          isNotComfortable: (this.selectedOptionForPhone !== 'comfortable using my phone')
+          notInterestedAny: this.notInterestedAny
         }
         this.$router.push('Ineligible')
       },
       currentVowSectionHasValues () {
-        if (this.hasFilledPartOneRequirements && !this.hasCompletedPartOne) {
-          return true
-        } else if (this.controllerLevel === 0) {
+        if (this.controllerLevel === 0) {
           return this.hasAnsweredAny(0, 6)
         } else if (this.controllerLevel === 1) {
           return this.hasAnsweredAny(6, 12)
@@ -357,32 +318,8 @@
       setSelection (index) {
         this.$set(this.selectedChoice, index, !this.selectedChoice[index])
       },
-      handleEligibility () {
-        this.isNotEligible = (this.age < 18) || (!this.isResident) || (this.selectedOptionForPhone !== 'comfortable using my phone')
-        if (this.isNotEligible) {
-          this.updateRouterState()
-        } else {
-          this.scrollPage('#understandInterest')
-          this.partOneIsEligible = true
-        }
-      },
       changeValue: function (newValue) {
         this.radioChoice = newValue
-      },
-      getCurrentStage () {
-        // we look to see thtat
-        if (this.hasFilledPartOneRequirements && !this.hasCompletedPartOne) {
-          this.hasCompletedPartOne = true
-          return 'Part One'
-        } else if (this.hasFilledPartTwoRequirements && !this.hasCompletedPartTwo) {
-          this.partTwo = true
-          return 'Part Two'
-        } else if (this.hasFilledPartThreeRequirements && !this.hasCompletedPartThree) {
-          this.partThree = true
-          return 'Part Three'
-        } else {
-          return 'None'
-        }
       },
       addProgress (index) {
         if (!this.hasAnswered[index]) {
@@ -398,14 +335,6 @@
           return 'STEP ' + (this.progressIndex + 1) + ' OF 4'
         }
       },
-      sethasCompletedForm: _.debounce(
-        function () {
-          this.hasCompletedForm = (!this.isUnderage && this.stateChosen !== '' && this.hasChosenOption)
-          if (this.hasCompletedForm) {
-            this.scrollPage('#submit')
-          }
-        }, 500
-      ),
       hasAnsweredAny: function (start, stop) {
         for (var i = start; i < stop; i++) {
           if (this.selectedChoice[i]) {
@@ -431,9 +360,6 @@
           // else on choice and return nothing
         }
       },
-      handleRadio (index) {
-        this.radioChoice = this.radioTexts[index]
-      },
       handleEdit: function (index) {
         this.controller[index].edit = !this.controller[index].edit
       }
@@ -455,9 +381,6 @@
     min-width: 290px !important;
   }
 
-  button:disabled {
-    opacity: 0.5;
-  }
   /* Work around for diabled button interfering with when the button gets focused in on*/
   .dim {
       opacity: 0.5    
@@ -466,12 +389,5 @@
   label {
     color: #3a539b !important;
    }
-
-  @media(max-width: 992px) {
-    .ml-6-restricted {
-      margin-left: 16.66% !important;
-    }
-  }
-
   
 </style>

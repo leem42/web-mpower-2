@@ -24,7 +24,7 @@
         <br>
         <br>
 
-        <div class="row sectionTwo">
+        <div class="row grayBackground">
 
             <div class="col-lg-3 mx-auto col-4 mr-2 mt-md-5 pt-md-5 mx-lg-print">
 
@@ -90,7 +90,7 @@
 
 
 
-         <div class="row sectionTwo">
+         <div class="row grayBackground">
             <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
                 <img class="pl-lg-5 img-fluid fittedImg" src="../../images/join-the-study-image_2x.png">
             </div>

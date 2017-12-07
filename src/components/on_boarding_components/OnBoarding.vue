@@ -46,18 +46,7 @@
         </div>
       </div>
     </nav>
-    <router-view class="whiteBackground medium mt-custom router container-fluid" v-bind:class="{fadeBackground: getHeader() === 'Sign' || getHeader() === 'Welcome' || isOnRetake(),
-                                                                                        'mt-consent': getHeader() === 'Consent'}"></router-view>
-    
-    <!--- TODO: must update to make sure application is only single page -->
-    <!--<v-bottom-nav value="true" class="hideOnSmall darkBlue customAlign">
-      <img class="logo" src="./images/mpower-logo.png"> </img>
-      <span class="pt-3 pt-sm-2 francisco white--text">mPower</span>
-      <v-btn id="question">
-        <v-icon large class="white--text">fa-question-circle</v-icon>
-      </v-btn>
-    </v-bottom-nav>-->
-  
+    <router-view class="whiteBackground medium mt-custom router container-fluid" v-bind:class="{fadeBackground: getHeader() === 'Sign' || getHeader() === 'Welcome' || isOnRetake(), 'mt-consent': getHeader() === 'Consent'}"></router-view>
     
   </v-app>
 </template>
@@ -68,12 +57,6 @@
 
 .midOpacity {
   opacity: 0.5 !important;
-}
-
-.seperator {
-  width: 2px;
-  height: 86px;
-  background-color: #e1f2df;
 }
 
 .mt-custom {

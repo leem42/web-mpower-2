@@ -12,17 +12,14 @@
             </div>
         </div>
         
-        <div class="col-4 p-0 marginTop50 d-sm-none text-center">
-            <v-btn
-            v-bind:class="[hasFilledPartOneRequirements ? '': 'lowOpacity']"
+        <div class="col-4 p-0 customNavButton d-sm-none text-center">
+            <v-btn v-bind:class="[hasFilledPartOneRequirements ? '': 'lowOpacity']"
              class="navyBlue white--text medium" v-on:click="handleController()"> {{indexInVowSection === 3? 'Review': 'Next'}} </v-btn>
         </div>
 
         
-        <div class="marginTop50  customCenterAlign col-2 d-none d-sm-inline-block">
-            <v-btn
-
-            v-bind:class="[hasFilledPartOneRequirements ? '': 'lowOpacity']"
+        <div class="customNavButton  customCenterAlign col-2 d-none d-sm-inline-block">
+            <v-btn v-bind:class="[hasFilledPartOneRequirements ? '': 'lowOpacity']"
              class="navyBlue largeButton small ml-0 medium  white--text" v-on:click="handleController()"> {{indexInVowSection === 3? 'Review Responses': 'Next'}}
             </v-btn>
         </div>
@@ -108,20 +105,9 @@
         progressStep: (100.0 / 3),
         hasCompletedPartOne: false,
         partOneIsEligible: false,
-        partTwo: false,
-        partThree: false,
         progressIndex: 0,
         hasAnswered: [false, false, false],
-        radioChoice: '',
-        controllerLevel: 0,
-        controller: {
-          0: {click: false, submit: false, edit: false, page: '#interest'}, // TODO: Remove submit field if its extraneous
-          1: {click: false, submit: false, edit: false, page: '#willing'},
-          2: {click: false, submit: false, edit: false, page: '#basis'},
-          3: {click: false, submit: false, edit: false, page: '#request'}
-        },
-        indexInVowSection: 1,
-        alert: true
+        indexInVowSection: 1
       }
     },
     watch: {
@@ -259,9 +245,6 @@
     min-width: 290px !important;
   }
 
-  button:disabled {
-    opacity: 0.5;
-  }
   /* Work around for diabled button interfering with when the button gets focused in on*/
   .dim {
       opacity: 0.5    
@@ -274,12 +257,6 @@
   label {
     color: #3a539b !important;
    }
-
-  @media(max-width: 992px) {
-    .ml-6-restricted {
-      margin-left: 16.66% !important;
-    }
-  }
 
   
 </style>

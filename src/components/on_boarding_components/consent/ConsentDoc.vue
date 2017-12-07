@@ -37,12 +37,12 @@
     <div class="row anchorBottom customRowHeight">
 
       <template v-if="!isReviewingQuestion">
-        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+        <div class="col-3 p-0 customNavButton hideOnLarge text-center">
           <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)">
             Back </v-btn>
         </div>
 
-        <div class="marginTop50 pl-4 col-2 hideOnSmall ml-0 mr-0">
+        <div class="customNavButton pl-4 col-2 hideOnSmall ml-0 mr-0">
           <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(0)"> Back
           </v-btn>
         </div>
@@ -54,25 +54,25 @@
           </div>
         </div>
 
-        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+        <div class="col-3 p-0 customNavButton hideOnLarge text-center">
           <v-btn class="navyBlue white--text  medium" v-on:click="navigate(1)"> Next </v-btn>
         </div>
 
-        <div class="marginTop50  pr-4 col-2 hideOnSmall">
+        <div class="customNavButton  pr-4 col-2 hideOnSmall">
           <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(1)"> Next
           </v-btn>
         </div>
       </template>
       <template v-else>
         <!--for mobile-->
-        <div class="col-12 mx-auto p-0 marginTop50 hideOnLarge text-center">
+        <div class="col-12 mx-auto p-0 customNavButton hideOnLarge text-center">
           <v-btn class="navyBlue white--text medium" v-on:click="$router.push({name: 'RetakeQuiz'})">
             Back To Overview 
           </v-btn>
         </div>
 
         <!--for desktop-->
-        <div class="marginTop50 col-6 text-center mx-auto hideOnSmall ml-0 mr-0">
+        <div class="customNavButton col-6 text-center mx-auto hideOnSmall ml-0 mr-0">
           <v-btn class="navyBlue largeButton medium white--text" v-on:click="$router.push({name: 'RetakeQuiz'})"> 
             Back To Overview
           </v-btn>
@@ -87,15 +87,12 @@
 
 
 <script>
-import {highlightTracker} from '../../../requirements/highlightTracker'
 import {requirements} from '../../../requirements/requirements'
 import {questionResults} from '../../../requirements/questionResults'
 
 export default {
   data () {
     return {
-      isFocused: true,
-      highlightTracker: highlightTracker,
       questionResults: questionResults,
       callStack: [
         'OverviewEligibility',

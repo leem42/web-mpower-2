@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <div class="row mt-5 sectionTwo">
+        <div class="row mt-5 grayBackground">
 
             <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
                 <img class="pl-lg-5 img-fluid fittedImg" src="../../images/scientists-icon.png">

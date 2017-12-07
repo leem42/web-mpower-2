@@ -7,11 +7,11 @@
 
     <div class="row anchorBottom customRowHeight">
         
-        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+        <div class="col-3 p-0 customNavButton hideOnLarge text-center">
             <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)"> Back </v-btn>
         </div>
 
-        <div class="marginTop50 col-2 hideOnSmall ml-0 mr-0">
+        <div class="customNavButton col-2 hideOnSmall ml-0 mr-0">
             <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(0)"> Back
             </v-btn>
         </div>
@@ -23,14 +23,14 @@
             </div>
         </div>
         
-        <div class="col-3 p-0 marginTop50 hideOnLarge text-center">
+        <div class="col-3 p-0 customNavButton hideOnLarge text-center">
             <v-btn class="navyBlue white--text  medium"
              v-bind:class="currentStageHasValues() ? '':'lowOpacity'"
             v-on:click="navigate(1)"> {{indexInStack === 5? ' Submit' : 'Next'}} </v-btn>
         </div>
 
         
-        <div class="marginTop50 col-2 hideOnSmall">
+        <div class="customNavButton col-2 hideOnSmall">
             <v-btn class="navyBlue largeButton medium white--text" 
              v-bind:class="currentStageHasValues() ? '':'lowOpacity'"
              v-on:click="navigate(1)"> {{indexInStack === 5? ' Submit' : 'Next'}}
