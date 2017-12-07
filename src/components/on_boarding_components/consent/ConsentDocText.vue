@@ -196,7 +196,7 @@ export default {
       // if (event.origin !== 'http://localhost:8080') {
         return ''
       } else {
-        console.log('reciever called')
+        // console.log('reciever called in 200')
         /* eslint-disable */
         if(event.data === "") {
           return

@@ -64,18 +64,19 @@
         </div>
       </template>
       <template v-else>
+        <!--for mobile-->
         <div class="col-12 mx-auto p-0 marginTop50 hideOnLarge text-center">
           <v-btn class="navyBlue white--text medium" v-on:click="$router.push({name: 'RetakeQuiz'})">
             Back To Overview 
           </v-btn>
         </div>
 
+        <!--for desktop-->
         <div class="marginTop50 col-6 text-center mx-auto hideOnSmall ml-0 mr-0">
           <v-btn class="navyBlue largeButton medium white--text" v-on:click="$router.push({name: 'RetakeQuiz'})"> 
             Back To Overview
           </v-btn>
         </div>
-
 
       </template>
 
@@ -158,15 +159,19 @@ export default {
     callFrame (message) {
       if (!this.iframe && document.getElementById('iFrame')) {
         this.iframe = document.getElementById('iFrame').contentWindow
+        // console.log('called in 162')
+        // this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
+        this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText')
       }
       if (this.isFrame) {
-        this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText')
+        // console.log('called in 166')
         // this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
+        this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText')
       }
     },
     recieveMessage: function (event) {
-      if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
-      // if (event.origin !== 'http://localhost:8080') {
+      // if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
+      if (event.origin !== 'http://localhost:8080') {
         return ''
       } else {
         /* eslint-disable */
