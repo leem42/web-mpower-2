@@ -14,7 +14,7 @@
     </div>
 
     <div class="row white anchorBottom" style="height: inherit;">
-        <v-btn v-on:click="$router.push({name: 'RegistrationLinkSent'})"  class="navyBlue medium text--lower large white--text mx-auto col-md-3 text--normal" > Submit</v-btn>
+        <v-btn v-on:click="$router.push({name: 'RegistrationLinkSent'})"  class="navyBlue mediumFontSize text--lower large white--text mx-auto col-md-3 text--normal" > Submit</v-btn>
     </div>
     
 

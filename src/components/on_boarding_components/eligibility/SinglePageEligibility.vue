@@ -5,7 +5,7 @@
 
         <div class="col-8 customCenterAlign col-md-10 mx-auto">
             <div clas="row text-center">
-                <p class="col-11  mx-auto text-left tiny  mb-0 lightLead"> 
+                <p class="col-11  mx-auto text-left tinyFontSize  mb-0 lightLead"> 
                    {{ getProgress()}}
                 </p>
                 <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
@@ -14,13 +14,13 @@
         
         <div class="col-4 p-0 customNavButton d-sm-none text-center">
             <v-btn v-bind:class="[hasFilledPartOneRequirements ? '': 'lowOpacity']"
-             class="navyBlue white--text medium" v-on:click="handleController()"> {{indexInVowSection === 3? 'Review': 'Next'}} </v-btn>
+             class="navyBlue white--text mediumFontSize" v-on:click="handleController()"> {{indexInVowSection === 3? 'Review': 'Next'}} </v-btn>
         </div>
 
         
         <div class="customNavButton  customCenterAlign col-2 d-none d-sm-inline-block">
             <v-btn v-bind:class="[hasFilledPartOneRequirements ? '': 'lowOpacity']"
-             class="navyBlue largeButton small ml-0 medium  white--text" v-on:click="handleController()"> {{indexInVowSection === 3? 'Review Responses': 'Next'}}
+             class="navyBlue largeButton small ml-0 mediumFontSize  white--text" v-on:click="handleController()"> {{indexInVowSection === 3? 'Review Responses': 'Next'}}
             </v-btn>
         </div>
 
@@ -36,13 +36,13 @@
     <div class="row mt-sm-4">
       <div class=" col-md-10 col-lg-8 mx-auto text-center">
         <div class="row">
-          <p class="lead col-auto mx-auto medium customCenterAlign pb-0 lato mx-md-0"> I am </p>
+          <p class="lead col-auto mx-auto mediumFontSize customCenterAlign pb-0 lato mx-md-0"> I am </p>
           <v-flex class="col-md-3">
             <v-text-field suffix="years old" name="input-1" placeholder="45" id="testing"  pattern="\d*" auto-grow v-model.number="personInfo.age">
             </v-text-field>
           </v-flex>
 
-          <p class="lead col-auto mx-auto medium customCenterAlign lato mx-md-0" v-if="isUnderage !== null && personInfo.age !== ''" > I live in </p>
+          <p class="lead col-auto mx-auto mediumFontSize customCenterAlign lato mx-md-0" v-if="isUnderage !== null && personInfo.age !== ''" > I live in </p>
           <v-flex class="col-12 mb-3 col-md-4" v-if="isUnderage !== null && personInfo.age != ''">
             <v-select autocomplete class="d-none d-sm-inline-block eligibility" v-bind:items="states" hide-details auto single-line  name="input-1" placeholder="select where" id="placeField" v-model="personInfo.stateChosen"></v-select>
             <v-select class="eligibility d-sm-none" v-bind:items="states" hide-details auto single-line  name="input-1" placeholder="select where" id="placeField" v-model="personInfo.stateChosen"></v-select>
@@ -55,11 +55,11 @@
     <div id="option" class="row mt-2" v-if="isResident !== null && personInfo.stateChosen !== '' ">
       <div class=" col-md-10 col-lg-8 mx-auto text-center text-md-left">
         <div class="row">
-          <p class="lead col-12 medium customCenterAlign col-md-auto lato text-center text-md-left">
+          <p class="lead col-12 mediumFontSize customCenterAlign col-md-auto lato text-center text-md-left">
             I feel </p>
           <v-select single-line id="comfortable" class="col-sm-4" placeholder="Select" v-bind:items="phoneChoices" v-model="personInfo.selectedOptionForPhone"></v-select>
           </v-select>
-          <p class="lead medium customCenterAlign col-md-auto lato text-center text-md-left">
+          <p class="lead mediumFontSize customCenterAlign col-md-auto lato text-center text-md-left">
             using my smart phone.</p>
         </div>
       </div>

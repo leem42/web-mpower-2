@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <div class="row">
-            <p class="ml-6 pl-2 lightLead tiny text-uppercase"> Question 3 </p>
+            <p class="ml-6 pl-2 lightLead tinyFontSize text-uppercase"> Question 3 </p>
         </div>
 
         <div class="row">

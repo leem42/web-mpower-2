@@ -5,7 +5,7 @@
 
         <div class="col-8 customCenterAlign col-md-10 mx-auto">
             <div clas="row text-center">
-                <p class="col-11  mx-auto text-left tiny  mb-0 lightLead"> 
+                <p class="col-11  mx-auto text-left tinyFontSize  mb-0 lightLead"> 
                    {{ getProgress()}}
                 </p>
                 <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
@@ -13,13 +13,13 @@
         </div>
         
         <div class="col-4 p-0 customNavButton hideOnLarge text-center">
-            <v-btn v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small',''] : 'medium' ]"
+            <v-btn v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['smallFontSize',''] : 'mediumFontSize' ]"
              class="navyBlue white--text" v-on:click="handleVows()"> {{indexInVowSection === 5? 'Review': 'Next'}} </v-btn>
         </div>
 
         
         <div class="customNavButton col-2 hideOnSmall">
-            <v-btn v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['medium-small','font-weight-bold'] : 'medium' ]"
+            <v-btn v-bind:class="[currentVowSectionHasValues() ? '': 'lowOpacity', indexInVowSection === 5 ? ['smallFontSize','font-weight-bold'] : 'mediumFontSize' ]"
              class="navyBlue largeButton small ml-0  white--text" v-on:click="handleVows()"> {{indexInVowSection === 5? 'Review Responses': 'Next'}}
             </v-btn>
         </div>
@@ -35,18 +35,18 @@
         -->
       
       <div class="row mt-5">
-        <p class="lead font-weight-bold col-sm-6 col-lg-8 largeTitle mx-auto text-center pt-0 pt-md-0"> Why are you interested in joining mPower?
+        <p class="lead font-weight-bold col-sm-6 col-lg-8 baseFontSize mx-auto text-center pt-0 pt-md-0"> Why are you interested in joining mPower?
         </p>
       </div>
 
       <div class="row">
-        <p id="understandInterest" class="lead col-md-8 col-lg-8 medium mx-auto text-left pt-0 pt-md-0"> 
+        <p id="understandInterest" class="lead col-md-8 col-lg-8 mediumFontSize mx-auto text-left pt-0 pt-md-0"> 
           Understanding what interests you and what you are willing to do helps us shape an experience that aligns with your expectations.
         </p>
       </div>
 
       <div class="row mt-3">
-        <span id="interest" class="francisco lato mediumLarge default pt-sm-0 col-md-6 col-sm-7 col-lg-8 text-left mx-auto mb-4"> I'm interested in joining mPower because I 
+        <span id="interest" class="francisco lato smallFontSize default pt-sm-0 col-md-6 col-sm-7 col-lg-8 text-left mx-auto mb-4"> I'm interested in joining mPower because I 
     
           <span v-if="controller[0].edit" class="ml-0 p-0">
             <v-btn flat :ripple="false" v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink pl-0 middle francisco"> Want to help myself         
@@ -101,7 +101,7 @@
         -->
       <span id="willing" v-if="controller[0].click">
         <div class="row">
-          <span class="mx-auto text-left col-sm-7 col-md-6 col-lg-8 francisco mediumTitle mb-4 text-left lead"> I would be willing to try
+          <span class="mx-auto text-left col-sm-7 col-md-6 col-lg-8 francisco mediumFontSize mb-4 text-left lead"> I would be willing to try
             <span v-if="controller[1].edit" class="p-0">
               
               <v-btn flat :ripple="false" v-if="selectedChoice[6]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> finger tapping
@@ -157,7 +157,7 @@
         -->
       <span id="basis" v-if="controller[1].click">
         <div class="row">
-          <p class="francisco col-sm-7 col-md-6 col-lg-8 mediumTitle mx-auto text-left lead"> on a {{(controller[2].click)? "": "_____"}}
+          <p class="francisco col-sm-7 col-md-6 col-lg-8 mediumFontSize mx-auto text-left lead"> on a {{(controller[2].click)? "": "_____"}}
             <span class="p-0" v-if="controller[2].edit">
               <v-btn v-on:click="handleEdit(2)" flat class=" text-capitalize pl-0 clickableLink francisco"> {{radioChoice}}
               </v-btn>
@@ -184,7 +184,7 @@
         -->
       <span id="request" v-if="controller[2].click">
         <div class="row">
-          <p class="francisco col-sm-7 col-md-6 col-lg-8 mx-auto text-left mediumTitle lead"> I would like to recieve
+          <p class="francisco col-sm-7 col-md-6 col-lg-8 mx-auto text-left mediumFontSize lead"> I would like to recieve
             <span v-if="controller[3].edit">
               <v-btn flat :ripple="false" v-if="selectedChoice[12]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the study
               </v-btn>

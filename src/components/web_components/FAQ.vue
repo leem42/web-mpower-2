@@ -8,7 +8,7 @@
                 <div class="row">
                     <p class="ml-6 ml-3 darkPurpleText  font-weight-bold"> Frequently asked questions </p>
     
-                    <p class="default tiny ml-6 ml-3">
+                    <p class="default tinyFontSize ml-6 ml-3">
     
                         <strong>What is "mPower"?</strong>
                         <br> mPower is an iPhone app-based study designed to monitor and understand the causes of variations in symptoms of Parkinson disease (ParkinsonmPower.org). Living with Parkinson disease means coping with symptoms that change daily. Yet these daily changes are not tracked frequently enough. The Parkinson mPower app will use questionnaires, sensor data from your phone, and optional wearable device data to help you track your condition 24x7, allowing you to review trends and share this information with researchers.

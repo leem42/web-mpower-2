@@ -6,7 +6,7 @@
           <img class="img-fluid " src="../../../images/step-9-consent-icon.png">
         </div>
   
-        <div class="col-9 col-lg-9 x-tiny mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
+        <div class="col-9 col-lg-9  mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
         
           <div class="row">
             <div class="col-12 default font-weight-bold">
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="row">
-        <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
+        <ul class="ml-md-5 mr-md-5 xsmallFontSize lightGrayText">
 
             <li class="mt-lg-1 mb-lg-3">
                 If you participate in this study, your privacy may be at risk. 
@@ -33,7 +33,7 @@
       </ul>
     </div>
     <div class="row mb-5 pb-5" v-if="showHelperText">
-        <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+        <div class="ml-md-5 mr-md-5 p-0 col lightGrayText xsmallFontSize">
           This is not a medical treatment study. We do not expect medical side effects from participating in this study.
           <br><br>
           We take great care to protect your privacy. However, if there is a data breach it may be possible to identify you. This risk is low but it is not zero.

@@ -10,16 +10,16 @@
                 <p class="ml-6 ml-3 darkPurpleText  font-weight-bold"> Contact </p>
                 <br>
                 <br>
-                <p class="default tiny ml-6 ml-3">
+                <p class="default tinyFontSize ml-6 ml-3">
                    For information about participating and questions around the study, please review the FAQ page.
                    If you have additional questions or other queries, please send us a message.
                 </p>
 
-                <v-btn large class="col-auto mt-3 mb-5 ml-6 Begin text-capitalize navyBlue mediumLarge white--text"> Send us a message </v-btn>
+                <v-btn large class="col-auto mt-3 mb-5 ml-6 Begin text-capitalize navyBlue smallFontSize white--text"> Send us a message </v-btn>
                 </v-btn>
 
 
-                <p class="default tiny ml-6 ml-3">
+                <p class="default tinyFontSize ml-6 ml-3">
 
                     This study is sponsored by Sage Bionetworks, a 501(c)(3) nonprofit research organization located at 1100 Fairview Avenue North, Seattle, WA, 98109.
                     <br>

@@ -25,7 +25,7 @@
       <div class="col-md-8 col-lg-6  mt-2 mx-auto" v-bind:class="{'order-1': showConsentDoc }" >
         <router-view style="height: -webkit-fill-available;" class="whiteBackground fillParentRouter consentView router container-fluid"> </router-view>
         <div class="row mt-md-5 m-md-3">
-            <div class="ml-5 medium-small">  
+            <div class="ml-5 smallFontSize">  
               <a v-on:click="showConsentDoc = !showConsentDoc" class="defaultBlue font-weight-bold ">
                 <u> See Consent Document with this section </u>
               </a>
@@ -38,42 +38,42 @@
 
       <template v-if="!isReviewingQuestion">
         <div class="col-3 p-0 customNavButton hideOnLarge text-center">
-          <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)">
+          <v-btn class="navyBlue white--text mediumFontSize" v-on:click="navigate(0)">
             Back </v-btn>
         </div>
 
         <div class="customNavButton pl-4 col-2 hideOnSmall ml-0 mr-0">
-          <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(0)"> Back
+          <v-btn class="navyBlue largeButton mediumFontSize white--text" v-on:click="navigate(0)"> Back
           </v-btn>
         </div>
 
         <div class="customCenterAlign col-6 col-md-8">
           <div clas="row text-center">
-            <p class="col-11  mx-auto text-center tiny  mb-0 lightLead"> Step {{' ' + indexInStack }} </p>
+            <p class="col-11  mx-auto text-center tinyFontSize  mb-0 lightLead"> Step {{' ' + indexInStack }} </p>
             <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
           </div>
         </div>
 
         <div class="col-3 p-0 customNavButton hideOnLarge text-center">
-          <v-btn class="navyBlue white--text  medium" v-on:click="navigate(1)"> Next </v-btn>
+          <v-btn class="navyBlue white--text  mediumFontSize" v-on:click="navigate(1)"> Next </v-btn>
         </div>
 
         <div class="customNavButton  pr-4 col-2 hideOnSmall">
-          <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(1)"> Next
+          <v-btn class="navyBlue largeButton mediumFontSize white--text" v-on:click="navigate(1)"> Next
           </v-btn>
         </div>
       </template>
       <template v-else>
         <!--for mobile-->
         <div class="col-12 mx-auto p-0 customNavButton hideOnLarge text-center">
-          <v-btn class="navyBlue white--text medium" v-on:click="$router.push({name: 'RetakeQuiz'})">
+          <v-btn class="navyBlue white--text mediumFontSize" v-on:click="$router.push({name: 'RetakeQuiz'})">
             Back To Overview 
           </v-btn>
         </div>
 
         <!--for desktop-->
         <div class="customNavButton col-6 text-center mx-auto hideOnSmall ml-0 mr-0">
-          <v-btn class="navyBlue largeButton medium white--text" v-on:click="$router.push({name: 'RetakeQuiz'})"> 
+          <v-btn class="navyBlue largeButton mediumFontSize white--text" v-on:click="$router.push({name: 'RetakeQuiz'})"> 
             Back To Overview
           </v-btn>
         </div>

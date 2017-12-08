@@ -2,7 +2,7 @@
     <v-app>
 
         <div class="row">
-            <p class="ml-6 pl-2 lightLead tiny text-uppercase"> Question 1 </p>
+            <p class="ml-6 pl-2 lightLead tinyFontSize text-uppercase"> Question 1 </p>
         </div>
 
         <div class="row">

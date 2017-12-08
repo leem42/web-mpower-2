@@ -6,7 +6,7 @@
                 <p class="mx-auto font-weight-bold white--text"> Welcome to mPower! </p>
             </div>
             <div class="row text-center mb-2">
-                <p class="col-md-8 mx-auto  medium white--text">                  
+                <p class="col-md-8 mx-auto  mediumFontSize white--text">                  
                         mPower is a study to track the symptoms of Parkinson’s Disease over time. 
                         Here you can learn about the study and decide if you want to join! Let’s get started.
                 </p>
@@ -17,7 +17,7 @@
                 <p class="mx-auto white--text"> Congratulations, you’re eligible! </p>
             </div>
             <div class="row text-center mb-2">
-                <p class="col-md-8 mx-auto  medium white--text">
+                <p class="col-md-8 mx-auto  mediumFontSize white--text">
                     Now that we have found out that you are eligible, let’s move on to the next step. Your next step will be Consent where you’ll learn some more about the study.
                 </p>
             </div>
@@ -27,7 +27,7 @@
                 <p class="mx-auto white--text"> Thanks for walking through Consent! </p>
             </div>
             <div class="row text-center mb-2">
-                <p class="col-md-8 mx-auto  medium white--text">
+                <p class="col-md-8 mx-auto  mediumFontSize white--text">
                     Next we will ask you 5 questions. They will tell you if we did a good job explaining the study. </p>
             </div>
         </template>
@@ -36,7 +36,7 @@
                 <p class="mx-auto white--text"> Great Job! </p>
             </div>
             <div class="row text-center mb-2">
-                <p class="col-md-8 mx-auto  medium white--text">
+                <p class="col-md-8 mx-auto  mediumFontSize white--text">
                     You’ve passed the quiz, now let’s review the consent document that you looked at one more time before we can register you for the study.                </p>
             </div>
         </template>
@@ -50,13 +50,13 @@
                         <img  src="../../images/eligibility-icon.png" class="checkOnOverview"> </img>
                     </div>
                     <div class="col-md-8 col-7 mb-0 pr-0 ml-2 mt-3">
-                        <p class="medium default mb-0" v-bind:class="{whiteText: requirements.hasCompletedEligibility }"><strong>  Eligibility </strong>
-                            <p class="pb-0 mb-0 medium-small lightGrayText" v-bind:class="{whiteText: requirements.hasCompletedEligibility }"> Let’s see if you are eligible for the Parkinsons Disease study. </p>
-                            <p class="tiny default" v-bind:class="{whiteText: requirements.hasCompletedEligibility }"> 2 minutes </p>
+                        <p class="mediumFontSize default mb-0" v-bind:class="{whiteText: requirements.hasCompletedEligibility }"><strong>  Eligibility </strong>
+                            <p class="pb-0 mb-0 smallFontSize lightGrayText" v-bind:class="{whiteText: requirements.hasCompletedEligibility }"> Let’s see if you are eligible for the Parkinsons Disease study. </p>
+                            <p class="tinyFontSize default" v-bind:class="{whiteText: requirements.hasCompletedEligibility }"> 2 minutes </p>
                         </p>
                     </div>
                     <div class="col-1 col-xl-2 pl-0 pl-1 verticalCenter">
-                        <p v-if="!requirements .hasCompletedEligibility" class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
+                        <p v-if="!requirements .hasCompletedEligibility" class="font-weight-bold m-0 lead tinyFontSize mx-auto"> Start </p>
                     </div>
                 </div>
             </div>
@@ -69,16 +69,16 @@
                         <img  src="../../images/consent-icon.png"> </img>
                     </div>
                     <div class="col-7 col-md-8 mb-0 mt-3">
-                        <p class="medium default mb-0" v-bind:class="{whiteText: requirements.hasCompletedConsent }"><strong>  Consent </strong>
-                            <p class="pb-0 mb-0 medium-small lightGrayText" v-bind:class="{whiteText: requirements.hasCompletedConsent }"> Learn about the study and the risks and benefits of joining. </p>
-                            <p class="tiny default" v-bind:class="{whiteText: requirements.hasCompletedConsent }"> 5 minutes </p> 
+                        <p class="mediumFontSize default mb-0" v-bind:class="{whiteText: requirements.hasCompletedConsent }"><strong>  Consent </strong>
+                            <p class="pb-0 mb-0 smallFontSize lightGrayText" v-bind:class="{whiteText: requirements.hasCompletedConsent }"> Learn about the study and the risks and benefits of joining. </p>
+                            <p class="tinyFontSize default" v-bind:class="{whiteText: requirements.hasCompletedConsent }"> 5 minutes </p> 
                         </p>
                     </div>
                     <div v-if="!requirements.isOnConsent" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedConsent}" class="lock">{{requirements.hasCompletedEligibility ? '': 'fa-lock'  }}</v-icon>
                     </div>                          
                     <div v-if="requirements.isOnConsent" class="col-1 col-xl-2 pl-0 verticalCenter">
-                        <p  class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
+                        <p  class="font-weight-bold m-0 lead tinyFontSize mx-auto"> Start </p>
                     </div>
                 </div>
             </div>
@@ -91,16 +91,16 @@
                         <img  src="../../images/quiz-onboarding-icon.png" class="checkOnOverview"> </img>
                     </div>
                     <div class="col-7 col-md-8 mb-0 mt-3">
-                        <p class="medium default mb-0" v-bind:class="{whiteText: requirements.hasCompletedQuiz }"><strong>  Quiz </strong>
-                            <p class="pb-0 mb-0 medium-small lightGrayText" v-bind:class="{whiteText: requirements.hasCompletedQuiz }"> Let’s see what you have learned from the consent document. </p>
-                            <p class="tiny default" v-bind:class="{whiteText: requirements.hasCompletedQuiz }"> 5 minutes </p>
+                        <p class="mediumFontSize default mb-0" v-bind:class="{whiteText: requirements.hasCompletedQuiz }"><strong>  Quiz </strong>
+                            <p class="pb-0 mb-0 smallFontSize lightGrayText" v-bind:class="{whiteText: requirements.hasCompletedQuiz }"> Let’s see what you have learned from the consent document. </p>
+                            <p class="tinyFontSize default" v-bind:class="{whiteText: requirements.hasCompletedQuiz }"> 5 minutes </p>
                         </p>
                     </div>
                     <div v-if="!requirements.isOnQuiz" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedQuiz}" class="lock">{{requirements.hasCompletedConsent ? '': 'fa-lock'  }}</v-icon>
                     </div>
                     <div v-if="requirements.isOnQuiz" class="col-1 col-xl-2 pl-0  verticalCenter">
-                        <p  class="font-weight-bold m-0 lead tiny mx-auto">  Start </p>
+                        <p  class="font-weight-bold m-0 lead tinyFontSize mx-auto">  Start </p>
                     </div>
                 </div>
             </div>
@@ -113,16 +113,16 @@
                         <img  src="../../images/sign-consent-icon.png" class="checkOnOverview"> </img>
                     </div>
                     <div class="col-7 col-md-8  mb-0 mt-3">
-                        <p class="medium default mb-0" v-bind:class="{whiteText: requirements.hasCompletedSign }"><strong>  Sign </strong>
-                            <p class="pb-0 mb-0 medium-small lightGrayText" v-bind:class="{whiteText: requirements.hasCompletedSign }" > Sign the consent document. </p>
-                            <p class="tiny default" v-bind:class="{whiteText: requirements.hasCompletedSign }"> 2 minutes </p>
+                        <p class="mediumFontSize default mb-0" v-bind:class="{whiteText: requirements.hasCompletedSign }"><strong>  Sign </strong>
+                            <p class="pb-0 mb-0 smallFontSize lightGrayText" v-bind:class="{whiteText: requirements.hasCompletedSign }" > Sign the consent document. </p>
+                            <p class="tinyFontSize default" v-bind:class="{whiteText: requirements.hasCompletedSign }"> 2 minutes </p>
                         </p>
                     </div>
                     <div v-if="!requirements.isOnSign" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedSign}" class="lock">{{requirements.hasCompletedQuiz ? '': 'fa-lock'  }}</v-icon>
                     </div>
                     <div v-if="requirements.isOnSign" class="col-1 col-xl-2 pl-0  verticalCenter">
-                        <p  class="font-weight-bold m-0 lead tiny mx-auto">  Start </p>
+                        <p  class="font-weight-bold m-0 lead tinyFontSize mx-auto">  Start </p>
                     </div>
                 </div>
             </div>
@@ -135,16 +135,16 @@
                         <img  src="../../images/number-icon.png" class="checkOnOverview"> </img>
                     </div>
                     <div class="col-7 col-md-8 mb-0 mt-3">
-                        <p class="medium default mb-0" v-bind:class="{whiteText: requirements.hasCompletedRegistration }"><strong>  Registration </strong>
-                            <p class="pb-0 mb-0 medium-small lightGrayText" v-bind:class="{whiteText: requirements.hasCompletedRegistration }"> Add your phone number so you can join the study! </p>
-                            <p class="tiny default" v-bind:class="{whiteText: requirements.hasCompletedRegistration }"> 2 minutes </p>
+                        <p class="mediumFontSize default mb-0" v-bind:class="{whiteText: requirements.hasCompletedRegistration }"><strong>  Registration </strong>
+                            <p class="pb-0 mb-0 smallFontSize lightGrayText" v-bind:class="{whiteText: requirements.hasCompletedRegistration }"> Add your phone number so you can join the study! </p>
+                            <p class="tinyFontSize default" v-bind:class="{whiteText: requirements.hasCompletedRegistration }"> 2 minutes </p>
                         </p>
                     </div>
                     <div v-if="!requirements.isOnRegistration" class="col-1 ml-0 pl-0 ml-sm-auto pl-md-auto text-center verticalCenter">
                         <v-icon large v-bind:class="{greenText: requirements.hasCompletedRegistration}" class="lock">{{requirements.hasCompletedSign ? '': 'fa-lock'  }}</v-icon>
                     </div>
                      <div v-if="requirements.isOnRegistration" class="col-1 col-xl-2 pl-0  verticalCenter">
-                        <p  class="font-weight-bold m-0 lead tiny mx-auto"> Start </p>
+                        <p  class="font-weight-bold m-0 lead tinyFontSize mx-auto"> Start </p>
                     </div>
                 </div>
             </div>

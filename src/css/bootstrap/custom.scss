@@ -99,36 +99,24 @@ nav.web {
     opacity: 0 !important;
 }
 
-.x-tiny {
-  font-size: $font-size-base * 0.3 !important;
-}
+// TEXT UTILITIES Across all sizes//
 
-.medium-small {
-  font-size: $font-size-base * 0.6 !important;
-}
-
-.largeTitle {
+.baseFontSize {
   font-size: $font-size-base;
 }
 
-.medium {
-  font-size: $font-size-base * 0.7 !important;
-}
+// End //
 
 .darkPurpleText {
     color: #5b34b6;
 }
 
-#join > div.btn__content {
+.joinButton > div.btn__content {
     font-size: $font-size-base * 0.7 !important;
 }
 
 .fittedImg {
   width: 380px;
-}
-
-.mediumTitle {
-  font-size: $font-size-base * 0.7 !important;
 }
 
 button.lowOpacity {
@@ -153,16 +141,12 @@ button.lowOpacity {
   background-color: #3a539b !important;
 }
 
-.medium > div.btn__content {
-  @extend .medium;
+.mediumFontSize > div.btn__content {
+  @extend .mediumFontSize;
 }
 
 .lightGrayText {
   color: #4a4a4a;
-}
-
-.mediumLarge {
-  font-size: $font-size-base * 0.6 !important;
 }
 
 .mediumGray {
@@ -240,10 +224,6 @@ div.customCheck>label {
   padding-left: 20px;
   color: rgba(58, 83, 155, 0.87) !important;
   min-height: 40px;
-}
-
-#question {
-  display: none;
 }
 
 div.customCheck>div.input-group__details {
@@ -389,12 +369,12 @@ div.input-group__selections__comma {
 
 .white--text input::placeholder  {
   color: white !important;
-  @extend .medium;
+  @extend .mediumFontSize;
 }
 
 .default input::placeholder  {
   color: #3a539b !important;
-  @extend .medium;
+  @extend .mediumFontSize;
 }
 
 .centerVertical {
@@ -422,18 +402,6 @@ div[role=radio].wrapLabel > label {
   white-space: normal;
   min-height: 180px !important;
   min-width: 90% !important;
-}
-
-#submit {
-  background-color: #3A539B;
-  border-radius: 5px !important;
-  color: white;
-  height: 3.83%;
-  & > .btn__content {
-    font-size:$font-size-base !important;
-    text-transform: capitalize;
-    font-weight: bold;
-  }
 }
 
 .greenText {
@@ -490,6 +458,7 @@ nav.onboarding {
   -webkit-box-pack: center;
   -webkit-box-orient: vertical;
 }
+
 .border {
   border-radius: 50%; // background-color: rgba(65, 73, 90, 0.1);
   background-color: whitesmoke;
@@ -516,7 +485,6 @@ nav.onboarding * img {
 input {
   text-align: center;
 }
-
 
 .custom-input {
   display: inline !important;
@@ -553,10 +521,6 @@ input {
   color: #6C7A89; 
 }
 
-.long {
-  width: 295px;
-}
-
 div[role=radio].input-group:hover {
   background-color: rgba(59,74,99,0.1) !important;
 }
@@ -572,8 +536,6 @@ div.flexDisplay:hover {
   background-color: rgba(59,74,99,0.1) !important;
 }
 
-
-
 .stencilBorderTop {
   border-top: solid;
   border-width: 1px;
@@ -588,10 +550,6 @@ div.flexDisplay:hover {
   border-bottom: solid;
   border-width: 1px;
   border-color: rgba(0,0,0,0.1);
-}
-
-.x-long {
-  width: 385px !important;
 }
 
 .large {
@@ -643,7 +601,7 @@ div.flexDisplay:hover {
   min-height: 300px;
 } 
 
- button.largeTitle > div.btn__content {
+ button.baseFontSize > div.btn__content {
    font-size: $font-size-base !important;
  }
  
@@ -651,12 +609,11 @@ div.flexDisplay:hover {
   height: 500px;
 }
 
-
 input.showSelectedCheckbox[type=checkbox] {
   display:none;
 }
     
-    // styling for custom checkboxes and radio boxes-- this took a lot of time to get right.. //
+// styling for custom checkboxes and radio boxes-- this took a lot of time to get right.. //
 input.showSelectedCheckbox[type=checkbox] +  label span {
   display:inline-block;
   background:url("../../images/dropdown-checkbox-blank.png") no-repeat;
@@ -706,15 +663,11 @@ input.showSelectedRadio[type=radio]:checked +  label span {
   div.btn__content {
     font-size: $font-size-base * 0.28 !important;
   }
-
-  .tiny {
+  
+  .smallFontSize > div.btn__content {
     font-size: $font-size-base * 0.45 !important;
   }
-
-  .mediumLarge > div.btn__content {
-  font-size: $font-size-base * 0.45 !important;
-  }
-
+  
   div.customCheck>label, div.radio > label {
     font-size: $font-size-base * 0.6 !important;
   }
@@ -723,72 +676,81 @@ input.showSelectedRadio[type=radio]:checked +  label span {
     height: 44px;
     width: 100px;
   }
-
+  
   .navButton {
     height: 22px;
     width: 50px;
   }
-
+  
   #question {
     display: block;
     margin-left: 100px !important;
   }
 
-  .subText {
-    font-size: $font-size-base * 0.45 !important;
-  }
-
+  
   input#testing,
   input#placeField {
     text-align: center !important;
   }
-
+  
   .list__tile__title {
     font-size: $font-size-base * .5 !important;
   }
-
+  
   input#comfortable {
     text-align: center !important;
   }
-
+  
   .input-group__selections__comma {
     font-size: $font-size-base * 0.5 !important;
   }
-
+  
   p {
     color: #31117D;
     font-size: $font-size-base * 0.6 !important;
   }  
-
-  .bigButton > div.btn__content {
-    font-size: $font-size-base * 0.7 !important;
-  }
-
+  
   span.chip,
   div {
     font-size: $font-size-base * 0.60 !important;
   }
-
+  
   nav * img {
     height: 30px !important;
     width: 30px !important;
   }
-
+  
   .border {
     padding-top: 3px;
     padding-right: 13px;
     height: 30px !important;
     width: 30px !important;
   }
-
+  
   div.hideOnSmall {
     display: none !important;
   }
 
-  .smallText {
+  // TEXT UTILITIES SMALL //
+  
+  .xsmallFontSize {
     font-size: $font-size-base * 0.4;
   }
 
+  .smallFontSize {
+    font-size: $font-size-base * 0.35 !important;
+  }
+
+  .tinyFontSize {
+    font-size: $font-size-base * 0.45 !important;
+  }
+  
+  .mediumFontSize {
+    font-size: $font-size-base * 0.6 !important;
+  }
+ 
+  // END TEXT UTILITIES SMALL //
+  
   div.wrapLabel > label {
     min-height: 60px !important;
     white-space: normal;
@@ -799,21 +761,9 @@ input.showSelectedRadio[type=radio]:checked +  label span {
       padding: 0px;
   }
 
-  .medium-small {
-    font-size: $font-size-base * 0.35 !important;
-  }
-
   nav.web.fixed-bottom {
     height: 150px;
     position: relative !important;
-  }
-
-  .mediumTitle {
-    font-size: $font-size-base * 0.7 !important;
-  }
-
-  .medium {
-    font-size: $font-size-base * 0.6 !important;
   }
 
   // Styling on consent doc //
@@ -885,45 +835,50 @@ input.showSelectedRadio[type=radio]:checked +  label span {
      display: none !important;
    }
 
-  .smallText {
-    font-size: $font-size-base * 0.5 !important;
+   
+   button.clickableLink > div.btn__content {
+     padding: 0px !important;
+     font-size: $font-size-base * 0.70 !important;
+    }
+    
+    p {
+      color: #31117D;
+      font-size: $font-size-base !important;
+    }
+    
+    
+    span.chip,
+    div {
+      font-size: $font-size-base * 0.70 !important;
+    }
+    
+    div.btn__content {
+      font-size: $font-size-base * 0.40 !important;
+    }
+
+  // BEGIN TEXT UTILITIES LARGE // 
+  .mediumFontSize {
+    font-size: $font-size-base * 0.7 !important;
   }
 
-  button.clickableLink > div.btn__content {
-    padding: 0px !important;
-    font-size: $font-size-base * 0.70 !important;
-  }
+  .smallFontSize {
+    font-size: $font-size-base * 0.6 !important;
+  }  
   
-  .subText {
-    font-size: $font-size-base * 0.65 !important;
-  }
-
-  p {
-    color: #31117D;
-    font-size: $font-size-base !important;
-  }
-
-  .tiny {
+  .tinyFontSize {
     font-size: $font-size-base * 0.6 !important;
   }
 
-  span.chip,
-  div {
-    font-size: $font-size-base * 0.70 !important;
+  .xsmallFontSize {
+    font-size: $font-size-base * 0.5 !important;
   }
+    
 
-  div.btn__content {
-    font-size: $font-size-base * 0.40 !important;
-  }
-
-  .bigButton > div.btn__content {
-    font-size: $font-size-base * 0.70 !important;
-  }
-
-  .mediumLarge > div.btn__content {
+  .smallFontSize > div.btn__content {
     font-size: $font-size-base * 0.60 !important;
   }
 
+  // END TEXT UTILITIES LARGE //
   .ml-6 {
     margin-left: 16.66% !important;
   }

@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-sm-8 mx-auto">
                 <p class="white--text text-center"> Sorry, you are not eligible</p>
-                <p class="white--text text-center tiny">
+                <p class="white--text text-center tinyFontSize">
                         {{ sectionOne ? 'You must':'' }}
                         {{isUnderage ? "be at least 18" + getProperCharacter(0): "" }} 
                         {{isNotComfortable ? "be comfortable using a smartphone to participate"
@@ -27,23 +27,23 @@
                     
     
                 <br>
-                <p class="white--text tiny text-center">
+                <p class="white--text tinyFontSize text-center">
                     You can still help by telling others about the study
                 </p>
             </div>
             <br>
             <div class="col-12 text-center">
                 <v-btn  class="roundBtn orange"> 
-                    <v-icon medium class="white--text">fa-facebook</v-icon>
+                    <v-icon mediumFontSize class="white--text">fa-facebook</v-icon>
                 </v-btn>
                 <v-btn  class="roundBtn orange">
-                    <v-icon medium class="white--text">fa-twitter</v-icon>
+                    <v-icon mediumFontSize class="white--text">fa-twitter</v-icon>
                 </v-btn>
                 <v-btn class="roundBtn orange"> 
-                    <v-icon medium class="white--text">message</v-icon>
+                    <v-icon mediumFontSize class="white--text">message</v-icon>
                 </v-btn>
                 <v-btn class="roundBtn orange"> 
-                    <v-icon medium class="white--text">fa-envelope</v-icon>
+                    <v-icon mediumFontSize class="white--text">fa-envelope</v-icon>
                 </v-btn>
             </div>
 

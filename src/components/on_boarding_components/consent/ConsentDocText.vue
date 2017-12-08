@@ -151,7 +151,7 @@
 			
 
       <div v-if="!isModalFrame" class="attachButton">
-        <v-btn flat v-on:click="overlay()" color="white" class=" largeButton medium inheritPosition"> 
+        <v-btn flat v-on:click="overlay()" color="white" class=" largeButton mediumFontSize inheritPosition"> 
           <v-icon  class="defaultBlue" x-large> fa-expand </v-icon>
       </v-btn>
       </div>

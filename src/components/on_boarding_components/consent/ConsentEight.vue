@@ -6,7 +6,7 @@
           <img class="img-fluid " src="../../../images/step-8-consent-icon.png">
         </div>
   
-        <div class="col-9 col-lg-9 x-tiny mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
+        <div class="col-9 col-lg-9  mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
           <div class="row">
             <div class="col-12 default font-weight-bold">
               Potential Benefits
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="row">
-        <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
+        <ul class="ml-md-5 mr-md-5 xsmallFontSize lightGrayText">
 
             <li class="mt-lg-1 mb-lg-3">
                 Your participation could help researchers understand Parkinson’s Disease better.
@@ -32,7 +32,7 @@
       </ul>
     </div>
     <div class="row" v-if="showHelperText">
-        <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+        <div class="ml-md-5 mr-md-5 p-0 col lightGrayText xsmallFontSize">
           We will ask you to answer different health surveys. Some of these surveys have been used in other PD research studies. Some of the surveys are new. Some of the questions in the surveys may be mildly stressful for some people.
           <br><br>
           Because we are looking for health patterns over time, we will ask you some of the same questions more than one time. This may seem silly, but it is important to our research.

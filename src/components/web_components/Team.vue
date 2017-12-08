@@ -1,9 +1,9 @@
 <template>
     <v-app class="white">
-        <p class="text-center largeTitle"> Who is involved? </p>
+        <p class="text-center baseFontSize"> Who is involved? </p>
         <div class="row">
             <div class="mx-auto col-sm-8">
-                <p class="mx-auto default medium-small">
+                <p class="mx-auto default smallFontSize">
                     A little bit of text about who these people are. A little bit of text about who these people are. A little bit of text about who these people are.
                 </p>
             </div>
@@ -47,9 +47,9 @@
                 <img class="pl-lg-5 img-fluid fittedImg" src="../../images/scientists-icon.png">
             </div>
 
-            <div class="mx-auto mt-0 subText p-4 col-12 col-lg-6 order-2 order-lg-2">
-                <p class="darkPurpleText largeTitle"> Scientists Make Discoveries</p>
-                <p class="medium-small default">
+            <div class="mx-auto mt-0  p-4 col-12 col-lg-6 order-2 order-lg-2">
+                <p class="darkPurpleText baseFontSize"> Scientists Make Discoveries</p>
+                <p class="smallFontSize default">
                     When you use the app you contribute to research on MS. By combining the information from many people who are using the app, researchers expect to find patterns. The information you provide through the elevateMS app gets encrypted on the phone to protect your privacy. As you participate over time, you help create a powerful dataset that may lead to scientific breakthrough and to new ways to help people with MS improve their well being. You do not need to have MS to participate. This study will last about one year. We’d like you to participate for three consecutive months or longer if you can.
                 </p>
             </div>
@@ -61,13 +61,13 @@
                 <img class="pl-lg-5 img-fluid fittedImg" src="../../images/partner-icon.png">
             </div>
 
-            <div class="mx-auto mt-0 pt-0 subText col-12 col-lg-6 order-2 order-lg-2 mt-5">
-                <p class="darkPurpleText largeTitle"> Interested in becoming a partner?</p>
-                <p class="medium default">
+            <div class="mx-auto mt-0 pt-0  col-12 col-lg-6 order-2 order-lg-2 mt-5">
+                <p class="darkPurpleText baseFontSize"> Interested in becoming a partner?</p>
+                <p class="mediumFontSize default">
                     Join the Synapse community. Some text about how you will get the data.
                 </p>
                 <br>
-                <v-btn id="join" :to="{name: 'OverviewEligibility'}" class="col-auto navyBlue text-capitalize white--text"> Join </v-btn>
+                <v-btn  :to="{name: 'OverviewEligibility'}" class="joinButton col-auto navyBlue text-capitalize white--text"> Join </v-btn>
                 </p>
             </div>
 

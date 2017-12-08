@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             <div class="mx-auto text-center col-md-8">
-               <p class=" white--text medium-small">
+               <p class=" white--text smallFontSize">
                    By signing your name, you have indicated that you have read and fully agree with the consent form given below. 
                    This is the document which you just went through in the consent and quiz process.
                </p>
@@ -21,7 +21,7 @@
             </v-flex>
         </div>
         <div class="row">
-            <div class="text-center medium col">
+            <div class="text-center mediumFontSize col">
                 <v-btn flat class="large white--text font-weight-bold"> <u> Disagree  </u> </v-btn>
                 <v-btn v-on:click="[requirements.isOnSign = false, requirements.hasCompletedSign = true, requirements.isOnRegistration = true, $router.push({name: 'OverviewEligibility'})]"class="large defaultBlue font-weight-bold"> Accept </v-btn>
             </div>

@@ -6,7 +6,7 @@
             <img class="img-fluid " src="../../../images/join-the-study-image_2x.png">
           </div>
 
-          <div class="col-9 col-lg-9 x-tiny mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
+          <div class="col-9 col-lg-9  mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
             <div class="row">
               <div class="col-12 default font-weight-bold">
                 Potential benefits
@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="row">
-          <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
+          <ul class="ml-md-5 mr-md-5 xsmallFontSize lightGrayText">
 
             <li class="mt-lg-1 mb-lg-3">
               Your participation could help researchers understand Parkinson’s Disease better.
@@ -40,7 +40,7 @@
             </ul>
           </div>
           <div class="row pb-5 mb-5" v-if="showHelperText">
-            <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+            <div class="ml-md-5 mr-md-5 p-0 col lightGrayText xsmallFontSize">
               We will process your data electronically.
               <br><br>
               We will combine your coded study data with the coded study data of other volunteers.

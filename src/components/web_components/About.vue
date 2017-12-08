@@ -1,9 +1,9 @@
 <template>
     <v-app class="white">
-        <p class="text-center largeTitle"> About the study </p>
+        <p class="text-center baseFontSize"> About the study </p>
         <div class="row">
             <div class="mx-auto col-sm-8">
-            <p class="mx-auto default medium-small">
+            <p class="mx-auto default smallFontSize">
                 The elevateMS study, developed in collaboration by Sage Bionetworks (nonprofit) and Novartis
                 Pharmaceuticals Corporation, monitors wellbeing and changes in selected symptoms of MS such 
                 as dexterity, balance or gait.
@@ -30,26 +30,26 @@
 
                 <div class="row ml-sm-5">
                     <div class="col yellowTop yellowBottom">
-                        <p class="medium-small mb-1 darkPurpleText font-weight-bold"> Step 1 </p>
-                        <p class="medium-small mb-1 darkPurpleText font-weight-bold"> Eligibility & consent </p>
+                        <p class="smallFontSize mb-1 darkPurpleText font-weight-bold"> Step 1 </p>
+                        <p class="smallFontSize mb-1 darkPurpleText font-weight-bold"> Eligibility & consent </p>
                     </div>
                 </div>
                 <div class="row ml-sm-5">
                     <div class="col yellowBottom mx-auto">
-                        <p class="medium-small mb-1 darkPurpleText"> Step 2 </p>
-                        <p class="medium-small mb-1 darkPurpleText"> Download the app </p>
+                        <p class="smallFontSize mb-1 darkPurpleText"> Step 2 </p>
+                        <p class="smallFontSize mb-1 darkPurpleText"> Download the app </p>
                     </div>
                 </div>
                 <div class="row ml-sm-5">
                     <div class="col yellowBottom mx-auto">
-                        <p class="medium-small mb-1 darkPurpleText"> Step 3 </p>
-                        <p class="medium-small mb-1 darkPurpleText"> Perform simple tasks </p>
+                        <p class="smallFontSize mb-1 darkPurpleText"> Step 3 </p>
+                        <p class="smallFontSize mb-1 darkPurpleText"> Perform simple tasks </p>
                     </div>
                 </div>
                 <div class="row ml-sm-5">
                     <div class="col yellowBottom mx-auto">
-                        <p class="medium-small mb-1 darkPurpleText"> Step 4 </p>
-                        <p class="medium-small mb-1 darkPurpleText"> Track your health </p>
+                        <p class="smallFontSize mb-1 darkPurpleText"> Step 4 </p>
+                        <p class="smallFontSize mb-1 darkPurpleText"> Track your health </p>
                     </div>
                 </div>
 
@@ -60,8 +60,8 @@
             </div>
 
             <div class="col-lg-4 ml-lg-0  mt-md-5 pt-md-5 mx-auto">
-                <p class="darkPurpleText lato largeTitle "> Eligibility & Consent </p>
-                <p class="medium default">
+                <p class="darkPurpleText lato baseFontSize "> Eligibility & Consent </p>
+                <p class="mediumFontSize default">
                     Once you have received confirmation of your eligibility, we will ask you to do
                     an informed consent process. It takes about 20 minutes. We will also ask you to do
                     a one-time health survey. It takes about 20 minutes.
@@ -76,9 +76,9 @@
                 <img class="pl-lg-5 img-fluid fittedImg" src="../../images/sage-logo.png">
                 <img class="pl-lg-5 img-fluid fittedImg" src="../../images/robert-wood-johnson-foundation-logo.png">
             </div>
-            <div class="mx-auto mt-0 pt-0 subText col-12 col-lg-6 order-2 order-lg-2">
-                <p class="darkPurpleText largeTitle"> Who is Involved? </p>
-                <p class="medium default"> 
+            <div class="mx-auto mt-0 pt-0  col-12 col-lg-6 order-2 order-lg-2">
+                <p class="darkPurpleText baseFontSize"> Who is Involved? </p>
+                <p class="mediumFontSize default"> 
                     Life with Parkinson’s disease  isn’t a one size fits all.
                     Everyone has unique experiences even though there are common symptoms.
                     mPower is a tool for you to understand your Parkinson’s disease symptoms 
@@ -94,12 +94,12 @@
             <div class="mx-auto col-12 order-1 col-sm-4 order-lg-1 ">
                 <img class="pl-lg-5 img-fluid fittedImg" src="../../images/join-the-study-image_2x.png">
             </div>
-            <div class="mx-auto pt-lg-5 mt-lg-5 mt-5 subText col-12 col-lg-6 order-2 order-lg-2">
-                <p class="darkPurpleText  largeTitle"> Join the study </p>
-                <p class="medium default"> In just a minute you can see if you are eligible to participate in the mPower study. Find out now! 
+            <div class="mx-auto pt-lg-5 mt-lg-5 mt-5  col-12 col-lg-6 order-2 order-lg-2">
+                <p class="darkPurpleText  baseFontSize"> Join the study </p>
+                <p class="mediumFontSize default"> In just a minute you can see if you are eligible to participate in the mPower study. Find out now! 
                 <br>
                 <br>
-                <v-btn id="join" :to="{name: 'OverviewEligibility'}" class="col-auto navyBlue text-capitalize white--text"> Join </v-btn>
+                <v-btn :to="{name: 'OverviewEligibility'}" class="joinButton col-auto navyBlue text-capitalize white--text"> Join </v-btn>
                 </p>
                 <br>
                 <br>

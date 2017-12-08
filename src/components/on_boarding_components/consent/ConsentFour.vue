@@ -6,7 +6,7 @@
               <img class="img-fluid " src="../../../images/step-4-consent-icon.png">
             </div>
       
-            <div class="col-9 col-lg-9 x-tiny mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
+            <div class="col-9 col-lg-9  mt-3 lightLead  mr-lg-0 ml-lg-0 pl-0 pr-0">
               <div class="row">
                 <div class="col-12 default font-weight-bold">
                   Risks
@@ -16,7 +16,7 @@
           </div>
 
           <div class="row">
-            <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
+            <ul class="ml-md-5 mr-md-5 xsmallFontSize lightGrayText">
 
               <li class="mt-lg-1 mb-lg-3">
                 Your study data will be encrypted on your phone, and we will do our best to protect your privacy. But your data could be hacked.
@@ -41,7 +41,7 @@
             </ul>
           </div>
       <!-- <div class="row pb-5 mb-5" v-if="showHelperText">
-        <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+        <div class="ml-md-5 mr-md-5 p-0 col lightGrayText xsmallFontSize">
           Your privacy is important to us. We will make every effort to protect your privacy.
           <br><br> The data we collect through the app is encrypted on the phone. This means your data is protected. Unauthorized people cannot easily understand your data when it is encrypted.
           <br><br> We will separate the account information that identifies you from your study data. Your account information will not be stored with your survey responses or app measurements.

@@ -8,30 +8,30 @@
     <div class="row anchorBottom customRowHeight">
         
         <div class="col-3 p-0 customNavButton hideOnLarge text-center">
-            <v-btn class="navyBlue white--text medium" v-on:click="navigate(0)"> Back </v-btn>
+            <v-btn class="navyBlue white--text mediumFontSize" v-on:click="navigate(0)"> Back </v-btn>
         </div>
 
         <div class="customNavButton col-2 hideOnSmall ml-0 mr-0">
-            <v-btn class="navyBlue largeButton medium white--text" v-on:click="navigate(0)"> Back
+            <v-btn class="navyBlue largeButton mediumFontSize white--text" v-on:click="navigate(0)"> Back
             </v-btn>
         </div>
 
         <div class="col-6 col-md-8 mt-md-3">
             <div clas="row text-center">
-                <p class="col-11  mx-auto text-center tiny mt-md-2  mb-0 lightLead"> Question {{' ' + indexInStack }} </p>
+                <p class="col-11  mx-auto text-center tinyFontSize mt-md-2  mb-0 lightLead"> Question {{' ' + indexInStack }} </p>
                 <v-progress-linear class="col-11 text-center mx-auto pr-0  centerAlign" v-model="progress" height="16" color="success"> </v-progress-linear>
             </div>
         </div>
         
         <div class="col-3 p-0 customNavButton hideOnLarge text-center">
-            <v-btn class="navyBlue white--text  medium"
+            <v-btn class="navyBlue white--text  mediumFontSize"
              v-bind:class="currentStageHasValues() ? '':'lowOpacity'"
             v-on:click="navigate(1)"> {{indexInStack === 5? ' Submit' : 'Next'}} </v-btn>
         </div>
 
         
         <div class="customNavButton col-2 hideOnSmall">
-            <v-btn class="navyBlue largeButton medium white--text" 
+            <v-btn class="navyBlue largeButton mediumFontSize white--text" 
              v-bind:class="currentStageHasValues() ? '':'lowOpacity'"
              v-on:click="navigate(1)"> {{indexInStack === 5? ' Submit' : 'Next'}}
             </v-btn>

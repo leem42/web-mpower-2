@@ -7,7 +7,7 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> Privacy Policy </p>
-                <p class="default tiny ml-6 ml-3">
+                <p class="default tinyFontSize ml-6 ml-3">
                     Sage Bionetworks (“Sage Bionetworks, “we,” or “us”) is a 501(c)(3)
                     nonprofit biomedical research organization in the United States, 
                     created to enhance how researchers approach the complexity of human
@@ -54,7 +54,7 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> Registering for the Study through Sage Bionetworks </p>
-                <p class="default tiny ml-6 ml-3">
+                <p class="default tinyFontSize ml-6 ml-3">
                     In order to access the Parkinson mPower App functionalities, 
                     we ask you to create an account through the Parkinson mPower App.
                     To create an account, you must provide a username, a
@@ -75,7 +75,7 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> Information We Collect </p>
-                <p class="default tiny ml-6 ml-3">
+                <p class="default tinyFontSize ml-6 ml-3">
                     In addition to the data we collect in registration for the Study, we collect the following through the Parkinson mPower App and the Study:
 
                     <br>
@@ -146,7 +146,7 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> How we use information </p>
-                <p class="default tiny ml-6 ml-3"> 
+                <p class="default tinyFontSize ml-6 ml-3"> 
 
                 Except as described in this privacy policy, we will not sell, rent, lease, give away, disclose or share your contact information, and will not disclose your information that we collect through the Parkinson mPower App and the Study to third parties without your consent. We may provide contact or coded study information to third parties if you consent to us doing so, as well as in the following circumstances:
 
@@ -178,10 +178,10 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> How we disclose information </p>
-                <p class="default tiny ml-6 ml-3"> 
+                <p class="default tinyFontSize ml-6 ml-3"> 
                 Except as described in this privacy policy, we will not sell, rent, lease, give away, disclose or share your contact information, and will not disclose your information that we collect through the Parkinson mPower App and the Study to third parties without your consent. We may provide contact or coded study information to third parties if you consent to us doing so, as well as in the following circumstances:
 
-                    <p class="ml-6 pl-5 default tiny ">
+                    <p class="ml-6 pl-5 default tinyFontSize ">
                         When we work with third parties who provide services on our behalf, we take steps to limit the personal data provided to them to that which is reasonably necessary for them to perform their functions for the allowable purposes listed above. We require them by contract to agree to only process the personal data in accordance with our instructions and to maintain the security and confidentiality of such information by applying adequate technical and organizational measures.
                         <br>
                         <br>
@@ -206,7 +206,7 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> How is my Health app data handled </p>
-                <p class="default tiny ml-6 ml-3">
+                <p class="default tinyFontSize ml-6 ml-3">
                     You have the option to share data from your mobile device’s iOS Health app with the App. Unless you agree to share your data through and with the App, you will not be able to include it in the study. Once you agree to share your data through and with the App, such data becomes covered by this Privacy Policy. We are not responsible for the data practices of the iOS Health app outside the Parkinson mPower App in any way.
                 </p>                
             </div>
@@ -217,7 +217,7 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> Do Not Track </p>
-                <p class="default tiny ml-6 ml-3"> 
+                <p class="default tinyFontSize ml-6 ml-3"> 
                     We do not track our Parkinson mPower App visitors over time and across third party websites or online services to provide targeted advertising, and we do not specifically respond to Do Not Track (“DNT”) signals.
                 </p>                
                 
@@ -229,7 +229,7 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> Data Security </p>
-                <p class="default tiny ml-6 ml-3"> 
+                <p class="default tinyFontSize ml-6 ml-3"> 
                 Sage Bionetworks uses appropriate physical, managerial, and technical safeguards that are designed to protect the confidentiality, integrity and security of personal data that we collect and maintain against accidental or unlawful loss, theft and misuse and unauthorized access, disclosure, alteration destruction, or any other type of unlawful processing. We cannot, however, fully guarantee the security of personal data or other information transmitted to us through the Parkinson mPower App or the Study.
                 <br>
                 <br>
@@ -271,7 +271,7 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> Cross-Border Transfer of Your Information </p>
-                <p class="default tiny ml-6 ml-3"> 
+                <p class="default tinyFontSize ml-6 ml-3"> 
                     We may transfer your personal data to countries outside of your country of residence which may have different personal data protection laws than the country in which you initially provided the information. In doing so, we comply with applicable legal requirements pertaining to the transfer of personal data to other countries and will protect that information as described in this Privacy Policy.
                     <br>
                     <br>
@@ -289,7 +289,7 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> Changes to Our Privacy Policy </p>
-                <p class="default tiny ml-6 ml-3">
+                <p class="default tinyFontSize ml-6 ml-3">
                     We may change this privacy policy from time to time. Any changes will be posted on this page with an updated revision date. In the event that any changes to this privacy policy materially alter your rights or obligations under this privacy policy, we will make reasonable efforts to notify you of the change. For example, we may send a message to your email address, if we have one on file, or generate a pop-up or similar notification when you access the Parkinson mPower App or the Study for the first time after such material changes are made. Your continued use of the Parkinson mPower App or the Study after the revised privacy policy has become effective indicates that you have read, understood and agreed to the then-current version of this privacy policy.
                 </p>                
             </div>
@@ -300,7 +300,7 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> Contact </p>
-                <p class="default tiny ml-6 ml-3"> 
+                <p class="default tinyFontSize ml-6 ml-3"> 
                     
                     If you have any questions, comments or requests regarding this privacy policy or our processing of your information, please contact:
 
@@ -327,7 +327,7 @@
         <div class="col-sm-10">
             <div class="row">
                 <p class="ml-6 ml-3 defaultBlue font-weight-bold"> Updates </p>
-                <p class="default tiny ml-6 ml-3">
+                <p class="default tinyFontSize ml-6 ml-3">
                     We may update our Privacy Policy from time to time to clarify how we collect, process, store, use and disclose information. We want to be as transparent as possible about the changes we make to our Privacy Policy. </p>                
             </div>
         </div>

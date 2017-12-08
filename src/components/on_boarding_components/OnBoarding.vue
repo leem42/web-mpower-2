@@ -16,7 +16,7 @@
           </div>
 
           <div class="text-center d-sm-none col-3">
-            <span id="help" class="d-sm-none white--text  lead headerText light tiny"> Need Help? </span>
+            <span id="help" class="d-sm-none white--text  lead headerText light tinyFontSize"> Need Help? </span>
           </div>
 
           <div class="col-sm-10 text-center text-sm-right">
@@ -46,7 +46,7 @@
         </div>
       </div>
     </nav>
-    <router-view class="whiteBackground medium mt-custom router container-fluid" v-bind:class="{fadeBackground: getHeader() === 'Sign' || getHeader() === 'Welcome' || isOnRetake(), 'mt-consent': getHeader() === 'Consent'}"></router-view>
+    <router-view class="whiteBackground mediumFontSize mt-custom router container-fluid" v-bind:class="{fadeBackground: getHeader() === 'Sign' || getHeader() === 'Welcome' || isOnRetake(), 'mt-consent': getHeader() === 'Consent'}"></router-view>
     
   </v-app>
 </template>

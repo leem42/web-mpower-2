@@ -7,7 +7,7 @@
         <img class="img-fluid " src="../../../images/step-1-consent-icon.png">
       </div>
 
-      <div class="col-9 centerVertically x-tiny mt-3 lightLead mr-md-0 ml-md-0 pl-0 pr-0">
+      <div class="col-9 centerVertically  mt-3 lightLead mr-md-0 ml-md-0 pl-0 pr-0">
         <div class="row">
           <div class="col-12 mt-0 default text-left font-weight-bold">
             Overview
@@ -17,7 +17,7 @@
     </div>
 
     <div class="row m-3">
-      <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
+      <ul class="ml-md-5 mr-md-5 xsmallFontSize lightGrayText">
         <li>
           This study is to understand variations in Parkinson’s Disease symptoms.
         </li>
@@ -34,7 +34,7 @@
       </ul>
     </div>
     <div class="row" v-if="showHelperText">
-        <div class="ml-md-5 mr-md-5 p-0 col lightGrayText smallText">
+        <div class="ml-md-5 mr-md-5 p-0 col lightGrayText xsmallFontSize">
           We will ask you questions about your health and your medical history. We will ask if you have PD and if you take certain medications. Because the purpose of this study is to look for patterns over time, we will ask you to review and update your answers from time to time. We might also ask new questions about your mood or how well you slept. These questions are important for the research study
           <br>< br>
           We will ask you to do simple activities. For example:

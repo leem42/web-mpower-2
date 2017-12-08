@@ -6,7 +6,7 @@
                 <img class="img-fluid consentImg " src="../../../images/number-icon.png">
             </div>
 
-            <div class="col-8 centerVertically x-tiny lightLead mr-md-0 ml-md-0 pl-0 pr-0">
+            <div class="col-8 centerVertically  lightLead mr-md-0 ml-md-0 pl-0 pr-0">
                 <div class="row">
                     <div class="col-12 mt-0 default text-left font-weight-bold">
                         Study Activities
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="row m-3">
-            <ul class="ml-md-5 mr-md-5 smallText lightGrayText">
+            <ul class="ml-md-5 mr-md-5 xsmallFontSize lightGrayText">
 
                 <li class="mt-md-4">
                     You will install the mPower app on your phone.
