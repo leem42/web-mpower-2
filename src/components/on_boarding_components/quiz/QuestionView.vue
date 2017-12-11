@@ -1,9 +1,7 @@
 <template>
     <v-app>
         <br>
-
         <router-view  class="whiteBackground router container-fluid"> </router-view>
-
 
     <div class="row anchorBottom customRowHeight">
         
@@ -29,14 +27,12 @@
             v-on:click="navigate(1)"> {{indexInStack === 5? ' Submit' : 'Next'}} </v-btn>
         </div>
 
-        
         <div class="customNavButton col-2 hideOnSmall">
             <v-btn class="navyBlue largeButton mediumFontSize white--text" 
              v-bind:class="currentStageHasValues() ? '':'lowOpacity'"
              v-on:click="navigate(1)"> {{indexInStack === 5? ' Submit' : 'Next'}}
             </v-btn>
         </div>
-
 
     </div>
 
@@ -45,8 +41,8 @@
 </template>
 
 <script>
-    import { questionResults } from '../../../requirements/questionResults'
-    import { requirements } from '../../../requirements/requirements'
+    import { questionResults } from '../../../state_objects/questionResults'
+    import { requirements } from '../../../state_objects/requirements'
 
     export default {
       data () {
@@ -78,6 +74,7 @@
             return
           }
           var frame = ''
+          // this dictates to go forward or backwards
           if (index === 0) {
             this.indexInStack = this.indexInStack - 1
             this.progress = this.progress - this.multiple5
@@ -85,6 +82,7 @@
             this.progress = this.progress + this.multiple5
             this.indexInStack = this.indexInStack + 1
           }
+          // if they've made it to the end
           if (this.indexInStack === 6) {
             let failedTest = Object.values(this.questionResults).includes('false')
             if (failedTest) {
@@ -95,7 +93,7 @@
               this.requirements.isOnSign = true
               this.$router.push({ name: 'OverviewEligibility' })
             }
-          } else if (this.indexInStack >= 6) {
+          } else if (this.indexInStack >= 6) { // probable a more eligant way ti handle this
             this.requirements.isOnQuiz = false
             this.requirements.hasCompletedQuiz = true
             this.requirements.isOnSign = true

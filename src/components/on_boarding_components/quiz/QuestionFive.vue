@@ -22,8 +22,8 @@
 </template>
 
 <script>
-    import { questionResults } from '../../../requirements/questionResults'
-    import { requirements } from '../../../requirements/requirements'
+    import { questionResults } from '../../../state_objects/questionResults'
+    import { requirements } from '../../../state_objects/requirements'
 
     export default {
       data () {

@@ -49,22 +49,22 @@
         <span id="interest" class="francisco lato smallFontSize default pt-sm-0 col-md-6 col-sm-7 col-lg-8 text-left mx-auto mb-4"> I'm interested in joining mPower because I 
     
           <span v-if="controller[0].edit" class="ml-0 p-0">
-            <v-btn flat :ripple="false" v-if="selectedChoice[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink pl-0 middle francisco"> Want to help myself         
+            <v-btn flat :ripple="false" v-if="checkboxChoices[0]" @click.native="handleEdit(0)" class=" text-capitalize clickableLink pl-0 middle francisco"> Want to help myself         
             </v-btn>
               {{getPlacementText(0,6)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[1]" @click.native="handleEdit(0)" class=" pb-3 francisco text-capitalize clickableLink pl-0"> Want to help a loved one 
+            <v-btn flat :ripple="false" v-if="checkboxChoices[1]" @click.native="handleEdit(0)" class=" pb-3 francisco text-capitalize clickableLink pl-0"> Want to help a loved one 
                 {{getPlacementText(1,6)}}
             </v-btn>
-            <v-btn flat :ripple="false" v-if="selectedChoice[2]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> help others
+            <v-btn flat :ripple="false" v-if="checkboxChoices[2]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> help others
             </v-btn>
             {{getPlacementText(2,6)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[3]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> Am curious
+            <v-btn flat :ripple="false" v-if="checkboxChoices[3]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> Am curious
             </v-btn>
             {{getPlacementText(3,6)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[4]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> another reason
+            <v-btn flat :ripple="false" v-if="checkboxChoices[4]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> another reason
             </v-btn>
             {{ getPlacementText(4,6)}}
-            <v-btn flat :ripple="false" v-if="selectedChoice[5]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> not interested
+            <v-btn flat :ripple="false" v-if="checkboxChoices[5]" @click.native="handleEdit(0)" class="francisco  text-capitalize clickableLink pl-0"> not interested
             </v-btn>
           </span>
           <v-btn v-if="!controller[0].edit && controller[0].submit" flat class="francisco clickableLink white--text text-capitalize pl-0" @click.native="handleEdit(0)"> {{controller[0].edit ? "(Add More)": "Resubmit"}} </v-btn>
@@ -73,23 +73,23 @@
     
       <template v-if="!controller[0].edit">
          <div class="row">
-              <checkbox-smooth label="want to help myself" class=" col-sm-7 col-md-6 col-lg-8 mx-auto text-left pt-2 pb-2 stencilBorderTop stencilBorder mb-2 mb-sm-0"  v-model="selectedChoice[0]"></checkbox-smooth>         
+              <checkbox-smooth label="want to help myself" class=" col-sm-7 col-md-6 col-lg-8 mx-auto text-left pt-2 pb-2 stencilBorderTop stencilBorder mb-2 mb-sm-0"  v-model="checkboxChoices[0]"></checkbox-smooth>         
         </div> 
 
         <div class="row">
-          <checkbox-smooth label="want to help a loved one" v-model="selectedChoice[1]" class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></checkbox-smooth>
+          <checkbox-smooth label="want to help a loved one" v-model="checkboxChoices[1]" class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></checkbox-smooth>
         </div>
         <div class="row">
-          <checkbox-smooth label="want to help others" v-model="selectedChoice[2]" class="mx-auto text-left pt-2 pb-2  stencilBorder col-sm-7 col-md-6 col-lg-8 customCheck "></checkbox-smooth>
+          <checkbox-smooth label="want to help others" v-model="checkboxChoices[2]" class="mx-auto text-left pt-2 pb-2  stencilBorder col-sm-7 col-md-6 col-lg-8 customCheck "></checkbox-smooth>
         </div>
         <div class="row">
-          <checkbox-smooth label="am curious" v-model="selectedChoice[3]" class="mx-auto text-left pt-2 pb-2 stencilBorder col-sm-7 col-md-6 customCheck col-lg-8 "></checkbox-smooth>
+          <checkbox-smooth label="am curious" v-model="checkboxChoices[3]" class="mx-auto text-left pt-2 pb-2 stencilBorder col-sm-7 col-md-6 customCheck col-lg-8 "></checkbox-smooth>
         </div>
         <div class="row">
-          <checkbox-smooth label="another reason" v-model="selectedChoice[4]" class="mx-auto text-left pt-2 pb-2 stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-8"></checkbox-smooth>
+          <checkbox-smooth label="another reason" v-model="checkboxChoices[4]" class="mx-auto text-left pt-2 pb-2 stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-8"></checkbox-smooth>
         </div>
         <div class="row">
-          <checkbox-smooth label="not interested" v-model="selectedChoice[5]" class="mx-auto text-left pt-2 pb-2 stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-8"></checkbox-smooth>
+          <checkbox-smooth label="not interested" v-model="checkboxChoices[5]" class="mx-auto text-left pt-2 pb-2 stencilBorderBottom col-sm-7 col-md-6 customCheck col-lg-8"></checkbox-smooth>
         </div>
       </template>
     
@@ -104,22 +104,22 @@
           <span class="mx-auto text-left col-sm-7 col-md-6 col-lg-8 francisco mediumFontSize mb-4 text-left lead"> I would be willing to try
             <span v-if="controller[1].edit" class="p-0">
               
-              <v-btn flat :ripple="false" v-if="selectedChoice[6]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> finger tapping
+              <v-btn flat :ripple="false" v-if="checkboxChoices[6]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> finger tapping
               </v-btn>
               {{ getPlacementText(6,12)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[7]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> hand tremor activity
+              <v-btn flat :ripple="false" v-if="checkboxChoices[7]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> hand tremor activity
               </v-btn>
               {{ getPlacementText(7,12)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[8]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> balance activity
+              <v-btn flat :ripple="false" v-if="checkboxChoices[8]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> balance activity
               </v-btn>
               {{ getPlacementText(8,12)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[9]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> brain teaser activity
+              <v-btn flat :ripple="false" v-if="checkboxChoices[9]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> brain teaser activity
               </v-btn>
               {{ getPlacementText(9,12)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[10]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> surveys
+              <v-btn flat :ripple="false" v-if="checkboxChoices[10]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> surveys
               </v-btn>
               {{ getPlacementText(10,12)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[11]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> none of the above
+              <v-btn flat :ripple="false" v-if="checkboxChoices[11]" @click.native="handleEdit(1)" class=" text-capitalize clickableLink pl-0 francisco"> none of the above
               </v-btn>
             </span>
             <v-btn v-if="!controller[1].edit && controller[1].submit" flat class="clickableLink pl-0 text-capitalize" v-on:click="handleEdit(1)"> {{controller[1].edit ? "(Add Choices)": "Resubmit"}} </v-btn>
@@ -128,23 +128,23 @@
 
         <template v-if="!controller[1].edit">
             <div class="row">
-              <checkbox-smooth label="finger tapping" v-model="selectedChoice[6]" class="stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
+              <checkbox-smooth label="finger tapping" v-model="checkboxChoices[6]" class="stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
             <div class="row">
-              <checkbox-smooth label="hand tremor activity" v-model="selectedChoice[7]" class="  stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
+              <checkbox-smooth label="hand tremor activity" v-model="checkboxChoices[7]" class="  stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
             <div class="row">
-              <checkbox-smooth label="balance activity" v-model="selectedChoice[8]" class=" stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
+              <checkbox-smooth label="balance activity" v-model="checkboxChoices[8]" class=" stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
             <div class="row">
-              <checkbox-smooth label="brain teaser activity" v-model="selectedChoice[9]" class=" stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
+              <checkbox-smooth label="brain teaser activity" v-model="checkboxChoices[9]" class=" stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
             </div>
             <div class="row">
-              <checkbox-smooth label="surveys" v-model="selectedChoice[10]" class=" stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
+              <checkbox-smooth label="surveys" v-model="checkboxChoices[10]" class=" stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
             <div class="row">
-              <checkbox-smooth label="none of the above" v-model="selectedChoice[11]" class=" stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
+              <checkbox-smooth label="none of the above" v-model="checkboxChoices[11]" class=" stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 text-left mx-auto col-lg-8 customCheck darkPurple--text"></checkbox-smooth>
             </div>
         </template>
 
@@ -186,16 +186,16 @@
         <div class="row">
           <p class="francisco col-sm-7 col-md-6 col-lg-8 mx-auto text-left mediumFontSize lead"> I would like to recieve
             <span v-if="controller[3].edit">
-              <v-btn flat :ripple="false" v-if="selectedChoice[12]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the study
+              <v-btn flat :ripple="false" v-if="checkboxChoices[12]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on the study
               </v-btn>
               {{ getPlacementText(12,16)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[13]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on participation stats
+              <v-btn flat :ripple="false" v-if="checkboxChoices[13]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Updates on participation stats
               </v-btn>
               {{ getPlacementText(13,16)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[14]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Data about personal performance
+              <v-btn flat :ripple="false" v-if="checkboxChoices[14]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> Data about personal performance
               </v-btn>
               {{ getPlacementText(14,16)}}
-              <v-btn flat :ripple="false" v-if="selectedChoice[15]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> No updates or stats
+              <v-btn flat :ripple="false" v-if="checkboxChoices[15]" v-on:click="handleEdit(3)" class=" text-capitalize clickableLink pl-0 francisco"> No updates or stats
               </v-btn>
             </span>
             <v-btn v-if="!controller[3].edit && controller[3].submit" flat class="white--text text-capitalize clickableLink pl-0" v-on:click="handleEdit(3)"> {{controller[3].edit ? "(Add Choices)": "Resubmit"}} </v-btn>
@@ -204,29 +204,29 @@
     
         <template v-if="!controller[3].edit">
           <div class="row">
-            <checkbox-smooth label="Updates on the study" v-model="selectedChoice[12]" class="stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left wrapLabel  customCheck darkPurple--text"></checkbox-smooth>
+            <checkbox-smooth label="Updates on the study" v-model="checkboxChoices[12]" class="stencilBorderTop stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left wrapLabel  customCheck darkPurple--text"></checkbox-smooth>
           </div>
           <div class="row">
-            <checkbox-smooth id="updates" label="Updates on participation stats" v-model="selectedChoice[13]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left mb-sm-0 customCheck darkPurple--text wrapLabel"></checkbox-smooth>
+            <checkbox-smooth id="updates" label="Updates on participation stats" v-model="checkboxChoices[13]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left mb-sm-0 customCheck darkPurple--text wrapLabel"></checkbox-smooth>
           </div>
           <div class="row">
-            <checkbox-smooth label="Data about personal performance" v-model="selectedChoice[14]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
+            <checkbox-smooth label="Data about personal performance" v-model="checkboxChoices[14]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
           </div>
           <div class="row">
-            <checkbox-smooth label="No updates or stats" v-model="selectedChoice[15]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
+            <checkbox-smooth label="No updates or stats" v-model="checkboxChoices[15]" class="stencilBorder pt-2 pb-2 col-sm-7 col-md-6 col-lg-8 mx-auto text-left  customCheck darkPurple--text"></checkbox-smooth>
           </div>
         </template>
     
       </span>
 
     </template>
-    <div class="row" style="height: 400px;" > </div>
+    <div class="row" style="height: 400px;" > </div> <!-- For extra padding -->
   </v-app>
 </template>
 
 <script>
   import {Focus} from '@/directives/focus.js'
-  import {requirements} from '../../../requirements/requirements'
+  import {requirements} from '../../../state_objects/requirements'
   import _ from 'lodash'
   import CheckboxSmooth from '@/custom_components/checkbox/CheckboxSmooth.vue'
   import RadioSmooth from '@/custom_components/radiobox/RadioBoxLight.vue'
@@ -239,10 +239,14 @@
         progress: (100.0 / 4),
         progressStep: (100.0 / 4),
         progressIndex: 0,
-        hasAnswered: [false, false, false],
+        // the page is broken down into sections, (for each question asked), the object below then represents whether there is one or more
+        // answers in a particular section
+        hasAnsweredInSection: [false, false, false],
         radioChoice: '',
-        selectedChoice: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
+        // below is for checkboxes
+        checkboxChoices: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
         controllerLevel: 0,
+        // below controls whether or not to show checkboxes for a particular section and then it shows where to scroll to
         controller: {
           0: {click: false, submit: false, edit: false, page: '#interest'}, // TODO: Remove submit field if its extraneous
           1: {click: false, submit: false, edit: false, page: '#willing'},
@@ -254,11 +258,11 @@
     },
     computed: {
       notInterestedFromStart: function () {
-        return this.selectedChoice[5]
+        return this.checkboxChoices[5]
       },
       notInterestedAny: function () {
         // TODO: Get details on the desired functionality for this function
-        return this.selectedChoice[11] && this.radioChoice === 'Never'
+        return this.checkboxChoices[11] && this.radioChoice === 'Never'
       }
     },
     methods: {
@@ -316,14 +320,14 @@
         }
       },
       setSelection (index) {
-        this.$set(this.selectedChoice, index, !this.selectedChoice[index])
+        this.$set(this.checkboxChoices, index, !this.checkboxChoices[index])
       },
       changeValue: function (newValue) {
         this.radioChoice = newValue
       },
       addProgress (index) {
-        if (!this.hasAnswered[index]) {
-          this.hasAnswered[index] = true
+        if (!this.hasAnsweredInSection[index]) {
+          this.hasAnsweredInSection[index] = true
           this.progressIndex += 1
           this.progress += this.progressStep
         }
@@ -337,7 +341,7 @@
       },
       hasAnsweredAny: function (start, stop) {
         for (var i = start; i < stop; i++) {
-          if (this.selectedChoice[i]) {
+          if (this.checkboxChoices[i]) {
             return true
           }
         }
@@ -345,10 +349,10 @@
       },
       getPlacementText: function (start, stop) {
         // am I open and is there a single space to the right or a multi space
-        if (this.selectedChoice[start]) {
+        if (this.checkboxChoices[start]) {
           var count = 0
           for (var i = start + 1; i < stop; i++) {
-            if (this.selectedChoice[i]) {
+            if (this.checkboxChoices[i]) {
               count = count + 1
             }
           }

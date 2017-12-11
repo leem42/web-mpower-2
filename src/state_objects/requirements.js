@@ -1,4 +1,5 @@
 /* eslint-disable */
+// stores the piece of the app that the person is on
 export {
   requirements
 }

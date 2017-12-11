@@ -1,4 +1,5 @@
 /* eslint-disable */
+// stores results of person's answers to questions
 export {
   questionResults
 }

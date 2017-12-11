@@ -158,8 +158,8 @@
 </template>
 
 <script>
-import {requirements} from '../../requirements/requirements'
-import {questionResults} from '../../requirements/questionResults'
+import {requirements} from '../../state_objects/requirements'
+import {questionResults} from '../../state_objects/questionResults'
 
 export default {
   data () {

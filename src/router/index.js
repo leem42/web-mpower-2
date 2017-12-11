@@ -52,13 +52,13 @@ import auth from '../auth/auth'
 
 Vue.use(Router)
 
+// below works only if in history mode
 const scrollBehavior = (to, from, savedPosition) => {
   const position = {}
-  position.x = 0
-  position.y = 500
   return { position }
 }
 
+// handles authentication
 function requireAuth (to, from, next) {
   if (!auth.loggedIn()) {
     next({

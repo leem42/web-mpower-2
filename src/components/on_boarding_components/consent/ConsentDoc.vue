@@ -88,8 +88,9 @@
 
 
 <script>
-import {requirements} from '../../../requirements/requirements'
-import {questionResults} from '../../../requirements/questionResults'
+import {requirements} from '../../../state_objects/requirements'
+// question results imported because if person needs to review section
+import {questionResults} from '../../../state_objects/questionResults'
 
 export default {
   data () {

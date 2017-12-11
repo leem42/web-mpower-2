@@ -162,8 +162,8 @@
 
 <script>
 import _ from 'lodash'
-import {highlightTracker} from '../../../requirements/highlightTracker'
-import {requirements} from '../../../requirements/requirements'
+import {highlightTracker} from '../../../state_objects/highlightTracker'
+import {requirements} from '../../../state_objects/requirements'
 export default {
   data () {
     return {

@@ -71,8 +71,8 @@
 </template>
 
 <script>
-  import {requirements} from '../../../requirements/requirements'
-  import {personInfo} from '../../../requirements/personInfo'
+  import {requirements} from '../../../state_objects/requirements'
+  import {personInfo} from '../../../state_objects/personInfo'
   import _ from 'lodash'
 
   export default {
@@ -110,6 +110,7 @@
         indexInVowSection: 1
       }
     },
+    // syntax below allows for inner object property to be appropriately called
     watch: {
       'personInfo.age': function () {
         this.setIsUnderage()
@@ -138,6 +139,8 @@
           this.handleEligibility()
         }
       },
+      // TODO: below is a depreciated method of getting the results- should switch to using
+      // the object personInfo.js
       updateRouterState () {
         this.$router.data = {
           isUnderage: this.personInfo.age < 18,
@@ -217,6 +220,8 @@
           }
         }, 500
       ),
+      // for each section of the app we need to see
+      // if they have completed any particular checkbox
       hasAnsweredAny: function (start, stop) {
         for (var i = start; i < stop; i++) {
           if (this.selectedChoice[i]) {
@@ -226,6 +231,7 @@
         return false
       }
     },
+    // If the user has already filled out the form then we load their values and show the form already completed
     mounted: function () {
       if (this.personInfo.age !== '' && this.personInfo.stateChosen !== '' && this.personInfo.selectedOptionForPhone) {
         this.isUnderage = false

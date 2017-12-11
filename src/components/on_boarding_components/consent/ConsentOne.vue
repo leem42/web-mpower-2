@@ -36,7 +36,7 @@
     <div class="row" v-if="showHelperText">
         <div class="ml-md-5 mr-md-5 p-0 col lightGrayText xsmallFontSize">
           We will ask you questions about your health and your medical history. We will ask if you have PD and if you take certain medications. Because the purpose of this study is to look for patterns over time, we will ask you to review and update your answers from time to time. We might also ask new questions about your mood or how well you slept. These questions are important for the research study
-          <br>< br>
+          <br></br>
           We will ask you to do simple activities. For example:
           Say “aaah” into your phone’s microphone for 10 seconds. This is to measure variation in your voice.
           Walk and/or stand still with your phone in your pocket. This is to measure your gait and balance.

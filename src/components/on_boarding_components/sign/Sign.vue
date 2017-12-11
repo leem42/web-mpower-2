@@ -30,7 +30,7 @@
         <div class="row whiteBackground">
             <!-- <iframe ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" height="500px" class="col-12 mask">
             </iframe> -->
-            <iframe ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-checkboxes/#/NullPage/ConsentDocText" height="500px" class="col-12 mask">
+            <iframe ref="frame" src="/#/NullPage/ConsentDocText" height="500px" class="col-12 mask">
             </iframe>
         </div>
 
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import {requirements} from '../../../requirements/requirements'
+import {requirements} from '../../../state_objects/requirements'
 
 export default {
   data () {

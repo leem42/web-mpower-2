@@ -72,11 +72,7 @@ export default {
           console.log(response.data)
         })
         .catch(error => {
-          console.log('eror being made')
           this.loginInfo = JSON.parse(JSON.stringify(error)).response.data
-          console.log('')
-          console.log(this.loginInfo)
-          console.log('')
           var sessionToken = this.loginInfo.sessionToken
           this.userId = this.loginInfo.id
           this.HTTP = this.createBaseHTTP(sessionToken)

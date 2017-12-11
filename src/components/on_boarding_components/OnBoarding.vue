@@ -89,7 +89,7 @@
 </style>
 
 <script>
-  import {requirements} from '../../requirements/requirements'
+  import {requirements} from '../../state_objects/requirements'
 
   export default {
     // Here we get the correct placement text when switching between pages

@@ -1,4 +1,6 @@
 /* eslint-disable */
+// track which part of the page should be highlighted
+// eg. one:True would mean that section one should be highlighted
 export {
   highlightTracker
 }

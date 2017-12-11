@@ -74,6 +74,8 @@
         notInterestedAny: null
       }
     },
+    // TODO: below is a depreciated method of getting the results- should switch to using
+    // the object personInfo.js
     mounted: function () {
       this.isUnderage = this.$router.data.isUnderage
       this.isNotFromUS = this.$router.data.isNotFromUS

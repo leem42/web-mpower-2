@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import {phoneNumber} from '../../../requirements/phoneNumber'
+import {phoneNumber} from '../../../state_objects/phoneNumber'
 
 export default {
   data () {
