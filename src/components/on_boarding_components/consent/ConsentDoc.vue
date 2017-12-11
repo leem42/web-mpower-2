@@ -4,16 +4,17 @@
     <div class="row" style="height: 400px;">
 
       <div v-if="showConsentDoc" class='customHeightFrame mt-0 m-0 p-0 col-md-5 ml-md-2 mr-md-4 order-2'>
-         <iframe id="iFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText"
+         <iframe id="iFrame" ref="frame" src="/#/NullPage/ConsentDocText"
         class='fillParent  mask'>
         </iframe> 
+        <!--  -->
            <!--<iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
         </iframe> -->
       </div>
 
        <v-dialog v-if="showOverlay" max-width="90%" v-model="showOverlay" scrollable>
         <v-card height="400px ">
-            <iframe id="overlayFrame" ref="frame" src="http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText"
+            <iframe id="overlayFrame" ref="frame" src="/#/NullPage/ConsentDocText"
             class='fillParent'>
             </iframe>
               <!--<iframe id="overlayFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class='fillParent'>
@@ -154,27 +155,21 @@ export default {
       this.$router.push({name: frame})
     },
     callFrame (message) {
+      // this statement checks whether or not the iframe modal is popped out or not
       if (!this.iframe && document.getElementById('iFrame')) {
         this.iframe = document.getElementById('iFrame').contentWindow
-        // console.log('called in 162')
-        // this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
-        this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText')
-      }
-      if (this.isFrame) {
-        // console.log('called in 166')
-        // this.iframe.postMessage(message, 'http://localhost:8080/#/NullPage/ConsentDocText')
-        this.iframe.postMessage(message, 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com/feat/vuetify-alternate-v2/#/NullPage/ConsentDocText')
+        this.iframe.postMessage(message, window.origin + '/#/NullPage/ConsentDocText')
+      } else if (this.iframe) {
+        this.iframe.postMessage(message, window.origin + '/#/NullPage/ConsentDocText')
       }
     },
     recieveMessage: function (event) {
       // if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
       if (event.origin !== 'http://localhost:8080') {
         return ''
+      } else if (event.data !== 'switch overlay') {
+        return
       } else {
-        /* eslint-disable */
-        if (event.data !== 'switch overlay') {
-          return
-        }
         this.showOverlay = !this.showOverlay
         /* eslint-enable */
       }

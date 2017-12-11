@@ -10,12 +10,10 @@
         </div>
         
         <div class="row ml-6 mt-4">
-             <v-radio-group v-model="questionResults.questionOne" class="col-12">
-                <div class="row"> 
-                    <v-radio class="col-md-10 col-12  customPadding mb-3 mb-sm-0 stencilBorder stencilBorderTop pt-sm-3 mt-0 pb-5 pt-3 wrapLabel lightGrayText pr-0" value=true label="Understand the fluctuations of Parkinson’s disease symptoms">  </v-radio>
-                    <v-radio class="col-md-10 col-12  customPaddingTwo  mt-sm-0 stencilBorder pt-sm-2 mt-0 pb-5 wrapLabel lightGrayText pr-0" value=false label="Give medical advice and diagnose people with Parkinson’s disease">  </v-radio>
-                </div>
-             </v-radio-group> 
+            <div class="row"> 
+                <radio-smooth :label="optionOne" @change ="changeValue" :value="radioChoice"  class="col-md-10 col-12  stencilBorder stencilBorderTop  pt-3 mt-0 pb-3 wrapLabel lightGrayText pr-0"></radio-smooth>
+                <radio-smooth :label="optionTwo" @change ="changeValue" :value="radioChoice"  class="col-md-10 col-12  stencilBorder stencilBorderTop   pt-3 mt-0 pb-3 wrapLabel lightGrayText pr-0"></radio-smooth>
+            </div>
         </div>
     
 
@@ -24,25 +22,35 @@
 
 <script>
     import { questionResults } from '../../../requirements/questionResults'
-
+    import RadioSmooth from '@/custom_components/radiobox/RadioBoxLight.vue'
+    
     export default {
       data () {
         return {
-          questionResults: questionResults
+          questionResults: questionResults,
+          optionOne: 'Understand the fluctuations of Parkinson’s disease symptoms',
+          optionTwo: 'Give medical advice and diagnose people with Parkinson’s disease',
+          radioChoice: ''
         }
+      },
+      watch: {
+        radioChoice: function () {
+          this.questionResults.questionOne = (this.radioChoice === this.optionOne)
+        }
+      },
+      methods: {
+        changeValue: function (newValue) {
+          console.log('new value')
+          this.radioChoice = newValue
+        }
+      },
+      components: {
+        'radio-smooth': RadioSmooth
+      },
+      mounted: function () {
+        console.log('mounted')
+        this.radioChoice = this.questionResults.questionOne
+        console.log(this.radioChoice)
       }
     }
 </script>
-
-<style>
-    @media(max-width: 425px) {
-        .customPadding {
-            padding-bottom: 100px !important;
-        }
-    }
-    @media(max-width: 470px) {
-        .customPaddingTwo {
-            padding-bottom: 95px !important;
-        }
-    }
-</style>

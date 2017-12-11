@@ -106,6 +106,7 @@
           }
         },
         currentStageHasValues () {
+          // determines if user can click and also the opacity of the buttons
           return this.questionResults[this.keys[this.indexInStack - 1]] !== null
         }
       }

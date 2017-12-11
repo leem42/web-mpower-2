@@ -1,9 +1,7 @@
  <template>
     <div class="flexDisplay handCursor">  
       <span class="customCenterAlign">
-          <!-- <input :value="val" @change="updateValue" v-model="checked" :id="uniqueID" type="radio" class="showSelectedRadio"> </input> -->
-
-          <input type="radio" :value="label" :name="name" v-model="radioButtonValue" :id="uniqueID" class="showSelectedRadio">
+          <input type="radio" :value="label" v-model="radioButtonValue" :id="uniqueID" class="showSelectedRadio">
           <label class="handCursor  customCenterAlign" tabindex="1" :for="uniqueID">
               <span> </span> 
           </label>
@@ -16,7 +14,7 @@
 <script>
     export default {
       name: 'radio-smooth',
-      props: ['name', 'label', 'value'],
+      props: ['label', 'value'],
       computed: {
         radioButtonValue: {
           get: function () {

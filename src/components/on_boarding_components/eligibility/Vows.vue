@@ -168,11 +168,11 @@
         </div>
 
          <div class="row" v-if="!controller[2].edit">
-          <radio-smooth name="options" label="Daily" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
-          <radio-smooth name="options" label="Weekly" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
-          <radio-smooth name="options" label="Biweekly" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
-          <radio-smooth name="options" label="Monthly" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
-          <radio-smooth name="options" label="Never" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+          <radio-smooth label="Daily" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+          <radio-smooth label="Weekly" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+          <radio-smooth label="Biweekly" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+          <radio-smooth label="Monthly" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
+          <radio-smooth label="Never" @change="changeValue" :value="radioChoice"  class="mx-auto text-left pt-2 pb-2  stencilBorder mb-4 mb-sm-0 col-sm-7 col-md-6 col-lg-8 customCheck wrapLabel"></radio-smooth>
         </div> 
 
       </span>
