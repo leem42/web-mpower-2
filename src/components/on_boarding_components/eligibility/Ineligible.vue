@@ -1,15 +1,5 @@
 <template>
     <v-app class="page-overview fadeBackground">
-        <div class="row progressBar">
-            <div class="indicatorFilled offset"> </div>
-            <div class="indicatorFilled offset one"> </div>
-            <div class="indicatorFilled offset two"> </div>
-            <div class="indicatorFilled offset three"> </div>
-            <div class="indicatorFilled offset four"> </div>
-            <div class="indicatorFilled offset five"> </div>
-        </div>
-        <br>
-    
         <div class="row">
             <div class="col-sm-8 mx-auto">
                 <p class="white--text text-center"> Sorry, you are not eligible</p>
@@ -24,8 +14,6 @@
                         required for the mPower study. Please note that praticipants can perform the activities as time permits and any\
                         number of activities.' : ''}}
                 </p>
-                    
-    
                 <br>
                 <p class="white--text tinyFontSize text-center">
                     You can still help by telling others about the study
@@ -63,7 +51,6 @@
 
 <script>
   export default {
-    name: 'congratulations',
     data: function () {
       return {
         isUnderage: null,

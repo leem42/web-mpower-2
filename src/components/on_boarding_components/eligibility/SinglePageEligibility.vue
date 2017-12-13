@@ -251,11 +251,6 @@
     min-width: 290px !important;
   }
 
-  /* Work around for diabled button interfering with when the button gets focused in on*/
-  .dim {
-      opacity: 0.5    
-  }
-
   #placeField {
     color: #3a539b !important;
   }

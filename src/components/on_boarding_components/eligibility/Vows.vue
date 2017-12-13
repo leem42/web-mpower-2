@@ -272,18 +272,20 @@
         }
         , 200),
       handleVows () {
+        // if nothing has been entered for the current set of checkboxes then return
         if (!this.currentVowSectionHasValues()) {
           return
         }
+        // if they've reached the last question and are uninterested (and consequently ineligible then go down sad path)
         if (this.controllerLevel === 4 && this.notInterestedAny) {
-          this.updateRouterState()
+          this.goDownSadPath()
         } else if (this.controllerLevel === 4) {
           this.requirements.isOnElgibility = false
           this.requirements.hasCompletedEligibility = true
           this.requirements.isOnConsent = true
           this.$router.push('OverviewEligibility')
         } else if (this.controllerLevel === 0 && this.notInterestedFromStart) {
-          this.updateRouterState()
+          this.goDownSadPath()
         } else {
           let levelObj = this.controller[this.controllerLevel]
           levelObj.click = true
@@ -299,13 +301,15 @@
           }
         }
       },
-      updateRouterState () {
+      // Depreciated method in used below -- should use a JS object instead (thought not a necessity)
+      goDownSadPath () {
         this.$router.data = {
           notInterestedFromStart: this.notInterestedFromStart,
           notInterestedAny: this.notInterestedAny
         }
         this.$router.push('Ineligible')
       },
+      // check if current question has any single check answered
       currentVowSectionHasValues () {
         if (this.controllerLevel === 0) {
           return this.hasAnsweredAny(0, 6)
@@ -319,9 +323,12 @@
           return true
         }
       },
+      //  this is a way for vue to set content of an object and keep track of that state -- not sure if this is entirely functioning
+      //  how intended000
       setSelection (index) {
         this.$set(this.checkboxChoices, index, !this.checkboxChoices[index])
       },
+      // used to record radio value choice
       changeValue: function (newValue) {
         this.radioChoice = newValue
       },
@@ -339,6 +346,7 @@
           return 'STEP ' + (this.progressIndex + 1) + ' OF 4'
         }
       },
+      // look through current section of checkbox questions and show true
       hasAnsweredAny: function (start, stop) {
         for (var i = start; i < stop; i++) {
           if (this.checkboxChoices[i]) {
