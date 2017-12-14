@@ -247,6 +247,7 @@
         checkboxChoices: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
         controllerLevel: 0,
         // below controls whether or not to show checkboxes for a particular section and then it shows where to scroll to
+        // once an item is clicked then it tells the page to nove on, then it's either in an edit state or submit state
         controller: {
           0: {click: false, submit: false, edit: false, page: '#interest'}, // TODO: Remove submit field if its extraneous
           1: {click: false, submit: false, edit: false, page: '#willing'},

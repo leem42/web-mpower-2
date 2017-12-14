@@ -65,7 +65,7 @@
       </div>
     </div>
 
-   
+   <!-- extra-padding -->
     <div class="row" style="height: 400px;" > </div>
   </v-app>
 </template>
@@ -104,7 +104,6 @@
         progress: (100.0 / 3),
         progressStep: (100.0 / 3),
         hasCompletedPartOne: false,
-        partOneIsEligible: false,
         progressIndex: 0,
         hasAnswered: [false, false, false],
         indexInVowSection: 1
@@ -140,8 +139,8 @@
         }
       },
       // TODO: below is a depreciated method of getting the results- should switch to using
-      // the object personInfo.js
-      updateRouterState () {
+      // the object personInfo.js, vue discourages coupling data to the $router.
+      goDownSadPath () {
         this.$router.data = {
           isUnderage: this.personInfo.age < 18,
           isNotFromUS: !this.isResident,
@@ -155,7 +154,7 @@
       handleEligibility () {
         this.isNotEligible = (this.personInfo.age < 18) || (!this.isResident) || (this.personInfo.selectedOptionForPhone !== 'comfortable')
         if (this.isNotEligible) {
-          this.updateRouterState()
+          this.goDownSadPath()
         } else {
           this.requirements.isOnElgibility = false
           this.requirements.hasCompletedEligibility = true
@@ -173,12 +172,11 @@
       getProgress () {
         if (this.progressIndex + 1 === 3 && this.hasCompletedPartOne) {
           return 'ELIGBILITY DONE'
-        } else {
-          if (this.progressIndex > 2) {
-            this.progressIndex = 2
-          }
-          return 'STEP ' + (this.progressIndex + 1) + ' OF 3'
         }
+        if (this.progressIndex > 2) {
+          this.progressIndex = 2
+        }
+        return 'STEP ' + (this.progressIndex + 1) + ' OF 3'
       },
       setIsUnderage: _.debounce(
         function () {
@@ -198,7 +196,7 @@
           } else {
             this.addProgress(1)
             this.scrollPage('#comfortable')
-            this.isResident = (this.personInfo.stateChosen !== '' && this.personInfo.stateChosen !== 'I don\'t live in the US')
+            this.isResident = this.personInfo.stateChosen !== 'I don\'t live in the US'
           }
         }, 500
       ),
@@ -207,7 +205,7 @@
           if (personInfo.selectedOptionForPhone === '') {
             this.hasChosenOption = null
           } else {
-            this.hasChosenOption = (this.personInfo.selectedOptionForPhone !== '')
+            this.hasChosenOption = this.personInfo.selectedOptionForPhone !== ''
             this.addProgress(2)
           }
         }, 500
@@ -219,17 +217,7 @@
             this.scrollPage('#submit')
           }
         }, 500
-      ),
-      // for each section of the app we need to see
-      // if they have completed any particular checkbox
-      hasAnsweredAny: function (start, stop) {
-        for (var i = start; i < stop; i++) {
-          if (this.selectedChoice[i]) {
-            return true
-          }
-        }
-        return false
-      }
+      )
     },
     // If the user has already filled out the form then we load their values and show the form already completed
     mounted: function () {

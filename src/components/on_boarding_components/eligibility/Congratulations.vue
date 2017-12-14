@@ -1,6 +1,6 @@
 <template>
 
-
+  <!--  DEPRECIATED PAGE- SHOULD BE REMOVED  -->
   <div class="page-overview">
     <div class="row progressBar">
     <div class="indicatorFilled offset">  </div>

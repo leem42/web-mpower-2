@@ -7,18 +7,14 @@
          <iframe id="iFrame" ref="frame" src="/#/NullPage/ConsentDocText"
         class='fillParent  mask'>
         </iframe> 
-        <!--  -->
-           <!--<iframe id="iFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class="fillParent  mask">
-        </iframe> -->
       </div>
 
+        <!-- modal to show up if user clicks the expand button -->
        <v-dialog v-if="showOverlay" max-width="90%" v-model="showOverlay" scrollable>
         <v-card height="400px ">
             <iframe id="overlayFrame" ref="frame" src="/#/NullPage/ConsentDocText"
             class='fillParent'>
             </iframe>
-              <!--<iframe id="overlayFrame" ref="frame" src="http://localhost:8080/#/NullPage/ConsentDocText" class='fillParent'>
-            </iframe>  -->
         </v-card>
        </v-dialog>
 
@@ -27,6 +23,7 @@
         <router-view style="height: -webkit-fill-available;" class="whiteBackground fillParentRouter consentView router container-fluid"> </router-view>
         <div class="row mt-md-5 m-md-3">
             <div class="ml-5 smallFontSize">  
+              <!-- button that needs to be fixed is below, the styling of the router-view tag is throwing things off -->
               <a v-on:click="showConsentDoc = !showConsentDoc" class="defaultBlue font-weight-bold ">
                 <u> See Consent Document with this section </u>
               </a>
@@ -117,7 +114,6 @@ export default {
       requirements: requirements,
       multiple13: 100.0 / 13,
       progress: 100.0 / 13,
-      stepNumber: 1,
       iframe: '',
       showOverlay: false,
       showConsentDoc: false,
@@ -131,15 +127,16 @@ export default {
   methods: {
     navigate (index) {
       var frame = ''
+      // if 0 then we go backwards otherwise it means we clicked next
       if (index === 0) {
         this.indexInStack = this.indexInStack - 1
         this.progress = this.progress - this.multiple13
-        this.stepNumber -= 1
       } else {
         this.progress = this.progress + this.multiple13
         this.indexInStack = this.indexInStack + 1
-        this.stepNumber += 1
       }
+      // if they're going through consent for the first time and are on the last page then
+      // transition them over and set properties of requirements object.
       if (this.indexInStack === 14 && !this.requirements.hasCompletedConsent) {
         this.requirements.isOnConsent = false
         this.requirements.hasCompletedConsent = true
@@ -166,16 +163,16 @@ export default {
     },
     recieveMessage: function (event) {
       // if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
-      if (event.origin !== 'http://localhost:8080') {
+      if (event.origin !== 'http://localhost:8080' || event.data !== 'switch overlay') {
         return ''
-      } else if (event.data !== 'switch overlay') {
-        return
       } else {
         this.showOverlay = !this.showOverlay
         /* eslint-enable */
       }
     }
   },
+  // event listener to respond to ConsentDocText-- this tells ConsentDoc whether to show the modal
+  // or not.
   created: function () {
     window.addEventListener('message', this.recieveMessage, false)
   }

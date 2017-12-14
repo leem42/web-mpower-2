@@ -1,7 +1,6 @@
 <template>
     <v-app class="container white">
 
-
       <i> APPROVED AS MODIFIED May19, 2016 WIRB® </i>
 
       <h2> STUDY INFORMATION AND CONSENT TO RESEARCH </h2>
@@ -185,27 +184,30 @@ export default {
     }
   },
   methods: {
+    // scroll to given ID coming in at a specific speed, the A is added because ID's have to start
+    // with a letter
     scrollPage: _.debounce(
       function (arg1, speed) {
         arg1 = '#A' + arg1
         this.$scrollTo(arg1, speed, { easing: 'linear', offset: 0 })
       }
       , 200),
+    // method to listen to events coming in
     recieveMessage: function (event) {
       if (event.origin !== 'http://web-mpower-2-michael.lee.s3-website-us-east-1.amazonaws.com') {
       // if (event.origin !== 'http://localhost:8080') {
         return ''
       } else {
-        // console.log('reciever called in 200')
         /* eslint-disable */
         if(event.data === "") {
-          return
+          return ''
         }
         let index = event.data.indexInStack
         let forward = event.data.forward
 
         let keyCurrent = this.keys[index - 1]
         let keyBehind = this.keys[index - 2]
+        // if it was called using 'Next' Button
         if (forward) {
           this.$set(this.highlightTracker,keyCurrent,true)
           this.$set(this.highlightTracker,keyBehind,false)
@@ -219,17 +221,21 @@ export default {
         /* eslint-enable */
       }
     },
+    // must keep state of what is being overlayed
     overlay () {
       this.showOverlay = !this.showOverlay
       window.parent.postMessage('switch overlay', this.parentURL)
     }
   },
+  // if its the modal frame then on mount we need to scroll to the correct section
   created: function () {
     this.isModalFrame = window.frameElement.id === 'overlayFrame'
     if (!this.isModalFrame) { // with modal frame it will always scroll into sight below
       window.addEventListener('message', this.recieveMessage, false)
     }
   },
+  // on mount must scroll to correct position if this is the modal, otherwise the frame will automatically
+  // scroll
   mounted: function () {
     if (this.isModalFrame || this.highlightTracker.one) {
       let wordsToNums = [
@@ -247,14 +253,14 @@ export default {
         'twelve',
         'thirteen'
       ]
-
+      // here we parse the URL to know which location must be scrolled to on the page
       let href = window.parent.location.href
       href = href.split('Consent')
       let key = href[href.length - 1].toLowerCase()
       let index = wordsToNums.indexOf(key) + 1
       this.highlightTracker[key] = true
       this.$set(this.highlightTracker, key, true)
-      this.$scrollTo('#A' + index, 0, { easing: 'linear', offset: 0 })
+      this.$scrollTo(index, 0, { easing: 'linear', offset: 0 })
     }
   }
 }
@@ -287,7 +293,8 @@ p {
     color: #3a539b !important;
 }
 
-
+/* if we put expand button within the iframe then it needs to have a z-index high enough
+such that it can be reached by ConsentDoc and fire events */
 .attachButton {
   z-index: 99999;
   position: fixed !important;
